@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<fx:root fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#handleClick" prefHeight="90.0" prefWidth="91.0" type="javafx.scene.layout.GridPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="17.0" prefWidth="17.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="73.0" prefWidth="73.0" />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="17.0" minHeight="10.0" prefHeight="17.0" valignment="TOP" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="15.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="button" alignment="CENTER" maxHeight="19.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="71.0" text="details" textAlignment="CENTER" textFill="#434343" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <font>
+            <Font size="9.0" />
+         </font></Label>
+      <Label fx:id="name" alignment="CENTER" prefHeight="70.0" prefWidth="70.0" text="Doduo " textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="header" alignment="CENTER" prefHeight="45.0" prefWidth="90.0" text="Basic / HP 90" GridPane.columnIndex="1">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="basicCardSymbol" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="23.0" style="-fx-border-width: 0.4pt; -fx-border-color: #ad00ff;" text="+1" textAlignment="CENTER" textFill="#ad00ff" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Impact" size="10.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <Pane fx:id="energyHolder" prefHeight="120.0" prefWidth="21.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="BOTTOM">
+         <children>
+            <Label fx:id="e0" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="1.0" layoutY="57.0" prefHeight="14.0" prefWidth="17.0" style="-fx-background-color: orange;" text="E" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="e1" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="1.0" layoutY="39.0" prefHeight="16.0" prefWidth="17.0" style="-fx-background-color: orange;" text="E" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="e2" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="1.0" layoutY="21.0" prefHeight="15.0" prefWidth="17.0" style="-fx-background-color: orange;" text="E" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="e3" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="1.0" layoutY="3.0" prefHeight="16.0" prefWidth="17.0" style="-fx-background-color: orange;" text="E" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Pane>
+   </children>
+</fx:root>

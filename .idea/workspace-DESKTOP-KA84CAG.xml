@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="PokemonGoBack:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <ignored path="JavaFxApplication.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/PokemonGoBack$Pokemon.coverage" NAME="Pokemon Coverage Results" MODIFIED="1495663375573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="150" column="37" lean-forward="false" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
+              <folding>
+                <element signature="method#Player#0;class#Player#0" expanded="false" />
+                <element signature="method#getCardArea#0;class#Player#0" expanded="false" />
+                <element signature="method#addCard#0;class#Player#0" expanded="false" />
+                <element signature="method#addCard#1;class#Player#0" expanded="false" />
+                <element signature="method#addCard#2;class#Player#0" expanded="false" />
+                <element signature="method#drawCard#0;class#Player#0" expanded="false" />
+                <element signature="method#removeCard#0;class#Player#0" expanded="false" />
+                <element signature="method#popCard#0;class#Player#0" expanded="false" />
+                <element signature="n#!!doc;n#shuffle#0;n#Player#0" expanded="false" />
+                <element signature="method#shuffle#0;class#Player#0" expanded="false" />
+                <element signature="n#!!doc;n#addListener#0;n#Player#0" expanded="false" />
+                <element signature="method#addListener#0;class#Player#0" expanded="false" />
+                <element signature="method#removeListener#0;class#Player#0" expanded="false" />
+                <element signature="method#fireAddCard#0;class#Player#0" expanded="false" />
+                <element signature="method#fireRemoveCard#0;class#Player#0" expanded="false" />
+                <element signature="method#getAreaCard#0;class#Player#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetaData.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/MetaData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogicController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/LogicController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1312">
+              <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+              <folding>
+                <element signature="docComment;class#LogicController#0" expanded="false" />
+                <element signature="e#296#311#0" expanded="false" />
+                <element signature="n#!!doc;n#LogicController#0;n#LogicController#0" expanded="false" />
+                <element signature="method#LogicController#0;class#LogicController#0" expanded="false" />
+                <element signature="method#startTurn#0;class#LogicController#0" expanded="false" />
+                <element signature="method#getPlayerName#0;class#LogicController#0" expanded="false" />
+                <element signature="method#executeAbility#0;class#LogicController#0" expanded="false" />
+                <element signature="e#4291#4303#0" expanded="false" />
+                <element signature="method#isMovementVerified#0;class#LogicController#0" expanded="false" />
+                <element signature="e#6731#6739#0" expanded="false" />
+                <element signature="n#!!doc;n#addListener#0;n#LogicController#0" expanded="false" />
+                <element signature="method#fireShowMessage#0;class#LogicController#0" expanded="false" />
+                <element signature="method#fireFlipCoin#0;class#LogicController#0" expanded="false" />
+                <element signature="method#fireSelectCardRequest#0;class#LogicController#0" expanded="false" />
+                <element signature="n#!!doc;n#boardEventListener#0;n#LogicController#0" expanded="false" />
+                <element signature="class#11393:13480" expanded="false" />
+                <element signature="method#MoveCard#0;class#11393:13480" expanded="false" />
+                <element signature="method#doneButtonPressed#0;class#11393:13480" expanded="false" />
+                <element signature="class#13524:14908" expanded="false" />
+                <element signature="method#attackRequest#0;class#13524:14908" expanded="false" />
+                <element signature="method#applyTrainerCardRequest#0;class#13524:14908" expanded="false" />
+                <element signature="method#showFaceRequest#0;class#13524:14908" expanded="false" />
+                <element signature="n#!!doc;n#getActivePlayer#0;n#LogicController#0" expanded="false" />
+                <element signature="method#addPlayerEventListener#0;class#LogicController#0" expanded="false" />
+                <element signature="method#getOpponent#0;class#LogicController#0" expanded="false" />
+                <marker date="1496804518553" expanded="false" signature="13464:13474" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogicEventListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/LogicEventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="533">
+              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameBoardController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/GameBoardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="n#!!doc;n#primaryStage#0;n#GameBoardController#0" expanded="false" />
+                <element signature="e#1369#1413#0" expanded="false" />
+                <element signature="class#3092:7740" expanded="false" />
+                <element signature="method#pushCard#0;class#3092:7740" expanded="false" />
+                <element signature="e#3333#3361#0" expanded="false" />
+                <element signature="e#3734#3752#0" expanded="false" />
+                <element signature="e#5450#5487#0" expanded="false" />
+                <element signature="e#5631#5667#0" expanded="false" />
+                <element signature="method#popCard#0;class#3092:7740" expanded="false" />
+                <element signature="e#6283#6303#0" expanded="false" />
+                <element signature="e#6693#6717#0" expanded="false" />
+                <element signature="e#7108#7138#0" expanded="false" />
+                <element signature="e#7565#7587#0" expanded="false" />
+                <element signature="e#8368#8369#0" expanded="true" />
+                <element signature="e#8403#8404#0" expanded="true" />
+                <element signature="method#fireMoveCard#0;class#GameBoardController#0" expanded="false" />
+                <element signature="method#getAreaName#0;class#GameBoardController#0" expanded="false" />
+                <element signature="method#popup#0;class#GameBoardController#0" expanded="false" />
+                <element signature="method#flipCoin#0;class#GameBoardController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SmallCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UIControls/SmallCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="93" column="66" lean-forward="false" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+              <folding>
+                <element signature="e#3262#3263#0" expanded="true" />
+                <element signature="e#3322#3323#0" expanded="true" />
+                <element signature="method#push#0;class#SmallCard#0" expanded="false" />
+                <element signature="method#updateView#0;class#SmallCard#0" expanded="false" />
+                <element signature="method#getMainCard#0;class#SmallCard#0" expanded="false" />
+                <element signature="method#getAllCard#0;class#SmallCard#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NormalCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UIControls/NormalCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="654">
+              <caret line="79" column="90" lean-forward="false" selection-start-line="79" selection-start-column="90" selection-end-line="79" selection-end-column="90" />
+              <folding>
+                <element signature="e#1084#1102#0" expanded="false" />
+                <element signature="method#handleAttack1Clicked#0;class#NormalCard#0" expanded="false" />
+                <element signature="method#handleAttack2Clicked#0;class#NormalCard#0" expanded="false" />
+                <element signature="method#handleAttack3Clicked#0;class#NormalCard#0" expanded="false" />
+                <element signature="method#handleAttack4Clicked#0;class#NormalCard#0" expanded="false" />
+                <element signature="n#!!doc;n#addListener#0;n#NormalCard#0" expanded="false" />
+                <element signature="method#fireAbility#0;class#NormalCard#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attack.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Attack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="788">
+              <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+              <folding>
+                <element signature="e#512#513#0" expanded="true" />
+                <element signature="e#542#543#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uiCardEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/uiCardEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ability.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Ability.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="984">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>NextFreeCell</find>
+      <find>GridPane.getColumnIndex</find>
+      <find>StackPane</find>
+      <find>attack1</find>
+      <find>getPlayerName</find>
+      <find>new SmallCard</find>
+      <find>handle</find>
+      <find>dragOver</find>
+      <find>getTarget</find>
+      <find>card</find>
+      <find>cardID</find>
+      <find>setid</find>
+      <find>Player.A</find>
+      <find>&quot;A&quot;</find>
+      <find>coin</find>
+      <find>showface</find>
+      <find>stage</find>
+      <find>close</find>
+      <find>hi</find>
+      <find>waitForFlipping</find>
+      <find>flip</find>
+      <find>start</find>
+      <find>show</find>
+      <find>listenerList</find>
+      <find>ShowFaceRequest</find>
+      <find>BoardEventListener</find>
+      <find>movementVerified</find>
+      <find>pop</find>
+      <find>playerName</find>
+      <find>getpl</find>
+    </findStrings>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="HierarchyBrowserManager">
+    <option name="SCOPE" value="All" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../CustomControl/src/Card/PokemonCardView.fxml" />
+        <option value="$PROJECT_DIR$/../CustomControl/src/Card/SmallCard.java" />
+        <option value="$PROJECT_DIR$/src/Card/NormalCard.fxml" />
+        <option value="$PROJECT_DIR$/src/Enums/Area.java" />
+        <option value="$PROJECT_DIR$/src/Model/CardEvent.java" />
+        <option value="$PROJECT_DIR$/src/Card/NormalCard.java" />
+        <option value="$PROJECT_DIR$/src/Enums/Player.java" />
+        <option value="$PROJECT_DIR$/src/Card/Main.java" />
+        <option value="$PROJECT_DIR$/src/Enums/Coin.java" />
+        <option value="$PROJECT_DIR$/src/Controller/CoinDialog.fxml" />
+        <option value="$PROJECT_DIR$/src/asset/gameBoard.css" />
+        <option value="$PROJECT_DIR$/src/Card/SmallCard.fxml" />
+        <option value="$PROJECT_DIR$/src/Card/MessageDialog.fxml" />
+        <option value="$PROJECT_DIR$/src/Controller/CoinDialog.java" />
+        <option value="$PROJECT_DIR$/src/Card/MessageDialog.java" />
+        <option value="$PROJECT_DIR$/src/Card/SmallCard.java" />
+        <option value="$PROJECT_DIR$/src/UIControls/MessageDialog.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Helper.java" />
+        <option value="$PROJECT_DIR$/src/UIControls/PMessageDialog.java" />
+        <option value="$PROJECT_DIR$/src/UIControls/MessageDialog.fxml" />
+        <option value="$PROJECT_DIR$/src/Model/EnergyCard.java" />
+        <option value="$PROJECT_DIR$/src/Model/Card.java" />
+        <option value="$PROJECT_DIR$/src/Enums/Category.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Core.java" />
+        <option value="$PROJECT_DIR$/src/Model/CardEventListener.java" />
+        <option value="$PROJECT_DIR$/src/Model/PlayerEventListener.java" />
+        <option value="$PROJECT_DIR$/src/Model/AbilityEventListener.java" />
+        <option value="$PROJECT_DIR$/src/Model/MoveCardListener.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Main.java" />
+        <option value="$PROJECT_DIR$/src/Controller/GameBoardView.fxml" />
+        <option value="$PROJECT_DIR$/src/Model/BoardEventListener.java" />
+        <option value="$PROJECT_DIR$/src/Enums/TurnAction.java" />
+        <option value="$PROJECT_DIR$/src/Model/ActionTarget.java" />
+        <option value="$PROJECT_DIR$/src/Enums/Operand.java" />
+        <option value="$PROJECT_DIR$/src/Model/Action.java" />
+        <option value="$PROJECT_DIR$/src/Model/PokemonCard.java" />
+        <option value="$PROJECT_DIR$/src/Model/TrainerCard.java" />
+        <option value="$PROJECT_DIR$/src/Model/AbilityEvent.java" />
+        <option value="$PROJECT_DIR$/src/Model/attackEvent.java" />
+        <option value="$PROJECT_DIR$/src/Model/Attack.java" />
+        <option value="$PROJECT_DIR$/src/Model/AttackEvent.java" />
+        <option value="$PROJECT_DIR$/src/Model/CardHolder.java" />
+        <option value="$PROJECT_DIR$/src/Model/uiCardEvent.java" />
+        <option value="$PROJECT_DIR$/src/Model/LogicEventListener.java" />
+        <option value="$PROJECT_DIR$/src/Model/Player.java" />
+        <option value="$PROJECT_DIR$/src/UIControls/SmallCard.java" />
+        <option value="$PROJECT_DIR$/src/Controller/GameBoardController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/LogicController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Ability.java" />
+        <option value="$PROJECT_DIR$/src/UIControls/NormalCard.java" />
+        <option value="$PROJECT_DIR$/src/Model/MetaData.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-13" />
+    <option name="y" value="-13" />
+    <option name="width" value="3026" />
+    <option name="height" value="1946" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>unused</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UIControls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PokemonGoBack_jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="ToolWindowStructure.ShowToolbar" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Enums" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\PokemonGoBack\out\artifacts\PokemonGoBack_jar" />
+      <recent name="D:\JavaProjects\PokemonGoBack\PokemonCard\src" />
+      <recent name="D:\JavaProjects\PokemonGoBack\src\Controller\CustomControl" />
+      <recent name="D:\JavaProjects\PokemonGoBack\src\sample" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Controller.CustomControl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\PokemonGoBack\src\Controller" />
+      <recent name="D:\JavaProjects\PokemonGoBack\src\View" />
+      <recent name="D:\JavaProjects\CustomControl\src\SmallCard" />
+      <recent name="D:\JavaProjects\CustomControl\src\AttackRow" />
+      <recent name="D:\JavaProjects\CustomControl\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Pokemon">
+    <configuration default="false" name="PokemonGoBack.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/PokemonGoBack_jar/PokemonGoBack.jar" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PokemonGoBack" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="cloudfoundry-deploy" factoryName="CloudFoundry Deployment">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="false" name="Pokemon" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Controller.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/.." />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PokemonGoBack" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="UIControls.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Card.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PokemonGoBack" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.Pokemon" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="2" class="java.lang.String" itemvalue="JAR Application.PokemonGoBack.jar" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JAR Application.PokemonGoBack.jar" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES,SHOW_NON_PUBLIC,VISIBILITY_SORTER" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1495302322065" duration="13170000" />
+      <workItem from="1495333612672" duration="4433000" />
+      <workItem from="1495341799910" duration="50000" />
+      <workItem from="1495341908186" duration="17049000" />
+      <workItem from="1495385154950" duration="18884000" />
+      <workItem from="1495475324958" duration="33959000" />
+      <workItem from="1495580746444" duration="9491000" />
+      <workItem from="1495605673636" duration="40805000" />
+      <workItem from="1495684162583" duration="21349000" />
+      <workItem from="1495725764306" duration="22757000" />
+      <workItem from="1495768971500" duration="61104000" />
+      <workItem from="1496074394511" duration="6238000" />
+      <workItem from="1496096162113" duration="682000" />
+      <workItem from="1496369233691" duration="2544000" />
+      <workItem from="1496431525513" duration="4544000" />
+      <workItem from="1496457864658" duration="16416000" />
+      <workItem from="1496587907400" duration="16706000" />
+      <workItem from="1496606675477" duration="806000" />
+      <workItem from="1496609094189" duration="40000" />
+      <workItem from="1496609795747" duration="20000" />
+      <workItem from="1496618474829" duration="9265000" />
+      <workItem from="1496681674274" duration="1044000" />
+      <workItem from="1496784843665" duration="17091000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="332107000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32702544" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3231198" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28976938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20570055" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44011143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1733" y="195" width="865" height="470" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33832854" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/PokemonCard/src/Main.java</url>
+          <line>11</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/PokemonCard/src/Main.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Model/MetaData.java</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/UIControls/SmallCard.java</url>
+          <line>272</line>
+          <properties />
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Model/CardHolder.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/GameBoardController.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="243" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Model/Player.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="245" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/UIControls/SmallCard.java</url>
+          <line>215</line>
+          <properties />
+          <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/GameBoardController.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/GameBoardController.java</url>
+          <line>331</line>
+          <properties />
+          <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Model/Player.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Model/CardHolder.java</url>
+          <line>65</line>
+          <properties class="Model.CardHolder" />
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/Controller/GameBoardController.java</url>
+          <line>230</line>
+          <properties field="dropHandler" class="Controller.GameBoardController" />
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="261" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="source.getParent().getId().substring(source.getParent().getId().length() - 1)" />
+        <watch expression="evt.getSmallCardId()" />
+        <watch expression="(area).getChildren()" />
+        <watch expression="area.lookup(&quot;#&quot; + evt.getSmallCardId())" />
+        <watch expression="(area).getChildren()" />
+        <watch expression="flycard.getId()" />
+        <watch expression="getEnergyCardList().size()" />
+        <watch expression="&quot;#coin&quot;+player )" />
+        <watch expression="&quot;#coin&quot;+player " />
+        <watch expression="this.lookup(&quot;#coin&quot;+player )" />
+        <watch expression="((ImageView)this.lookup(&quot;#coin&quot;+player ))" />
+        <watch expression="new Image(getClass().getResource(&quot;/asset/coin-button.gif.jpg&quot;).toURI().toString())" />
+        <watch expression="getClass().getResource(&quot;/asset/coin-button.gif.jpg&quot;).toURI().toString()" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="982" column="0" lean-forward="false" selection-start-line="982" selection-start-column="0" selection-end-line="982" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="2494" column="0" lean-forward="false" selection-start-line="2494" selection-start-column="0" selection-end-line="2494" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/PokemonGoBack_jar/cards.txt" />
+    <entry file="file://$PROJECT_DIR$/src/Enums/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="211" column="6" lean-forward="false" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Card/Main.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/image/ImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="140" column="13" lean-forward="false" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CoinDialog.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="162" lean-forward="false" selection-start-line="14" selection-start-column="162" selection-end-line="14" selection-end-column="162" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enums/Coin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Controller.Main">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Controller.Main</OriginalElement>
+          <nodes>
+            <node x="" y="">Model.EnergyCard</node>
+            <node x="" y="">Enums.Area</node>
+            <node x="" y="">Model.PokemonCard</node>
+            <node x="" y="">Model.Action</node>
+            <node x="" y="">Enums.Coin</node>
+            <node x="" y="">Model.Attack</node>
+            <node x="" y="">Model.CardHolder</node>
+            <node x="" y="">Model.Player</node>
+            <node x="" y="">Controller.GameBoardController</node>
+            <node x="" y="">Model.MetaData</node>
+            <node x="" y="">Controller.Main</node>
+            <node x="" y="">Model.Card</node>
+            <node x="" y="">Model.TrainerCard</node>
+            <node x="" y="">Model.Ability</node>
+            <node x="" y="">Enums.Player</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.3623430962343097" x="1016.0" y="727.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asset/gameBoard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UIControls/SmallCard.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/concurrent/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="853" column="73" lean-forward="false" selection-start-line="853" selection-start-column="37" selection-end-line="853" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/event/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CoinDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-813">
+          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="31" />
+          <folding>
+            <element signature="class#2515:2828" expanded="false" />
+            <element signature="class#2876:3895" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#alert#0;class#Helper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UIControls/NormalCard.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UIControls/MessageDialog.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enums/Area.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enums/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/EnergyCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+          <folding>
+            <element signature="e#753#754#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CardEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/MoveCardListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/UIControls/PMessageDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="53" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/PlayerEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GameBoardView.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <marker date="1496622512899" expanded="true" signature="8351:8372" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/BoardEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enums/Operand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enums/TurnAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="341.5000000000001" y="1144.0">Controller.LogicController</node>
+            <node x="1531.5609666848325" y="212.0">Model.Attack</node>
+            <node x="1493.375" y="902.0">UIControls.SmallCard</node>
+            <node x="478.5133476372133" y="680.0">Model.Player</node>
+            <node x="1482.6250000000002" y="1144.0">Controller.GameBoardController</node>
+            <node x="2685.0609666848322" y="544.0">Model.MetaData</node>
+            <node x="1813.0319721944716" y="212.0">Enums.Category</node>
+            <node x="1962.8109666848325" y="378.0">Model.TrainerCard</node>
+            <node x="2551.610442209306" y="680.0">Controller.CoinDialog</node>
+            <node x="2082.579192209306" y="106.0">Model.Ability</node>
+            <node x="911.2458588759725" y="786.0">Model.uiCardEvent</node>
+            <node x="717.7276333514991" y="544.0">Model.CardEvent</node>
+            <node x="1288.7458588759728" y="680.0">UIControls.NormalCard</node>
+            <node x="1724.8109666848325" y="378.0">Model.EnergyCard</node>
+            <node x="1458.8109666848325" y="378.0">Model.PokemonCard</node>
+            <node x="616.6305533481677" y="378.0">Enums.Area</node>
+            <node x="2242.110442209306" y="902.0">UIControls.PMessageDialog</node>
+            <node x="2410.956800018166" y="0.0">Model.Action</node>
+            <node x="182.0" y="902.0">Enums.TurnAction</node>
+            <node x="10.5" y="1008.0">Model.BoardEventListener</node>
+            <node x="2322.5494755244736" y="544.0">Enums.Coin</node>
+            <node x="2320.610442209306" y="1008.0">Model.LogicEventListener</node>
+            <node x="480.7276333514991" y="544.0">Model.CardHolder</node>
+            <node x="1489.1250000000002" y="1250.0">Controller.Main</node>
+            <node x="1201.2458588759728" y="212.0">Model.Card</node>
+            <node x="1167.2458588759728" y="544.0">Model.AbilityEvent</node>
+            <node x="708.2682255244737" y="1008.0">Model.PlayerEventListener</node>
+            <node x="1066.7458588759725" y="378.0">Enums.Player</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Model.LogicEventListener" target="UIControls.PMessageDialog">
+              <point x="-73.5" y="-28.0" />
+              <point x="2394.110442209306" y="988.0" />
+              <point x="2446.110442209306" y="988.0" />
+              <point x="68.0" y="28.0" />
+            </edge>
+            <edge source="UIControls.NormalCard" target="Enums.Player">
+              <point x="0.0" y="-28.0" />
+              <point x="1400.7458588759728" y="640.0" />
+              <point x="1432.579192209306" y="640.0" />
+              <point x="1432.579192209306" y="484.0" />
+              <point x="1196.7458588759725" y="484.0" />
+              <point x="50.0" y="28.0" />
+            </edge>
+            <edge source="Controller.Main" target="Controller.GameBoardController">
+              <point x="0.0" y="-28.0" />
+              <point x="-81.5" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="Model.LogicEventListener">
+              <point x="95.08333333333326" y="-28.0" />
+              <point x="1740.7083333333335" y="1104.0" />
+              <point x="2394.110442209306" y="1104.0" />
+              <point x="-73.5" y="28.0" />
+            </edge>
+            <edge source="Controller.LogicController" target="Model.PlayerEventListener">
+              <point x="116.10000000000002" y="-28.0" />
+              <point x="586.6000000000001" y="1124.0" />
+              <point x="758.601558857807" y="1124.0" />
+              <point x="-100.66666666666663" y="28.0" />
+            </edge>
+            <edge source="Model.EnergyCard" target="Model.Card">
+              <point x="-54.5" y="-28.0" />
+              <point x="1779.3109666848325" y="328.0" />
+              <point x="1313.2913134214273" y="328.0" />
+              <point x="39.545454545454504" y="28.0" />
+            </edge>
+            <edge source="Model.LogicEventListener" target="Enums.Coin">
+              <point x="73.5" y="-28.0" />
+              <point x="2541.110442209306" y="660.0" />
+              <point x="2413.1744755244736" y="660.0" />
+              <point x="18.125" y="28.0" />
+            </edge>
+            <edge source="Model.Player" target="Enums.Coin">
+              <point x="68.57142857142856" y="-28.0" />
+              <point x="627.0847762086419" y="650.0" />
+              <point x="2340.6744755244736" y="650.0" />
+              <point x="-54.375" y="28.0" />
+            </edge>
+            <edge source="Controller.Main" target="Model.MetaData">
+              <point x="60.0" y="-28.0" />
+              <point x="1624.1250000000002" y="1230.0" />
+              <point x="2785.0609666848322" y="1230.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="Model.BoardEventListener" target="Model.Card">
+              <point x="-120.0" y="-28.0" />
+              <point x="40.5" y="978.0" />
+              <point x="106.48990649502002" y="978.0" />
+              <point x="106.48990649502002" y="328.0" />
+              <point x="1221.0185861486998" y="328.0" />
+              <point x="-52.72727272727275" y="28.0" />
+            </edge>
+            <edge source="Model.MetaData" target="Model.Card">
+              <point x="-12.5" y="-28.0" />
+              <point x="2772.5609666848322" y="524.0" />
+              <point x="2791.610442209306" y="524.0" />
+              <point x="2791.610442209306" y="298.0" />
+              <point x="1339.6549497850638" y="298.0" />
+              <point x="65.90909090909099" y="28.0" />
+            </edge>
+            <edge source="Model.Attack" target="Model.Ability">
+              <point x="0.0" y="-28.0" />
+              <point x="1612.5609666848325" y="192.0" />
+              <point x="2123.329192209306" y="192.0" />
+              <point x="-40.75" y="28.0" />
+            </edge>
+            <edge source="Model.Ability" target="Model.Action">
+              <point x="0.0" y="-28.0" />
+              <point x="2164.079192209306" y="81.0" />
+              <point x="2451.956800018166" y="81.0" />
+              <point x="-41.0" y="28.0" />
+            </edge>
+            <edge source="Model.BoardEventListener" target="Enums.TurnAction">
+              <point x="120.0" y="-28.0" />
+              <point x="280.5" y="988.0" />
+              <point x="235.25" y="988.0" />
+              <point x="-53.25" y="28.0" />
+            </edge>
+            <edge source="Model.AbilityEvent" target="Enums.Player">
+              <point x="-74.0" y="-28.0" />
+              <point x="1204.2458588759728" y="494.0" />
+              <point x="1176.7458588759725" y="494.0" />
+              <point x="30.0" y="28.0" />
+            </edge>
+            <edge source="Model.CardEvent" target="Enums.Area">
+              <point x="-68.0" y="-28.0" />
+              <point x="751.7276333514991" y="454.0" />
+              <point x="724.6305533481677" y="454.0" />
+              <point x="36.0" y="28.0" />
+            </edge>
+            <edge source="Model.BoardEventListener" target="Enums.Player">
+              <point x="60.0" y="-28.0" />
+              <point x="220.5" y="978.0" />
+              <point x="145.35935314685253" y="978.0" />
+              <point x="145.35935314685253" y="464.0" />
+              <point x="1076.7458588759725" y="464.0" />
+              <point x="-70.0" y="28.0" />
+            </edge>
+            <edge source="Model.AbilityEvent" target="Model.Card">
+              <point x="0.0" y="-28.0" />
+              <point x="1278.2458588759728" y="494.0" />
+              <point x="1334.5609666848325" y="494.0" />
+              <point x="1334.5609666848325" y="358.0" />
+              <point x="1273.7458588759728" y="358.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="Enums.Player">
+              <point x="-40.75" y="-28.0" />
+              <point x="1604.8750000000002" y="1084.0" />
+              <point x="1156.7458588759725" y="1084.0" />
+              <point x="10.0" y="28.0" />
+            </edge>
+            <edge source="Model.EnergyCard" target="Enums.Category">
+              <point x="54.5" y="-28.0" />
+              <point x="1888.3109666848325" y="358.0" />
+              <point x="1909.0319721944716" y="358.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="Model.MetaData" target="Model.Action">
+              <point x="87.5" y="-28.0" />
+              <point x="2872.5609666848322" y="504.0" />
+              <point x="2835.610442209306" y="504.0" />
+              <point x="2835.610442209306" y="81.0" />
+              <point x="2533.956800018166" y="81.0" />
+              <point x="41.0" y="28.0" />
+            </edge>
+            <edge source="Controller.LogicController" target="Model.Player">
+              <point x="12.899999999999977" y="-28.0" />
+              <point x="483.4000000000001" y="1084.0" />
+              <point x="529.6305533481677" y="1084.0" />
+              <point x="529.6305533481677" y="761.0" />
+              <point x="505.18001430387994" y="761.0" />
+              <point x="-53.33333333333337" y="28.0" />
+            </edge>
+            <edge source="Model.TrainerCard" target="Model.Card">
+              <point x="-73.0" y="-28.0" />
+              <point x="1999.3109666848325" y="318.0" />
+              <point x="1326.4731316032453" y="318.0" />
+              <point x="52.72727272727275" y="28.0" />
+            </edge>
+            <edge source="Model.MetaData" target="Model.PokemonCard">
+              <point x="-87.5" y="-28.0" />
+              <point x="2697.5609666848322" y="514.0" />
+              <point x="1674.0609666848325" y="514.0" />
+              <point x="92.25" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="UIControls.SmallCard">
+              <point x="13.583333333333258" y="-28.0" />
+              <point x="1659.2083333333335" y="1124.0" />
+              <point x="1651.125" y="1124.0" />
+              <point x="1651.125" y="988.0" />
+              <point x="1671.0" y="988.0" />
+              <point x="76.125" y="28.0" />
+            </edge>
+            <edge source="Model.AbilityEvent" target="Model.Ability">
+              <point x="74.0" y="-28.0" />
+              <point x="1352.2458588759728" y="494.0" />
+              <point x="1382.5319721944716" y="494.0" />
+              <point x="1382.5319721944716" y="182.0" />
+              <point x="2096.1625255426397" y="182.0" />
+              <point x="-67.91666666666652" y="28.0" />
+            </edge>
+            <edge source="Controller.LogicController" target="Model.uiCardEvent">
+              <point x="64.5" y="-28.0" />
+              <point x="535.0000000000001" y="1104.0" />
+              <point x="643.4638866815011" y="1104.0" />
+              <point x="643.4638866815011" y="872.0" />
+              <point x="939.2458588759725" y="872.0" />
+              <point x="-84.0" y="28.0" />
+            </edge>
+            <edge source="Model.PlayerEventListener" target="UIControls.SmallCard">
+              <point x="0.0" y="-28.0" />
+              <point x="859.2682255244737" y="978.0" />
+              <point x="1518.75" y="978.0" />
+              <point x="-76.125" y="28.0" />
+            </edge>
+            <edge source="Controller.Main" target="Controller.LogicController">
+              <point x="-60.0" y="-28.0" />
+              <point x="1504.1250000000002" y="1230.0" />
+              <point x="406.0000000000001" y="1230.0" />
+              <point x="-64.5" y="28.0" />
+            </edge>
+            <edge source="Model.BoardEventListener" target="Enums.Area">
+              <point x="0.0" y="-28.0" />
+              <point x="160.5" y="988.0" />
+              <point x="134.35935314685253" y="988.0" />
+              <point x="134.35935314685253" y="454.0" />
+              <point x="652.6305533481677" y="454.0" />
+              <point x="-36.0" y="28.0" />
+            </edge>
+            <edge source="Model.TrainerCard" target="Model.Ability">
+              <point x="73.0" y="-28.0" />
+              <point x="2145.3109666848322" y="358.0" />
+              <point x="2140.579192209306" y="358.0" />
+              <point x="2140.579192209306" y="192.0" />
+              <point x="2150.4958588759728" y="192.0" />
+              <point x="-13.583333333333485" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="Enums.Player">
+              <point x="-12.6875" y="-28.0" />
+              <point x="1582.1875" y="882.0" />
+              <point x="1584.6432255244736" y="882.0" />
+              <point x="1584.6432255244736" y="474.0" />
+              <point x="1216.7458588759725" y="474.0" />
+              <point x="70.0" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="Controller.CoinDialog">
+              <point x="149.41666666666674" y="-28.0" />
+              <point x="1795.041666666667" y="1124.0" />
+              <point x="2658.610442209306" y="1124.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="Controller.CoinDialog" target="Enums.Coin">
+              <point x="0.0" y="-28.0" />
+              <point x="2658.610442209306" y="650.0" />
+              <point x="2449.4244755244736" y="650.0" />
+              <point x="54.375" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="Model.AbilityEvent">
+              <point x="-63.4375" y="-28.0" />
+              <point x="1531.4375" y="872.0" />
+              <point x="1278.2458588759728" y="872.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="Controller.LogicController" target="Model.BoardEventListener">
+              <point x="-64.50000000000006" y="-28.0" />
+              <point x="406.0" y="1104.0" />
+              <point x="235.5" y="1104.0" />
+              <point x="75.0" y="28.0" />
+            </edge>
+            <edge source="Model.Player" target="Model.CardEvent">
+              <point x="45.714285714285666" y="-28.0" />
+              <point x="604.227633351499" y="640.0" />
+              <point x="751.7276333514991" y="640.0" />
+              <point x="-68.0" y="28.0" />
+            </edge>
+            <edge source="UIControls.NormalCard" target="Model.Card">
+              <point x="74.66666666666674" y="-28.0" />
+              <point x="1475.4125255426393" y="640.0" />
+              <point x="1448.3109666848325" y="640.0" />
+              <point x="1448.3109666848325" y="348.0" />
+              <point x="1286.9276770577908" y="348.0" />
+              <point x="13.181818181818244" y="28.0" />
+            </edge>
+            <edge source="UIControls.NormalCard" target="Model.AbilityEvent">
+              <point x="-74.66666666666674" y="-28.0" />
+              <point x="1326.0791922093058" y="640.0" />
+              <point x="1352.2458588759728" y="640.0" />
+              <point x="74.0" y="28.0" />
+            </edge>
+            <edge source="Model.TrainerCard" target="Enums.Category">
+              <point x="0.0" y="-28.0" />
+              <point x="2072.3109666848322" y="308.0" />
+              <point x="1973.0319721944716" y="308.0" />
+              <point x="64.0" y="28.0" />
+            </edge>
+            <edge source="Model.uiCardEvent" target="Model.AbilityEvent">
+              <point x="74.66666666666674" y="-28.0" />
+              <point x="1097.9125255426393" y="761.0" />
+              <point x="1066.079192209306" y="761.0" />
+              <point x="1066.079192209306" y="640.0" />
+              <point x="1204.2458588759728" y="640.0" />
+              <point x="-74.0" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="Model.CardEvent">
+              <point x="-67.91666666666674" y="-28.0" />
+              <point x="1577.7083333333335" y="1094.0" />
+              <point x="1145.7458588759725" y="1094.0" />
+              <point x="1145.7458588759725" y="630.0" />
+              <point x="887.7276333514991" y="630.0" />
+              <point x="68.0" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="Model.TrainerCard">
+              <point x="63.4375" y="-28.0" />
+              <point x="1658.3125" y="872.0" />
+              <point x="2017.5609666848325" y="872.0" />
+              <point x="-54.75" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="UIControls.PMessageDialog">
+              <point x="67.91666666666674" y="-28.0" />
+              <point x="1713.541666666667" y="1094.0" />
+              <point x="2310.110442209306" y="1094.0" />
+              <point x="-68.0" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="Model.Ability">
+              <point x="88.8125" y="-28.0" />
+              <point x="1683.6875" y="882.0" />
+              <point x="2192.3109666848322" y="882.0" />
+              <point x="2192.3109666848322" y="192.0" />
+              <point x="2177.6625255426397" y="192.0" />
+              <point x="13.583333333333485" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="Enums.Coin">
+              <point x="40.75" y="-28.0" />
+              <point x="1686.3750000000002" y="1084.0" />
+              <point x="2231.610442209306" y="1084.0" />
+              <point x="2231.610442209306" y="660.0" />
+              <point x="2376.9244755244736" y="660.0" />
+              <point x="-18.125" y="28.0" />
+            </edge>
+            <edge source="Model.Player" target="Model.Card">
+              <point x="-68.57142857142856" y="-28.0" />
+              <point x="489.94191906578476" y="660.0" />
+              <point x="416.5000000000001" y="660.0" />
+              <point x="416.5000000000001" y="348.0" />
+              <point x="1247.3822225123363" y="348.0" />
+              <point x="-26.36363636363626" y="28.0" />
+            </edge>
+            <edge source="Model.MetaData" target="Model.Attack">
+              <point x="12.5" y="-28.0" />
+              <point x="2797.5609666848322" y="524.0" />
+              <point x="2802.610442209306" y="524.0" />
+              <point x="2802.610442209306" y="288.0" />
+              <point x="1666.5609666848325" y="288.0" />
+              <point x="54.0" y="28.0" />
+            </edge>
+            <edge source="Model.PokemonCard" target="Model.Attack">
+              <point x="-30.75" y="-28.0" />
+              <point x="1551.0609666848325" y="358.0" />
+              <point x="1558.5609666848325" y="358.0" />
+              <point x="-54.0" y="28.0" />
+            </edge>
+            <edge source="Model.PlayerEventListener" target="Model.CardEvent">
+              <point x="-100.66666666666663" y="-28.0" />
+              <point x="758.601558857807" y="988.0" />
+              <point x="819.7276333514991" y="988.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="Model.PokemonCard">
+              <point x="12.6875" y="-28.0" />
+              <point x="1607.5625" y="882.0" />
+              <point x="1612.5609666848325" y="882.0" />
+              <point x="30.75" y="28.0" />
+            </edge>
+            <edge source="Model.Player" target="Enums.Player">
+              <point x="-45.714285714285666" y="-28.0" />
+              <point x="512.7990619229276" y="650.0" />
+              <point x="470.2276333514991" y="650.0" />
+              <point x="470.2276333514991" y="484.0" />
+              <point x="1116.7458588759725" y="484.0" />
+              <point x="-30.0" y="28.0" />
+            </edge>
+            <edge source="Model.CardHolder" target="Model.PokemonCard">
+              <point x="-54.25" y="-28.0" />
+              <point x="534.9776333514991" y="504.0" />
+              <point x="1489.5609666848325" y="504.0" />
+              <point x="-92.25" y="28.0" />
+            </edge>
+            <edge source="Model.CardEvent" target="Enums.Player">
+              <point x="68.0" y="-28.0" />
+              <point x="887.7276333514991" y="494.0" />
+              <point x="1136.7458588759725" y="494.0" />
+              <point x="-10.0" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="Model.uiCardEvent">
+              <point x="-88.8125" y="-28.0" />
+              <point x="1506.0625" y="882.0" />
+              <point x="1107.2458588759725" y="882.0" />
+              <point x="84.0" y="28.0" />
+            </edge>
+            <edge source="Model.CardHolder" target="Model.EnergyCard">
+              <point x="54.25" y="-28.0" />
+              <point x="643.4776333514991" y="524.0" />
+              <point x="1761.1443000181657" y="524.0" />
+              <point x="-72.66666666666674" y="28.0" />
+            </edge>
+            <edge source="Model.uiCardEvent" target="Model.PokemonCard">
+              <point x="0.0" y="-28.0" />
+              <point x="1023.2458588759725" y="761.0" />
+              <point x="1055.079192209306" y="761.0" />
+              <point x="1055.079192209306" y="514.0" />
+              <point x="1551.0609666848325" y="514.0" />
+              <point x="-30.75" y="28.0" />
+            </edge>
+            <edge source="Model.CardEvent" target="Model.Card">
+              <point x="0.0" y="-28.0" />
+              <point x="819.7276333514991" y="454.0" />
+              <point x="771.1305533481677" y="454.0" />
+              <point x="771.1305533481677" y="358.0" />
+              <point x="1260.5640406941543" y="358.0" />
+              <point x="-13.181818181818244" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="Model.EnergyCard">
+              <point x="38.0625" y="-28.0" />
+              <point x="1632.9375" y="862.0" />
+              <point x="1833.8109666848325" y="862.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="UIControls.SmallCard" target="UIControls.NormalCard">
+              <point x="-38.0625" y="-28.0" />
+              <point x="1556.8125" y="862.0" />
+              <point x="1400.7458588759728" y="862.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="Model.PlayerEventListener">
+              <point x="-149.41666666666674" y="-28.0" />
+              <point x="1496.2083333333335" y="1124.0" />
+              <point x="859.2682255244737" y="1124.0" />
+              <point x="0.0" y="28.0" />
+            </edge>
+            <edge source="Model.PokemonCard" target="Model.Card">
+              <point x="-92.25" y="-28.0" />
+              <point x="1489.5609666848325" y="338.0" />
+              <point x="1300.1094952396093" y="338.0" />
+              <point x="26.363636363636488" y="28.0" />
+            </edge>
+            <edge source="Controller.LogicController" target="Enums.Player">
+              <point x="-12.899999999999977" y="-28.0" />
+              <point x="457.60000000000014" y="1084.0" />
+              <point x="405.5000000000001" y="1084.0" />
+              <point x="405.5000000000001" y="474.0" />
+              <point x="1096.7458588759725" y="474.0" />
+              <point x="-50.0" y="28.0" />
+            </edge>
+            <edge source="Model.MetaData" target="Model.EnergyCard">
+              <point x="-62.5" y="-28.0" />
+              <point x="2722.5609666848322" y="504.0" />
+              <point x="1906.4776333514992" y="504.0" />
+              <point x="72.66666666666674" y="28.0" />
+            </edge>
+            <edge source="Model.uiCardEvent" target="Model.Player">
+              <point x="-74.66666666666674" y="-28.0" />
+              <point x="948.5791922093058" y="761.0" />
+              <point x="611.8466809705467" y="761.0" />
+              <point x="53.33333333333337" y="28.0" />
+            </edge>
+            <edge source="Model.MetaData" target="Model.TrainerCard">
+              <point x="-37.5" y="-28.0" />
+              <point x="2747.5609666848322" y="494.0" />
+              <point x="2127.0609666848322" y="494.0" />
+              <point x="54.75" y="28.0" />
+            </edge>
+            <edge source="Model.Player" target="Model.CardHolder">
+              <point x="-22.857142857142776" y="-28.0" />
+              <point x="535.6562047800705" y="640.0" />
+              <point x="516.8943000181657" y="640.0" />
+              <point x="-72.33333333333337" y="28.0" />
+            </edge>
+            <edge source="Controller.LogicController" target="Enums.TurnAction">
+              <point x="-38.700000000000045" y="-28.0" />
+              <point x="431.80000000000007" y="1094.0" />
+              <point x="341.7500000000001" y="1094.0" />
+              <point x="53.25" y="28.0" />
+            </edge>
+            <edge source="Controller.LogicController" target="Model.Card">
+              <point x="-116.10000000000002" y="-28.0" />
+              <point x="354.4000000000001" y="1124.0" />
+              <point x="0.0" y="1124.0" />
+              <point x="0.0" y="318.0" />
+              <point x="1207.8367679668818" y="318.0" />
+              <point x="-65.90909090909099" y="28.0" />
+            </edge>
+            <edge source="Model.MetaData" target="Model.Ability">
+              <point x="62.5" y="-28.0" />
+              <point x="2847.5609666848322" y="514.0" />
+              <point x="2824.610442209306" y="514.0" />
+              <point x="2824.610442209306" y="182.0" />
+              <point x="2231.9958588759728" y="182.0" />
+              <point x="67.91666666666652" y="28.0" />
+            </edge>
+            <edge source="Model.PokemonCard" target="Enums.Category">
+              <point x="92.25" y="-28.0" />
+              <point x="1674.0609666848325" y="358.0" />
+              <point x="1845.0319721944716" y="358.0" />
+              <point x="-64.0" y="28.0" />
+            </edge>
+            <edge source="Controller.GameBoardController" target="Model.uiCardEvent">
+              <point x="-95.08333333333348" y="-28.0" />
+              <point x="1550.5416666666667" y="1104.0" />
+              <point x="1051.2458588759725" y="1104.0" />
+              <point x="28.0" y="28.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="227.0" y="132.0" />
+          <SelectedNodes>
+            <node>Model.Attack</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ActionTarget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#810#811#0" expanded="false" />
+            <element signature="e#839#840#0" expanded="false" />
+            <element signature="e#889#890#0" expanded="false" />
+            <element signature="e#925#926#0" expanded="false" />
+            <element signature="e#954#955#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="false" />
+            <element signature="e#1021#1022#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1093#1094#0" expanded="false" />
+            <element signature="e#1122#1123#0" expanded="false" />
+            <element signature="e#1171#1172#0" expanded="false" />
+            <element signature="e#1207#1208#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1271">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#792#810#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#2299#2322#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/TrainerCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="docComment;class#TrainerCard#0" expanded="false" />
+            <element signature="method#setName#0;class#TrainerCard#0" expanded="false" />
+            <element signature="method#setCategory#0;class#TrainerCard#0" expanded="false" />
+            <element signature="method#setType#0;class#TrainerCard#0" expanded="false" />
+            <element signature="method#setId#0;class#TrainerCard#0" expanded="false" />
+            <element signature="method#clone#0;class#TrainerCard#0" expanded="false" />
+            <element signature="e#1378#1379#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/PokemonCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <element signature="docComment;class#PokemonCard#0" expanded="false" />
+            <element signature="method#setName#0;class#PokemonCard#0" expanded="false" />
+            <element signature="method#setCategory#0;class#PokemonCard#0" expanded="false" />
+            <element signature="method#setType#0;class#PokemonCard#0" expanded="false" />
+            <element signature="method#setId#0;class#PokemonCard#0" expanded="false" />
+            <element signature="e#1695#1724#0" expanded="false" />
+            <element signature="method#clone#0;class#PokemonCard#0" expanded="false" />
+            <element signature="method#setDamage#0;class#PokemonCard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/AttackEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CardHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1511">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#CardHolder#0" expanded="false" />
+            <element signature="method#add#0;class#CardHolder#0" expanded="false" />
+            <element signature="method#pop#0;class#CardHolder#0" expanded="false" />
+            <element signature="method#popAllCard#0;class#CardHolder#0" expanded="false" />
+            <element signature="e#3224#3225#0" expanded="true" />
+            <element signature="method#getTopCard#0;class#CardHolder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/uiCardEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/LogicEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="150" column="37" lean-forward="false" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
+          <folding>
+            <element signature="method#Player#0;class#Player#0" expanded="false" />
+            <element signature="method#getCardArea#0;class#Player#0" expanded="false" />
+            <element signature="method#addCard#0;class#Player#0" expanded="false" />
+            <element signature="method#addCard#1;class#Player#0" expanded="false" />
+            <element signature="method#addCard#2;class#Player#0" expanded="false" />
+            <element signature="method#drawCard#0;class#Player#0" expanded="false" />
+            <element signature="method#removeCard#0;class#Player#0" expanded="false" />
+            <element signature="method#popCard#0;class#Player#0" expanded="false" />
+            <element signature="n#!!doc;n#shuffle#0;n#Player#0" expanded="false" />
+            <element signature="method#shuffle#0;class#Player#0" expanded="false" />
+            <element signature="n#!!doc;n#addListener#0;n#Player#0" expanded="false" />
+            <element signature="method#addListener#0;class#Player#0" expanded="false" />
+            <element signature="method#removeListener#0;class#Player#0" expanded="false" />
+            <element signature="method#fireAddCard#0;class#Player#0" expanded="false" />
+            <element signature="method#fireRemoveCard#0;class#Player#0" expanded="false" />
+            <element signature="method#getAreaCard#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UIControls/SmallCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="93" column="66" lean-forward="false" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+          <folding>
+            <element signature="e#3262#3263#0" expanded="true" />
+            <element signature="e#3322#3323#0" expanded="true" />
+            <element signature="method#push#0;class#SmallCard#0" expanded="false" />
+            <element signature="method#updateView#0;class#SmallCard#0" expanded="false" />
+            <element signature="method#getMainCard#0;class#SmallCard#0" expanded="false" />
+            <element signature="method#getAllCard#0;class#SmallCard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GameBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc;n#primaryStage#0;n#GameBoardController#0" expanded="false" />
+            <element signature="e#1369#1413#0" expanded="false" />
+            <element signature="class#3092:7740" expanded="false" />
+            <element signature="method#pushCard#0;class#3092:7740" expanded="false" />
+            <element signature="e#3333#3361#0" expanded="false" />
+            <element signature="e#3734#3752#0" expanded="false" />
+            <element signature="e#5450#5487#0" expanded="false" />
+            <element signature="e#5631#5667#0" expanded="false" />
+            <element signature="method#popCard#0;class#3092:7740" expanded="false" />
+            <element signature="e#6283#6303#0" expanded="false" />
+            <element signature="e#6693#6717#0" expanded="false" />
+            <element signature="e#7108#7138#0" expanded="false" />
+            <element signature="e#7565#7587#0" expanded="false" />
+            <element signature="e#8368#8369#0" expanded="true" />
+            <element signature="e#8403#8404#0" expanded="true" />
+            <element signature="method#fireMoveCard#0;class#GameBoardController#0" expanded="false" />
+            <element signature="method#getAreaName#0;class#GameBoardController#0" expanded="false" />
+            <element signature="method#popup#0;class#GameBoardController#0" expanded="false" />
+            <element signature="method#flipCoin#0;class#GameBoardController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/LogicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1312">
+          <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+          <folding>
+            <element signature="docComment;class#LogicController#0" expanded="false" />
+            <element signature="e#296#311#0" expanded="false" />
+            <element signature="n#!!doc;n#LogicController#0;n#LogicController#0" expanded="false" />
+            <element signature="method#LogicController#0;class#LogicController#0" expanded="false" />
+            <element signature="method#startTurn#0;class#LogicController#0" expanded="false" />
+            <element signature="method#getPlayerName#0;class#LogicController#0" expanded="false" />
+            <element signature="method#executeAbility#0;class#LogicController#0" expanded="false" />
+            <element signature="e#4291#4303#0" expanded="false" />
+            <element signature="method#isMovementVerified#0;class#LogicController#0" expanded="false" />
+            <element signature="e#6731#6739#0" expanded="false" />
+            <element signature="n#!!doc;n#addListener#0;n#LogicController#0" expanded="false" />
+            <element signature="method#fireShowMessage#0;class#LogicController#0" expanded="false" />
+            <element signature="method#fireFlipCoin#0;class#LogicController#0" expanded="false" />
+            <element signature="method#fireSelectCardRequest#0;class#LogicController#0" expanded="false" />
+            <element signature="n#!!doc;n#boardEventListener#0;n#LogicController#0" expanded="false" />
+            <element signature="class#11393:13480" expanded="false" />
+            <element signature="method#MoveCard#0;class#11393:13480" expanded="false" />
+            <element signature="method#doneButtonPressed#0;class#11393:13480" expanded="false" />
+            <element signature="class#13524:14908" expanded="false" />
+            <element signature="method#attackRequest#0;class#13524:14908" expanded="false" />
+            <element signature="method#applyTrainerCardRequest#0;class#13524:14908" expanded="false" />
+            <element signature="method#showFaceRequest#0;class#13524:14908" expanded="false" />
+            <element signature="n#!!doc;n#getActivePlayer#0;n#LogicController#0" expanded="false" />
+            <element signature="method#addPlayerEventListener#0;class#LogicController#0" expanded="false" />
+            <element signature="method#getOpponent#0;class#LogicController#0" expanded="false" />
+            <marker date="1496804518553" expanded="false" signature="13464:13474" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Attack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding>
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Ability.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="984">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UIControls/NormalCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="79" column="90" lean-forward="false" selection-start-line="79" selection-start-column="90" selection-end-line="79" selection-end-column="90" />
+          <folding>
+            <element signature="e#1084#1102#0" expanded="false" />
+            <element signature="method#handleAttack1Clicked#0;class#NormalCard#0" expanded="false" />
+            <element signature="method#handleAttack2Clicked#0;class#NormalCard#0" expanded="false" />
+            <element signature="method#handleAttack3Clicked#0;class#NormalCard#0" expanded="false" />
+            <element signature="method#handleAttack4Clicked#0;class#NormalCard#0" expanded="false" />
+            <element signature="n#!!doc;n#addListener#0;n#NormalCard#0" expanded="false" />
+            <element signature="method#fireAbility#0;class#NormalCard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/MetaData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>CustomControl:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PokemonGoBack</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>CustomControl</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

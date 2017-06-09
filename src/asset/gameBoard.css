@@ -1,0 +1,39 @@
+#main {
+    /*-fx-background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQxsasGQIwQNwjek3F1nSwlfx60g6XpOggnxw5dyQrtCL_0x8IW');*/
+    -fx-background-image:url('../asset/gameboard1.jpg');
+    -fx-background-repeat:stretch;
+    /*-fx-background-size: 900 506;*/
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+/*#deckA,*/
+/*#handA,*/
+#benchB,
+#benchA
+/*,#benchA0,*/
+/*#benchA1,*/
+/*#benchA2,*/
+/*#benchA3,*/
+/*#benchA4,*/
+/*#prizeA,*/
+/*#activeA,*/
+/*#discardA*/
+{
+    -fx-background-color:rgba(255,255,255,0.55);
+
+    /* -fx-border-style: solid;-fx-border-color: saddlebrown;*/
+}
+#deckB,
+#handB,
+#benchB,
+#benchB0,
+#benchB1,
+#benchB2,
+#benchB3,
+#benchB4,
+#activeB,
+#discardB,
+#prizeB
+{
+    /*-fx-border-style: solid;-fx-border-color: yellowgreen;*/
+}

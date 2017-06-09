@@ -1,0 +1,7 @@
+Lightning|energy||lightning|||||||||||||||
+Water|energy||water|||||||||||||||
+Fight|energy||fight|||||||||||||||
+Psychic|energy||psychic|||||||||||||||
+Glameow|pokemon|basic|colorless|60|colorless|2|colorless|1|1|colorless|2|2||||||
+Pikachu Libre|pokemon|basic|lightning|80|colorless|1|colorless|2|3|colorless|2|4|lightning|1|4|||
+Pikachu|pokemon|basic|lightning|60|colorless|1|colorless|1|5|colorless|2|3||||||

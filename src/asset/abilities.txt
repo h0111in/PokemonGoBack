@@ -1,0 +1,6 @@
+nullCard | dam | opponent-active | 20 | - |
+Scratch | dam | opponent-active | 20 | - |
+Quick Attack | dam | opponent-active | 10 | - | dam | opponent-active | 30 | flip | 
+Nuzzle | applyStat | opponent-active | paralyzed | flip |
+Circle Circuit | dam | opponent-active | 20*bench.length | - |
+Thunderbolt | dam | opponent-active | 100 |  - | deenergize | your-active | 100% | - |
