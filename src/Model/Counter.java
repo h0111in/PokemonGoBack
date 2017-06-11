@@ -30,7 +30,7 @@ public class Counter {
     public int getAmount(String operand) throws ScriptException {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("js");
-        return Integer.parseInt((String) engine.eval(operand + formula));
+        return Integer.parseInt(String.valueOf(engine.eval(operand + formula)));
     }
 
     public ActionTarget getTarget() {
