@@ -1,5 +1,6 @@
 package Model;
 
+import javax.script.ScriptException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -84,8 +85,9 @@ public class CardHolder {
     }
 
     public void remove(String id) throws Exception {
-pop(id);
+        pop(id);
     }
+
     public Map<String, Card> getAllCard() {
         Map<String, Card> output = new HashMap<>();
         for (Card eCard : energyCards) output.put(eCard.getId(), eCard);
@@ -118,4 +120,18 @@ pop(id);
         return energyCards;
     }
 
+    public Attack getBestAttack() throws ScriptException {
+        Attack bestAttack = null;
+        if (getTopCard() != null)
+            for (Attack attack : getTopCard().getAttackList()) {
+                if (attack.getCostAmount() <= getEnergyCards().size())//has enough energy?
+                {
+                    if (bestAttack == null) {
+                        bestAttack = attack;
+                    } else if (attack.getAbility().getActionsPower() > bestAttack.getAbility().getActionsPower())
+                        bestAttack = attack;
+                }
+            }
+        return bestAttack;
+    }
 }

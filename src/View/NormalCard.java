@@ -1,6 +1,5 @@
-package UIControls;
+package View;
 
-import Enums.*;
 import Model.*;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -68,8 +67,6 @@ public class NormalCard extends GridPane {
             level.setVisible(true);
             //Attack1
             if (pokemonCard.getAttackList().size() > 0) {
-
-
                 attack1.setVisible(true);
                 attack1.setCursor(Cursor.HAND);
                 Attack attack1 = pokemonCard.getAttackList().get(0);
@@ -78,7 +75,7 @@ public class NormalCard extends GridPane {
                 for (Action action : attack1.getAbility().actionList)
                     description += action.getName() + ",Condition: " + action.getCondition() + ", Target: " + action.getTarget();
                 attack1Description.setText(description);
-                attack1Power.setText(String.valueOf(attack1.getAbility().getActionsPower()));
+                attack1Power.setText(attack1.getAbility().getActionsPowerText());
                 attack1Cost.setText(attack1.getCostAmount() + "X" + attack1.getCostType());
             }
 

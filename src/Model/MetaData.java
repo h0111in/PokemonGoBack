@@ -21,9 +21,6 @@ public class MetaData {
     private List<Card> cards;
 
 
-    /**
-     *
-     */
     public MetaData() throws Exception {
         List<String> strAbilityList = readFile("./asset/abilities.txt");
 
@@ -51,10 +48,6 @@ public class MetaData {
         }
         cards = new ArrayList<>();
 
-        //region Load Abilities
-
-
-        //endregion
 
         //region Load cards
         List<String> strCardList = readFile("./asset/cards.txt");
@@ -62,7 +55,7 @@ public class MetaData {
 
         for (String str : strCardList) {
             String[] subCardStr = str.replace("cat:", "").replace(",", ":").split(":");
-            if (subCardStr.length > 5)
+            if (subCardStr.length > 1) {
                 switch (subCardStr[1]) {
                     case "pokemon":
                         List<Attack> attacks = new ArrayList<>();
@@ -75,7 +68,7 @@ public class MetaData {
                                 j++;
                             }
                             for (; i + 12 <= subCardStr.length && !subCardStr[i + 9].isEmpty(); i += 3) {
-                                attacks.add(new Attack(abilitys.get(Integer.parseInt(subCardStr[i + 11])), subCardStr[i + 9], Integer.parseInt(subCardStr[i + 10])));
+                                attacks.add(new Attack(abilitys.get(Integer.parseInt(subCardStr[i + 11]) - 1), subCardStr[i + 9], Integer.parseInt(subCardStr[i + 10])));
                             }
 
                         } catch (Exception e) {
@@ -96,12 +89,12 @@ public class MetaData {
                     case "trainer":
                         //Switch:trainer:cat:item:71
                         //String name, CardCategory category, String type, Attack attack
-                        cards.add(new TrainerCard(subCardStr[0], CardCategory.valueOf(subCardStr[1]), subCardStr[2], new Attack(abilitys.get(Integer.parseInt(subCardStr[3])), "", 0)));
+                        cards.add(new TrainerCard(subCardStr[0], CardCategory.valueOf(subCardStr[1]), subCardStr[2], new Attack(abilitys.get(Integer.parseInt(subCardStr[3]) - 1), "", 0)));
                         break;
                 }
+            } else if (subCardStr[0].equals("#")) cards.add(new PokemonCard("nullRow", null, "", "", 0, null, null));
         }
         //endregion
-
 
     }
 
@@ -318,7 +311,6 @@ public class MetaData {
         }
         return new AbstractMap.SimpleEntry<>(-1, null);
     }
-
 
     private static ActionStatus toStatus(String statusName) {
 

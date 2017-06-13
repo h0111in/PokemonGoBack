@@ -33,7 +33,6 @@ public class Action {
      * @param status
      */
     public Action(String actionName, ActionTarget target, ActionStatus status) {
-
         name = actionName;
         this.target = target;
         this.status = status;

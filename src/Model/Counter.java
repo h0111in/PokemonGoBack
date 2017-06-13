@@ -16,7 +16,7 @@ public class Counter {
     private String type;
     private String formula;
 
-    public Counter( String formula) {
+    public Counter(String formula) {
         this.formula = formula;
     }
 
@@ -27,17 +27,17 @@ public class Counter {
         this.type = type;
     }
 
-    public int getAmount(String operand) throws ScriptException {
+    public int getAmount(String leftOperand) throws ScriptException {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("js");
-        return Integer.parseInt(String.valueOf(engine.eval(operand + formula)));
+        return Integer.parseInt(String.valueOf(engine.eval(leftOperand + formula)));
     }
 
     public ActionTarget getTarget() {
         return target;
     }
 
-    public CardCategory getCategory() {
+    public CardCategory getTargetCategory() {
         return category;
     }
 

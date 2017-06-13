@@ -1,4 +1,4 @@
-package UIControls;
+package View;
 
 import Enums.Player;
 import Model.*;
@@ -26,6 +26,7 @@ import static Controller.Main.logger;
 
 public class SmallCard extends GridPane {
 
+    //region fields
     @FXML
     protected Label name;
     @FXML
@@ -44,20 +45,20 @@ public class SmallCard extends GridPane {
     protected Label basicCardSymbol;
     @FXML
     protected Pane energyHolder;
-
     @FXML
     protected Label button;
 
-    private Enums.Player playerName;
 
     private PokemonCard basicCard;
     private PokemonCard stageCard;
     private List<EnergyCard> energyCardList;
     private TrainerCard trainerCard;
     private EventListenerList listenerList;
+    private Player playerName;
 
+    //endregion
 
-    public SmallCard(Model.Card card, Enums.Player playerName, Stage primaryStage) throws Exception {
+    public SmallCard(Model.Card card, Stage primaryStage) throws Exception {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SmallCard.fxml"));
         fxmlLoader.setController(this);
@@ -74,17 +75,34 @@ public class SmallCard extends GridPane {
         header.setVisible(false);
         name.setVisible(false);
         button.setVisible(false);
+        playerName = card.getPlayerName();
+        setStyle("-fx-background-color: transparent");
 
-        if (playerName.equals(Player.A))
+        if (card.getPlayerName().equals(Player.A))
             setStyle("-fx-background-image:url('/asset/card-back5.png'); ");
         else setStyle("-fx-background-image:url('/asset/card-back6.png'); ");
 
         //setStyle("-fx-background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQxsasGQIwQNwjek3F1nSwlfx60g6XpOggnxw5dyQrtCL_0x8IW');");
 
         this.setId(card.getId());
-        this.playerName = playerName;
         listenerList = new EventListenerList();
         this.setCursor(Cursor.HAND);
+
+        this.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    fireCardClicked(card.getId());
+
+                    logger.info("handle from code");
+                    logger.info(card.getId() + card.getName());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         button.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -108,6 +126,11 @@ public class SmallCard extends GridPane {
                             return false;
                         }
 
+                        @Override
+                        public void cardClicked(String cardId) {
+
+                        }
+
 
                     });
                 } catch (ScriptException e) {
@@ -118,7 +141,7 @@ public class SmallCard extends GridPane {
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setResizable(false);
                 stage.setIconified(false);
-                stage.initOwner(primaryStage);
+                stage.initOwner(getScene().getWindow());
                 stage.showAndWait();
             }
         });
@@ -228,10 +251,28 @@ public class SmallCard extends GridPane {
                 event.consume();
             }
         });
+        card.addListener(new CardEventListener() {
+            @Override
+            public void cardModified(String property, Card card) {
 
+                if (basicCard != null && card.getId().equals(basicCard.getId()))
+                    setBasicCard((PokemonCard) card);
+                else if (stageCard != null && stageCard.getId().equals(card.getId()))
+                    setStageCard((PokemonCard) card);
+                else if (card instanceof EnergyCard) {
+                    for (int i = 0; i < energyCardList.size(); i++) {
+                        Card energyCard = energyCardList.get(i);
+                        if (energyCard.equals(card.getId())) {
+                            energyCardList.set(i, (EnergyCard) card);
+                            break;
+                        }
+                    }
+                }
+                updateView();
+            }
+        });
         //place card
         push(card);
-
     }
 
     public void push(Card card) throws Exception {
@@ -334,12 +375,13 @@ public class SmallCard extends GridPane {
         basicCardSymbol.setVisible(getStageCard() != null && getBasicCard() != null && fireShowFaceRequest(playerName, getId()));
 
         Card topCard = getMainCard();
-        this.name.setText(topCard.getName());
-        if (topCard instanceof PokemonCard)
-            this.header.setText(((PokemonCard) topCard).getLevel() + "-" + ((PokemonCard) topCard).getHealth() + "/" + ((PokemonCard) topCard).getHitPoint());
-        else
-            this.header.setText(topCard.getCategory() + "/" + topCard.getType());
-
+        if (topCard != null) {
+            this.name.setText(topCard.getName());
+            if (topCard instanceof PokemonCard)
+                this.header.setText(((PokemonCard) topCard).getLevel() + "-" + ((PokemonCard) topCard).getHealth() + "/" + ((PokemonCard) topCard).getHitPoint());
+            else
+                this.header.setText(topCard.getCategory() + "/" + topCard.getType());
+        }
     }
 
     public Enums.Player getPlayerName() {
@@ -371,8 +413,9 @@ public class SmallCard extends GridPane {
     }
 
     @FXML
-    private void handleClick(Event event) {
-        // showFace();
+    private void handleClick(Event event) throws Exception {
+        logger.info("handle from ui");
+        fireCardClicked(getId());
     }
 
     public void showFace() {
@@ -414,6 +457,15 @@ public class SmallCard extends GridPane {
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == uiCardEvent.class) {
                 ((uiCardEvent) listeners[i + 1]).attackRequest(playerName, cardId, attackIndex);
+            }
+        }
+    }
+
+    void fireCardClicked(String cardId) throws Exception {
+        Object[] listeners = listenerList.getListenerList();
+        for (int i = 0; i < listeners.length; i = i + 2) {
+            if (listeners[i] == uiCardEvent.class) {
+                ((uiCardEvent) listeners[i + 1]).cardClicked(cardId);
             }
         }
     }

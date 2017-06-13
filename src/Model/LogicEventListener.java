@@ -11,9 +11,9 @@ import java.util.List;
  */
 public interface LogicEventListener extends EventListener {
 
-    void showMessage(String message, int duration);
+    void showMessage(String message, double duration);
 
-    boolean flipCoin(Coin defaultFace, int waitForFlipping) throws URISyntaxException;
+    boolean flipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException;
 
-    List<String> selectCardRequest(String message, int cardNumber, Area area, Enums.Player player);
+    List<String> selectCardRequest(String message, int totalRequired, List<Card> cardList, boolean showCard) throws Exception;
 }

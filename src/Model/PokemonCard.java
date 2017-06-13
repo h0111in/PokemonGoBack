@@ -1,8 +1,16 @@
 package Model;
 
-import Enums.CardCategory;
+import Enums.*;
+import Enums.Player;
 
+import javax.swing.event.CellEditorListener;
+import javax.swing.event.EventListenerList;
+import java.util.EnumSet;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static Controller.Main.logger;
 
 /**
  * Created by H0111in on 05/20/2017.
@@ -19,9 +27,14 @@ public class PokemonCard implements Card {
     private List<Attack> attackList;
     private int damage;
     private int totalHealed;
+    private Player playerName;
+
+    private final EventListenerList listenerList;
+    private int lastHeal;
     // Glameow 0 :pokemon 1:            basic 2        colorless 3:       60 4:           retreat 5:cat:colorless 6:2 7:attacks 8:cat:colorless 9:1 10:1 11,cat:colorless 12:2 13:2 14
 
     public PokemonCard(String name, CardCategory category, String level, String type, int hitPoint, Attack retreat, List<Attack> attacks) {
+
         this.id = "";
         this.name = name;
         this.category = category;
@@ -30,6 +43,8 @@ public class PokemonCard implements Card {
         this.hitPoint = hitPoint;
         this.retreat = retreat;
         attackList = attacks;
+        listenerList = new EventListenerList();
+
     }
 
     @Override
@@ -76,6 +91,11 @@ public class PokemonCard implements Card {
         return name;
     }
 
+    @Override
+    public Player getPlayerName() {
+        return playerName;
+    }
+
 
     public String getLevel() {
         return level;
@@ -119,7 +139,7 @@ public class PokemonCard implements Card {
     }
 
     public int getHealth() {
-        return (hitPoint - damage + totalHealed) % hitPoint;
+        return totalHealed - damage != 0 ? (hitPoint - damage + totalHealed) % hitPoint : hitPoint;
     }
 
     public int getDamage() {
@@ -127,15 +147,70 @@ public class PokemonCard implements Card {
     }
 
     public Card setDamage(int damage) {
-        this.damage = damage;
+        this.damage += damage;
+        fireCardModified("setDamage");
         return this;
     }
 
-    public void SetHeal(int heal) {
-        totalHealed = totalHealed + heal % hitPoint;
+    public void setHeal(int heal) {
+
+        lastHeal = heal;
+        totalHealed = totalHealed + heal;
+
+        fireCardModified("setHeal");
+    }
+
+    public int getLastHeal() {
+        return lastHeal;
     }
 
     public int getTotalHealed() {
         return totalHealed;
+    }
+
+    public Map<String, Integer> getRequiredEnergy() {
+        Map<String, Integer> outputList = new HashMap<>();
+        for (Attack attack : attackList) {
+            String costType = attack.getCostType();
+            boolean found = false;
+            for (String key : outputList.keySet()) {
+                if (costType.equals(key)) {
+                    outputList.put(key, outputList.get(key) + attack.getCostAmount());
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+                outputList.put(attack.getCostType(), attack.getCostAmount());
+        }
+        return outputList;
+
+    }
+
+    public int getTotalRequiredEnergy() {
+        int totalRequiredEnergy = 0;
+        for (Attack attack : getAttackList())
+            totalRequiredEnergy += attack.getCostAmount();
+        return totalRequiredEnergy;
+    }
+
+    //region Event
+    public void addListener(CardEventListener listener) {
+        listenerList.add(CardEventListener.class, listener);
+    }
+
+    void fireCardModified(String propertyName) {
+        Object[] listeners = listenerList.getListenerList();
+        for (int i = 0; i < listeners.length; i = i + 2) {
+            if (listeners[i] == CardEventListener.class) {
+                ((CardEventListener) listeners[i + 1]).cardModified(propertyName, this);
+            }
+        }
+    }
+
+    //endregion
+
+    public void setPlayerName(Player playerName) {
+        this.playerName = playerName;
     }
 }

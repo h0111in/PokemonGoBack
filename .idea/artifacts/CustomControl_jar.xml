@@ -2,7 +2,9 @@
   <artifact type="jar" name="CustomControl:jar">
     <output-path>$PROJECT_DIR$/../CustomControl/out/artifacts/CustomControl</output-path>
     <root id="archive" name="CustomControl.jar">
-      <element id="module-output" name="CustomControl" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
     </root>
   </artifact>
 </component>

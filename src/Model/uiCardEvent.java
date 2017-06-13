@@ -9,4 +9,5 @@ public interface uiCardEvent extends EventListener{
     void attackRequest(Enums.Player playerName, String cardId, int attackIndex) throws Exception;
     void applyTrainerCardRequest(Player playerName,String cardId) throws Exception;
     boolean showFaceRequest(Player playerName, String cardId);
+    void cardClicked(String cardId);
 }

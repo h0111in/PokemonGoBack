@@ -27,12 +27,13 @@ public class Helper {
             return result.get();
         return ButtonType.CANCEL;
     }
-    public static void wait(int millisecond, EventHandler<WorkerStateEvent> onSucceeded) {
+
+    public static void wait(double millisecond, EventHandler<WorkerStateEvent> onSucceeded) {
         Task<Void> sleeper = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
                 try {
-                    Thread.sleep(millisecond*1000);
+                    Thread.sleep((int) (millisecond * 1000));
                 } catch (InterruptedException e) {
                 }
                 return null;

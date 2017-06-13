@@ -24,7 +24,7 @@ public class CoinDialog extends Pane {
     private final Image head;
     private final Image tail;
     private Coin defaultFace = Coin.None;
-    private int waitForFlipping = 0;
+    private double waitForFlipping = 0;
     @FXML
     private ImageView imageCoinHead;
     @FXML
@@ -42,7 +42,7 @@ public class CoinDialog extends Pane {
     protected boolean result;
     private boolean flipped;
 
-    public CoinDialog(Coin defaultFace, int waitForFlipping) throws URISyntaxException {
+    public CoinDialog(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
         this.defaultFace = defaultFace;
         this.waitForFlipping = waitForFlipping;
 

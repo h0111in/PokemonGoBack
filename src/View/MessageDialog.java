@@ -1,4 +1,4 @@
-package UIControls;
+package View;
 
 import Controller.Helper;
 import javafx.concurrent.WorkerStateEvent;
@@ -8,19 +8,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
 /**
  * Created by H0111in on 05/29/2017.
  */
-public class PMessageDialog extends HBox {
+public class MessageDialog extends HBox {
 
     @FXML
     protected Label message;
 
-    public PMessageDialog(String message,int duration, javafx.scene.paint.Color color){
+    public MessageDialog(String message, double duration, javafx.scene.paint.Color color){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MessageDialog.fxml"));
         fxmlLoader.setController(this);
         fxmlLoader.setRoot(this);
@@ -38,13 +37,13 @@ public class PMessageDialog extends HBox {
             @Override
             public void handle(MouseEvent event) {
 
-                PMessageDialog.this.getScene().getWindow().hide();
+                MessageDialog.this.getScene().getWindow().hide();
             }
         });
         Helper.wait(duration, new EventHandler<WorkerStateEvent>() {
             @Override
             public void handle(WorkerStateEvent event) {
-                PMessageDialog.this.message.getOnMouseClicked().handle(null);
+                MessageDialog.this.message.getOnMouseClicked().handle(null);
             }
         });
     }

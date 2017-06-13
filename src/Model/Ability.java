@@ -11,6 +11,7 @@ public class Ability {
 
     private String name;
     public List<Action> actionList;
+    private boolean conditionalAmount;
 
     public Ability(String name, List<Action> actions) {
         actionList = new ArrayList<>();
@@ -22,9 +23,28 @@ public class Ability {
 
     public int getActionsPower() throws ScriptException {
         int total = 0;
-        for (Action action : actionList)
-            total += action.getPower().getAmount("");
+        for (Action action : actionList) {
+            try {
+                total += action.getPower().getAmount("");
+            } catch (Exception e) {
+                conditionalAmount = true;
+            }
+        }
         return total;
+    }
+
+    public String getActionsPowerText() throws ScriptException {
+        int total = 0;
+        for (Action action : actionList) {
+            try {
+
+                total += action.getPower().getAmount("");
+            } catch (Exception e) {
+                conditionalAmount = true;
+            }
+        }
+
+        return (conditionalAmount ? "+" : "") + total;
     }
 
     public String getName() {

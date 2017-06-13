@@ -15,5 +15,5 @@ public interface BoardEventListener extends EventListener {
     void MoveCard(Area targetArea, Card targetCard, Card targetStageCard, Card flyCard, Area sourceArea, Enums.Player senderPlayer,
                   List<Card> uiCardList, int targetColumnIndex, int sourceColumnIndex, String uiCardId, String uiSmallCardId) throws Exception;
 
-    void doneButtonPressed(Player player);
+    void doneButtonPressed(Player player) throws Exception;
 }

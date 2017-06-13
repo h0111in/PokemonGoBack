@@ -21,10 +21,11 @@ public class Player {
     CardHolder active;
     Map<String, Card> discard;
     private EventListenerList listenerList;
-    private boolean knokout;
+    private ActionStatus status;
 
     public Player(Enums.Player name, boolean isComputer) {
         this.isComputer = isComputer;
+        status = ActionStatus.none;
         this.name = name;
         listenerList = new EventListenerList();
         bench = new ArrayList<CardHolder>();
@@ -63,18 +64,29 @@ public class Player {
         return this;
     }
 
-    public Player addCard(Card card, Area destination, int cardHolderIndex, String smallCardId) throws Exception {
+    public Player addCard(Card card, Area destination, int cardHolderIndex, String cardHolderId) throws Exception {
         switch (destination) {
 
             case deck:
-                if (card.getId().equals(""))
+                if (card.getId().equals("")) {
                     card.setId(name.name() + deck.size());
+                    card.setPlayerName(name);
+                }
                 deck.put(card.getId(), card);
                 break;
             case hand:
                 hand.put(card.getId(), card);
                 break;
             case bench:
+                if (cardHolderIndex == -1)
+                    for (int i = 0; i < bench.size(); i++) {
+                        if (bench.get(i).getAllCard().size() == 0) {
+                            cardHolderIndex = i;
+                            break;
+                        }
+                    }
+                if (cardHolderIndex == -1)
+                    throw new Exception("Bench is full");
                 bench.get(cardHolderIndex).add(card);
                 break;
             case active:
@@ -87,7 +99,7 @@ public class Player {
                 discard.put(card.getId(), card);
                 break;
         }
-        fireAddCard(new CardEvent(card, destination, getName(), cardHolderIndex, smallCardId));
+        fireAddCard(new CardEvent(card, destination, getName(), cardHolderIndex, cardHolderId));
         return this;
     }
 
@@ -105,7 +117,7 @@ public class Player {
                 case deck:
                     if (deck.size() > 0) {
                         List<String> keys = new ArrayList<String>(deck.keySet());
-                        String randomKey = keys.get(0);
+                        String randomKey = keys.get(keys.size() - 1);
                         Card card = deck.get(randomKey);
                         cardList.add(card);
                         deck.remove(card.getId());
@@ -114,7 +126,7 @@ public class Player {
                     break;
                 case hand:
                     if (hand.size() > 0) {
-                        Card card = hand.get(((List<String>) hand.keySet()).get(0));
+                        Card card = hand.get(((List<String>) hand.keySet()).get(hand.size() - 1));
                         cardList.add(card);
                         hand.remove(card.getId());
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));
@@ -218,8 +230,8 @@ public class Player {
         return false;
     }
 
-    public Card popCard(String id, String smallCardId) throws Exception {
-        return popCard(id, getCardArea(id), -1, smallCardId);
+    public Card popCard(String id, String cardHolderId) throws Exception {
+        return popCard(id, getCardArea(id), -1, cardHolderId);
     }
 
     public CardHolder getActiveCard() {
@@ -250,7 +262,6 @@ public class Player {
     //region Events
     public void addListener(PlayerEventListener listener) {
         listenerList.add(PlayerEventListener.class, listener);
-        logger.info(String.valueOf(listenerList.getListenerList().length));
     }
 
     public void removeListener(PlayerEventListener listener) {
@@ -276,6 +287,14 @@ public class Player {
     }
 //endregion
 
+
+    public String getRandomCardId(Area area) {
+        List<Card> tempCardList = getAreaCard(area);
+        if(tempCardList.size()>0)
+        return tempCardList.get(new Random().nextInt(tempCardList.size())).getId();
+        else return "";
+    }
+
     public List<Card> getAreaCard(Area area) {
         switch (area) {
 
@@ -286,8 +305,7 @@ public class Player {
             case bench:
                 List<Card> list = new ArrayList<>();
                 for (CardHolder cardHolder : bench)
-                    for (Card card : cardHolder.getAllCard().values())
-                        list.add(card);
+                    list.add(cardHolder.getTopCard());
                 return list;
             case active:
                 return new ArrayList<>(getActiveCard().getAllCard().values());
@@ -311,10 +329,6 @@ public class Player {
         this.coin = coin;
     }
 
-    public boolean isKnockout() {
-        return knokout;
-    }
-
     public CardHolder getCardHolder(String cardId) {
         for (CardHolder cardHolder : bench)
             if (cardHolder.getAllCard().containsKey(cardId)) {
@@ -330,5 +344,13 @@ public class Player {
         for (Card card : getAreaCard(area))
             outputList.add(popCard(card.getId(), uiCardId));
         return outputList;
+    }
+
+    public ActionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ActionStatus status) {
+        this.status = status;
     }
 }

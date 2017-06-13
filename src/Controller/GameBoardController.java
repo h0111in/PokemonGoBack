@@ -4,8 +4,9 @@ import Enums.Area;
 import Enums.Coin;
 import Enums.Player;
 import Model.*;
-import UIControls.PMessageDialog;
-import UIControls.SmallCard;
+import View.MessageDialog;
+import View.SelectorDialog;
+import View.SmallCard;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -73,18 +74,25 @@ public class GameBoardController extends GridPane {
             this.lookup("#" + Area.active + player).setOnDragDropped(dropHandler);
             this.lookup("#" + Area.hand + player).setOnDragOver(dragHandler);
             this.lookup("#" + Area.hand + player).setOnDragDropped(dropHandler);
-            this.lookup("#doneA").setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    logger.info(player.name());
-                    fireDoneButton(Player.A);
-                }
-            });
+
             //coin image
             ((ImageView) this.lookup("#coin" + player))
                     .setImage(new Image(getClass().getResource("/asset/coin-symbol3.png").toURI().toString()));
 
         }
+        this.lookup("#doneA").setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    fireDoneButton(Player.A);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    logger.info(e.toString());
+                    //  alert(Alert.AlertType.INFORMATION,e.toString());
+
+                }
+            }
+        });
 
     }
     //endregion
@@ -100,7 +108,7 @@ public class GameBoardController extends GridPane {
                 if (evt.getSmallCardId().length() == 0) {//push to area
 
                     //region make new UIControls
-                    smallCard = new SmallCard(evt.getCard(), evt.getPlayerName(), primaryStage);
+                    smallCard = new SmallCard(evt.getCard(), primaryStage);
                     smallCard.setOnDragOver(dragHandler);
                     smallCard.setOnDragDropped(dropHandler);
                     smallCard.addListener(cardEventHandler);
@@ -190,21 +198,31 @@ public class GameBoardController extends GridPane {
 
     public LogicEventListener logicEventListener = new LogicEventListener() {
         @Override
-        public void showMessage(String message, int duration) {
+        public void showMessage(String message, double duration) {
 
-            popup(new PMessageDialog(message, duration, Color.GRAY), primaryStage);
+            popup(new MessageDialog(message, duration, Color.GRAY), primaryStage);
 
         }
 
         @Override
-        public boolean flipCoin(Coin defaultFace, int waitForFlipping) throws URISyntaxException {
+        public boolean flipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
             return GameBoardController.this.flipCoin(defaultFace,
                     waitForFlipping, primaryStage);
         }
 
         @Override
-        public List<String> selectCardRequest(String message, int cardNumber, Area area, Player player) {
-            return null;
+        public List<String> selectCardRequest(String message, int totalRequired, List<Card> cardList, boolean showCard) throws Exception {
+
+            SelectorDialog selectorDialog = new SelectorDialog(cardList, message, totalRequired, showCard, primaryStage);
+
+            Stage stage = new Stage(StageStyle.UNDECORATED);
+            stage.setScene(new Scene(selectorDialog));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setResizable(false);
+            stage.setIconified(false);
+            stage.initOwner(primaryStage);
+            stage.showAndWait();
+            return selectorDialog.getSelectedCards();
         }
     };
 
@@ -303,7 +321,7 @@ public class GameBoardController extends GridPane {
         return 0;
     }
 
-    void fireDoneButton(Player player) {
+    void fireDoneButton(Player player) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == BoardEventListener.class) {
@@ -336,7 +354,7 @@ public class GameBoardController extends GridPane {
         stage.showAndWait();
     }
 
-    public boolean flipCoin(Coin defaultFace, int waitForFlipping, Stage primaryStage) throws URISyntaxException {
+    public boolean flipCoin(Coin defaultFace, double waitForFlipping, Stage primaryStage) throws URISyntaxException {
         CoinDialog coinDialog = new CoinDialog(defaultFace, waitForFlipping);
         Stage stage = new Stage(StageStyle.UNDECORATED);
         stage.setScene(new Scene(coinDialog));

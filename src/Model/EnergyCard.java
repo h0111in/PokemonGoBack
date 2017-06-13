@@ -1,6 +1,9 @@
 package Model;
 
-import Enums.CardCategory;
+import Enums.*;
+import Enums.Player;
+
+import javax.swing.event.EventListenerList;
 
 /**
  * Created by H0111in on 05/20/2017.
@@ -10,12 +13,17 @@ public class EnergyCard implements Card {
     private String name;
     private CardCategory category;
     private String type;
+    private Enums.Player playerName;
+
+    private final EventListenerList listenerList;
 
     public EnergyCard(String name, CardCategory category, String type) {
+        this.playerName = playerName;
         this.id = "";
         this.name = name;
         this.category = category;
         this.type = type;
+        listenerList = new EventListenerList();
     }
 
     @Override
@@ -66,5 +74,28 @@ public class EnergyCard implements Card {
         return this;
     }
 
+    //region Event
+    public void addListener(CardEventListener listener) {
+        listenerList.add(CardEventListener.class, listener);
+    }
+
+    void fireCardModified(String propertyName) {
+        Object[] listeners = listenerList.getListenerList();
+        for (int i = 0; i < listeners.length; i = i + 2) {
+            if (listeners[i] == CardEventListener.class) {
+                ((CardEventListener) listeners[i + 1]).cardModified(propertyName, this);
+            }
+        }
+    }
+
+    @Override
+    public Player getPlayerName() {
+        return playerName;
+    }
+
+    public void  setPlayerName(Player playerName){
+        this.playerName=playerName;
+    }
+    //endregion
 
 }

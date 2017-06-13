@@ -57,12 +57,12 @@ public class Main extends Application {
             primaryStage.show();
 
             //Load deckA
-            for (String index : MetaData.readFile("./asset/deck2.txt"))
-                logic.players.get(Player.A).addCard(metaData.getCard(Integer.parseInt(index)), Area.deck, "");
+            for (String index : MetaData.readFile("./asset/deck1.txt"))
+                logic.players.get(Player.A).addCard(metaData.getCard(Integer.parseInt(index)-1), Area.deck, "");
 
             //Load deckB
             for (String index : MetaData.readFile("./asset/deck2.txt"))
-                logic.players.get(Player.B).addCard(metaData.getCard(Integer.parseInt(index)), Area.deck, "");
+                logic.players.get(Player.B).addCard(metaData.getCard(Integer.parseInt(index)-1), Area.deck, "");
 
             logic.startGame();
 
