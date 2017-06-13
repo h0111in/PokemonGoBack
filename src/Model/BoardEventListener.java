@@ -16,4 +16,5 @@ public interface BoardEventListener extends EventListener {
                   List<Card> uiCardList, int targetColumnIndex, int sourceColumnIndex, String uiCardId, String uiSmallCardId) throws Exception;
 
     void doneButtonPressed(Player player) throws Exception;
+    void showAreaCard(Area area,Player playerName) throws Exception;
 }

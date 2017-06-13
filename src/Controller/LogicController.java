@@ -1,10 +1,8 @@
 package Controller;
 
-import Enums.Area;
-import Enums.CardCategory;
-import Enums.Coin;
-import Enums.TurnAction;
+import Enums.*;
 import Model.*;
+import Model.Player;
 
 import javax.script.ScriptException;
 import javax.swing.event.EventListenerList;
@@ -657,6 +655,12 @@ public class LogicController {
                 else activePlayer = Enums.Player.A;
                 startTurn();
             }
+        }
+
+        @Override
+        public void showAreaCard(Area area, Enums.Player playerName) throws Exception {
+            if (area == Area.discard)
+                fireSelectCardRequest(area.name() + " area / size : "+players.get(playerName).getAreaCard(area).size()+"cards", 0, players.get(playerName).getAreaCard(area), true);
         }
     };
 

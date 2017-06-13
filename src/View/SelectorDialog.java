@@ -37,6 +37,17 @@ public class SelectorDialog extends GridPane {
 
     public SelectorDialog(List<Card> cardList, String title, int required, boolean showCard, Stage primaryStage) throws Exception {
         selectedCards = new ArrayList<>();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SelectorDialog.fxml"));
+        fxmlLoader.setController(this);
+        fxmlLoader.setRoot(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
         for (Card card : cardList) {
             SmallCard smallCard = new SmallCard(card, primaryStage);
             smallCard.addListener(new uiCardEvent() {
@@ -67,16 +78,8 @@ public class SelectorDialog extends GridPane {
                     }
                 }
             });
-            ((HBox)this.lookup("#container")).getChildren().add(smallCard);
-        }
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SelectorDialog.fxml"));
-        fxmlLoader.setController(this);
-        fxmlLoader.setRoot(this);
-
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
+            smallCard.showFace();
+            ((HBox)(SelectorDialog.this.lookup("#container"))).getChildren().add(smallCard);
         }
         this.title.setText(title);
 

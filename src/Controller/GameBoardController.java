@@ -9,6 +9,7 @@ import View.SelectorDialog;
 import View.SmallCard;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -112,6 +113,35 @@ public class GameBoardController extends GridPane {
                     smallCard.setOnDragOver(dragHandler);
                     smallCard.setOnDragDropped(dropHandler);
                     smallCard.addListener(cardEventHandler);
+                    smallCard.addListener(new uiCardEvent() {
+                        @Override
+                        public void attackRequest(Player playerName, String cardId, int attackIndex) throws Exception {
+
+                        }
+
+                        @Override
+                        public void applyTrainerCardRequest(Player playerName, String cardId) throws Exception {
+
+                        }
+
+                        @Override
+                        public boolean showFaceRequest(Player playerName, String cardId) {
+                            return false;
+                        }
+
+                        @Override
+                        public void cardClicked(String cardId) {
+                            Node node = lookup("#" + cardId);
+                            if (node != null && node.getParent() != null )
+                            {
+                                try {
+                                    fireShowAreaCard(getAreaName(node.getParent().getId()),evt.getPlayerName());
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    });
                     smallCard.showFace();
                     //endregion
 
@@ -196,6 +226,8 @@ public class GameBoardController extends GridPane {
         }
     };
 
+
+
     public LogicEventListener logicEventListener = new LogicEventListener() {
         @Override
         public void showMessage(String message, double duration) {
@@ -213,18 +245,22 @@ public class GameBoardController extends GridPane {
         @Override
         public List<String> selectCardRequest(String message, int totalRequired, List<Card> cardList, boolean showCard) throws Exception {
 
-            SelectorDialog selectorDialog = new SelectorDialog(cardList, message, totalRequired, showCard, primaryStage);
-
-            Stage stage = new Stage(StageStyle.UNDECORATED);
-            stage.setScene(new Scene(selectorDialog));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setResizable(false);
-            stage.setIconified(false);
-            stage.initOwner(primaryStage);
-            stage.showAndWait();
-            return selectorDialog.getSelectedCards();
+            return selectCard(message, totalRequired, cardList, showCard, primaryStage);
         }
     };
+
+    private static List<String> selectCard(String message, int totalRequired, List<Card> cardList, boolean showCard, Stage primaryStage) throws Exception {
+        SelectorDialog selectorDialog = new SelectorDialog(cardList, message, totalRequired, showCard, primaryStage);
+
+        Stage stage = new Stage(StageStyle.UNDECORATED);
+        stage.setScene(new Scene(selectorDialog));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.setIconified(false);
+        stage.initOwner(primaryStage);
+        stage.showAndWait();
+        return selectorDialog.getSelectedCards();
+    }
 
     private EventHandler dragHandler = new EventHandler<DragEvent>() {
 
@@ -330,7 +366,14 @@ public class GameBoardController extends GridPane {
         }
 
     }
-
+    private void fireShowAreaCard(Area areaName, Player playerName) throws Exception {
+        Object[] listeners = listenerList.getListenerList();
+        for (int i = 0; i < listeners.length; i = i + 2) {
+            if (listeners[i] == BoardEventListener.class) {
+                ((BoardEventListener) listeners[i + 1]).showAreaCard(areaName,playerName);
+            }
+        }
+    }
 //endregion
 
 
