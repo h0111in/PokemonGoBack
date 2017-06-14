@@ -1,112 +1,108 @@
-Jun 14, 2017 5:57:30 PM Model.Player popCard
+Jun 14, 2017 7:18:53 PM Model.Player popCard
 INFO: B19
-Jun 14, 2017 5:57:30 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:18:54 PM Controller.LogicController playAutomatic
 INFO: put to active area:Froakie
-Jun 14, 2017 5:57:30 PM Model.Player popCard
+Jun 14, 2017 7:18:54 PM Model.Player popCard
 INFO: B59
-Jun 14, 2017 5:57:30 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:18:54 PM Controller.LogicController playAutomatic
 INFO: attachEnergyOnActive:Lightning
-Jun 14, 2017 5:57:32 PM Model.Player popCard
+Jun 14, 2017 7:18:57 PM Model.Player popCard
 INFO: A40
-Jun 14, 2017 5:57:35 PM Model.Player popCard
+Jun 14, 2017 7:18:59 PM Model.Player popCard
 INFO: A37
-Jun 14, 2017 5:57:40 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:07 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 5:57:40 PM Model.Player popCard
+Jun 14, 2017 7:19:07 PM Model.Player popCard
 INFO: B58
-Jun 14, 2017 5:57:40 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:07 PM Controller.LogicController executeAbility
 INFO: player B, executes Potionaction:heal
-Jun 14, 2017 5:57:40 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:07 PM Controller.LogicController playAutomatic
 INFO: trainer card:Potion
-Jun 14, 2017 5:57:40 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:07 PM Controller.LogicController playAutomatic
 INFO: A40
-Jun 14, 2017 5:57:40 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:07 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
-Jun 14, 2017 5:57:40 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:07 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 5:57:40 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:07 PM View.SmallCard$1 handle
 INFO: handle from code
-Jun 14, 2017 5:57:40 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:07 PM View.SmallCard$1 handle
 INFO: A40Zubat
-Jun 14, 2017 5:57:48 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 5:57:48 PM Model.Player popCard
+Jun 14, 2017 7:19:12 PM Model.Player popCard
 INFO: B54
-Jun 14, 2017 5:57:48 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
 INFO: player B, executes Clemontaction:search
-Jun 14, 2017 5:57:48 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:12 PM Controller.LogicController playAutomatic
 INFO: trainer card:Clemont
-Jun 14, 2017 5:57:48 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:12 PM Controller.LogicController playAutomatic
 INFO: A40
-Jun 14, 2017 5:57:48 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:12 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
-Jun 14, 2017 5:57:48 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 5:57:48 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:12 PM View.SmallCard$1 handle
 INFO: handle from code
-Jun 14, 2017 5:57:48 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:12 PM View.SmallCard$1 handle
 INFO: A40Zubat
-Jun 14, 2017 5:57:53 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 5:57:53 PM Model.Player popCard
+Jun 14, 2017 7:19:16 PM Model.Player popCard
 INFO: B15
-Jun 14, 2017 5:57:53 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
 INFO: player B, executes Tiernoaction:draw
-Jun 14, 2017 5:57:53 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:16 PM Controller.LogicController playAutomatic
 INFO: trainer card:Tierno
-Jun 14, 2017 5:57:53 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:16 PM Controller.LogicController playAutomatic
 INFO: A40
-Jun 14, 2017 5:57:53 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:16 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
-Jun 14, 2017 5:57:53 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 5:57:53 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:17 PM View.SmallCard$1 handle
 INFO: handle from code
-Jun 14, 2017 5:57:53 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:17 PM View.SmallCard$1 handle
 INFO: A40Zubat
-Jun 14, 2017 5:57:56 PM View.SmallCard$1 handle
-INFO: handle from code
-Jun 14, 2017 5:57:56 PM View.SmallCard$1 handle
-INFO: A40Zubat
-Jun 14, 2017 5:57:59 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 5:58:00 PM Model.Player popCard
+Jun 14, 2017 7:19:20 PM Model.Player popCard
 INFO: B53
-Jun 14, 2017 5:58:00 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
 INFO: player B, executes Pokémon Center Ladyaction:heal
-Jun 14, 2017 5:58:00 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
 INFO: player B, executes Pokémon Center Ladyaction:destat
-Jun 14, 2017 5:58:00 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:20 PM Controller.LogicController playAutomatic
 INFO: trainer card:Pokémon Center Lady
-Jun 14, 2017 5:58:00 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:20 PM Controller.LogicController playAutomatic
 INFO: A40
-Jun 14, 2017 5:58:00 PM Controller.LogicController playAutomatic
+Jun 14, 2017 7:19:20 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
-Jun 14, 2017 5:58:00 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 5:58:00 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:20 PM View.SmallCard$1 handle
 INFO: handle from code
-Jun 14, 2017 5:58:00 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:20 PM View.SmallCard$1 handle
 INFO: A40Zubat
-Jun 14, 2017 5:58:05 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 5:58:05 PM Model.Player popCard
+Jun 14, 2017 7:19:25 PM Model.Player popCard
 INFO: B52
-Jun 14, 2017 5:58:05 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: player B, executes Misty's Determinationaction:cond
-Jun 14, 2017 5:58:05 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: player B, executes Misty's Determinationaction:deck
-Jun 14, 2017 5:58:05 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: player B, executes Misty's Determinationaction:search
-Jun 14, 2017 5:58:05 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: player B, executes Misty's Determinationaction:shuffle
-Jun 14, 2017 5:58:05 PM Controller.LogicController executeAbility
+Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: none
-Jun 14, 2017 5:58:05 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:25 PM View.SmallCard$1 handle
 INFO: handle from code
-Jun 14, 2017 5:58:05 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:25 PM View.SmallCard$1 handle
 INFO: A40Zubat
-Jun 14, 2017 5:58:20 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:29 PM View.SmallCard$1 handle
 INFO: handle from code
-Jun 14, 2017 5:58:20 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:29 PM View.SmallCard$1 handle
 INFO: A40Zubat
