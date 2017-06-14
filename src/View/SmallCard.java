@@ -110,29 +110,6 @@ public class SmallCard extends GridPane {
                 try {
                     normalCard = new NormalCard(getMainCard(), getPlayerName());
 
-                    normalCard.addListener(new uiCardEvent() {
-                        @Override
-                        public void attackRequest(Player playerName, String cardId, int attackIndex) throws Exception {
-                            fireAttack(playerName, cardId, attackIndex);
-                        }
-
-                        @Override
-                        public void applyTrainerCardRequest(Player playerName, String cardId) throws Exception {
-
-                        }
-
-                        @Override
-                        public boolean showFaceRequest(Player playerName, String cardId) {
-                            return false;
-                        }
-
-                        @Override
-                        public void cardClicked(String cardId) {
-
-                        }
-
-
-                    });
                 } catch (ScriptException e) {
                     e.printStackTrace();
                 }
@@ -143,6 +120,12 @@ public class SmallCard extends GridPane {
                 stage.setIconified(false);
                 stage.initOwner(getScene().getWindow());
                 stage.showAndWait();
+                if (normalCard.attackIndex >= 0)
+                    try {
+                        fireAttack(playerName, getId(), normalCard.attackIndex);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
             }
         });
         e0.setOnMouseClicked(new EventHandler<MouseEvent>() {

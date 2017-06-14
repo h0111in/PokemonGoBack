@@ -146,9 +146,9 @@ public class PokemonCard implements Card {
         return damage;
     }
 
-    public Card setDamage(int damage) {
+    public Card addDamage(int damage) {
         this.damage += damage;
-        fireCardModified("setDamage");
+        fireCardModified("addDamage");
         return this;
     }
 

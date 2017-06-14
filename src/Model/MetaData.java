@@ -20,7 +20,6 @@ public class MetaData {
     private List<Ability> abilitys;
     private List<Card> cards;
 
-
     public MetaData() throws Exception {
         List<String> strAbilityList = readFile("./asset/abilities.txt");
 
@@ -206,7 +205,7 @@ public class MetaData {
                 return new AbstractMap.SimpleEntry<Integer, Action>(i, new Action(actionName, target, ActionStatus.none));
             case "applystat"://applystat:status:paralyzed:opponent-active
                 if (words[i].equals(statusTag)) {
-                    i++;
+                    i++;//skip 'status'
                     ActionStatus status = toStatus(words[i++]
                             .replace("(", "").replace(")", ""));
                     target = toTarget(words[i++].replace("(", "").replace(")", ""));
@@ -219,7 +218,7 @@ public class MetaData {
                     target = toTarget(words[i++]);
                     return new AbstractMap.SimpleEntry<Integer, Action>(i, new Action(actionName, target, null));
                 }
-            case "redamage"://redamage:target:opponent:target:opponent:count(target:last:source:damage) todo
+            case "redamage"://redamage:target:opponent:target:opponent:count(target:last:source:damage)
                 i++;//skip target
                 target = toTarget(words[i++]);
                 i++;//skip 'target'

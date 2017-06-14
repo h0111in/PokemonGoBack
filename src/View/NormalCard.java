@@ -38,9 +38,10 @@ public class NormalCard extends GridPane {
     private Model.Card card;
     private EventListenerList listenerList;
     private Enums.Player playerName;
+    public int attackIndex;
 
     public NormalCard(Card card, Enums.Player playerName) throws ScriptException {
-
+        attackIndex = -1;
         this.card = card;
         this.playerName = playerName;
         listenerList = new EventListenerList();
@@ -73,7 +74,8 @@ public class NormalCard extends GridPane {
                 attack1Name.setText(attack1.getAbility().getName());
                 String description = "";
                 for (Action action : attack1.getAbility().actionList)
-                    description += action.getName() + ",Condition: " + action.getCondition() + ", Target: " + action.getTarget();
+                    description += action.getName() + (action.getCondition() != null ? ",Condition: " + action.getCondition().getName() : "")
+                            + (action.getTarget() != null ? ", Target: " + action.getTarget().name() : "");
                 attack1Description.setText(description);
                 attack1Power.setText(attack1.getAbility().getActionsPowerText());
                 attack1Cost.setText(attack1.getCostAmount() + "X" + attack1.getCostType());
@@ -95,26 +97,36 @@ public class NormalCard extends GridPane {
 
     @FXML
     private void handleAttack1Clicked(Event event) throws Exception {
-        if (getCard() instanceof PokemonCard)
-            fireAbility(playerName, getId(), 0);
+        attackIndex = 0;
+        ((Stage) getScene().getWindow()).close();
+
+//        if (getCard() instanceof PokemonCard)
+//            fireAbility(playerName, getId(), 0);
     }
 
     @FXML
     private void handleAttack2Clicked(Event event) throws Exception {
-        if (getCard() instanceof PokemonCard)
-            fireAbility(playerName, getId(), 1);
+        attackIndex = 1;
+        ((Stage) getScene().getWindow()).close();
+//        if (getCard() instanceof PokemonCard)
+//            fireAbility(playerName, getId(), 1);
     }
 
     @FXML
     private void handleAttack3Clicked(Event event) throws Exception {
-        if (getCard() instanceof PokemonCard)
-            fireAbility(playerName, getId(), 2);
+        attackIndex = 2;
+        ((Stage) getScene().getWindow()).close();
+//        if (getCard() instanceof PokemonCard)
+//            fireAbility(playerName, getId(), 2);
     }
 
     @FXML
     private void handleAttack4Clicked(Event event) throws Exception {
-        if (getCard() instanceof PokemonCard)
-            fireAbility(playerName, getId(), 3);
+        attackIndex = 3;
+        ((Stage) getScene().getWindow()).close();
+
+// if (getCard() instanceof PokemonCard)
+//            fireAbility(playerName, getId(), 3);
     }
 
 

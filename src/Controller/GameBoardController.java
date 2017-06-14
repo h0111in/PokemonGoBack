@@ -132,10 +132,9 @@ public class GameBoardController extends GridPane {
                         @Override
                         public void cardClicked(String cardId) {
                             Node node = lookup("#" + cardId);
-                            if (node != null && node.getParent() != null )
-                            {
+                            if (node != null && node.getParent() != null) {
                                 try {
-                                    fireShowAreaCard(getAreaName(node.getParent().getId()),evt.getPlayerName());
+                                    fireShowAreaCard(getAreaName(node.getParent().getId()), evt.getPlayerName());
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -225,7 +224,6 @@ public class GameBoardController extends GridPane {
 
         }
     };
-
 
 
     public LogicEventListener logicEventListener = new LogicEventListener() {
@@ -366,11 +364,12 @@ public class GameBoardController extends GridPane {
         }
 
     }
+
     private void fireShowAreaCard(Area areaName, Player playerName) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == BoardEventListener.class) {
-                ((BoardEventListener) listeners[i + 1]).showAreaCard(areaName,playerName);
+                ((BoardEventListener) listeners[i + 1]).showAreaCard(areaName, playerName);
             }
         }
     }
@@ -413,4 +412,3 @@ public class GameBoardController extends GridPane {
         this.cardEventHandler = cardEventHandler;
     }
 }
-

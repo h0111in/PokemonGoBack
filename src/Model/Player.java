@@ -93,7 +93,7 @@ public class Player {
                 active.add(card);
                 break;
             case prize:
-                deck.put(card.getId(), card);
+                prize.put(card.getId(), card);
                 break;
             case discard:
                 discard.put(card.getId(), card);
@@ -240,6 +240,7 @@ public class Player {
 
     public Card popCard(String id, Area area, int cardHolderIndex, String cardHolderId) throws Exception {
         Card card = getCard(id, area);
+        logger.info(id);
         removeCard(id, area);
         fireRemoveCard(new CardEvent(card, area, getName(), cardHolderIndex, cardHolderId));
         return card;
@@ -290,9 +291,11 @@ public class Player {
 
     public String getRandomCardId(Area area) {
         List<Card> tempCardList = getAreaCard(area);
-        if(tempCardList.size()>0)
-        return tempCardList.get(new Random().nextInt(tempCardList.size())).getId();
-        else return "";
+        logger.info(String.valueOf(tempCardList.size()));
+        if (tempCardList.size() > 0) {
+            int randomIndex = new Random().nextInt(tempCardList.size());
+            return tempCardList.get(randomIndex).getId();
+        } else return "";
     }
 
     public List<Card> getAreaCard(Area area) {
@@ -310,6 +313,7 @@ public class Player {
             case active:
                 return new ArrayList<>(getActiveCard().getAllCard().values());
             case prize:
+                logger.info(String.valueOf(prize.values().size()));
                 return new ArrayList<>(prize.values());
             case discard:
                 return new ArrayList<>(discard.values());
