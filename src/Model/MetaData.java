@@ -127,6 +127,8 @@ public class MetaData {
                         if (countStr.length > 1 && !words[i].startsWith("count"))
                             powerFormula = countStr[0];
                         i++;//skip 'count[target' or 'count(target'
+                        if (words[i].equals("choice"))
+                            i++;
                         powerTarget = toTarget(words[i++].replace("]|)", ""));
                         if (words.length < i) {
                             boolean isNeededEnergyType = !words[i].contains("]") && !words[i].contains(")");
@@ -199,7 +201,7 @@ public class MetaData {
                             new Counter(conditionTarget, conditionCardCategory, conditionCardType, conditionFormula), conditionFormula), actionTarget,
                             new Counter(powerTarget, powerCardCategory, powerCardType, powerFormula)));
                 }
-            case "destat"://destat:target:last todo
+            case "destat"://destat:target:last tod.o
                 i++;
                 ActionTarget target = toTarget(words[i++]);
                 return new AbstractMap.SimpleEntry<Integer, Action>(i, new Action(actionName, target, ActionStatus.none));
@@ -215,6 +217,8 @@ public class MetaData {
             case "shuffle":
                 if (words[i].equals(targetTag)) {
                     i++;
+                    if (words[i].equals("choice"))
+                        i++;
                     target = toTarget(words[i++]);
                     return new AbstractMap.SimpleEntry<Integer, Action>(i, new Action(actionName, target, null));
                 }

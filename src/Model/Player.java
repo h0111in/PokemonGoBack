@@ -21,11 +21,10 @@ public class Player {
     CardHolder active;
     Map<String, Card> discard;
     private EventListenerList listenerList;
-    private ActionStatus status;
 
     public Player(Enums.Player name, boolean isComputer) {
         this.isComputer = isComputer;
-        status = ActionStatus.none;
+
         this.name = name;
         listenerList = new EventListenerList();
         bench = new ArrayList<CardHolder>();
@@ -350,11 +349,24 @@ public class Player {
         return outputList;
     }
 
-    public ActionStatus getStatus() {
-        return status;
-    }
+    public void moveCardHolder(CardHolder cardHolder1, CardHolder cardHolder2, Area area1, Area area2) throws Exception {
+        Card topCard1 = cardHolder1.pop(cardHolder1.getId());
+        List<Card> cards1 = new ArrayList<>();
+        for (Card card : cardHolder1.getAllCard().values()) {
+            cards1.add(popCard(card.getId(), topCard1.getId()));
+        }
+        Card topCard2 = cardHolder2.pop(cardHolder2.getId());
+        List<Card> cards2 = new ArrayList<>();
+        for (Card card : cardHolder2.getAllCard().values()) {
+            cards2.add(popCard(card.getId(), topCard2.getId()));
+        }
+        addCard(topCard1, area2, -1, "");
+        for (Card card : cards1)
+            addCard(card, area2, -1, topCard1.getId());
 
-    public void setStatus(ActionStatus status) {
-        this.status = status;
+        addCard(topCard2, area1, -1, "");
+        for (Card card : cards2)
+            addCard(card, area1, -1, topCard2.getId());
+
     }
 }

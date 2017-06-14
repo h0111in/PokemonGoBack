@@ -28,19 +28,22 @@ public class PokemonCard implements Card {
     private int damage;
     private int totalHealed;
     private Player playerName;
+    private ActionStatus status;
 
     private final EventListenerList listenerList;
     private int lastHeal;
+    private int health;
     // Glameow 0 :pokemon 1:            basic 2        colorless 3:       60 4:           retreat 5:cat:colorless 6:2 7:attacks 8:cat:colorless 9:1 10:1 11,cat:colorless 12:2 13:2 14
 
     public PokemonCard(String name, CardCategory category, String level, String type, int hitPoint, Attack retreat, List<Attack> attacks) {
-
+        status = ActionStatus.none;
         this.id = "";
         this.name = name;
         this.category = category;
         this.type = type;
         this.level = level;
         this.hitPoint = hitPoint;
+        health = hitPoint;
         this.retreat = retreat;
         attackList = attacks;
         listenerList = new EventListenerList();
@@ -96,7 +99,6 @@ public class PokemonCard implements Card {
         return playerName;
     }
 
-
     public String getLevel() {
         return level;
     }
@@ -139,7 +141,7 @@ public class PokemonCard implements Card {
     }
 
     public int getHealth() {
-        return totalHealed - damage != 0 ? (hitPoint - damage + totalHealed) % hitPoint : hitPoint;
+        return health;
     }
 
     public int getDamage() {
@@ -147,13 +149,18 @@ public class PokemonCard implements Card {
     }
 
     public Card addDamage(int damage) {
+        health -= damage;
+        if (health < 0)
+            health = 0;
         this.damage += damage;
         fireCardModified("addDamage");
         return this;
     }
 
     public void setHeal(int heal) {
-
+        health += heal;
+        if (health >= hitPoint)
+            health = hitPoint;
         lastHeal = heal;
         totalHealed = totalHealed + heal;
 
@@ -166,6 +173,14 @@ public class PokemonCard implements Card {
 
     public int getTotalHealed() {
         return totalHealed;
+    }
+
+    public ActionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ActionStatus status) {
+        this.status = status;
     }
 
     public Map<String, Integer> getRequiredEnergy() {

@@ -7,10 +7,7 @@ import Model.Player;
 import javax.script.ScriptException;
 import javax.swing.event.EventListenerList;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static Controller.Main.logger;
 
@@ -26,6 +23,7 @@ public class LogicController {
     private Enums.Player activePlayer;
     private Map<TurnAction, Integer> turnActions;
     private final EventListenerList listenerList;
+    private AbstractMap.SimpleEntry<Enums.Player, Action> addActionrequested;
 
     //endregion
 
@@ -91,18 +89,26 @@ public class LogicController {
 
         //DEFINE FIRST PLAYER
 //        fireShowMessage("Choice a face!", 2);
-        activePlayer = //!fireFlipCoin(Coin.None, -1) ?
-                //Enums.Player.B :
+        activePlayer = !fireFlipCoin(Coin.None, -1) ?
+                Enums.Player.B :
                 Enums.Player.A;
 
-        startTurn();
+        startTurn(false);
 
 
     }
 
-    private void startTurn() throws Exception {
+    private void startTurn(boolean addCard) throws Exception {
 
-        players.get(activePlayer).addCard(players.get(activePlayer).drawCard(1, Area.deck), Area.hand, -1, "");
+        if (addActionrequested != null && addActionrequested.getKey() == activePlayer) {
+            //heal the sender
+            if (players.get(addActionrequested.getKey()).getActiveCard().getTopCard() != null)
+                players.get(addActionrequested.getKey()).getActiveCard().getTopCard()
+                        .setHeal(addActionrequested.getValue().getPower().getAmount(""));
+            addActionrequested = null;
+        }
+        if (addCard)
+            players.get(activePlayer).addCard(players.get(activePlayer).drawCard(1, Area.deck), Area.hand, -1, "");
         for (TurnAction action : Enums.TurnAction.values())
             turnActions.put(action, 0);
         if (players.get(activePlayer).isComputer()) {
@@ -276,7 +282,7 @@ public class LogicController {
         if (activePlayer == Enums.Player.A)
             activePlayer = Enums.Player.B;
         else activePlayer = Enums.Player.A;
-        startTurn();
+        startTurn(true);
     }
 
     private void executeRetreat(Card activeCard, Card benchCard) {
@@ -306,25 +312,26 @@ public class LogicController {
 
         Enums.Player targetPlayer = Enums.Player.None;
         for (Action action : ability.actionList) {
-            logger.info("player " + name + ", executes " + ability.getName()+"action:"+action.getName());
-            switch (action.getTarget()) {
-                case opponentActive:
-                    targetPlayer = getOpponent(name);
+            logger.info("player " + name + ", executes " + ability.getName() + "action:" + action.getName());
+            if (action.getTarget() != null)
+                switch (action.getTarget()) {
+                    case opponentActive:
+                        targetPlayer = getOpponent(name);
 
-                    break;
-                case yourActive:
-                    targetPlayer = name;
-                    break;
-                case yourBench:
-                    break;
-                case none:
-                    break;
-                case last:
-                    break;
+                        break;
+                    case yourActive:
+                        targetPlayer = name;
+                        break;
+                    case yourBench:
+                        break;
+                    case none:
+                        break;
+                    case last:
+                        break;
 
-                default:
-                    throw new Exception("The Active Area is not defined.");
-            }
+                    default:
+                        throw new Exception("The Active Area is not defined.");
+                }
             switch (action.getName()) {
 
                 //region damage
@@ -388,21 +395,22 @@ public class LogicController {
                 case "destat":
                 case "applystat":
                     switch (action.getTarget()) {
-
                         case opponentActive:
-                            players.get(getOpponent(name)).setStatus(action.getStatus());
+                            players.get(getOpponent(name)).getActiveCard().getTopCard().setStatus(action.getStatus());
                             break;
+                        case last:
                         case yourActive:
-                            players.get(name).setStatus(action.getStatus());
+                            players.get(name).getActiveCard().getTopCard().setStatus(action.getStatus());
                             break;
                         case yourBench:
                         case none:
-                        case last:
+
                         default:
                             throw new Exception("unknown target");
                     }
                     break;
                 case "shuffle":
+                    logger.info(action.getTarget().name());
                     switch (action.getTarget()) {
 
                         case opponentActive:
@@ -440,14 +448,38 @@ public class LogicController {
                     }
                     break;
                 case "draw":
+                    players.get(name).addCard(players.get(name)
+                                    .drawCard(action.getPower().getAmount(""), Area.deck),
+                            Area.hand, -1, "");
                     break;
                 case "swap":
+                    if (players.get(name).getAreaCard(Area.bench).size() > 0) {
+
+                        String cardId = "";
+                        if (players.get(name).isComputer()) {
+
+                            cardId = players.get(name).getRandomCardId(Area.bench);
+
+                        } else {
+                            List<String> selectedCard = fireSelectCardRequest("Select a Card to SWAP with active card",
+                                    1, players.get(name).getAreaCard(Area.bench), true);
+                            if (selectedCard.size() > 0)
+                                cardId = selectedCard.get(0);
+                        }
+                        players.get(name).moveCardHolder(players.get(name).getActiveCard(), players.get(name).getCardHolder(cardId),
+                                Area.active, Area.bench);
+
+                    } else
+                        fireShowMessage("Player " + name.name() + "has no card in the bench", 1);
                     break;
                 case "add":
+                    addActionrequested = new AbstractMap.SimpleEntry<Enums.Player, Action>(name, action);
                     break;
                 case "cond":
+
                     break;
                 case "search":
+
                     break;
             }
 
@@ -479,7 +511,7 @@ public class LogicController {
                             players.get((playerName)).getAreaCard(Area.prize), false);
                 }
                 for (String cardId : selectedCardList) {
-                    logger.info(playerName+"select prize card :"+cardId);
+                    logger.info(playerName + "select prize card :" + cardId);
                     players.get(playerName)
                             .addCard(players.get(playerName).popCard(cardId, Area.prize, -1, cardId), Area.hand, "");
                 }
@@ -705,7 +737,7 @@ public class LogicController {
                 if (activePlayer == Enums.Player.A)
                     activePlayer = Enums.Player.B;
                 else activePlayer = Enums.Player.A;
-                startTurn();
+                startTurn(true);
             }
         }
 
@@ -720,17 +752,25 @@ public class LogicController {
 
         @Override
         public void attackRequest(Enums.Player playerName, String pokemonCardId, int attackIndex) throws Exception {
-
+            if (playerName == activePlayer)
             //get opponent
-            Player opponent = players.get(getOpponent(playerName));
-            PokemonCard card = (PokemonCard) players.get(playerName).getCard(pokemonCardId);
-            CardHolder cardHolder = players.get(playerName).getCardHolder(pokemonCardId);
+            {
+                PokemonCard card = (PokemonCard) players.get(playerName).getCard(pokemonCardId);
+                CardHolder cardHolder = players.get(playerName).getCardHolder(pokemonCardId);
 
-            //check cost
-            if (card.getAttackList().get(attackIndex).getCostAmount() <= cardHolder.getEnergyCards().size()) {
+                //check cost
+                if (card.getAttackList().get(attackIndex).getCostAmount() <= cardHolder.getEnergyCards().size()) {
 
-                executeAbility(playerName, card.getAttackList().get(attackIndex).getAbility());
+                    executeAbility(playerName, card.getAttackList().get(attackIndex).getAbility());
 
+                }
+
+                LogicController.this.CheckKnockout();
+
+                if (activePlayer == Enums.Player.A)
+                    activePlayer = Enums.Player.B;
+                else activePlayer = Enums.Player.A;
+                startTurn(true);
             }
         }
 
