@@ -2,13 +2,16 @@ package Model;
 
 import Enums.*;
 import Enums.Player;
+import Listeners.CardEventListener;
+import Model.Abilities.Ability;
 
 import javax.swing.event.EventListenerList;
+import java.util.List;
 
 /**
  * Created by H0111in on 05/20/2017.
  */
-public class TrainerCard implements Card  {
+public class TrainerCard implements Card {
     private String id;
     private String name;
     private CardCategory category;
@@ -17,13 +20,9 @@ public class TrainerCard implements Card  {
     private final EventListenerList listenerList;
     private Enums.Player playerName;
 
-    public TrainerCard(String name, CardCategory category, String type, Attack attack) {
+    public TrainerCard() {
 
         this.id = "";
-        this.name = name;
-        this.category = category;
-        this.type = type;
-        this.attack=attack;
         listenerList = new EventListenerList();
     }
 
@@ -45,7 +44,7 @@ public class TrainerCard implements Card  {
 
     @Override
     public Card setCategory(CardCategory category) {
-        this.category=category;
+        this.category = category;
         return this;
     }
 
@@ -56,7 +55,7 @@ public class TrainerCard implements Card  {
 
     @Override
     public Card setType(String type) {
-        this.type=type;
+        this.type = type;
         return this;
     }
 
@@ -67,7 +66,7 @@ public class TrainerCard implements Card  {
 
     @Override
     public Card setId(String id) {
-        this.id=id;
+        this.id = id;
         return this;
     }
 
@@ -90,6 +89,17 @@ public class TrainerCard implements Card  {
         return (TrainerCard) super.clone();
     }
 
+
+    public void parse(String[] words, List<Ability> abilities) {
+        //Switch:trainer:cat:item:71
+        //String name, CardCategory category, String type, Attack attack
+        name = words[0];
+        category = CardCategory.valueOf(words[1]);
+        type = words[2];
+        attack = new Attack(abilities.get(Integer.parseInt(words[3]) - 1), "", 0);
+
+    }
+
     public Attack getAttack() {
         return attack;
     }
@@ -99,7 +109,7 @@ public class TrainerCard implements Card  {
         return playerName;
     }
 
-    public void  setPlayerName(Player playerName){
-        this.playerName=playerName;
+    public void setPlayerName(Player playerName) {
+        this.playerName = playerName;
     }
 }

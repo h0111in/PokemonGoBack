@@ -1,11 +1,13 @@
 package View;
 
+import Listeners.uiCardEventListener;
 import Model.*;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -14,7 +16,7 @@ import javax.script.ScriptException;
 import javax.swing.event.EventListenerList;
 import java.io.IOException;
 
-public class NormalCard extends GridPane {
+public class NormalCardController extends GridPane implements IDialog {
 
     @FXML
     protected GridPane attack1;
@@ -39,8 +41,9 @@ public class NormalCard extends GridPane {
     private EventListenerList listenerList;
     private Enums.Player playerName;
     public int attackIndex;
+    private ButtonType result = ButtonType.CLOSE;
 
-    public NormalCard(Card card, Enums.Player playerName) throws ScriptException {
+    public NormalCardController(Card card, Enums.Player playerName) throws ScriptException {
         attackIndex = -1;
         this.card = card;
         this.playerName = playerName;
@@ -72,11 +75,8 @@ public class NormalCard extends GridPane {
                 attack1.setCursor(Cursor.HAND);
                 Attack attack1 = pokemonCard.getAttackList().get(0);
                 attack1Name.setText(attack1.getAbility().getName());
-                String description = "";
-                for (Action action : attack1.getAbility().actionList)
-                    description += action.getName() + (action.getCondition() != null ? ",Condition: " + action.getCondition().getName() : "")
-                            + (action.getTarget() != null ? ", Target: " + action.getTarget().name() : "");
-                attack1Description.setText(description);
+
+                attack1Description.setText(attack1.toString());
                 attack1Power.setText(attack1.getAbility().getActionsPowerText());
                 attack1Cost.setText(attack1.getCostAmount() + "X" + attack1.getCostType());
             }
@@ -143,21 +143,26 @@ public class NormalCard extends GridPane {
     }
 
     //region Events
-    public void addListener(uiCardEvent listener) {
-        listenerList.add(uiCardEvent.class, listener);
+    public void addListener(uiCardEventListener listener) {
+        listenerList.add(uiCardEventListener.class, listener);
     }
 
-    public void removeListener(uiCardEvent listener) {
-        listenerList.remove(uiCardEvent.class, listener);
+    public void removeListener(uiCardEventListener listener) {
+        listenerList.remove(uiCardEventListener.class, listener);
     }
 
     void fireAbility(Enums.Player playerName, String cardId, int attackIndex) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == uiCardEvent.class) {
-                ((uiCardEvent) listeners[i + 1]).attackRequest(playerName, cardId, attackIndex);
+            if (listeners[i] == uiCardEventListener.class) {
+                ((uiCardEventListener) listeners[i + 1]).attackRequest(playerName, cardId, attackIndex);
             }
         }
+    }
+
+    @Override
+    public ButtonType getResult() {
+        return result;
     }
 
 

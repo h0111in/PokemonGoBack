@@ -1,4 +1,4 @@
-package Model;
+package Enums;
 
 /**
  * Created by Hosein on 6/5/2017.
@@ -8,6 +8,6 @@ public enum ActionTarget {
     yourActive,
     yourBench,
 
-    none, last,
+    none, last, yourHand, opponentHand, opponentBench, them,
 
 }

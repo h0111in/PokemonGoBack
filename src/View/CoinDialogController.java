@@ -1,8 +1,6 @@
-package Controller;
+package View;
 
 import Enums.Coin;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +17,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Random;
 
-public class CoinDialog extends Pane {
+public class CoinDialogController extends Pane {
 
     private final Image head;
     private final Image tail;
@@ -42,7 +40,7 @@ public class CoinDialog extends Pane {
     protected boolean result;
     private boolean flipped;
 
-    public CoinDialog(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
+    public CoinDialogController(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
         this.defaultFace = defaultFace;
         this.waitForFlipping = waitForFlipping;
 
@@ -91,14 +89,14 @@ public class CoinDialog extends Pane {
             @Override
             public void handle(MouseEvent event) {
 
-                if (!CoinDialog.this.flipped) {
-                    CoinDialog.this.flipped = true;
+                if (!CoinDialogController.this.flipped) {
+                    CoinDialogController.this.flipped = true;
                     int result = new Random().nextInt(100) % 2;
                     if (result == 1)
                         imageCoinFlip.setImage(head);
                     else imageCoinFlip.setImage(tail);
 
-                    CoinDialog.this.result = playerChoice == result;
+                    CoinDialogController.this.result = playerChoice == result;
 
                     if (playerChoice == result) {
                         messageLabel.setText("YOU WON!");

@@ -2,15 +2,17 @@ package Model;
 
 import Enums.*;
 import Enums.Player;
+import Listeners.CardEventListener;
+import Model.Abilities.Ability;
+import javafx.scene.control.Alert;
 
-import javax.swing.event.CellEditorListener;
 import javax.swing.event.EventListenerList;
-import java.util.EnumSet;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static Controller.Main.logger;
+import static Controller.Helper.alert;
 
 /**
  * Created by H0111in on 05/20/2017.
@@ -35,17 +37,9 @@ public class PokemonCard implements Card {
     private int health;
     // Glameow 0 :pokemon 1:            basic 2        colorless 3:       60 4:           retreat 5:cat:colorless 6:2 7:attacks 8:cat:colorless 9:1 10:1 11,cat:colorless 12:2 13:2 14
 
-    public PokemonCard(String name, CardCategory category, String level, String type, int hitPoint, Attack retreat, List<Attack> attacks) {
+    public PokemonCard() {
         status = ActionStatus.none;
         this.id = "";
-        this.name = name;
-        this.category = category;
-        this.type = type;
-        this.level = level;
-        this.hitPoint = hitPoint;
-        health = hitPoint;
-        this.retreat = retreat;
-        attackList = attacks;
         listenerList = new EventListenerList();
 
     }
@@ -122,7 +116,7 @@ public class PokemonCard implements Card {
 //        int totalDamages = 0;
 //        for (Attack attack : attackList) {
 //            {
-//                for (Action action : attack.getAbility().actionList) {
+//                for (Action action : attack.getAbility().action) {
 //                    if (action.getTarget().equals("opponentActive"))
 //                     totalDamages += Integer.valueOf(action.getPower());
 //
@@ -138,6 +132,35 @@ public class PokemonCard implements Card {
 
     public Card clone() throws CloneNotSupportedException {
         return (PokemonCard) super.clone();
+    }
+
+    public void parse(String[] words, List<Ability> abilities) {
+        List<Attack> attacks = new ArrayList<>();
+        //Ability ability, String costType,int costAmount
+        int j = 0;
+        try {
+            int i = 0;
+            if (!words[2].equals("basic")) {
+                i++;
+                j++;
+            }
+            for (; i + 12 <= words.length && !words[i + 9].isEmpty(); i += 3) {
+                attacks.add(new Attack(abilities.get(Integer.parseInt(words[i + 11]) - 1), words[i + 9], Integer.parseInt(words[i + 10])));
+            }
+
+        } catch (Exception e) {
+            e.getStackTrace();
+            alert(Alert.AlertType.INFORMATION, words[0]);
+        }
+        name = words[0];
+        category = CardCategory.valueOf(words[1]);
+        level = words[j + 2];
+        type = words[j + 3];
+        hitPoint = Integer.parseInt(words[j + 4]);
+        retreat = new Attack(null, words[j + 6], Integer.parseInt(words[j + 7]));
+        this.attackList = attacks;
+
+
     }
 
     public int getHealth() {

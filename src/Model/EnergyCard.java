@@ -2,8 +2,11 @@ package Model;
 
 import Enums.*;
 import Enums.Player;
+import Listeners.CardEventListener;
+import Model.Abilities.Ability;
 
 import javax.swing.event.EventListenerList;
+import java.util.List;
 
 /**
  * Created by H0111in on 05/20/2017.
@@ -17,12 +20,8 @@ public class EnergyCard implements Card {
 
     private final EventListenerList listenerList;
 
-    public EnergyCard(String name, CardCategory category, String type) {
-        this.playerName = playerName;
+    public EnergyCard() {
         this.id = "";
-        this.name = name;
-        this.category = category;
-        this.type = type;
         listenerList = new EventListenerList();
     }
 
@@ -34,6 +33,15 @@ public class EnergyCard implements Card {
 
     public Card clone() throws CloneNotSupportedException {
         return (EnergyCard) super.clone();
+    }
+
+    @Override
+    public void parse(String[] words, List<Ability> abilities) {
+        //Psychic:energy:cat:psychic
+        //String name, CardCategory category, String type
+        name = words[0];
+        category = CardCategory.valueOf(words[1]);
+        type = words[2];
     }
 
     @Override
@@ -93,8 +101,8 @@ public class EnergyCard implements Card {
         return playerName;
     }
 
-    public void  setPlayerName(Player playerName){
-        this.playerName=playerName;
+    public void setPlayerName(Player playerName) {
+        this.playerName = playerName;
     }
     //endregion
 

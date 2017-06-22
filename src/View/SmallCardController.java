@@ -1,6 +1,8 @@
 package View;
 
 import Enums.Player;
+import Listeners.CardEventListener;
+import Listeners.uiCardEventListener;
 import Model.*;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -24,7 +26,7 @@ import java.util.List;
 
 import static Controller.Main.logger;
 
-public class SmallCard extends GridPane {
+public class SmallCardController extends GridPane {
 
     //region fields
     @FXML
@@ -58,7 +60,7 @@ public class SmallCard extends GridPane {
 
     //endregion
 
-    public SmallCard(Model.Card card, Stage primaryStage) throws Exception {
+    public SmallCardController(Model.Card card, Stage primaryStage) throws Exception {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SmallCard.fxml"));
         fxmlLoader.setController(this);
@@ -106,9 +108,9 @@ public class SmallCard extends GridPane {
         button.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                NormalCard normalCard = null;
+                NormalCardController normalCard = null;
                 try {
-                    normalCard = new NormalCard(getMainCard(), getPlayerName());
+                    normalCard = new NormalCardController(getMainCard(), getPlayerName());
 
                 } catch (ScriptException e) {
                     e.printStackTrace();
@@ -134,7 +136,7 @@ public class SmallCard extends GridPane {
 
                 Stage stage = new Stage(StageStyle.UNDECORATED);
                 try {
-                    stage.setScene(new Scene(new NormalCard(getEnergyCardList().get(0), getPlayerName())));
+                    stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(0), getPlayerName())));
 
                     stage.setTitle(getMainCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
@@ -152,7 +154,7 @@ public class SmallCard extends GridPane {
             public void handle(MouseEvent event) {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
-                    stage.setScene(new Scene(new NormalCard(getEnergyCardList().get(1), getPlayerName())));
+                    stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(1), getPlayerName())));
                     stage.setTitle(getMainCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
@@ -169,7 +171,7 @@ public class SmallCard extends GridPane {
             public void handle(MouseEvent event) {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
-                    stage.setScene(new Scene(new NormalCard(getEnergyCardList().get(2), getPlayerName())));
+                    stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(2), getPlayerName())));
                     stage.setTitle(getMainCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
@@ -186,7 +188,7 @@ public class SmallCard extends GridPane {
             public void handle(MouseEvent event) {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
-                    stage.setScene(new Scene(new NormalCard(getEnergyCardList().get(3), getPlayerName())));
+                    stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(3), getPlayerName())));
                     stage.setTitle(getMainCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
@@ -203,7 +205,7 @@ public class SmallCard extends GridPane {
             public void handle(MouseEvent event) {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
-                    stage.setScene(new Scene(new NormalCard(getBasicCard(), getPlayerName())));
+                    stage.setScene(new Scene(new NormalCardController(getBasicCard(), getPlayerName())));
                     stage.setTitle(getMainCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
@@ -219,9 +221,9 @@ public class SmallCard extends GridPane {
         this.setOnDragDetected(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                Dragboard db = SmallCard.this.startDragAndDrop(TransferMode.ANY);
+                Dragboard db = SmallCardController.this.startDragAndDrop(TransferMode.ANY);
                 ClipboardContent content = new ClipboardContent();
-                content.putString(SmallCard.this.getId());
+                content.putString(SmallCardController.this.getId());
                 db.setContent(content);
                 event.consume();
             }
@@ -427,19 +429,19 @@ public class SmallCard extends GridPane {
 
 
     //region Events
-    public void addListener(uiCardEvent listener) {
-        listenerList.add(uiCardEvent.class, listener);
+    public void addListener(uiCardEventListener listener) {
+        listenerList.add(uiCardEventListener.class, listener);
     }
 
-    public void removeListener(uiCardEvent listener) {
-        listenerList.remove(uiCardEvent.class, listener);
+    public void removeListener(uiCardEventListener listener) {
+        listenerList.remove(uiCardEventListener.class, listener);
     }
 
     void fireAttack(Player playerName, String cardId, int attackIndex) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == uiCardEvent.class) {
-                ((uiCardEvent) listeners[i + 1]).attackRequest(playerName, cardId, attackIndex);
+            if (listeners[i] == uiCardEventListener.class) {
+                ((uiCardEventListener) listeners[i + 1]).attackRequest(playerName, cardId, attackIndex);
             }
         }
     }
@@ -447,8 +449,8 @@ public class SmallCard extends GridPane {
     void fireCardClicked(String cardId) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == uiCardEvent.class) {
-                ((uiCardEvent) listeners[i + 1]).cardClicked(cardId);
+            if (listeners[i] == uiCardEventListener.class) {
+                ((uiCardEventListener) listeners[i + 1]).cardClicked(cardId);
             }
         }
     }
@@ -456,8 +458,8 @@ public class SmallCard extends GridPane {
     boolean fireShowFaceRequest(Player playerName, String cardId) {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == uiCardEvent.class) {
-                return ((uiCardEvent) listeners[i + 1]).showFaceRequest(playerName, cardId);
+            if (listeners[i] == uiCardEventListener.class) {
+                return ((uiCardEventListener) listeners[i + 1]).showFaceRequest(playerName, cardId);
             }
         }
         return false;

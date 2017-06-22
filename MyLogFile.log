@@ -24,9 +24,9 @@ Jun 14, 2017 7:19:07 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
 Jun 14, 2017 7:19:07 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:07 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:07 PM View.SmallCardController$1 handle
 INFO: handle from code
-Jun 14, 2017 7:19:07 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:07 PM View.SmallCardController$1 handle
 INFO: A40Zubat
 Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
@@ -42,9 +42,9 @@ Jun 14, 2017 7:19:12 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
 Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:12 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:12 PM View.SmallCardController$1 handle
 INFO: handle from code
-Jun 14, 2017 7:19:12 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:12 PM View.SmallCardController$1 handle
 INFO: A40Zubat
 Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
@@ -60,9 +60,9 @@ Jun 14, 2017 7:19:16 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
 Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:17 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:17 PM View.SmallCardController$1 handle
 INFO: handle from code
-Jun 14, 2017 7:19:17 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:17 PM View.SmallCardController$1 handle
 INFO: A40Zubat
 Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
@@ -80,9 +80,9 @@ Jun 14, 2017 7:19:20 PM Controller.LogicController playAutomatic
 INFO: attack:Froakie
 Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
 INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:20 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:20 PM View.SmallCardController$1 handle
 INFO: handle from code
-Jun 14, 2017 7:19:20 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:20 PM View.SmallCardController$1 handle
 INFO: A40Zubat
 Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: player A, executes Skill Diveaction:dam
@@ -98,11 +98,11 @@ Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: player B, executes Misty's Determinationaction:shuffle
 Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
 INFO: none
-Jun 14, 2017 7:19:25 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:25 PM View.SmallCardController$1 handle
 INFO: handle from code
-Jun 14, 2017 7:19:25 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:25 PM View.SmallCardController$1 handle
 INFO: A40Zubat
-Jun 14, 2017 7:19:29 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:29 PM View.SmallCardController$1 handle
 INFO: handle from code
-Jun 14, 2017 7:19:29 PM View.SmallCard$1 handle
+Jun 14, 2017 7:19:29 PM View.SmallCardController$1 handle
 INFO: A40Zubat

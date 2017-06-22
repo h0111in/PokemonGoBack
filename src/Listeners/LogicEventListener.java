@@ -1,6 +1,9 @@
-package Model;
+package Listeners;
 
 import Enums.*;
+import Model.Abilities.IActionStrategy;
+import Model.Card;
+import javafx.scene.control.Alert;
 
 import java.net.URISyntaxException;
 import java.util.EventListener;
@@ -11,9 +14,11 @@ import java.util.List;
  */
 public interface LogicEventListener extends EventListener {
 
-    void showMessage(String message, double duration);
+    Boolean showMessage(Alert.AlertType confirmation, String message, double duration);
 
     boolean flipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException;
 
     List<String> selectCardRequest(String message, int totalRequired, List<Card> cardList, boolean showCard) throws Exception;
+
+    boolean actionRequest(Player playerName, IActionStrategy action) throws Exception;
 }

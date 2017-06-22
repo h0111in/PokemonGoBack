@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Abilities.Ability;
+
 /**
  * Created by H0111in on 05/22/2017.
  */
@@ -9,11 +11,10 @@ public class Attack {
     private int costAmount;
     private Ability ability;
 
-    public Attack (Ability ability, String costType,int costAmount){
-
-        this.ability=ability;
-        this.costAmount=costAmount;
-        this.costType=costType;
+    public Attack(Ability ability, String costType, int costAmount) {
+        this.ability = ability;
+        this.costAmount = costAmount;
+        this.costType = costType;
 
     }
 
@@ -28,5 +29,7 @@ public class Attack {
     public Ability getAbility() {
         return ability;
     }
-
+    public String toString(){
+        return ability.action.toString();
+    }
 }

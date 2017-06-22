@@ -3,15 +3,16 @@ package Controller;
 import Enums.Area;
 import Enums.Player;
 import Model.MetaData;
+import Parser.IDataLoader;
+import Parser.TextParser;
+import View.GameBoardController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -36,33 +37,34 @@ public class Main extends Application {
             //endregion
 
             //load data
-            MetaData metaData = new MetaData();
+            TextParser parser = new TextParser("");
+
+            MetaData metaData = new MetaData(parser);
 
             //UI Controller
-            ui = new GameBoardController( playerNames, primaryStage);
+            ui = new GameBoardController(playerNames, primaryStage);
 
             //Logic Controller
             logic = new LogicController(playerNames);
 
             //Connect LogicController and Board
-            ui.setCardEventHandler(logic.uiCardEvent);
-            ui.addListener(logic.boardEventListener);
+            ui.setCardEventHandler(logic.uiCardEventListener);
+            ui.addListener(logic.uiBoardEventListener);
 
             logic.addPlayerEventListener(ui.playerEventListener);
             logic.addListener(ui.logicEventListener);
-
 
             //Load UI
             primaryStage.setScene(new Scene(ui));
             primaryStage.show();
 
             //Load deckA
-            for (String index : MetaData.readFile("./asset/deck1.txt"))
-                logic.players.get(Player.A).addCard(metaData.getCard(Integer.parseInt(index)-1), Area.deck, "");
+            for (String index : parser.readFile("./asset/deck1.txt"))
+                logic.players.get(Player.A).addCard(metaData.getCard(Integer.parseInt(index) - 1), Area.deck, "");
 
             //Load deckB
-            for (String index : MetaData.readFile("./asset/deck2.txt"))
-                logic.players.get(Player.B).addCard(metaData.getCard(Integer.parseInt(index)-1), Area.deck, "");
+            for (String index : parser.readFile("./asset/deck2.txt"))
+                logic.players.get(Player.B).addCard(metaData.getCard(Integer.parseInt(index) - 1), Area.deck, "");
 
             logic.startGame();
 

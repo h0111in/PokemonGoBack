@@ -1,4 +1,6 @@
-package Model;
+package Listeners;
+
+import Model.CardEvent;
 
 import java.util.EventListener;
 

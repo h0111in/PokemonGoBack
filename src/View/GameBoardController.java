@@ -1,16 +1,20 @@
-package Controller;
+package View;
 
 import Enums.Area;
 import Enums.Coin;
 import Enums.Player;
+import Listeners.uiBoardEventListener;
+import Listeners.LogicEventListener;
+import Listeners.PlayerEventListener;
+import Listeners.uiCardEventListener;
 import Model.*;
-import View.MessageDialog;
-import View.SelectorDialog;
-import View.SmallCard;
+import Model.Abilities.IActionStrategy;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,6 +33,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static Controller.Main.logger;
 
@@ -36,7 +41,7 @@ public class GameBoardController extends GridPane {
 
     //region fields
     private Stage primaryStage;
-    private uiCardEvent cardEventHandler;
+    private uiCardEventListener cardEventHandler;
     private final EventListenerList listenerList;
     Map<Player, Boolean> players;
     //endregion
@@ -49,7 +54,7 @@ public class GameBoardController extends GridPane {
         this.players = players;
 
         //region Initialize essential GUI properties
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameBoardView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameBoard.fxml"));
         fxmlLoader.setController(this);
         fxmlLoader.setRoot(this);
 
@@ -59,7 +64,7 @@ public class GameBoardController extends GridPane {
             throw new RuntimeException(exception);
         }
 
-        this.getStylesheets().add("./asset/gameBoard.css");
+        this.getStylesheets().add("asset/gameBoard.css");
 
         //endregion
 
@@ -103,17 +108,17 @@ public class GameBoardController extends GridPane {
         @Override
         public void pushCard(CardEvent evt) {
 
-            SmallCard smallCard = null;
+            SmallCardController smallCard = null;
             try {
 
                 if (evt.getSmallCardId().length() == 0) {//push to area
 
                     //region make new UIControls
-                    smallCard = new SmallCard(evt.getCard(), primaryStage);
+                    smallCard = new SmallCardController(evt.getCard(), primaryStage);
                     smallCard.setOnDragOver(dragHandler);
                     smallCard.setOnDragDropped(dropHandler);
                     smallCard.addListener(cardEventHandler);
-                    smallCard.addListener(new uiCardEvent() {
+                    smallCard.addListener(new uiCardEventListener() {
                         @Override
                         public void attackRequest(Player playerName, String cardId, int attackIndex) throws Exception {
 
@@ -173,7 +178,7 @@ public class GameBoardController extends GridPane {
 
                 } else
                     //region push into another UIControls
-                    ((SmallCard) GameBoardController.this.lookup("#" + evt.getSmallCardId())).push(evt.getCard());//endregion
+                    ((SmallCardController) GameBoardController.this.lookup("#" + evt.getSmallCardId())).push(evt.getCard());//endregion
 
                 //region update card list size in UI
                 if (evt.getArea() == Area.hand || evt.getArea() == Area.discard || evt.getArea() == Area.active || evt.getArea() == Area.deck)
@@ -209,10 +214,10 @@ public class GameBoardController extends GridPane {
             {
 
                 // pop card
-                ((SmallCard) area.lookup("#" + evt.getSmallCardId())).pop(evt.getCard().getId());
+                ((SmallCardController) area.lookup("#" + evt.getSmallCardId())).pop(evt.getCard().getId());
 
                 //pop cardHolder
-                if (((SmallCard) area.lookup("#" + evt.getSmallCardId())).getAllCard().size() == 0)
+                if (((SmallCardController) area.lookup("#" + evt.getSmallCardId())).getAllCard().size() == 0)
                     (area).getChildren().remove(area.lookup("#" + evt.getSmallCardId()));
 
             }  //endregion
@@ -228,9 +233,9 @@ public class GameBoardController extends GridPane {
 
     public LogicEventListener logicEventListener = new LogicEventListener() {
         @Override
-        public void showMessage(String message, double duration) {
+        public Boolean showMessage(Alert.AlertType alertType,String message, double duration) {
 
-            popup(new MessageDialog(message, duration, Color.GRAY), primaryStage);
+            return popup(new MessageDialogController(alertType,message, duration, Color.GRAY), primaryStage);
 
         }
 
@@ -245,10 +250,15 @@ public class GameBoardController extends GridPane {
 
             return selectCard(message, totalRequired, cardList, showCard, primaryStage);
         }
+
+        @Override
+        public boolean actionRequest(Player playerName, IActionStrategy action) throws Exception {
+            return false;
+        }
     };
 
     private static List<String> selectCard(String message, int totalRequired, List<Card> cardList, boolean showCard, Stage primaryStage) throws Exception {
-        SelectorDialog selectorDialog = new SelectorDialog(cardList, message, totalRequired, showCard, primaryStage);
+        SelectorDialogController selectorDialog = new SelectorDialogController(cardList, message, totalRequired, showCard, primaryStage);
 
         Stage stage = new Stage(StageStyle.UNDECORATED);
         stage.setScene(new Scene(selectorDialog));
@@ -283,7 +293,7 @@ public class GameBoardController extends GridPane {
         public void handle(DragEvent event) {
             String uiSmallCardId = "";
             Area targetArea;
-            SmallCard targetCard = null;
+            SmallCardController targetCard = null;
 
             try {
                 if (((Pane) event.getSource()).getId() != ((GridPane) event.getGestureSource()).getParent().getId() && event.getGestureSource() != (event.getTarget()) &&
@@ -291,13 +301,13 @@ public class GameBoardController extends GridPane {
 
                     String cardID = (event.getDragboard().getContent(DataFormat.PLAIN_TEXT).toString());
                     GridPane source = ((GridPane) event.getGestureSource());
-                    SmallCard flyCard = (SmallCard) GameBoardController.this.lookup("#" + cardID);
+                    SmallCardController flyCard = (SmallCardController) GameBoardController.this.lookup("#" + cardID);
                     Area sourceArea = getAreaName(source.getParent().getId());
 
-                    if (event.getGestureTarget() instanceof SmallCard) {
-                        targetArea = getAreaName((((SmallCard) event.getGestureTarget()).getParent()).getId());
-                        targetCard = (SmallCard) event.getGestureTarget();
-                        uiSmallCardId = ((SmallCard) event.getGestureTarget()).getId();
+                    if (event.getGestureTarget() instanceof SmallCardController) {
+                        targetArea = getAreaName((((SmallCardController) event.getGestureTarget()).getParent()).getId());
+                        targetCard = (SmallCardController) event.getGestureTarget();
+                        uiSmallCardId = ((SmallCardController) event.getGestureTarget()).getId();
                     } else
                         targetArea = getAreaName(((Pane) event.getGestureTarget()).getId());
 
@@ -330,16 +340,16 @@ public class GameBoardController extends GridPane {
     //endregion
 
     //region Events
-    public void addListener(BoardEventListener listener) {
-        listenerList.add(BoardEventListener.class, listener);
+    public void addListener(uiBoardEventListener listener) {
+        listenerList.add(uiBoardEventListener.class, listener);
     }
 
     void fireMoveCard(Area targetArea, Card targetCard, Card targetStageCard, Card flyCard, Area sourceArea, Enums.Player senderPlayer,
                       List<Card> uiCardList, int targetColumnIndex, int sourceColumnIndex, String uiCardId, String uiSmallCardId) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == BoardEventListener.class) {
-                ((BoardEventListener) listeners[i + 1]).MoveCard(targetArea, targetCard, targetStageCard, flyCard, sourceArea, senderPlayer,
+            if (listeners[i] == uiBoardEventListener.class) {
+                ((uiBoardEventListener) listeners[i + 1]).MoveCard(targetArea, targetCard, targetStageCard, flyCard, sourceArea, senderPlayer,
                         uiCardList, targetColumnIndex, sourceColumnIndex, uiCardId, uiSmallCardId);
             }
         }
@@ -348,8 +358,8 @@ public class GameBoardController extends GridPane {
     int fireGetAreaSize(Enums.Player player, Area area) {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == BoardEventListener.class) {
-                return ((BoardEventListener) listeners[i + 1]).getAreaSize(player, area);
+            if (listeners[i] == uiBoardEventListener.class) {
+                return ((uiBoardEventListener) listeners[i + 1]).getAreaSize(player, area);
             }
         }
         return 0;
@@ -358,8 +368,8 @@ public class GameBoardController extends GridPane {
     void fireDoneButton(Player player) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == BoardEventListener.class) {
-                ((BoardEventListener) listeners[i + 1]).doneButtonPressed(player);
+            if (listeners[i] == uiBoardEventListener.class) {
+                ((uiBoardEventListener) listeners[i + 1]).doneButtonPressed(player);
             }
         }
 
@@ -368,8 +378,8 @@ public class GameBoardController extends GridPane {
     private void fireShowAreaCard(Area areaName, Player playerName) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
-            if (listeners[i] == BoardEventListener.class) {
-                ((BoardEventListener) listeners[i + 1]).showAreaCard(areaName, playerName);
+            if (listeners[i] == uiBoardEventListener.class) {
+                ((uiBoardEventListener) listeners[i + 1]).showAreaCard(areaName, playerName);
             }
         }
     }
@@ -385,30 +395,33 @@ public class GameBoardController extends GridPane {
     }
 
 
-    public static void popup(Pane dialog, Stage primaryStage) {
+    public static boolean popup(IDialog dialog, Stage primaryStage) {
 
         Stage stage = new Stage(StageStyle.UNDECORATED);
-        stage.setScene(new Scene(dialog));
+        stage.setScene(new Scene((Pane)dialog));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.setIconified(false);
         stage.initOwner(primaryStage);
         stage.showAndWait();
+        return dialog.getResult()== ButtonType.YES;
     }
 
+
+
     public boolean flipCoin(Coin defaultFace, double waitForFlipping, Stage primaryStage) throws URISyntaxException {
-        CoinDialog coinDialog = new CoinDialog(defaultFace, waitForFlipping);
+        CoinDialogController coinDialogController = new CoinDialogController(defaultFace, waitForFlipping);
         Stage stage = new Stage(StageStyle.UNDECORATED);
-        stage.setScene(new Scene(coinDialog));
+        stage.setScene(new Scene(coinDialogController));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.initOwner(primaryStage);
         stage.showAndWait();
-        return coinDialog.result;
+        return coinDialogController.result;
     }
 
 
-    public void setCardEventHandler(uiCardEvent cardEventHandler) {
+    public void setCardEventHandler(uiCardEventListener cardEventHandler) {
         this.cardEventHandler = cardEventHandler;
     }
 }

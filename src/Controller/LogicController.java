@@ -1,10 +1,17 @@
 package Controller;
 
 import Enums.*;
+import Listeners.uiBoardEventListener;
+import Listeners.LogicEventListener;
+import Listeners.PlayerEventListener;
+import Listeners.uiCardEventListener;
 import Model.*;
+import Model.Abilities.Ability;
+import Model.Abilities.Add;
+import Model.Abilities.IActionStrategy;
 import Model.Player;
+import javafx.scene.control.Alert;
 
-import javax.script.ScriptException;
 import javax.swing.event.EventListenerList;
 import java.net.URISyntaxException;
 import java.util.*;
@@ -23,7 +30,7 @@ public class LogicController {
     private Enums.Player activePlayer;
     private Map<TurnAction, Integer> turnActions;
     private final EventListenerList listenerList;
-    private AbstractMap.SimpleEntry<Enums.Player, Action> addActionrequested;
+    private Map<Enums.Player, IActionStrategy> actionrequestedList;
 
     //endregion
 
@@ -31,12 +38,13 @@ public class LogicController {
     public LogicController(Map<Enums.Player, Boolean> playerNames) {
 
         listenerList = new EventListenerList();
-
+        actionrequestedList = new HashMap<>();
         //Define Players
         players = new HashMap<>();
         for (Enums.Player playerName : playerNames.keySet()) {
             Player player = new Player(playerName, playerNames.get(playerName));
             players.put(playerName, player);
+            actionrequestedList.put(playerName, null);
         }
 
         //Define TurnActions
@@ -89,8 +97,8 @@ public class LogicController {
 
         //DEFINE FIRST PLAYER
 //        fireShowMessage("Choice a face!", 2);
-        activePlayer = !fireFlipCoin(Coin.None, -1) ?
-                Enums.Player.B :
+        activePlayer = //!fireFlipCoin(Coin.None, -1) ?
+                // Enums.Player.B :
                 Enums.Player.A;
 
         startTurn(false);
@@ -100,13 +108,20 @@ public class LogicController {
 
     private void startTurn(boolean addCard) throws Exception {
 
-        if (addActionrequested != null && addActionrequested.getKey() == activePlayer) {
-            //heal the sender
-            if (players.get(addActionrequested.getKey()).getActiveCard().getTopCard() != null)
-                players.get(addActionrequested.getKey()).getActiveCard().getTopCard()
-                        .setHeal(addActionrequested.getValue().getPower().getAmount(""));
-            addActionrequested = null;
-        }
+        for (Enums.Player player : players.keySet())
+            if (actionrequestedList.get(player) != null) {
+                if (actionrequestedList.get(player) instanceof Add) {
+                    if (((((Add) actionrequestedList.get(player)).getTriggerTime() == TriggerTime.your_turn_start ||
+                            ((Add) actionrequestedList.get(player)).getTriggerTime() == TriggerTime.opponent_turn_end) &&
+                            player == activePlayer) ||
+                            ((((Add) actionrequestedList.get(player)).getTriggerTime() == TriggerTime.your_turn_end ||
+                                    ((Add) actionrequestedList.get(player)).getTriggerTime() == TriggerTime.opponent_turn_start) &&
+                                    player != activePlayer))
+                        actionrequestedList.get(player).fight(players.get(player), players.get(getOpponent(player)));
+                }
+                actionrequestedList.put(player, null);
+            }
+
         if (addCard)
             players.get(activePlayer).addCard(players.get(activePlayer).drawCard(1, Area.deck), Area.hand, -1, "");
         for (TurnAction action : Enums.TurnAction.values())
@@ -150,18 +165,19 @@ public class LogicController {
 
         //region attach stage one to basic card in active area
         if (turnActions.get(TurnAction.attachStage1CardToActive) == 0) {
-            if (player.getActiveCard().getTopCard().getType().equals("basic")) {
-                for (Card handCard : player.getAreaCard(Area.hand)) {
-                    if (handCard instanceof PokemonCard && !((PokemonCard) handCard).getLevel().equals("basic")
-                            && handCard.getType().equals(player.getActiveCard().getTopCard().getType())) {
-                        player.addCard(player.popCard(handCard.getId(), ""), Area.active, player.getActiveCard().getId());
-                        turnActions.put(TurnAction.attachStage1CardToActive, 1);
+            if (player.getActiveCard() != null)
+                if (player.getActiveCard().getTopCard().getType().equals("basic")) {
+                    for (Card handCard : player.getAreaCard(Area.hand)) {
+                        if (handCard instanceof PokemonCard && !((PokemonCard) handCard).getLevel().equals("basic")
+                                && handCard.getType().equals(player.getActiveCard().getTopCard().getType())) {
+                            player.addCard(player.popCard(handCard.getId(), ""), Area.active, player.getActiveCard().getId());
+                            turnActions.put(TurnAction.attachStage1CardToActive, 1);
 
-                        logger.info(TurnAction.attachStage1CardToActive + ":" + handCard.getName());
-                        break;
+                            logger.info(TurnAction.attachStage1CardToActive + ":" + handCard.getName());
+                            break;
+                        }
                     }
                 }
-            }
         }
 
         //endregion
@@ -297,7 +313,7 @@ public class LogicController {
         executeAbility(player, trainerCard.getAttack().getAbility());
 
         //put trainer card into discard area
-        players.get(player).addCard(trainerCard, Area.discard, -1, "");
+        players.get(player).addCard(trainerCard, Area.discard, -1, "", false);
     }
 
     private Enums.Player getPlayerName(String nodeID) {
@@ -310,180 +326,32 @@ public class LogicController {
 
     public void executeAbility(Enums.Player name, Ability ability) throws Exception {
 
-        Enums.Player targetPlayer = Enums.Player.None;
-        for (Action action : ability.actionList) {
-            logger.info("player " + name + ", executes " + ability.getName() + "action:" + action.getName());
-            if (action.getTarget() != null)
-                switch (action.getTarget()) {
-                    case opponentActive:
-                        targetPlayer = getOpponent(name);
-
-                        break;
-                    case yourActive:
-                        targetPlayer = name;
-                        break;
-                    case yourBench:
-                        break;
-                    case none:
-                        break;
-                    case last:
-                        break;
-
-                    default:
-                        throw new Exception("The Active Area is not defined.");
-                }
-            switch (action.getName()) {
-
-                //region damage
-                case "dam":
-
-                    //region condition
-                    boolean conditionMet = isConditionMet(name, action);
-                    //endregion
-
-                    if (conditionMet) {
-
-                        //region calculate power
-                        String operand = countPower(name, action);
-                        //endregion
-
-                        //region apply damage on target
-                        if (action.getTarget() == ActionTarget.yourActive)
-                            players.get(name).getActiveCard().getTopCard().addDamage(action.getPower().getAmount(operand));
-                        else if (action.getTarget() == ActionTarget.opponentActive)
-                            players.get(getOpponent(name)).getActiveCard().getTopCard().addDamage(action.getPower().getAmount(operand));
-//endregion
-                    }
-                    break;
-
-                //endregion
-
-                //region heal
-                case "heal":
-
-                    //heal:target:your-active:20
-                    //Potion:heal:target:your:30 done
-                    //region condition
-
-                    //endregion
-                    if (isConditionMet(name, action)) {
-
-                        //Apply heal
-                        if (action.getTarget() == ActionTarget.opponentActive) {
-                            players.get(getOpponent(name)).getActiveCard().getTopCard().setHeal(action.getPower().getAmount(countPower(name, action)));
-                        } else if (action.getTarget() == ActionTarget.yourActive) {
-                            players.get(name).getActiveCard().getTopCard().setHeal(action.getPower().getAmount(countPower(name, action)));
-                        }
-                    }
-
-                    break;
-                //endregion
-
-                //region deenergize
-                case "deenergize":
-
-                    if (isConditionMet(name, action)) {
-                        List<EnergyCard> energyCardList = players.get(targetPlayer).getActiveCard().getEnergyCards();
-                        for (Card energyCard : energyCardList) {
-                            players.get(targetPlayer).addCard(players.get(targetPlayer).popCard(energyCard.getId(),
-                                    players.get(targetPlayer).getActiveCard().getId()), Area.discard, "");
-                        }
-                    }
-                    break;
-                //endregion
-
-                case "destat":
-                case "applystat":
-                    switch (action.getTarget()) {
-                        case opponentActive:
-                            players.get(getOpponent(name)).getActiveCard().getTopCard().setStatus(action.getStatus());
-                            break;
-                        case last:
-                        case yourActive:
-                            players.get(name).getActiveCard().getTopCard().setStatus(action.getStatus());
-                            break;
-                        case yourBench:
-                        case none:
-
-                        default:
-                            throw new Exception("unknown target");
-                    }
-                    break;
-                case "shuffle":
-                    logger.info(action.getTarget().name());
-                    switch (action.getTarget()) {
-
-                        case opponentActive:
-                            players.get(getOpponent(name)).addCard(Player.shuffle(players.get(getOpponent(name)).popAllCard(Area.deck, -1, "")), Area.deck, -1, "");
-                            break;
-                        case yourActive:
-                            players.get(name).addCard(Player.shuffle(players.get(name).popAllCard(Area.deck, -1, "")), Area.deck, -1, "");
-                            break;
-                        case yourBench:
-                        case none:
-                        case last:
-                        default:
-                            throw new Exception("unknown target");
-                    }
-                    break;
-                case "redamage":
-                    int benchSize = players.get(getOpponent(name)).getAreaCard(Area.bench).size();
-                    if (benchSize > 0) {
-                        if (players.get(getOpponent(name)).getActiveCard().getTopCard() != null) {
-                            int opponentDamage = players.get(getOpponent(name)).getActiveCard().getTopCard().getDamage();
-                            players.get(getOpponent(name)).getActiveCard().getTopCard().addDamage(-opponentDamage);
-                            String lastCardId = "";
-                            for (Card card : players.get(getOpponent(name)).getAreaCard(Area.bench)) {
-                                if (card instanceof PokemonCard) {
-                                    lastCardId = card.getId();
-                                    ((PokemonCard) players.get(getOpponent(name)).getCard(card.getId())).addDamage(opponentDamage / benchSize);
-                                }
-                            }
-                            if (!lastCardId.isEmpty())
-                                if (opponentDamage > opponentDamage / benchSize * benchSize)
-                                    ((PokemonCard) players.get(getOpponent(name)).getCard(lastCardId)).addDamage(opponentDamage - opponentDamage / benchSize * benchSize);
-                                else
-                                    ((PokemonCard) players.get(getOpponent(name)).getCard(lastCardId)).addDamage((opponentDamage / benchSize * benchSize) - opponentDamage);
-                        }
-                    }
-                    break;
-                case "draw":
-                    players.get(name).addCard(players.get(name)
-                                    .drawCard(action.getPower().getAmount(""), Area.deck),
-                            Area.hand, -1, "");
-                    break;
-                case "swap":
-                    if (players.get(name).getAreaCard(Area.bench).size() > 0) {
-
-                        String cardId = "";
-                        if (players.get(name).isComputer()) {
-
-                            cardId = players.get(name).getRandomCardId(Area.bench);
-
-                        } else {
-                            List<String> selectedCard = fireSelectCardRequest("Select a Card to SWAP with active card",
-                                    1, players.get(name).getAreaCard(Area.bench), true);
-                            if (selectedCard.size() > 0)
-                                cardId = selectedCard.get(0);
-                        }
-                        players.get(name).moveCardHolder(players.get(name).getActiveCard(), players.get(name).getCardHolder(cardId),
-                                Area.active, Area.bench);
-
-                    } else
-                        fireShowMessage("Player " + name.name() + "has no card in the bench", 1);
-                    break;
-                case "add":
-                    addActionrequested = new AbstractMap.SimpleEntry<Enums.Player, Action>(name, action);
-                    break;
-                case "cond":
-
-                    break;
-                case "search":
-
-                    break;
+        ability.action.addListener(new LogicEventListener() {
+            @Override
+            public Boolean showMessage(Alert.AlertType confirmation, String message, double duration) {
+                return fireShowMessage(confirmation, message, duration);
             }
 
-        }
+            @Override
+            public boolean flipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
+                return fireFlipCoin(defaultFace, waitForFlipping);
+            }
+
+            @Override
+            public List<String> selectCardRequest(String message, int totalRequired, List<Card> cardList, boolean showCard) throws Exception {
+                return fireSelectCardRequest(message, totalRequired, cardList, showCard);
+            }
+
+            @Override
+            public boolean actionRequest(Enums.Player playerName, IActionStrategy action) throws Exception {
+                actionrequestedList.put(playerName, action);
+                return true;
+            }
+        });
+        ability.action.fight(players.get(name), players.get(getOpponent(name)));
+        ability.action.clearListener();
+        logger.info("player " + name + ", executes " + ability.getName() + "\r\n action:" + ability.action);
+
 
     }
 
@@ -495,7 +363,7 @@ public class LogicController {
                 for (String activeCardId : players.get(getOpponent(playerName)).getActiveCard().getAllCard().keySet()) {
                     players.get(getOpponent(playerName)).addCard(players.get(getOpponent(playerName))
                                     .popCard(activeCardId, players.get(getOpponent(playerName)).getActiveCard().getId()),
-                            Area.discard, -1, "");
+                            Area.discard, -1, "", false);
                     logger.info("put " + activeCardId + " on discard");
                 }
 
@@ -503,8 +371,8 @@ public class LogicController {
                 if (players.get(playerName).isComputer()) {
                     selectedCardList.add(players.get(playerName).getRandomCardId(Area.prize));
                 } else {
-                    fireShowMessage("You knockout the your opponent's active card", 1);
-                    fireShowMessage("Please select a card from prize area", 1);
+                    fireShowMessage(Alert.AlertType.INFORMATION, "You knockout the your opponent's active card", 1);
+                    fireShowMessage(Alert.AlertType.INFORMATION, "Please select a card from prize area", 1);
 
 
                     selectedCardList = fireSelectCardRequest("Please select a card", 1,
@@ -517,78 +385,6 @@ public class LogicController {
                 }
 
             }
-    }
-
-    private boolean isConditionMet(Enums.Player name, Action action) throws URISyntaxException, ScriptException {
-
-        boolean conditionMet = false;
-        switch (action.getCondition().getName()) {
-            case "flip":
-                if (fireFlipCoin(Coin.Head, 1)) {
-                    conditionMet = true;
-                }
-                break;
-            case "healed":
-                //EX:If this Pokémon was healed during this turn, this attack does 80 more damage.
-                switch (action.getCondition().getTarget()) {
-                    case opponentActive:
-                        break;
-                    case yourActive:
-                        if (players.get(name).getActiveCard().getTopCard().getTotalHealed() > 0) {
-                            conditionMet = true;
-                        }
-                        break;
-                }
-                break;
-            default:
-                conditionMet = true;
-        }
-        return conditionMet;
-    }
-
-    private String countPower(Enums.Player name, Action action) {
-        String operand = "";
-        if (action.getPower().getTargetCategory() == CardCategory.none && action.getTarget() == ActionTarget.none) {
-            operand = "";
-
-        } else {
-            switch (action.getPower().getTarget()) {
-
-                case opponentActive:
-                    for (Card card : players.get(getOpponent(name)).getAreaCard(Area.active)) {
-                        if (action.getPower().getTargetCategory() == CardCategory.none ||
-                                card.getCategory() == action.getPower().getTargetCategory())
-                            if (action.getPower().getType().isEmpty()
-                                    || action.getPower().getType().equals(card.getType()))
-                                operand = String.valueOf(Integer.parseInt(operand) + 1);
-                    }
-                    break;
-                case yourActive:
-                    for (Card card : players.get(name).getAreaCard(Area.active)) {
-                        if (action.getPower().getTargetCategory() == CardCategory.none
-                                || card.getCategory() == action.getPower().getTargetCategory())
-                            if (action.getPower().getType().isEmpty()
-                                    || action.getPower().getType().equals(card.getType()))
-                                operand = String.valueOf(Integer.parseInt(operand) + 1);
-                    }
-                    break;
-                case yourBench:
-                    for (Card card : players.get(name).getAreaCard(Area.bench)) {
-                        if (action.getPower().getTargetCategory() == CardCategory.none ||
-                                card.getCategory() == action.getPower().getTargetCategory())
-                            if (action.getPower().getType().isEmpty()
-                                    || action.getPower().getType().equals(card.getType()))
-                                operand = String.valueOf(Integer.parseInt(operand) + 1);
-                    }
-                    break;
-                case none:
-                    break;
-                case last:
-                    break;
-            }
-        }
-
-        return operand;
     }
 
     public TurnAction isMovementVerified(Area targetArea, Card targetCard, Card flyCard, Area sourceArea, Card targetStageCard, Enums.Player player) {
@@ -664,13 +460,14 @@ public class LogicController {
         listenerList.add(LogicEventListener.class, listener);
     }
 
-    void fireShowMessage(String message, double duration) {
+    boolean fireShowMessage(Alert.AlertType type, String message, double duration) {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == LogicEventListener.class) {
-                ((LogicEventListener) listeners[i + 1]).showMessage(message, duration);
+                return ((LogicEventListener) listeners[i + 1]).showMessage(type, message, duration);
             }
         }
+        return false;
     }
 
     boolean fireFlipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
@@ -695,7 +492,7 @@ public class LogicController {
     //endregion
 
     //region UI Event Listener
-    public BoardEventListener boardEventListener = new BoardEventListener() {
+    public uiBoardEventListener uiBoardEventListener = new uiBoardEventListener() {
         @Override
         public int getAreaSize(Enums.Player player, Area area) {
             return players.get(player).getAreaCard(area).size();
@@ -720,13 +517,13 @@ public class LogicController {
                 uiSmallCardId = uiCardId;
                 //Add Head UIControls
                 players.get(senderPlayer).
-                        addCard(cardList.get(flyCard.getId()).clone(), targetArea, targetColumnIndex, "");
+                        addCard(cardList.get(flyCard.getId()).clone(), targetArea, targetColumnIndex, "", false);
                 cardList.remove(uiCardId);
             }
             //Remained Cards
             for (Card card : cardList.values())
                 players.get(senderPlayer).
-                        addCard(card, targetArea, targetColumnIndex, uiSmallCardId);
+                        addCard(card, targetArea, targetColumnIndex, uiSmallCardId, false);
 
         }
 
@@ -744,11 +541,13 @@ public class LogicController {
         @Override
         public void showAreaCard(Area area, Enums.Player playerName) throws Exception {
             if (area == Area.discard)
-                fireSelectCardRequest(area.name() + " area / size : " + players.get(playerName).getAreaCard(area).size() + "cards", 0, players.get(playerName).getAreaCard(area), true);
+                fireSelectCardRequest(area.name()
+                                + " area / size : " + players.get(playerName).getAreaCard(area).size() + "cards", 0,
+                        players.get(playerName).getAreaCard(area), true);
         }
     };
 
-    public uiCardEvent uiCardEvent = new uiCardEvent() {
+    public Listeners.uiCardEventListener uiCardEventListener = new uiCardEventListener() {
 
         @Override
         public void attackRequest(Enums.Player playerName, String pokemonCardId, int attackIndex) throws Exception {
@@ -818,9 +617,9 @@ public class LogicController {
         this.activePlayer = activePlayer;
         if (lastPlayer != activePlayer)
             if (activePlayer == Enums.Player.A) {
-                fireShowMessage("Your Turn...", 0.5);
+                fireShowMessage(Alert.AlertType.INFORMATION, "Your Turn...", 0.5);
             } else {
-                fireShowMessage("Opponent Turn...", 0.5);
+                fireShowMessage(Alert.AlertType.INFORMATION, "Opponent Turn...", 0.5);
 
             }
     }
@@ -843,6 +642,7 @@ public class LogicController {
     }
 
     //endregion
+
     //region independent Class
 //    class Damage extends Action {
 //        public Damage() {
@@ -876,62 +676,5 @@ public class LogicController {
 //                    conditionMet = true;
 //            }
 //            //endregion
-//
-//            if (conditionMet) {
-//
-//                //region calculate power
-//                String operand = "";
-//                if (getPower().getTargetCategory() == CardCategory.none && action.getTarget() == ActionTarget.none) {
-//                    operand = "";
-//
-//                } else {
-//                    switch (getPower().getTarget()) {
-//
-//                        case opponentActive:
-//                            for (Card card : players.get(getOpponent(name)).getAreaCard(Area.active)) {
-//                                if (getPower().getTargetCategory() == CardCategory.none ||
-//                                        card.getCategory() == action.getPower().getTargetCategory())
-//                                    if (getPower().getType().isEmpty()
-//                                            || getPower().getType().equals(card.getType()))
-//                                        operand = String.valueOf(Integer.parseInt(operand) + 1);
-//                            }
-//                            break;
-//                        case yourActive:
-//                            for (Card card : players.get(name).getAreaCard(Area.active)) {
-//                                if (getPower().getTargetCategory() == CardCategory.none
-//                                        || card.getCategory() == action.getPower().getTargetCategory())
-//                                    if (getPower().getType().isEmpty()
-//                                            || getPower().getType().equals(card.getType()))
-//                                        operand = String.valueOf(Integer.parseInt(operand) + 1);
-//                            }
-//                            break;
-//                        case yourBench:
-//                            for (Card card : players.get(name).getAreaCard(Area.bench)) {
-//                                if (action.getPower().getTargetCategory() == CardCategory.none ||
-//                                        card.getCategory() == action.getPower().getTargetCategory())
-//                                    if (action.getPower().getType().isEmpty()
-//                                            || action.getPower().getType().equals(card.getType()))
-//                                        operand = String.valueOf(Integer.parseInt(operand) + 1);
-//                            }
-//                            break;
-//                        case none:
-//                            break;
-//                        case last:
-//                            break;
-//                    }
-//                }
-//
-//                return operand;
-//            }
-//
-//            //region apply damage on target
-//            if (getTarget() == ActionTarget.yourActive)
-//                players.get(name).getActiveCard().getTopCard().addDamage(getPower().getAmount(operand));
-//            else if (action.getTarget() == ActionTarget.opponentActive)
-//                players.get(getOpponent(name)).getActiveCard().getTopCard().addDamage(getPower().getAmount(operand));
-////endregion
-//        }
-//    }
-//endregion
 }
 

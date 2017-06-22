@@ -2,6 +2,7 @@ package Model;
 
 import Enums.Area;
 import Enums.Coin;
+import Listeners.PlayerEventListener;
 
 import javax.swing.event.EventListenerList;
 import java.util.*;
@@ -59,22 +60,36 @@ public class Player {
 
     public Player addCard(List<Card> cards, Area destination, int cardHolderIndex, String smallCardId) throws Exception {
         for (Card card : cards)
-            addCard(card, destination, cardHolderIndex, smallCardId);
+            addCard(card, destination, cardHolderIndex, smallCardId, false);
+        return this;
+    }
+
+    public Player addCard(List<Card> cards, Area destination, boolean addTop) throws Exception {
+        for (Card card : cards)
+            if (addTop)
+                addCard(card, destination, -1, "", addTop);
         return this;
     }
 
     public Player addCard(Card card, Area destination, int cardHolderIndex, String cardHolderId) throws Exception {
-        switch (destination) {
+        return addCard(card, destination, cardHolderIndex, cardHolderId, false);
+    }
 
+    public Player addCard(Card card, Area destination, int cardHolderIndex, String cardHolderId, boolean addtoBottom) throws Exception {
+        switch (destination) {
             case deck:
                 if (card.getId().equals("")) {
                     card.setId(name.name() + deck.size());
                     card.setPlayerName(name);
                 }
-                deck.put(card.getId(), card);
+                if (addtoBottom) deck = addTopMap(card, deck);
+                else
+                    deck.put(card.getId(), card);
                 break;
             case hand:
-                hand.put(card.getId(), card);
+                if (addtoBottom) hand = addTopMap(card, hand);
+                else
+                    hand.put(card.getId(), card);
                 break;
             case bench:
                 if (cardHolderIndex == -1)
@@ -92,10 +107,13 @@ public class Player {
                 active.add(card);
                 break;
             case prize:
-                prize.put(card.getId(), card);
+                if (addtoBottom) prize = addTopMap(card, prize);
+                else
+                    prize.put(card.getId(), card);
                 break;
             case discard:
-                discard.put(card.getId(), card);
+                if (addtoBottom) discard = addTopMap(card, discard);
+                else discard.put(card.getId(), card);
                 break;
         }
         fireAddCard(new CardEvent(card, destination, getName(), cardHolderIndex, cardHolderId));
@@ -103,8 +121,18 @@ public class Player {
     }
 
     public Player addCard(Card card, Area destination, String smallCardId) throws Exception {
-        this.addCard(card, destination, -1, smallCardId);
+        this.addCard(card, destination, -1, smallCardId, false);
         return this;
+    }
+
+    private Map<String, Card> addTopMap(Card card, Map<String, Card> map) {
+
+        Map<String, Card> temp = new HashMap<>();
+        temp.put(card.getId(), card);
+        for (Card card1 : map.values())
+            temp.put(card1.getId(), card1);
+        return temp;
+
     }
 
     public List<Card> drawCard(int amount, Area area) throws Exception {
