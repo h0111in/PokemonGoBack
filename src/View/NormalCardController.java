@@ -34,6 +34,17 @@ public class NormalCardController extends GridPane implements IDialog {
     protected Label attack1Cost;
     @FXML
     protected Label attack1Power;
+
+    @FXML
+    protected GridPane attack2;
+    @FXML
+    protected Label attack2Name;
+    @FXML
+    protected Label attack2Description;
+    @FXML
+    protected Label attack2Cost;
+    @FXML
+    protected Label attack2Power;
     @FXML
     protected Button buttonClose;
 
@@ -80,11 +91,36 @@ public class NormalCardController extends GridPane implements IDialog {
                 attack1Power.setText(attack1.getAbility().getActionsPowerText());
                 attack1Cost.setText(attack1.getCostAmount() + "X" + attack1.getCostType());
             }
+            //Attack2
+            if (pokemonCard.getAttackList().size() > 1) {
+                attack2.setVisible(true);
+                attack2.setCursor(Cursor.HAND);
+                Attack atk2 = pokemonCard.getAttackList().get(1);
+                attack2Name.setText(atk2.getAbility().getName());
+
+                attack2Description.setText(atk2.toString());
+                attack2Power.setText(atk2.getAbility().getActionsPowerText());
+                attack2Cost.setText(atk2.getCostAmount() + "X" + atk2.getCostType());
+            }
+
 
         } else if (card instanceof TrainerCard) {
             TrainerCard trainerCard = (TrainerCard) getCard();
             hp.setText(trainerCard.getType());
             attack1Name.setText(trainerCard.getAttack().getAbility().getName());
+
+            this.level.setText(card.getType());
+            level.setVisible(true);
+
+            attack1Description.setText(trainerCard.getAttack().toString());
+            attack1Power.setText(trainerCard.getAttack().getAbility().getActionsPowerText());
+            attack1Cost.setText(trainerCard.getAttack().getCostAmount() + "X" + trainerCard.getAttack().getCostType());
+            attack1.setVisible(true);
+            attack1.setCursor(Cursor.HAND);
+
+        } else if (card instanceof EnergyCard) {
+            this.level.setText(card.getType());
+            level.setVisible(true);
         }
         //endregion
 
