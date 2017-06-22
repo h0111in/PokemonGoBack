@@ -35,16 +35,11 @@ public abstract class BaseAction implements IActionStrategy {
     @Override
     public String toString() {
 
-        String description = name + " with power &power& on target &target& in condition &condition&";
+        String description = null;
         try {
-            description.replace("&power&", String.valueOf(getTotalEffectivePower()));
-        } catch (ScriptException e) {
-            description.replace("&power&", "?");
-        }
-        try {
-            description.replace("&target&", target.name());
+            description = name + " with power " + String.valueOf(getTotalEffectivePower()) + " on target " + target.name() + " in condition &condition&";
         } catch (Exception e) {
-            description.replace("&target&", "?");
+            description = name + (target != null ? " target " + target.name() : "");
         }
 
         return description;
