@@ -100,9 +100,17 @@ public class Player {
                             break;
                         }
                     }
-                if (cardHolderIndex == -1)
+                if (cardHolderIndex == -1) {
+                    for (CardHolder cardHolder : bench) {
+                        logger.info("cardHolder.getId()=> " + cardHolder.getId());
+                        for (String innerCard : cardHolder.getAllCard().keySet()) {
+                            logger.info("    ->" + innerCard);
+                        }
+                    }
+                    logger.info("column Index is not found=>" + card.getId());
+
                     throw new Exception("Bench is full");
-                logger.info(cardHolderIndex + " / " + bench.size());
+                }
 
                 bench.get(cardHolderIndex).add(card);
                 break;
