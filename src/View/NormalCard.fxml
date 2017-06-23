@@ -77,7 +77,7 @@
                   </Label>
                </children>
             </GridPane>
-            <GridPane fx:id="attack2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="270.0" visible="false" GridPane.rowIndex="1">
+            <GridPane fx:id="attack2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleAttack2Clicked" prefHeight="50.0" prefWidth="270.0" visible="false" GridPane.rowIndex="1">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="61.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.5" minWidth="10.0" prefWidth="163.0" />
@@ -124,7 +124,7 @@
                   </Label>
                </children>
             </GridPane>
-            <GridPane fx:id="attack3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="270.0" visible="false" GridPane.rowIndex="2">
+            <GridPane fx:id="attack3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleAttack3Clicked" prefHeight="50.0" prefWidth="270.0" visible="false" GridPane.rowIndex="2">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="10.0" prefWidth="61.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.5" minWidth="10.0" prefWidth="163.0" />

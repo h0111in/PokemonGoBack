@@ -76,7 +76,6 @@
          </children>
         </GridPane>
       <HBox id="handB" fx:id="handB" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-      <HBox id="handA" fx:id="handA" alignment="CENTER" prefHeight="88.0" prefWidth="1085.0" styleClass="a" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6" />
       <StackPane fx:id="deckA" prefHeight="150.0" prefWidth="200.0" styleClass="a" GridPane.columnIndex="3" GridPane.rowIndex="4">
          <children>
             <Label fx:id="deckSizeA" text="0" textFill="#9e0303" StackPane.alignment="TOP_LEFT">
@@ -191,5 +190,6 @@
             <Insets right="5.0" />
          </GridPane.margin>
       </Label>
+      <HBox id="handA" fx:id="handA" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="90.0" prefWidth="1085.0" styleClass="a" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
     </children>
 </fx:root>

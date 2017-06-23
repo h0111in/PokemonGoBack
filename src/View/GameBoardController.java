@@ -9,13 +9,15 @@ import Listeners.PlayerEventListener;
 import Listeners.uiCardEventListener;
 import Model.*;
 import Model.Abilities.IActionStrategy;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DataFormat;
@@ -33,17 +35,21 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import static Controller.Main.logger;
+import static javafx.scene.paint.Color.TRANSPARENT;
 
 public class GameBoardController extends GridPane {
 
     //region fields
+
     private Stage primaryStage;
     private uiCardEventListener cardEventHandler;
     private final EventListenerList listenerList;
     Map<Player, Boolean> players;
+
+    @FXML
+    private HBox handA;
     //endregion
 
     //region constructor
@@ -65,6 +71,7 @@ public class GameBoardController extends GridPane {
         }
 
         this.getStylesheets().add("asset/gameBoard.css");
+
 
         //endregion
 
