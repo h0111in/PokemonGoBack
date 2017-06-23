@@ -86,7 +86,7 @@ public abstract class BaseParser implements IDataLoader {
         List<String> lines = readFile(path + "/" + cardsFileName);
         for (String str : lines) {
 
-            String[] words = str.replace("cat:", "").replace(",", ":").split(":");
+            String[] words = str.replace("cat:", "").replace(",", delimiter).split(":");
             if (words.length > 1) {
                 Card card = factory.getCard(words[1]);
                 card.parse(words, abilities);

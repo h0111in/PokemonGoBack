@@ -1,6 +1,7 @@
 package Model;
 
 import Enums.Area;
+import Enums.CardCategory;
 import Enums.Coin;
 import Listeners.PlayerEventListener;
 
@@ -325,6 +326,16 @@ public class Player {
             int randomIndex = new Random().nextInt(tempCardList.size());
             return tempCardList.get(randomIndex).getId();
         } else return "";
+    }
+
+    public List<Card> getAreaCard(Area area, CardCategory cardCategory) {
+        List<Card> temp = new ArrayList<>();
+        for (Card card : getAreaCard(area)) {
+            if (card.getCategory() == cardCategory)
+                temp.add(card);
+        }
+        return temp;
+
     }
 
     public List<Card> getAreaCard(Area area) {

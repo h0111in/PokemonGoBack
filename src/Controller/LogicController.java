@@ -1,9 +1,6 @@
 package Controller;
 
-import Enums.Area;
-import Enums.Coin;
-import Enums.TriggerTime;
-import Enums.TurnAction;
+import Enums.*;
 import Listeners.LogicEventListener;
 import Listeners.PlayerEventListener;
 import Listeners.uiBoardEventListener;
@@ -12,6 +9,7 @@ import Model.Abilities.Ability;
 import Model.Abilities.Add;
 import Model.Abilities.IActionStrategy;
 import Model.*;
+import Model.Player;
 import javafx.scene.control.Alert;
 
 import javax.swing.event.EventListenerList;
@@ -37,6 +35,7 @@ public class LogicController {
     private final EventListenerList listenerList;
     private Map<Enums.Player, IActionStrategy> actionrequestedList;
     private boolean gameFinished;
+    private int turnCounter = 0;
 
     //endregion
 
@@ -63,7 +62,7 @@ public class LogicController {
     //region Methods
 
     public void startGame() throws Exception {
-
+        firstTurn = true;
 //        fireShowMessage("3", 1);
 //        fireShowMessage("2", 1);
 //        fireShowMessage("1", 1);
@@ -102,19 +101,20 @@ public class LogicController {
         }
 
         //DEFINE FIRST PLAYER
-//        fireShowMessage("Choice a face!", 2);
-        activePlayer = //!fireFlipCoin(Coin.None, -1) ?
-                // Enums.Player.B :
+        fireShowMessage(Alert.AlertType.INFORMATION, "Choice a face!", 1);
+        activePlayer = !fireFlipCoin(Coin.None, -1) ?
+                Enums.Player.B :
                 Enums.Player.A;
 
         startTurn(false);
-        firstTurn = true;
-
     }
 
     private void startTurn(boolean addCard) throws Exception {
+        turnCounter++;
+        firstTurn = turnCounter == 1;
         if (gameFinished)
             return;
+        fireShowMessage(Alert.AlertType.INFORMATION, "Player's " + activePlayer + " turn...", 1);
         for (Enums.Player player : players.keySet())
             if (actionrequestedList.get(player) != null) {
                 if (actionrequestedList.get(player) instanceof Add) {
@@ -136,7 +136,6 @@ public class LogicController {
         if (players.get(activePlayer).isComputer()) {
             playAI();
         }
-        firstTurn = false;
     }
 
     private void playAI() throws Exception {
@@ -193,7 +192,7 @@ public class LogicController {
         //endregion
 
         //region attach stage one to basic card in bench
-        if (turnActions.get(TurnAction.attachStage1CardToBench) == 0) {
+        if (turnActions.get(TurnAction.attachStage1CardToBench) + turnActions.get(TurnAction.attachStage1CardToActive) == 0) {
             List<Card> benchCards = player.getAreaCard(Area.bench);
             for (int i = 0; i < benchCards.size(); i++) {
                 Card benchCard = benchCards.get(i);
@@ -213,7 +212,7 @@ public class LogicController {
         PokemonCard activeCard = player.getActiveCard().getTopCard();
         int totalRequiredEnergy = 0;
         for (Attack attack : activeCard.getAttackList())
-            totalRequiredEnergy += attack.getCostAmount();
+            totalRequiredEnergy += attack.getCostAmount("");
         if (player.getActiveCard().getEnergyCards().size() < totalRequiredEnergy) {
             for (Card card : player.getAreaCard(Area.hand)) {
                 if (card instanceof EnergyCard) {
@@ -233,7 +232,7 @@ public class LogicController {
                 if (benchCard instanceof PokemonCard) {
                     PokemonCard pokemonCard = (PokemonCard) benchCard;
                     if (player.getCardHolder(benchCard.getId()).getEnergyCards() != null
-                            && player.getCardHolder(benchCard.getId()).getEnergyCards().size() < pokemonCard.getTotalRequiredEnergy())
+                            && player.getCardHolder(benchCard.getId()).getEnergyCards().size() < pokemonCard.getHeaviestAttack().getCostAmount(""))
                         for (Card card : player.getAreaCard(Area.hand)) {
                             if (card instanceof EnergyCard) {
                                 player.addCard(player.popCard(card.getId(), ""), Area.bench, benchCard.getId());
@@ -248,23 +247,24 @@ public class LogicController {
         //endregion
 
         //region run trainer
-        if (players.get(getOpponent(activePlayer)).getActiveCard() != null
-                && players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null
-                && players.get(activePlayer).getActiveCard().getTopCard() != null)
-            if (turnActions.get(TurnAction.trainer) == 0) {
-                for (Card handCard : player.getAreaCard(Area.hand)) {
-                    if (handCard instanceof TrainerCard) {
-                        Card trainerCard = player.popCard(handCard.getId(), "");
-                        executeAbility(activePlayer, ((TrainerCard) trainerCard).getAttack().getAbility());
+        if (!firstTurn)
+            if (players.get(getOpponent(activePlayer)).getActiveCard() != null
+                    && players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null
+                    && players.get(activePlayer).getActiveCard().getTopCard() != null)
+                if (turnActions.get(TurnAction.trainer) == 0) {
+                    for (Card handCard : player.getAreaCard(Area.hand)) {
+                        if (handCard instanceof TrainerCard) {
+                            Card trainerCard = player.popCard(handCard.getId(), "");
+                            executeAbility(activePlayer, ((TrainerCard) trainerCard).getAttack().getAbility());
 
-                        players.get(activePlayer).addCard(trainerCard, Area.discard, -1, "", false);
-                        logger.info("trainer card:" + handCard.getName());
+                            players.get(activePlayer).addCard(trainerCard, Area.discard, -1, "", false);
+                            logger.info("trainer card:" + handCard.getName());
 
-                        break;
+                            break;
+                        }
+
                     }
-
                 }
-            }
 
         //endregion
 
@@ -272,37 +272,41 @@ public class LogicController {
         //attack OR retreat?
         //attack?
         //get  opponent active card's health point
-        if (players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null &&
-                players.get(activePlayer).getActiveCard().getTopCard() != null) {
-            Attack bestOpponentAttack = players.get(getOpponent(activePlayer)).getActiveCard().getBestAttack();
-            Attack bestAttack = player.getActiveCard().getBestAttack();
-            logger.info(players.get(getOpponent(activePlayer)).getActiveCard().getId());
-            if (bestAttack != null && bestAttack.getAbility().getActionsPower() >= players.get(getOpponent(activePlayer)).getActiveCard().getTopCard().getHealth()) {
-                //justDoAttack = true;
-                executeAbility(activePlayer, bestAttack.getAbility());
-                logger.info(TurnAction.attack + ":" + activeCard.getName());
 
-            } //check for retreat
-            else if (bestOpponentAttack != null && bestOpponentAttack.getAbility().getActionsPower() >= player.getActiveCard().getTopCard().getHealth()
-                    //justDoRetreat = true;
-                    && player.getAreaCard(Area.bench).size() > 0 &&
-                    player.getActiveCard().getEnergyCards().size() >= player.getActiveCard().getTopCard().getRetreat().getCostAmount()) {
-                executeRetreat(player.getActiveCard().getTopCard(), player.getAreaCard(Area.bench).get(0));
+        if (!firstTurn)
+            if (players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null &&
+                    players.get(activePlayer).getActiveCard().getTopCard() != null) {
+                Attack bestOpponentAttack = players.get(getOpponent(activePlayer)).getActiveCard().getBestAttack();
+                Attack bestAttack = player.getActiveCard().getBestAttack();
+                logger.info(players.get(getOpponent(activePlayer)).getActiveCard().getId());
+                if (bestAttack != null && bestAttack.hasSufficientEnergy(player.getActiveCard().getEnergyCards()) &&
+                        bestAttack.getAbility().getActionsPower() >= players.get(getOpponent(activePlayer)).getActiveCard().getTopCard().getHealth()) {
+                    //justDoAttack = true;
+                    executeAbility(activePlayer, bestAttack.getAbility());
+                    logger.info(TurnAction.attack + ":" + activeCard.getName());
 
-                logger.info(TurnAction.retreat + ":" + activeCard.getName());
-            } else if (bestAttack != null) {//try to attack
+                } //check for retreat
+                else if (bestOpponentAttack != null
+                        && bestOpponentAttack.getAbility().getActionsPower() >= player.getActiveCard().getTopCard().getHealth()
+                        //justDoRetreat = true;
+                        && player.getAreaCard(Area.bench).size() > 0 &&
+                        player.getActiveCard().getTopCard().getRetreat().hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {
+                    executeRetreat(player.getActiveCard().getTopCard(), player.getAreaCard(Area.bench).get(0));
 
-                logger.info(TurnAction.attack + ":" + activeCard.getName());
-                executeAbility(activePlayer, bestAttack.getAbility());
-            } else {//try to retreat
-                if (player.getAreaCard(Area.bench).size() > 0 &&
-                        player.getActiveCard().getEnergyCards().size() >= player.getActiveCard().getTopCard().getRetreat().getCostAmount()) {
+                    logger.info(TurnAction.retreat + ":" + activeCard.getName());
+                } else if (bestAttack != null && bestAttack.hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {//try to attack
 
                     logger.info(TurnAction.attack + ":" + activeCard.getName());
-                    executeRetreat(player.getActiveCard().getTopCard(), player.getAreaCard(Area.bench).get(0));
+                    executeAbility(activePlayer, bestAttack.getAbility());
+                } else {//try to retreat
+                    if (player.getAreaCard(Area.bench).size() > 0 &&
+                            player.getActiveCard().getTopCard().getRetreat().hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {
+
+                        logger.info(TurnAction.attack + ":" + activeCard.getName());
+                        executeRetreat(player.getActiveCard().getTopCard(), player.getAreaCard(Area.bench).get(0));
+                    }
                 }
             }
-        }
         //endregion
 
         //check knockout active Card
@@ -363,51 +367,52 @@ public class LogicController {
 
     private void CheckKnockout() throws Exception {
         logger.info("CHECK KNOCKOUT");
-        for (Enums.Player playerName : players.keySet()) {
 
-            if (players.get(getOpponent(playerName)).getActiveCard() != null &&
-                    players.get(getOpponent(playerName)).getActiveCard().getTopCard() != null &&
-                    players.get(getOpponent(playerName)).getActiveCard().getTopCard().getHealth() <= 0) {
-                logger.info("1");
-                for (String activeCardId : players.get(getOpponent(playerName)).getActiveCard().getAllCard().keySet()) {
-                    players.get(getOpponent(playerName)).addCard(players.get(getOpponent(playerName))
-                                    .popCard(activeCardId, players.get(getOpponent(playerName)).getActiveCard().getId()),
-                            Area.discard, -1, "", false);
-                    logger.info("put " + activeCardId + " on discard");
-                }
-                logger.info("2");
-
-                List<String> selectedCardList = new ArrayList<>();
-                if (players.get(playerName).isComputer()) {
-                    selectedCardList.add(players.get(playerName).getRandomCardId(Area.prize));
-                } else {
-                    fireShowMessage(Alert.AlertType.INFORMATION, "You knockout the your opponent's active card", 1);
-                    fireShowMessage(Alert.AlertType.INFORMATION, "Please select a card from prize area", 1);
-
-
-                    selectedCardList = fireSelectCardRequest("Please select a card", 1,
-                            players.get((playerName)).getAreaCard(Area.prize), false);
-                }
-                logger.info("3");
-
-                for (String cardId : selectedCardList) {
-                    logger.info(playerName + "select prize card :" + cardId);
-                    players.get(playerName)
-                            .addCard(players.get(playerName).popCard(cardId, Area.prize, -1, cardId), Area.hand, "");
-                }
-                logger.info("4");
-
+        if (players.get(getOpponent(activePlayer)).getActiveCard() != null &&
+                players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null &&
+                players.get(getOpponent(activePlayer)).getActiveCard().getTopCard().getHealth() <= 0) {
+            logger.info("1");
+            for (String activeCardId : players.get(getOpponent(activePlayer)).getActiveCard().getAllCard().keySet()) {
+                players.get(getOpponent(activePlayer)).addCard(players.get(getOpponent(activePlayer))
+                                .popCard(activeCardId, players.get(getOpponent(activePlayer)).getActiveCard().getId()),
+                        Area.discard, -1, "", false);
+                logger.info("put " + activeCardId + " on discard");
             }
-            logger.info(players.get(getOpponent(playerName)).getActiveCard().getAllCard().size() + " \r\n" +
-                    players.get(getOpponent(playerName)).getAreaCard(Area.bench).size());
-            if (players.get(getOpponent(playerName)).getActiveCard().getAllCard().size() == 0) {
-                if (players.get(getOpponent(playerName)).getAreaCard(Area.bench).size() <= 0) {
+            logger.info("2");
+
+            List<String> selectedCardList = new ArrayList<>();
+            if (players.get(activePlayer).isComputer()) {
+                selectedCardList.add(players.get(activePlayer).getRandomCardId(Area.prize));
+            } else {
+                fireShowMessage(Alert.AlertType.INFORMATION, "You knockout the your opponent's active card", 1);
+                fireShowMessage(Alert.AlertType.INFORMATION, "Please select a card from prize area", 1);
+
+
+                selectedCardList = fireSelectCardRequest("Please select a card", 1,
+                        players.get((activePlayer)).getAreaCard(Area.prize), false);
+            }
+            logger.info("3");
+
+            for (String cardId : selectedCardList) {
+                logger.info(activePlayer + "select prize card :" + cardId);
+                players.get(activePlayer)
+                        .addCard(players.get(activePlayer).popCard(cardId, Area.prize, -1, cardId), Area.hand, "");
+            }
+            logger.info("4");
+
+        }
+        logger.info(players.get(getOpponent(activePlayer)).getActiveCard().getAllCard().size() + " \r\n" +
+                players.get(getOpponent(activePlayer)).getAreaCard(Area.bench).size());
+
+        if (!firstTurn)
+            if (players.get(getOpponent(activePlayer)).getActiveCard().getAllCard().size() == 0) {
+                if (players.get(getOpponent(activePlayer)).getAreaCard(Area.bench).size() <= 0) {
                     gameFinished = true;
                     //opponent wins the game
-                    fireShowMessage(Alert.AlertType.INFORMATION, "PLAYER " + playerName.name() + " WINS THE GAME", 3);
+                    fireShowMessage(Alert.AlertType.INFORMATION, "PLAYER " + activePlayer.name() + " WINS THE GAME", 3);
                 }
             }
-        }
+
     }
 
     public TurnAction isMovementVerified(Area targetArea, Card targetCard, Card flyCard, Area sourceArea, Card targetStageCard, Enums.Player player) {
@@ -563,6 +568,11 @@ public class LogicController {
         public void doneButtonPressed(Enums.Player player) throws Exception {
             if (gameFinished)
                 return;
+            if (players.get(player).getActiveCard().getTopCard() == null &&
+                    (players.get(player).getAreaCard(Area.bench).size() > 0 || players.get(player).getAreaCard(Area.hand, CardCategory.pokemon).size() > 0)) {
+                fireShowMessage(Alert.AlertType.INFORMATION, "Have a Pokemon in Active Area", 2);
+                return;
+            }
             if (activePlayer == player) {
                 if (activePlayer == Enums.Player.A)
                     activePlayer = Enums.Player.B;
@@ -636,17 +646,20 @@ public class LogicController {
                 //check cost
                 if (card != null && cardHolder != null) {
                     if (card instanceof PokemonCard) {
-                        if (((PokemonCard) card).getAttackList().get(attackIndex).getCostAmount() <= cardHolder.getEnergyCards().size()) {
+                        if (((PokemonCard) card).getAttackList().get(attackIndex).hasSufficientEnergy(cardHolder.getEnergyCards())) {
                             executeAbility(playerName, ((PokemonCard) card).getAttackList().get(attackIndex).getAbility());
                         }
                         turnActions.put(TurnAction.attack, turnActions.get(TurnAction.attack) + 1);
                     } else if (card instanceof TrainerCard) {
 
-                        executeAbility(playerName, ((TrainerCard) card).getAttack().getAbility());
-
-                        //put trainer card into discard area
-                        players.get(playerName).addCard(card, Area.discard, -1, "", false);
                         turnActions.put(TurnAction.trainer, turnActions.get(TurnAction.trainer) + 1);
+
+                        Card trainerCard = players.get(playerName).popCard(card.getId(), "");
+                        executeAbility(playerName, ((TrainerCard) trainerCard).getAttack().getAbility());
+
+                        players.get(playerName).addCard(trainerCard, Area.discard, -1, "", false);
+                        logger.info("trainer card:" + card.getName());
+
                     }
 
                     LogicController.this.CheckKnockout();

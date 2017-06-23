@@ -100,7 +100,7 @@ public class NormalCardController extends GridPane implements IDialog {
 
                 attack1Description.setText(attack1.toString());
                 attack1Power.setText(attack1.getAbility().getActionsPowerText());
-                attack1Cost.setText(attack1.getCostAmount() + "X" + attack1.getCostType());
+                attack1Cost.setText(attack1.getCostString());
             }
 
             //Attack2
@@ -112,7 +112,7 @@ public class NormalCardController extends GridPane implements IDialog {
 
                 attack2Description.setText(atk2.toString());
                 attack2Power.setText(atk2.getAbility().getActionsPowerText());
-                attack2Cost.setText(atk2.getCostAmount() + "X" + atk2.getCostType());
+                attack2Cost.setText(atk2.getCostString());
             }
 
             //Attack3
@@ -123,7 +123,7 @@ public class NormalCardController extends GridPane implements IDialog {
                 attack3Name.setText(atk3.getAbility().getName());
                 attack3Description.setText(atk3.toString());
                 attack3Power.setText(atk3.getAbility().getActionsPowerText());
-                attack3Cost.setText(atk3.getCostAmount() + "X" + atk3.getCostType());
+                attack3Cost.setText(atk3.getCostString());
             }
 
 
@@ -137,7 +137,7 @@ public class NormalCardController extends GridPane implements IDialog {
 
             attack1Description.setText(trainerCard.getAttack().toString());
             attack1Power.setText(trainerCard.getAttack().getAbility().getActionsPowerText());
-            attack1Cost.setText(trainerCard.getAttack().getCostAmount() + "X" + trainerCard.getAttack().getCostType());
+            attack1Cost.setText(trainerCard.getAttack().getCostString());
             attack1.setVisible(true);
             attack1.setCursor(Cursor.HAND);
 

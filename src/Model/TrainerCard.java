@@ -6,6 +6,7 @@ import Listeners.CardEventListener;
 import Model.Abilities.Ability;
 
 import javax.swing.event.EventListenerList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -96,7 +97,7 @@ public class TrainerCard implements Card {
         name = words[0];
         category = CardCategory.valueOf(words[1]);
         type = words[2];
-        attack = new Attack(abilities.get(Integer.parseInt(words[3]) - 1), "", 0);
+        attack = new Attack(abilities.get(Integer.parseInt(words[3]) - 1),new HashMap<>());
 
     }
 

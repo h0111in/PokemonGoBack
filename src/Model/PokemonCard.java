@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 import static Controller.Helper.alert;
+import static Controller.Main.logger;
 
 /**
  * Created by H0111in on 05/20/2017.
@@ -38,6 +39,7 @@ public class PokemonCard implements Card {
     // Glameow 0 :pokemon 1:            basic 2        colorless 3:       60 4:           retreat 5:cat:colorless 6:2 7:attacks 8:cat:colorless 9:1 10:1 11,cat:colorless 12:2 13:2 14
 
     public PokemonCard() {
+        attackList = new ArrayList<>();
         status = ActionStatus.none;
         this.id = "";
         listenerList = new EventListenerList();
@@ -135,35 +137,63 @@ public class PokemonCard implements Card {
     }
 
     public void parse(String[] words, List<Ability> abilities) {
-        List<Attack> attacks = new ArrayList<>();
-        //Ability ability, String costType,int costAmount
-        int j = 0;
         try {
+            int j = 0;
             int i = 0;
+            name = words[0];
+
+            category = CardCategory.valueOf(words[1]);
+
             if (!words[2].equals("basic")) {
-                i++;
                 j++;
             }
-            for (; i + 12 <= words.length && !words[i + 9].isEmpty(); i += 3) {
-                attacks.add(new Attack(abilities.get(Integer.parseInt(words[i + 11]) - 1), words[i + 9], Integer.parseInt(words[i + 10])));
+            level = words[j + 2];
+            type = words[j + 3];
+            hitPoint = Integer.parseInt(words[j + 4]);
+            health = hitPoint;
+            if (words[j + 5].equals("retreat")) {
+                Map<String, Integer> cost = new HashMap<>();
+                cost.put(words[j + 6], Integer.parseInt(words[j + 7]));
+                while (!words[j + 8].equals("attacks") && j + 7 < words.length && !words[j + 7].isEmpty()) {
+                    j += 2;
+                    cost.put(words[j + 6], Integer.parseInt(words[j + 7]));
+                }
+                retreat = new Attack(null, cost);
+            } else j -= 3;
+            for (; i + j + 12 <= words.length && !words[i + j + 9].isEmpty(); i += 3) {
+                try {
+
+                    Map<String, Integer> costList = new HashMap<>();
+                    costList.put(words[i + j + 9], Integer.parseInt(words[i + j + 10]));
+                    while (!tryInt(words[i + j + 11]) && i + j + 10 < words.length && !words[i + j + 10].isEmpty()) {
+                        j += 2;
+                        costList.put(words[i + j + 9], Integer.parseInt(words[i + j + 10]));
+
+                    }
+                    this.attackList.add(new Attack(abilities.get(Integer.parseInt(words[i + j + 11]) - 1), costList));
+                } catch (Exception e) {
+                    e.getStackTrace();
+                    alert(Alert.AlertType.ERROR, words[0]);
+                }
             }
-
         } catch (Exception e) {
-            e.getStackTrace();
-            alert(Alert.AlertType.INFORMATION, words[0]);
+            alert(Alert.AlertType.ERROR, words[0]);
         }
-        name = words[0];
-        category = CardCategory.valueOf(words[1]);
-        level = words[j + 2];
-        type = words[j + 3];
-        hitPoint = Integer.parseInt(words[j + 4]);
-        retreat = new Attack(null, words[j + 6], Integer.parseInt(words[j + 7]));
-        this.attackList = attacks;
 
+    }
+
+    private boolean tryInt(String integerString) {
+        try {
+            Integer.parseInt(integerString);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
 
     }
 
     public int getHealth() {
+        logger.info(playerName.name() + " health " + health);
         return health;
     }
 
@@ -209,28 +239,22 @@ public class PokemonCard implements Card {
     public Map<String, Integer> getRequiredEnergy() {
         Map<String, Integer> outputList = new HashMap<>();
         for (Attack attack : attackList) {
-            String costType = attack.getCostType();
-            boolean found = false;
-            for (String key : outputList.keySet()) {
-                if (costType.equals(key)) {
-                    outputList.put(key, outputList.get(key) + attack.getCostAmount());
-                    found = true;
-                    break;
-                }
+            int found = 0;
+            for (String attackCostType : attack.getCostList().keySet()) {
+                for (String key : outputList.keySet())
+                    if (attackCostType.equals(key)) {
+                        outputList.put(key, outputList.get(key) + attack.getCostAmount(key));
+                        found++;
+                        break;
+                    }
+                if (found == outputList.size())
+                    outputList.put(attackCostType, attack.getCostAmount(attackCostType));
             }
-            if (!found)
-                outputList.put(attack.getCostType(), attack.getCostAmount());
         }
         return outputList;
 
     }
 
-    public int getTotalRequiredEnergy() {
-        int totalRequiredEnergy = 0;
-        for (Attack attack : getAttackList())
-            totalRequiredEnergy += attack.getCostAmount();
-        return totalRequiredEnergy;
-    }
 
     //region Event
     public void addListener(CardEventListener listener) {
@@ -250,5 +274,22 @@ public class PokemonCard implements Card {
 
     public void setPlayerName(Player playerName) {
         this.playerName = playerName;
+    }
+
+    public Attack getHeaviestAttack() {
+        int max = 0;
+        Attack heavyAttack = null;
+        for (Attack attack : attackList) {
+            int totalCost = 0;
+            for (int costAmount : attack.getCostList().values())
+                totalCost += costAmount;
+
+            if (totalCost > max) {
+                max = totalCost;
+                heavyAttack = attack;
+            }
+        }
+        return heavyAttack;
+
     }
 }

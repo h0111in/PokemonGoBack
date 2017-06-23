@@ -19,7 +19,15 @@ public class Search extends BaseAction implements IActionStrategy {
     private String filterType;
     private boolean isUserChoice;
     private String sourceFilterType;
-    private String sourcefilterValue;
+    private String sourceFilterValue;
+
+    public Search() {
+        super();
+        sourceFilterType = "";
+        sourceFilterValue = "";
+        filterType = "";
+        filterValue = "";
+    }
 
     @Override
     public int getTotalEffectivePower() throws ScriptException {
@@ -42,7 +50,7 @@ public class Search extends BaseAction implements IActionStrategy {
         List<Card> areaCard = targetPlayer.getAreaCard(source);
         String basicCardType = "";
         if (!sourceFilterType.isEmpty()) {
-            List<Card> sourceList = getFilteredList(sourceFilterType, sourcefilterValue, Integer.MAX_VALUE, targetPlayer.getAreaCard(Area.hand), "");
+            List<Card> sourceList = getFilteredList(sourceFilterType, sourceFilterValue, Integer.MAX_VALUE, targetPlayer.getAreaCard(Area.hand), "");
             if (sourceList.size() > 0)
                 basicCardType = sourceList.get(0).getType();
         }
@@ -133,7 +141,7 @@ public class Search extends BaseAction implements IActionStrategy {
             sourceFilterType = words[i++];
             if (words[i].equals("cat")) {
                 i++;
-                sourcefilterValue = words[i++];
+                sourceFilterValue = words[i++];
 
             }
 
@@ -151,22 +159,22 @@ public class Search extends BaseAction implements IActionStrategy {
                 sourceFilterType = words[i++];
                 switch (words[i - 1]) {
                     case "cat":
-                        sourcefilterValue = words[i++];
+                        sourceFilterValue = words[i++];
                         break;
                     case "energy":
                         break;
                     case "top":
-                        sourcefilterValue = words[i++];
+                        sourceFilterValue = words[i++];
                         break;
                     case "pokemon":
                         if (words[i].equals("cat")) {
                             i++;//skip 'cat'
-                            sourcefilterValue = words[i++];
+                            sourceFilterValue = words[i++];
                         }
                         break;
                     case "evolves-from":
                         i++;//skip 'target'
-                        sourcefilterValue = words[i++];
+                        sourceFilterValue = words[i++];
                         break;
                     default:
                         throw new Exception("wrong filter type." + words[i]);
