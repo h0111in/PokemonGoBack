@@ -356,7 +356,7 @@ public class Player {
             case bench:
                 List<Card> list = new ArrayList<>();
                 for (CardHolder cardHolder : bench)
-                    if (cardHolder.getTopCard() != null)
+                    if (cardHolder.getAllCard().size() != 0)
                         list.add(cardHolder.getTopCard());
                 return list;
             case active:
