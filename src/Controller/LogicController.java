@@ -114,7 +114,7 @@ public class LogicController {
         firstTurn = turnCounter == 1;
         if (gameFinished)
             return;
-        fireShowMessage(Alert.AlertType.INFORMATION, "Player's " + activePlayer + " turn...", 1);
+        fireShowMessage(Alert.AlertType.INFORMATION, (activePlayer== Enums.Player.A?"User":"Opponent") + "'s turn...", 1);
         for (Enums.Player player : players.keySet())
             if (actionrequestedList.get(player) != null) {
                 if (actionrequestedList.get(player) instanceof Add) {
