@@ -76,7 +76,7 @@ public abstract class BaseParser implements IDataLoader {
 
         }
 
-
+        logger.info("*****************abilities finished*****************");
         return abilities;
     }
 
@@ -93,6 +93,8 @@ public abstract class BaseParser implements IDataLoader {
                 cards.add(card);
             } else if (words[0].equals("#")) cards.add(new PokemonCard());
         }
+        logger.info("*****************cards finished*****************");
+
         return cards;
     }
 

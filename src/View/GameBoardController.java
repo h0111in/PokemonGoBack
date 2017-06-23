@@ -236,6 +236,7 @@ public class GameBoardController extends GridPane {
 
         @Override
         public boolean flipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
+            logger.info("flipCoin - flipping time:" + waitForFlipping);
             return GameBoardController.this.flipCoin(defaultFace,
                     waitForFlipping, primaryStage);
         }
@@ -311,11 +312,22 @@ public class GameBoardController extends GridPane {
                         sourceColumnIndex = Integer.parseInt(source.getParent().getId().substring(source.getParent().getId().length() - 1));
 
                     int targetColumnIndex = -1;
-                    if (targetArea == Area.bench)
-                        targetColumnIndex = Integer.parseInt(((Pane) event.getGestureTarget()).getId().substring(((Pane) event.getGestureTarget()).getId().length() - 1));
-
+                    if (targetArea == Area.bench) {
+                        String area = "";
+                        if (event.getGestureTarget() instanceof SmallCardController)
+                            area = lookup("#" + ((SmallCardController) event.getGestureTarget()).getId()).getParent().getId();
+                        else area = ((Pane) event.getGestureTarget()).getId();
+                        targetColumnIndex = Integer.parseInt(area.replaceAll("\\D+", ""));
+                        logger.info("area" + area);
+                    }
                     List<Card> uiCardList = flyCard.getAllCard();
                     //continue on Logic
+                    logger.info(targetArea.name());
+                    if (targetCard != null)
+                        logger.info(" " + targetCard.getId() + " ");
+                    logger.info(flyCard.getPlayerName().name());
+                    logger.info("target-source indext: " + targetArea + targetColumnIndex + " " + sourceArea + " " + sourceColumnIndex + " ");
+                    logger.info("cardID:" + cardID + " " + uiSmallCardId);
                     fireMoveCard(targetArea, targetCard != null ? targetCard.getMainCard() : null, targetCard != null ? targetCard.getStageCard() : null,
                             flyCard != null ? flyCard.getMainCard() : null, sourceArea, flyCard != null ? flyCard.getPlayerName() : null,
                             uiCardList, targetColumnIndex, sourceColumnIndex, cardID, uiSmallCardId);

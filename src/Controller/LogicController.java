@@ -36,6 +36,7 @@ public class LogicController {
     private Map<TurnAction, Integer> turnActions;
     private final EventListenerList listenerList;
     private Map<Enums.Player, IActionStrategy> actionrequestedList;
+    private boolean gameFinished;
 
     //endregion
 
@@ -112,7 +113,8 @@ public class LogicController {
     }
 
     private void startTurn(boolean addCard) throws Exception {
-
+        if (gameFinished)
+            return;
         for (Enums.Player player : players.keySet())
             if (actionrequestedList.get(player) != null) {
                 if (actionrequestedList.get(player) instanceof Add) {
@@ -138,6 +140,8 @@ public class LogicController {
     }
 
     private void playAI() throws Exception {
+        if (gameFinished)
+            return;
         Player player = players.get(activePlayer);
 
         //region put pokemon in active area from hand
@@ -244,13 +248,16 @@ public class LogicController {
         //endregion
 
         //region run trainer
-        if (players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null &&
-                players.get(activePlayer).getActiveCard().getTopCard() != null)
+        if (players.get(getOpponent(activePlayer)).getActiveCard() != null
+                && players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null
+                && players.get(activePlayer).getActiveCard().getTopCard() != null)
             if (turnActions.get(TurnAction.trainer) == 0) {
                 for (Card handCard : player.getAreaCard(Area.hand)) {
                     if (handCard instanceof TrainerCard) {
                         Card trainerCard = player.popCard(handCard.getId(), "");
-                        executeTrainerCard((TrainerCard) trainerCard);
+                        executeAbility(activePlayer, ((TrainerCard) trainerCard).getAttack().getAbility());
+
+                        players.get(activePlayer).addCard(trainerCard, Area.discard, -1, "", false);
                         logger.info("trainer card:" + handCard.getName());
 
                         break;
@@ -308,18 +315,10 @@ public class LogicController {
     }
 
     private void executeRetreat(Card activeCard, Card benchCard) {
+        if (gameFinished)
+            return;
         //exchange active card with bench card
         //detach energy card to discard area
-    }
-
-    private void executeTrainerCard(TrainerCard trainerCard) throws Exception {
-        Enums.Player player = getPlayerName(trainerCard.getId());
-        //execute card ability
-
-        executeAbility(player, trainerCard.getAttack().getAbility());
-
-        //put trainer card into discard area
-        players.get(player).addCard(trainerCard, Area.discard, -1, "", false);
     }
 
     private Enums.Player getPlayerName(String nodeID) {
@@ -331,7 +330,8 @@ public class LogicController {
     }
 
     public void executeAbility(Enums.Player name, Ability ability) throws Exception {
-
+        if (gameFinished)
+            return;
         ability.action.addListener(new LogicEventListener() {
             @Override
             public Boolean showMessage(Alert.AlertType confirmation, String message, double duration) {
@@ -362,16 +362,20 @@ public class LogicController {
     }
 
     private void CheckKnockout() throws Exception {
-        for (Enums.Player playerName : players.keySet())
-            if (players.get(getOpponent(playerName)).getActiveCard().getTopCard() != null &&
-                    players.get(getOpponent(playerName)).getActiveCard().getTopCard().getHealth() <= 0) {
+        logger.info("CHECK KNOCKOUT");
+        for (Enums.Player playerName : players.keySet()) {
 
+            if (players.get(getOpponent(playerName)).getActiveCard() != null &&
+                    players.get(getOpponent(playerName)).getActiveCard().getTopCard() != null &&
+                    players.get(getOpponent(playerName)).getActiveCard().getTopCard().getHealth() <= 0) {
+                logger.info("1");
                 for (String activeCardId : players.get(getOpponent(playerName)).getActiveCard().getAllCard().keySet()) {
                     players.get(getOpponent(playerName)).addCard(players.get(getOpponent(playerName))
                                     .popCard(activeCardId, players.get(getOpponent(playerName)).getActiveCard().getId()),
                             Area.discard, -1, "", false);
                     logger.info("put " + activeCardId + " on discard");
                 }
+                logger.info("2");
 
                 List<String> selectedCardList = new ArrayList<>();
                 if (players.get(playerName).isComputer()) {
@@ -384,13 +388,26 @@ public class LogicController {
                     selectedCardList = fireSelectCardRequest("Please select a card", 1,
                             players.get((playerName)).getAreaCard(Area.prize), false);
                 }
+                logger.info("3");
+
                 for (String cardId : selectedCardList) {
                     logger.info(playerName + "select prize card :" + cardId);
                     players.get(playerName)
                             .addCard(players.get(playerName).popCard(cardId, Area.prize, -1, cardId), Area.hand, "");
                 }
+                logger.info("4");
 
             }
+            logger.info(players.get(getOpponent(playerName)).getActiveCard().getAllCard().size() + " \r\n" +
+                    players.get(getOpponent(playerName)).getAreaCard(Area.bench).size());
+            if (players.get(getOpponent(playerName)).getActiveCard().getAllCard().size() == 0) {
+                if (players.get(getOpponent(playerName)).getAreaCard(Area.bench).size() <= 0) {
+                    gameFinished = true;
+                    //opponent wins the game
+                    fireShowMessage(Alert.AlertType.INFORMATION, "PLAYER " + playerName.name() + " WINS THE GAME", 3);
+                }
+            }
+        }
     }
 
     public TurnAction isMovementVerified(Area targetArea, Card targetCard, Card flyCard, Area sourceArea, Card targetStageCard, Enums.Player player) {
@@ -506,8 +523,10 @@ public class LogicController {
 
         @Override
         public void MoveCard(Area targetArea, Card targetCard, Card targetStageCard, Card flyCard, Area sourceArea, Enums.Player senderPlayer,
-                             List<Card> uiCardList, int targetColumnIndex, int sourceColumnIndex, String uiCardId, String uiSmallCardId) throws Exception {
-
+                             List<Card> uiCardList, int targetColumnIndex, int sourceColumnIndex, String uiCardId, String uiSmallCardId)
+                throws Exception {
+            if (gameFinished)
+                return;
             TurnAction movementVerified = isMovementVerified(targetArea, targetCard, flyCard, sourceArea, targetStageCard, senderPlayer);
             if (movementVerified == TurnAction.none)
                 return;
@@ -542,7 +561,8 @@ public class LogicController {
 
         @Override
         public void doneButtonPressed(Enums.Player player) throws Exception {
-
+            if (gameFinished)
+                return;
             if (activePlayer == player) {
                 if (activePlayer == Enums.Player.A)
                     activePlayer = Enums.Player.B;
@@ -554,14 +574,14 @@ public class LogicController {
         @Override
         public void showAreaCard(Area area, Enums.Player playerName) throws Exception {
             if (area == Area.discard)
-                fireSelectCardRequest(area.name()
-                                + " area / size : " + players.get(playerName).getAreaCard(area).size() + "cards", 0,
+                fireSelectCardRequest("player " + activePlayer + " " + area.name()
+                                + " area - size : " + players.get(playerName).getAreaCard(area).size() + "cards", 0,
                         players.get(playerName).getAreaCard(area), true);
         }
     };
 
     private boolean checkTurnActions(TurnAction movementVerified) {
-        ;
+
         switch (movementVerified) {
 
             case pokemonToBench:
@@ -601,9 +621,13 @@ public class LogicController {
 
         @Override
         public void attackRequest(Enums.Player playerName, String pokemonCardId, int attackIndex) throws Exception {
-            //no one can send attack unless it is active pokemon or trainer card
-            //and he did not do that before in current turn to do that
-            if (playerName == activePlayer && !firstTurn && !players.get(playerName).isComputer())
+            if (gameFinished)
+                return;
+            if (firstTurn)
+                return;
+            //no card can send attack unless it is active pokemon or trainer card (in activePlayer's hand)
+            //and it just happens during it's turn
+            if (playerName == activePlayer && !players.get(playerName).isComputer())
             //get opponent
             {
                 Card card = players.get(playerName).getCard(pokemonCardId);
@@ -619,6 +643,9 @@ public class LogicController {
                     } else if (card instanceof TrainerCard) {
 
                         executeAbility(playerName, ((TrainerCard) card).getAttack().getAbility());
+
+                        //put trainer card into discard area
+                        players.get(playerName).addCard(card, Area.discard, -1, "", false);
                         turnActions.put(TurnAction.trainer, turnActions.get(TurnAction.trainer) + 1);
                     }
 
@@ -629,7 +656,7 @@ public class LogicController {
                     else activePlayer = Enums.Player.A;
                     startTurn(true);
                 } else
-                    fireShowMessage(Alert.AlertType.WARNING, "Active area is empty", 1);
+                    fireShowMessage(Alert.AlertType.WARNING, "Active area is empty", 2);
             }
         }
 

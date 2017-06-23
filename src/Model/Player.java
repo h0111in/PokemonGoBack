@@ -101,6 +101,8 @@ public class Player {
                     }
                 if (cardHolderIndex == -1)
                     throw new Exception("Bench is full");
+                logger.info(cardHolderIndex + " / " + bench.size());
+
                 bench.get(cardHolderIndex).add(card);
                 break;
             case active:
@@ -335,7 +337,8 @@ public class Player {
             case bench:
                 List<Card> list = new ArrayList<>();
                 for (CardHolder cardHolder : bench)
-                    list.add(cardHolder.getTopCard());
+                    if (cardHolder.getTopCard() != null)
+                        list.add(cardHolder.getTopCard());
                 return list;
             case active:
                 return new ArrayList<>(getActiveCard().getAllCard().values());

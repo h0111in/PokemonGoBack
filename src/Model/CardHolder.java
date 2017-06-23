@@ -99,6 +99,8 @@ public class CardHolder {
     }
 
     public String getId() {
+        if (getTopCard() == null)
+            return "";
         return getTopCard().getId();
     }
 
