@@ -87,6 +87,7 @@ public abstract class BaseAction implements IActionStrategy {
                 targetPlayer = opponent;
 
                 break;
+            case last:
             case yourActive:
                 targetPlayer = player;
                 break;

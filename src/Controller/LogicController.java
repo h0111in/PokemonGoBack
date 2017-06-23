@@ -1,20 +1,25 @@
 package Controller;
 
-import Enums.*;
-import Listeners.uiBoardEventListener;
+import Enums.Area;
+import Enums.Coin;
+import Enums.TriggerTime;
+import Enums.TurnAction;
 import Listeners.LogicEventListener;
 import Listeners.PlayerEventListener;
+import Listeners.uiBoardEventListener;
 import Listeners.uiCardEventListener;
-import Model.*;
 import Model.Abilities.Ability;
 import Model.Abilities.Add;
 import Model.Abilities.IActionStrategy;
-import Model.Player;
+import Model.*;
 import javafx.scene.control.Alert;
 
 import javax.swing.event.EventListenerList;
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static Controller.Main.logger;
 
@@ -102,7 +107,7 @@ public class LogicController {
                 Enums.Player.A;
 
         startTurn(false);
-
+        firstTurn = true;
 
     }
 
@@ -127,11 +132,12 @@ public class LogicController {
         for (TurnAction action : Enums.TurnAction.values())
             turnActions.put(action, 0);
         if (players.get(activePlayer).isComputer()) {
-            playAutomatic();
+            playAI();
         }
+        firstTurn = false;
     }
 
-    private void playAutomatic() throws Exception {
+    private void playAI() throws Exception {
         Player player = players.get(activePlayer);
 
         //region put pokemon in active area from hand
@@ -505,6 +511,13 @@ public class LogicController {
             TurnAction movementVerified = isMovementVerified(targetArea, targetCard, flyCard, sourceArea, targetStageCard, senderPlayer);
             if (movementVerified == TurnAction.none)
                 return;
+            else {
+                turnActions.put(movementVerified, turnActions.get(movementVerified) + 1);
+                if (!checkTurnActions(movementVerified)) {
+                    return;
+                }
+            }
+
             //POP card from Source
             Map<String, Card> cardList = new HashMap<>();
             for (Card card : uiCardList)
@@ -547,36 +560,79 @@ public class LogicController {
         }
     };
 
+    private boolean checkTurnActions(TurnAction movementVerified) {
+        ;
+        switch (movementVerified) {
+
+            case pokemonToBench:
+                //no rules=> always return true
+                return true;
+            case pokemonToActive:
+                if (turnActions.get(TurnAction.pokemonToActive) > 1)
+                    return false;
+            case attachEnergyOnBench:
+            case attachEnergyOnActive:
+                if (turnActions.get(TurnAction.attachEnergyOnActive) + turnActions.get(TurnAction.attachEnergyOnBench) > 1)
+                    return false;
+            case attachStage1CardToActive:
+//                if (firstTurn)
+//                    return false;//attach stage 1 in first turn is forbidden
+                if (turnActions.get(TurnAction.attachStage1CardToActive) > 1)
+                    return false;
+            case attachStage1CardToBench:
+                if (turnActions.get(TurnAction.attachStage1CardToBench) > 5)
+                    return false;
+                break;
+            case retreat:
+
+                break;
+            case attack:
+                break;
+            case trainer:
+                break;
+            case none:
+                break;
+        }
+        return true;
+    }
+
+    boolean firstTurn = true;
     public Listeners.uiCardEventListener uiCardEventListener = new uiCardEventListener() {
 
         @Override
         public void attackRequest(Enums.Player playerName, String pokemonCardId, int attackIndex) throws Exception {
-            if (playerName == activePlayer)
+            //no one can send attack unless it is active pokemon or trainer card
+            //and he did not do that before in current turn to do that
+            if (playerName == activePlayer && !firstTurn && !players.get(playerName).isComputer())
             //get opponent
             {
-                PokemonCard card = (PokemonCard) players.get(playerName).getCard(pokemonCardId);
+                Card card = players.get(playerName).getCard(pokemonCardId);
                 CardHolder cardHolder = players.get(playerName).getCardHolder(pokemonCardId);
 
                 //check cost
-                if (card.getAttackList().get(attackIndex).getCostAmount() <= cardHolder.getEnergyCards().size()) {
+                if (card != null && cardHolder != null) {
+                    if (card instanceof PokemonCard) {
+                        if (((PokemonCard) card).getAttackList().get(attackIndex).getCostAmount() <= cardHolder.getEnergyCards().size()) {
+                            executeAbility(playerName, ((PokemonCard) card).getAttackList().get(attackIndex).getAbility());
+                        }
+                        turnActions.put(TurnAction.attack, turnActions.get(TurnAction.attack) + 1);
+                    } else if (card instanceof TrainerCard) {
 
-                    executeAbility(playerName, card.getAttackList().get(attackIndex).getAbility());
+                        executeAbility(playerName, ((TrainerCard) card).getAttack().getAbility());
+                        turnActions.put(TurnAction.trainer, turnActions.get(TurnAction.trainer) + 1);
+                    }
 
-                }
+                    LogicController.this.CheckKnockout();
 
-                LogicController.this.CheckKnockout();
-
-                if (activePlayer == Enums.Player.A)
-                    activePlayer = Enums.Player.B;
-                else activePlayer = Enums.Player.A;
-                startTurn(true);
+                    if (activePlayer == Enums.Player.A)
+                        activePlayer = Enums.Player.B;
+                    else activePlayer = Enums.Player.A;
+                    startTurn(true);
+                } else
+                    fireShowMessage(Alert.AlertType.WARNING, "Active area is empty", 1);
             }
         }
 
-        @Override
-        public void applyTrainerCardRequest(Enums.Player playerName, String cardId) throws Exception {
-
-        }
 
         @Override
         public boolean showFaceRequest(Enums.Player playerName, String cardId) {

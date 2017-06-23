@@ -11,6 +11,7 @@ import java.util.List;
  * Created by H0111in on 6/4/2017.
  */
 public interface uiBoardEventListener extends EventListener {
+
     int getAreaSize(Enums.Player player, Area area);
 
     void MoveCard(Area targetArea, Card targetCard, Card targetStageCard, Card flyCard, Area sourceArea, Enums.Player senderPlayer,

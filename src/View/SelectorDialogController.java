@@ -56,11 +56,6 @@ public class SelectorDialogController extends GridPane {
                 }
 
                 @Override
-                public void applyTrainerCardRequest(Player playerName, String cardId) throws Exception {
-
-                }
-
-                @Override
                 public boolean showFaceRequest(Player playerName, String cardId) {
                     return showCard;
                 }

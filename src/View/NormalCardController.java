@@ -46,6 +46,16 @@ public class NormalCardController extends GridPane implements IDialog {
     @FXML
     protected Label attack2Power;
     @FXML
+    protected GridPane attack3;
+    @FXML
+    protected Label attack3Name;
+    @FXML
+    protected Label attack3Description;
+    @FXML
+    protected Label attack3Cost;
+    @FXML
+    protected Label attack3Power;
+    @FXML
     protected Button buttonClose;
 
     private Model.Card card;
@@ -80,6 +90,7 @@ public class NormalCardController extends GridPane implements IDialog {
             this.level.setText(pokemonCard.getLevel());
             hp.setVisible(true);
             level.setVisible(true);
+
             //Attack1
             if (pokemonCard.getAttackList().size() > 0) {
                 attack1.setVisible(true);
@@ -91,6 +102,7 @@ public class NormalCardController extends GridPane implements IDialog {
                 attack1Power.setText(attack1.getAbility().getActionsPowerText());
                 attack1Cost.setText(attack1.getCostAmount() + "X" + attack1.getCostType());
             }
+
             //Attack2
             if (pokemonCard.getAttackList().size() > 1) {
                 attack2.setVisible(true);
@@ -101,6 +113,17 @@ public class NormalCardController extends GridPane implements IDialog {
                 attack2Description.setText(atk2.toString());
                 attack2Power.setText(atk2.getAbility().getActionsPowerText());
                 attack2Cost.setText(atk2.getCostAmount() + "X" + atk2.getCostType());
+            }
+
+            //Attack3
+            if (pokemonCard.getAttackList().size() > 2) {
+                attack3.setVisible(true);
+                attack3.setCursor(Cursor.HAND);
+                Attack atk3 = pokemonCard.getAttackList().get(2);
+                attack3Name.setText(atk3.getAbility().getName());
+                attack3Description.setText(atk3.toString());
+                attack3Power.setText(atk3.getAbility().getActionsPowerText());
+                attack3Cost.setText(atk3.getCostAmount() + "X" + atk3.getCostType());
             }
 
 

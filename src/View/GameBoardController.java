@@ -125,11 +125,6 @@ public class GameBoardController extends GridPane {
                         }
 
                         @Override
-                        public void applyTrainerCardRequest(Player playerName, String cardId) throws Exception {
-
-                        }
-
-                        @Override
                         public boolean showFaceRequest(Player playerName, String cardId) {
                             return false;
                         }
@@ -233,9 +228,9 @@ public class GameBoardController extends GridPane {
 
     public LogicEventListener logicEventListener = new LogicEventListener() {
         @Override
-        public Boolean showMessage(Alert.AlertType alertType,String message, double duration) {
+        public Boolean showMessage(Alert.AlertType alertType, String message, double duration) {
 
-            return popup(new MessageDialogController(alertType,message, duration, Color.GRAY), primaryStage);
+            return popup(new MessageDialogController(alertType, message, duration, Color.GRAY), primaryStage);
 
         }
 
@@ -398,15 +393,14 @@ public class GameBoardController extends GridPane {
     public static boolean popup(IDialog dialog, Stage primaryStage) {
 
         Stage stage = new Stage(StageStyle.UNDECORATED);
-        stage.setScene(new Scene((Pane)dialog));
+        stage.setScene(new Scene((Pane) dialog));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.setIconified(false);
         stage.initOwner(primaryStage);
         stage.showAndWait();
-        return dialog.getResult()== ButtonType.YES;
+        return dialog.getResult() == ButtonType.YES;
     }
-
 
 
     public boolean flipCoin(Coin defaultFace, double waitForFlipping, Stage primaryStage) throws URISyntaxException {
