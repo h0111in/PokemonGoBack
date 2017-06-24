@@ -665,7 +665,7 @@ public class LogicController {
         @Override
         public void showAreaCard(Area area, Enums.Player playerName) throws Exception {
             if (area == Area.discard)
-                fireSelectCardRequest("player " + activePlayer + " " + area.name()
+                fireSelectCardRequest("player " + playerName + " " + area.name()
                                 + " area - size : " + players.get(playerName).getAreaCard(area).size() + "cards", 0,
                         players.get(playerName).getAreaCard(area), true);
         }
@@ -726,9 +726,9 @@ public class LogicController {
                 CardHolder cardHolder = players.get(playerName).getCardHolder(pokemonCardId);
 
                 //check cost
-                if (card != null && cardHolder != null) {
+                if (card != null) {
                     boolean result = false;
-                    if (card instanceof PokemonCard) {
+                    if (card instanceof PokemonCard && cardHolder != null) {
                         if (attackIndex == -1) {//retreat
                             logger.info(playerName + " :" + card.getId() + " " + TurnAction.retreat);
                             if (((PokemonCard) card).getRetreat().hasSufficientEnergy(cardHolder.getEnergyCards())) {
@@ -780,7 +780,7 @@ public class LogicController {
                         startTurn(true);
                     }
                 } else
-                    fireShowMessage(Alert.AlertType.WARNING, "Active area is empty", 2);
+                    fireShowMessage(Alert.AlertType.WARNING, "Card is not found.", 2);
             }
         }
 

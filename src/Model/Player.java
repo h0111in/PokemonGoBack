@@ -427,16 +427,19 @@ public class Player {
 
     public void swapCardHolder(CardHolder cardHolder1, CardHolder cardHolder2, Area area1, Area area2) throws Exception {
 
-        Card topCard1 = popCard(cardHolder1.getId(), "");
         List<Card> cards1 = new ArrayList<>();
         for (Card card : cardHolder1.getAllCard().values()) {
-            cards1.add(popCard(card.getId(), topCard1.getId()));
+            if (!cardHolder1.getId().equals(card.getId()))
+                cards1.add(popCard(card.getId(), cardHolder1.getId()));
         }
-        Card topCard2 = popCard(cardHolder2.getId(), "");
+        Card topCard1 = popCard(cardHolder1.getId(), "");
+
         List<Card> cards2 = new ArrayList<>();
         for (Card card : cardHolder2.getAllCard().values()) {
-            cards2.add(popCard(card.getId(), topCard2.getId()));
+            if (!cardHolder2.getId().equals(card.getId()))
+                cards2.add(popCard(card.getId(), cardHolder2.getId()));
         }
+        Card topCard2 = popCard(cardHolder2.getId(), "");
         addCard(topCard1, area2, -1, "");
         for (Card card : cards1)
             addCard(card, area2, -1, topCard1.getId());
