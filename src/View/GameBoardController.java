@@ -138,6 +138,7 @@ public class GameBoardController extends GridPane {
 
                         @Override
                         public void cardClicked(String cardId) {
+                            logger.info("sender" + cardId + " evt :" + evt.getCard().getId());
                             Node node = lookup("#" + cardId);
                             if (node != null && node.getParent() != null) {
                                 try {
@@ -151,7 +152,7 @@ public class GameBoardController extends GridPane {
                     smallCard.showFace();
 
                     //endregion
-
+                    logger.info("evt :Area " + evt.getArea() + " - ID: " + evt.getCard().getId() + " - smallCardId: " + evt.getSmallCardId() + " - columnIndex:" + evt.getCardHolderIndex());
                     //region push card
                     switch (evt.getArea()) {
 
@@ -168,6 +169,7 @@ public class GameBoardController extends GridPane {
 
                             break;
                         case active:
+
                             ((Pane) GameBoardController.this.lookup("#" + evt.getArea() + evt.getPlayerName())).getChildren().add(smallCard);
                             break;
                         case prize:
@@ -180,8 +182,13 @@ public class GameBoardController extends GridPane {
                     //endregion
 
                 } else
-                    //region push into another UIControls
+                //region push into another UIControls
+                {
+                    logger.info("evt :Area " + evt.getArea() + " - ID: " + evt.getCard().getId() + " - smallCardId: " + evt.getSmallCardId() + " - columnIndex:" + evt.getCardHolderIndex());
+
                     ((SmallCardController) GameBoardController.this.lookup("#" + evt.getSmallCardId())).push(evt.getCard());//endregion
+
+                }
 
                 //region update card list size in UI
                 if (evt.getArea() == Area.hand || evt.getArea() == Area.discard || evt.getArea() == Area.active || evt.getArea() == Area.deck)
@@ -198,6 +205,7 @@ public class GameBoardController extends GridPane {
         public void popCard(CardEvent evt) throws Exception {
 
             Pane area = null;
+            logger.info("evt :Area " + evt.getArea() + " - ID: " + evt.getCard().getId() + " - smallCardId: " + evt.getSmallCardId() + " - columnIndex:" + evt.getCardHolderIndex());
 
             //region update size
             if (evt.getArea() == Area.hand || evt.getArea() == Area.discard || evt.getArea() == Area.active || evt.getArea() == Area.deck)
@@ -215,7 +223,6 @@ public class GameBoardController extends GridPane {
             if (evt.getSmallCardId().length() != 0)
             //region pop from another card
             {
-
                 // pop card
                 ((SmallCardController) area.lookup("#" + evt.getSmallCardId())).pop(evt.getCard().getId());
 

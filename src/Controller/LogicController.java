@@ -285,7 +285,8 @@ public class LogicController {
                 if (benchCard instanceof PokemonCard) {
                     PokemonCard pokemonCard = (PokemonCard) benchCard;
                     if (player.getCardHolder(benchCard.getId()).getEnergyCards() != null
-                            && player.getCardHolder(benchCard.getId()).getEnergyCards().size() < pokemonCard.getHeaviestAttack().getCostAmount(""))
+                            && player.getCardHolder(benchCard.getId()).getEnergyCards().size()
+                            < pokemonCard.getHeaviestAttack().getCostAmount(""))
                         for (Card card : player.getAreaCard(Area.hand)) {
                             if (card instanceof EnergyCard) {
                                 player.addCard(player.popCard(card.getId(), ""), Area.bench, benchCard.getId());
@@ -394,11 +395,12 @@ public class LogicController {
         while (selectedCard.size() != 1);
         //move energy cards into discard
         List<EnergyCard> energyCards = players.get(activePlayer).getActiveCard().getEnergyCards();
+
         for (int i = 0; i < retreat.getCostAmount(""); i++) {
-            EnergyCard card = energyCards.get(i);
-            player.addCard(player.getActiveCard().pop(card.getId()), Area.discard, -1, player.getActiveCard().getId());
+            EnergyCard card = energyCards.get(0);
+            player.addCard(player.popCard(card.getId(), player.getActiveCard().getId()), Area.discard, -1, "");
         }
-        player.swapCardHolder(player.getActiveCard(), player.getCardHolder(selectedCard.get(0)), Area.active, Area.bench);
+        player.swapCardHolder(player.getCardHolder(player.getActiveCard().getId()), player.getCardHolder(selectedCard.get(0)), Area.active, Area.bench);
 
         return true;
     }
@@ -620,7 +622,8 @@ public class LogicController {
                     return;
                 }
             }
-
+            logger.info("Move card " + uiCardId + " from " + sourceArea + ", to "
+                    + targetArea + (targetCard != null ? "(" + uiSmallCardId + ")" : ""));
             //POP card from Source
             Map<String, Card> cardList = new HashMap<>();
             for (Card card : uiCardList)
@@ -730,6 +733,7 @@ public class LogicController {
                         if (attackIndex == -1) {//retreat
                             logger.info(playerName + " :" + card.getId() + " " + TurnAction.retreat);
                             if (((PokemonCard) card).getRetreat().hasSufficientEnergy(cardHolder.getEnergyCards())) {
+                                logger.info("retreatCostList: " + ((PokemonCard) card).getRetreat().getCostAmount("") + " / " + cardHolder.getEnergyCards().size());
                                 if (!attackRetreatRestricted && !retreatRestricted) {
                                     if (executeRetreat(playerName, ((PokemonCard) card).getRetreat())) {
                                         logger.info(activePlayer + ": " + TurnAction.attack + ":" + card.getName());
@@ -804,7 +808,7 @@ public class LogicController {
 
         @Override
         public void cardClicked(String cardId) {
-
+            logger.info(cardId);
         }
 
     };

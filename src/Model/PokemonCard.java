@@ -193,7 +193,6 @@ public class PokemonCard implements Card {
     }
 
     public int getHealth() {
-        logger.info(playerName.name() + " health " + health);
         return health;
     }
 

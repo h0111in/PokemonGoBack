@@ -2,6 +2,7 @@ package Model;
 
 import Model.Abilities.Ability;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -52,12 +53,21 @@ public class Attack {
     }
 
     public boolean hasSufficientEnergy(List<EnergyCard> energyCards) {
+        List<String> energyCardTypes = new ArrayList<>();
+        for (Card cardType : energyCards) {
+            energyCardTypes.add(cardType.getType());
+        }
         for (String key : costList.keySet()) {
             int subTotal = 0;
-            {
-                for (EnergyCard energyCard : energyCards)
-                    if (energyCard.getType().equals(key) || key.equals("colorless") || energyCard.getType().equals("colorless"))
-                        subTotal++;
+            for (int i = 0; i < energyCardTypes.size(); i++) {
+                String energyCard = energyCardTypes.get(i);
+                if (energyCard.equals(key) || key.equals("colorless") || energyCard.equals("colorless")) {
+                    subTotal++;
+                    energyCardTypes.remove(i);
+                    i--;
+                    if (subTotal == costList.get(key))
+                        break;
+                }
             }
             if (subTotal < costList.get(key))
                 return false;

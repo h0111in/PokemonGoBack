@@ -77,6 +77,8 @@ public class Player {
     }
 
     public Player addCard(Card card, Area destination, int cardHolderIndex, String cardHolderId, boolean addtoBottom) throws Exception {
+        logger.info(card.getId() + " Area : " + destination + " columnIndex: " + cardHolderIndex + " uiHolderId: " + cardHolderId);
+
         switch (destination) {
             case deck:
                 if (card.getId().equals("")) {
@@ -93,18 +95,24 @@ public class Player {
                     hand.put(card.getId(), card);
                 break;
             case bench:
-                if (cardHolderIndex == -1)
+                if (cardHolderIndex == -1) {
+
                     for (int i = 0; i < bench.size(); i++) {
-                        if (bench.get(i).getAllCard().size() == 0) {
+                        if (!cardHolderId.isEmpty()) {
+                            if (cardHolderId.equals(bench.get(i).getId()))
+                                cardHolderIndex = i;
+                            break;
+                        } else if (bench.get(i).getAllCard().size() == 0) {
                             cardHolderIndex = i;
                             break;
                         }
                     }
+                }
                 if (cardHolderIndex == -1) {
                     for (CardHolder cardHolder : bench) {
                         logger.info("cardHolder.getId()=> " + cardHolder.getId());
-                        for (String innerCard : cardHolder.getAllCard().keySet()) {
-                            logger.info("    ->" + innerCard);
+                        for (Card innerCard : cardHolder.getAllCard().values()) {
+                            logger.info("    ->" + innerCard.getName() + " " + innerCard.getCategory() + " " + innerCard.getId());
                         }
                     }
                     logger.info("column Index is not found=>" + card.getId());
@@ -213,11 +221,14 @@ public class Player {
                 card = hand.get(id);
                 break;
             case bench:
-                for (CardHolder cardHolder : bench)
+                for (int i = 0; i < bench.size(); i++) {
+                    CardHolder cardHolder = bench.get(i);
                     if (cardHolder.getAllCard().containsKey(id)) {
                         card = cardHolder.getCard(id);
+
                         break;
                     }
+                }
                 break;
             case active:
                 card = active.getCard(id);
@@ -277,8 +288,21 @@ public class Player {
     }
 
     public Card popCard(String id, Area area, int cardHolderIndex, String cardHolderId) throws Exception {
+
         Card card = getCard(id, area);
-        logger.info(id);
+        logger.info(id + " Area : " + area + " columnIndex: " + cardHolderIndex + " uiHolderId: " + cardHolderId);
+        if (cardHolderIndex == -1 && area == Area.bench)
+            for (int i = 0; i < bench.size(); i++) {
+                CardHolder cardHolder = bench.get(i);
+                if (cardHolder.getAllCard().containsKey(id)) {
+                    cardHolderIndex = i;
+                    if (cardHolderId.isEmpty() && !id.equals(cardHolder.getId()))
+                        cardHolderId = cardHolder.getId();
+                    break;
+                }
+            }
+
+
         removeCard(id, area);
         fireRemoveCard(new CardEvent(card, area, getName(), cardHolderIndex, cardHolderId));
         return card;
@@ -401,12 +425,12 @@ public class Player {
 
     public void swapCardHolder(CardHolder cardHolder1, CardHolder cardHolder2, Area area1, Area area2) throws Exception {
 
-        Card topCard1 = cardHolder1.pop(cardHolder1.getId());
+        Card topCard1 = popCard(cardHolder1.getId(), "");
         List<Card> cards1 = new ArrayList<>();
         for (Card card : cardHolder1.getAllCard().values()) {
             cards1.add(popCard(card.getId(), topCard1.getId()));
         }
-        Card topCard2 = cardHolder2.pop(cardHolder2.getId());
+        Card topCard2 = popCard(cardHolder2.getId(), "");
         List<Card> cards2 = new ArrayList<>();
         for (Card card : cardHolder2.getAllCard().values()) {
             cards2.add(popCard(card.getId(), topCard2.getId()));
