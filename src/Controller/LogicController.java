@@ -14,10 +14,7 @@ import javafx.scene.control.Alert;
 
 import javax.swing.event.EventListenerList;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static Controller.Main.logger;
 
@@ -175,7 +172,9 @@ public class LogicController {
                         // It must also be turned to the left.
                         // After each turn, if a player's Pokémon is Asleep, the player must flip a coin: if heads,
                         // the Asleep Pokémon "wakes up" and is no longer affected by the Special Condition.
-                        if (fireFlipCoin(Coin.Head, -1)) {
+                        if (!players.get(activePlayer).isComputer() ?
+                                fireFlipCoin(Coin.Head, -1) :
+                                new Random().nextBoolean()) {
                             activeCard.setStatus(Status.none);
                         } else {
                             attackRetreatRestricted = true;
@@ -226,7 +225,7 @@ public class LogicController {
 
         //region attach stage one to basic card in active area
         if (turnActions.get(TurnAction.attachStage1CardToActive) == 0) {
-            if (player.getActiveCard() != null)
+            if (player.getActiveCard() != null && player.getActiveCard().getTopCard() != null)
                 if (player.getActiveCard().getTopCard().getType().equals("basic")) {
                     for (Card handCard : player.getAreaCard(Area.hand)) {
                         if (handCard instanceof PokemonCard && !((PokemonCard) handCard).getLevel().equals("basic")
@@ -261,19 +260,21 @@ public class LogicController {
 //endregion
 
         //region if(active pokemon needs energy)=> attach energy
-        PokemonCard activeCard = player.getActiveCard().getTopCard();
-        int totalRequiredEnergy = 0;
-        for (Attack attack : activeCard.getAttackList())
-            totalRequiredEnergy += attack.getCostAmount("");
-        if (player.getActiveCard().getEnergyCards().size() < totalRequiredEnergy) {
-            for (Card card : player.getAreaCard(Area.hand)) {
-                if (card instanceof EnergyCard) {
+        if (player.getActiveCard() != null && player.getActiveCard().getTopCard() != null) {
+            PokemonCard activeCard = player.getActiveCard().getTopCard();
+            int totalRequiredEnergy = 0;
+            for (Attack attack : activeCard.getAttackList())
+                totalRequiredEnergy += attack.getCostAmount("");
+            if (player.getActiveCard().getEnergyCards().size() < totalRequiredEnergy) {
+                for (Card card : player.getAreaCard(Area.hand)) {
+                    if (card instanceof EnergyCard) {
 
-                    player.addCard(player.popCard(card.getId(), ""), Area.active, activeCard.getId());
-                    turnActions.put(TurnAction.attachEnergyOnActive, turnActions.get(TurnAction.attachEnergyOnActive) + 1);
-                    logger.info(TurnAction.attachEnergyOnActive + ":" + card.getName());
+                        player.addCard(player.popCard(card.getId(), ""), Area.active, activeCard.getId());
+                        turnActions.put(TurnAction.attachEnergyOnActive, turnActions.get(TurnAction.attachEnergyOnActive) + 1);
+                        logger.info(TurnAction.attachEnergyOnActive + ":" + card.getName());
 
-                    break;
+                        break;
+                    }
                 }
             }
         }
@@ -329,6 +330,8 @@ public class LogicController {
         if (!firstTurn)
             if (players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null &&
                     players.get(activePlayer).getActiveCard().getTopCard() != null) {
+
+                PokemonCard activeCard = player.getActiveCard().getTopCard();
                 Attack bestOpponentAttack = players.get(getOpponent(activePlayer)).getActiveCard().getBestAttack();
                 Attack bestAttack = player.getActiveCard().getBestAttack();
                 logger.info(players.get(getOpponent(activePlayer)).getActiveCard().getId());
@@ -387,11 +390,14 @@ public class LogicController {
         Player player = players.get(activePlayer);
         //exchange active card with bench card
         List<String> selectedCard = new ArrayList<>();
-        do {
-            selectedCard = fireSelectCardRequest("Select a card to be swapped by active card", 1,
-                    players.get(activePlayer).getAreaCard(Area.bench), true);
-        }
-        while (selectedCard.size() != 1);
+        if (player.isComputer())
+            selectedCard.add(player.getRandomCardId(Area.bench));
+        else
+            do {
+                selectedCard = fireSelectCardRequest("Select a card to be swapped by active card", 1,
+                        players.get(activePlayer).getAreaCard(Area.bench), true);
+            }
+            while (selectedCard.size() != 1);
         //move energy cards into discard
         List<EnergyCard> energyCards = players.get(activePlayer).getActiveCard().getEnergyCards();
 
@@ -544,11 +550,13 @@ public class LogicController {
                         else {
                             switch (flyCard.getCategory()) {
                                 case pokemon:
-                                    movementVerified = true;
-                                    if (targetArea == Area.active)
-                                        turnAction = TurnAction.pokemonToActive;
-                                    else if (targetArea == Area.bench)
-                                        turnAction = TurnAction.pokemonToBench;
+                                    if (((PokemonCard) flyCard).getLevel().equals("basic")) {
+                                        movementVerified = true;
+                                        if (targetArea == Area.active)
+                                            turnAction = TurnAction.pokemonToActive;
+                                        else if (targetArea == Area.bench)
+                                            turnAction = TurnAction.pokemonToBench;
+                                    }
                                     break;
                                 case trainer:
                                     //push to no where // uc1-15
