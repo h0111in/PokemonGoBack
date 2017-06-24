@@ -91,10 +91,10 @@ public class CardHolder {
     public Map<String, Card> getAllCard() {
         Map<String, Card> output = new HashMap<>();
         for (Card eCard : energyCards) output.put(eCard.getId(), eCard);
-        if (basicCard != null)
-            output.put(getBasicCard().getId(), getBasicCard());
         if (stageOneCard != null)
             output.put(getStageOneCard().getId(), getStageOneCard());
+        if (basicCard != null)
+            output.put(getBasicCard().getId(), getBasicCard());
         return output;
     }
 

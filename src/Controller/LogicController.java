@@ -458,12 +458,18 @@ public class LogicController {
                 players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null &&
                 players.get(getOpponent(activePlayer)).getActiveCard().getTopCard().getHealth() <= 0) {
             logger.info("1");
+
+            String opponentActiveId = players.get(getOpponent(activePlayer)).getActiveCard().getId();
             for (String activeCardId : players.get(getOpponent(activePlayer)).getActiveCard().getAllCard().keySet()) {
-                players.get(getOpponent(activePlayer)).addCard(players.get(getOpponent(activePlayer))
-                                .popCard(activeCardId, players.get(getOpponent(activePlayer)).getActiveCard().getId()),
-                        Area.discard, -1, "", false);
-                logger.info("put " + activeCardId + " on discard");
+                if (!activeCardId.equals(opponentActiveId)) {
+                    players.get(getOpponent(activePlayer)).addCard(players.get(getOpponent(activePlayer))
+                                    .popCard(activeCardId, players.get(getOpponent(activePlayer)).getActiveCard().getId()),
+                            Area.discard, -1, "", false);
+                    logger.info("put " + activeCardId + " on discard");
+                }
             }
+            players.get(getOpponent(activePlayer)).addCard(players.get(getOpponent(activePlayer))
+                    .popCard(opponentActiveId, ""), Area.discard, -1, "", false);
             logger.info("2");
 
             List<String> selectedCardList = new ArrayList<>();
