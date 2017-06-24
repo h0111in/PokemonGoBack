@@ -1,6 +1,6 @@
 package Model.Abilities;
 
-import Enums.ActionStatus;
+import Enums.Status;
 import Model.Player;
 
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class DeState extends BaseAction implements IActionStrategy {
 
-    private ActionStatus status;
+    private Status status;
 
     @Override
     public boolean fight(Player player, Player opponent) throws Exception {
@@ -25,7 +25,7 @@ public class DeState extends BaseAction implements IActionStrategy {
         name = words[i++].replace("(", "");
         i++;//skip 'target'
         target = toTarget(words[i++]);
-        status = ActionStatus.none;
+        status = Status.none;
 
         if (i < words.length)
             return Arrays.copyOfRange(words, i, words.length);

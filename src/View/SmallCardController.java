@@ -96,9 +96,6 @@ public class SmallCardController extends GridPane {
                 try {
                     fireCardClicked(card.getId());
 
-                    logger.info("handle from code");
-                    logger.info(card.getId() + card.getName());
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -122,12 +119,12 @@ public class SmallCardController extends GridPane {
                 stage.setIconified(false);
                 stage.initOwner(getScene().getWindow());
                 stage.showAndWait();
-                if (normalCard.attackIndex >= 0)
-                    try {
+                try {
+                    if (normalCard.attackIndex > -2)
                         fireAttack(playerName, getId(), normalCard.attackIndex);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         e0.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -253,7 +250,34 @@ public class SmallCardController extends GridPane {
                         }
                     }
                 }
-                updateView();
+                switch (property) {
+                    case "status":
+                        if (card instanceof PokemonCard) {
+                            switch (((PokemonCard) card).getStatus()) {
+
+                                case none:
+                                    setRotate(0);
+                                    break;
+                                case paralyzed:
+                                    setRotate(45);
+                                    break;
+                                case stuck:
+                                    break;
+                                case poisoned:
+                                    setRotate(0);
+                                    break;
+                                case asleep:
+                                    setRotate(-45);
+                                    break;
+                            }
+                        }
+                        break;
+                    default:
+
+                        updateView();
+                        break;
+                }
+
             }
         });
         //place card

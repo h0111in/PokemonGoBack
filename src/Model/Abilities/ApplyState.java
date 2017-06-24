@@ -1,6 +1,6 @@
 package Model.Abilities;
 
-import Enums.ActionStatus;
+import Enums.Status;
 import Model.Player;
 
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class ApplyState extends BaseAction implements IActionStrategy {
 
-    private ActionStatus status;
+    private Status status;
 
     @Override
     public boolean fight(Player player, Player opponent) throws Exception {

@@ -36,6 +36,8 @@ public class LogicController {
     private Map<Enums.Player, IActionStrategy> actionrequestedList;
     private boolean gameFinished;
     private int turnCounter = 0;
+    private boolean retreatRestricted;
+    private boolean attackRetreatRestricted;
 
     //endregion
 
@@ -110,13 +112,20 @@ public class LogicController {
     }
 
     private void startTurn(boolean addCard) throws Exception {
+        attackRetreatRestricted = false;
+        retreatRestricted = false;
         turnCounter++;
         firstTurn = turnCounter == 1;
         if (gameFinished)
             return;
-        fireShowMessage(Alert.AlertType.INFORMATION, (activePlayer== Enums.Player.A?"User":"Opponent") + "'s turn...", 1);
-        for (Enums.Player player : players.keySet())
-            if (actionrequestedList.get(player) != null) {
+
+
+        fireShowMessage(Alert.AlertType.INFORMATION, (activePlayer == Enums.Player.A ? "User" : "Opponent") + "'s turn...", 1);
+        for (
+                Enums.Player player : players.keySet())
+            if (actionrequestedList.get(player) != null)
+
+            {
                 if (actionrequestedList.get(player) instanceof Add) {
                     if (((((Add) actionrequestedList.get(player)).getTriggerTime() == TriggerTime.your_turn_start ||
                             ((Add) actionrequestedList.get(player)).getTriggerTime() == TriggerTime.opponent_turn_end) &&
@@ -133,9 +142,52 @@ public class LogicController {
             players.get(activePlayer).addCard(players.get(activePlayer).drawCard(1, Area.deck), Area.hand, -1, "");
         for (TurnAction action : Enums.TurnAction.values())
             turnActions.put(action, 0);
-        if (players.get(activePlayer).isComputer()) {
-            playAI();
+
+        //region check State
+        if (players.get(activePlayer).getActiveCard().getTopCard() != null) {
+            PokemonCard activeCard = (PokemonCard) players.get(activePlayer).getActiveCard().getTopCard();
+            if (activeCard.getStatus() != Status.none) {
+
+                fireShowMessage(Alert.AlertType.INFORMATION,
+                        (activePlayer == Enums.Player.A ? "User " : "Opponent") + "is " + activeCard.getStatus().name(), 1.5);
+                switch (activeCard.getStatus()) {
+                    case none://nothing to do..
+                        break;
+                    case paralyzed:
+                        activeCard.setStatus(Status.none);
+                        if (activePlayer == Enums.Player.A)
+                            activePlayer = Enums.Player.B;
+                        else activePlayer = Enums.Player.A;
+                        startTurn(true);
+                        return;
+                    case stuck:
+                        //Pokemon can not retreat during this turn
+                        activeCard.setStatus(Status.none);
+                        retreatRestricted = true;
+                        break;
+                    case poisoned:
+                        //
+                        //one damage counter must be put on the Pokémon in between each turn.
+                        activeCard.addDamage(1);
+
+                        break;
+                    case asleep: //it cannot attack or retreat by itself.
+                        // It must also be turned to the left.
+                        // After each turn, if a player's Pokémon is Asleep, the player must flip a coin: if heads,
+                        // the Asleep Pokémon "wakes up" and is no longer affected by the Special Condition.
+                        if (fireFlipCoin(Coin.Head, -1)) {
+                            activeCard.setStatus(Status.none);
+                        } else {
+                            attackRetreatRestricted = true;
+                        }
+                        break;
+                }
+            }
         }
+//endregion
+        if (players.get(activePlayer).isComputer())
+            playAI();
+
     }
 
     private void playAI() throws Exception {
@@ -283,8 +335,11 @@ public class LogicController {
                 if (bestAttack != null && bestAttack.hasSufficientEnergy(player.getActiveCard().getEnergyCards()) &&
                         bestAttack.getAbility().getActionsPower() >= players.get(getOpponent(activePlayer)).getActiveCard().getTopCard().getHealth()) {
                     //justDoAttack = true;
-                    executeAbility(activePlayer, bestAttack.getAbility());
-                    logger.info(TurnAction.attack + ":" + activeCard.getName());
+                    if (!attackRetreatRestricted) {
+                        executeAbility(activePlayer, bestAttack.getAbility());
+                        logger.info(activePlayer + ": " + TurnAction.attack + ":" + activeCard.getName());
+                    } else
+                        logger.info("AI can not attack due to restriction");
 
                 } //check for retreat
                 else if (bestOpponentAttack != null
@@ -292,19 +347,26 @@ public class LogicController {
                         //justDoRetreat = true;
                         && player.getAreaCard(Area.bench).size() > 0 &&
                         player.getActiveCard().getTopCard().getRetreat().hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {
-                    executeRetreat(player.getActiveCard().getTopCard(), player.getAreaCard(Area.bench).get(0));
+                    if (!attackRetreatRestricted && !retreatRestricted) {
+                        executeRetreat(activePlayer, player.getActiveCard().getTopCard().getRetreat());
+                        logger.info(activePlayer + ": " + TurnAction.retreat + ":" + activeCard.getName());
+                    } else
+                        logger.info("AI can not attack due to restriction");
 
-                    logger.info(TurnAction.retreat + ":" + activeCard.getName());
                 } else if (bestAttack != null && bestAttack.hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {//try to attack
-
-                    logger.info(TurnAction.attack + ":" + activeCard.getName());
-                    executeAbility(activePlayer, bestAttack.getAbility());
+                    if (!attackRetreatRestricted) {
+                        executeAbility(activePlayer, bestAttack.getAbility());
+                        logger.info(activePlayer + ": " + TurnAction.attack + ":" + activeCard.getName());
+                    } else
+                        logger.info("AI can not attack due to restriction");
                 } else {//try to retreat
                     if (player.getAreaCard(Area.bench).size() > 0 &&
                             player.getActiveCard().getTopCard().getRetreat().hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {
-
-                        logger.info(TurnAction.attack + ":" + activeCard.getName());
-                        executeRetreat(player.getActiveCard().getTopCard(), player.getAreaCard(Area.bench).get(0));
+                        if (!attackRetreatRestricted && !retreatRestricted) {
+                            executeRetreat(activePlayer, player.getActiveCard().getTopCard().getRetreat());
+                            logger.info(activePlayer + ": " + TurnAction.attack + ":" + activeCard.getName());
+                        } else
+                            logger.info("AI can not attack due to restriction");
                     }
                 }
             }
@@ -319,11 +381,26 @@ public class LogicController {
         startTurn(true);
     }
 
-    private void executeRetreat(Card activeCard, Card benchCard) {
+    private boolean executeRetreat(Enums.Player activePlayer, Attack retreat) throws Exception {
         if (gameFinished)
-            return;
+            return false;
+        Player player = players.get(activePlayer);
         //exchange active card with bench card
-        //detach energy card to discard area
+        List<String> selectedCard = new ArrayList<>();
+        do {
+            selectedCard = fireSelectCardRequest("Select a card to be swapped by active card", 1,
+                    players.get(activePlayer).getAreaCard(Area.bench), true);
+        }
+        while (selectedCard.size() != 1);
+        //move energy cards into discard
+        List<EnergyCard> energyCards = players.get(activePlayer).getActiveCard().getEnergyCards();
+        for (int i = 0; i < retreat.getCostAmount(""); i++) {
+            EnergyCard card = energyCards.get(i);
+            player.addCard(player.getActiveCard().pop(card.getId()), Area.discard, -1, "");
+        }
+        player.swapCardHolder(player.getActiveCard(), player.getCardHolder(selectedCard.get(0)), Area.active, Area.bench);
+
+        return true;
     }
 
     private Enums.Player getPlayerName(String nodeID) {
@@ -334,9 +411,10 @@ public class LogicController {
         return Enums.Player.None;
     }
 
-    public void executeAbility(Enums.Player name, Ability ability) throws Exception {
+    public boolean executeAbility(Enums.Player name, Ability ability) throws Exception {
         if (gameFinished)
-            return;
+            return false;
+
         ability.action.addListener(new LogicEventListener() {
             @Override
             public Boolean showMessage(Alert.AlertType confirmation, String message, double duration) {
@@ -363,7 +441,7 @@ public class LogicController {
         ability.action.clearListener();
         logger.info("player " + name + ", executes " + ability.getName() + "\r\n action:" + ability.action);
 
-
+        return true;
     }
 
     private void CheckKnockout() throws Exception {
@@ -636,6 +714,7 @@ public class LogicController {
                 return;
             if (firstTurn)
                 return;
+
             //no card can send attack unless it is active pokemon or trainer card (in activePlayer's hand)
             //and it just happens during it's turn
             if (playerName == activePlayer && !players.get(playerName).isComputer())
@@ -646,29 +725,57 @@ public class LogicController {
 
                 //check cost
                 if (card != null && cardHolder != null) {
+                    boolean result = false;
                     if (card instanceof PokemonCard) {
-                        if (((PokemonCard) card).getAttackList().get(attackIndex).hasSufficientEnergy(cardHolder.getEnergyCards())) {
-                            executeAbility(playerName, ((PokemonCard) card).getAttackList().get(attackIndex).getAbility());
+                        if (attackIndex == -1) {//retreat
+                            logger.info(playerName + " :" + card.getId() + " " + TurnAction.retreat);
+                            if (((PokemonCard) card).getRetreat().hasSufficientEnergy(cardHolder.getEnergyCards())) {
+                                if (!attackRetreatRestricted && !retreatRestricted) {
+                                    if (executeRetreat(playerName, ((PokemonCard) card).getRetreat())) {
+                                        logger.info(activePlayer + ": " + TurnAction.attack + ":" + card.getName());
+                                        turnActions.put(TurnAction.retreat, turnActions.get(TurnAction.retreat) + 1);
+                                        result = true;
+                                    }
+                                } else
+                                    logger.info("User can not attack due to restriction");
+                            } else
+                                fireShowMessage(Alert.AlertType.INFORMATION, "You have not enough energy to do that.", 1);
+
+                        } else {//Attack
+                            if (((PokemonCard) card).getAttackList().get(attackIndex).hasSufficientEnergy(cardHolder.getEnergyCards())) {
+                                if (!attackRetreatRestricted) {
+                                    if (executeAbility(playerName, ((PokemonCard) card).getAttackList().get(attackIndex).getAbility())) {
+                                        logger.info(activePlayer + ": " + TurnAction.attack + ":" + card.getName());
+                                        turnActions.put(TurnAction.attack, turnActions.get(TurnAction.attack) + 1);
+                                        result = true;
+                                    }
+                                } else {
+                                    logger.info("User can not attack due to restriction");
+
+                                }
+                            } else
+                                fireShowMessage(Alert.AlertType.INFORMATION, "You have not enough energy to do that.", 1);
                         }
-                        turnActions.put(TurnAction.attack, turnActions.get(TurnAction.attack) + 1);
                     } else if (card instanceof TrainerCard) {
 
                         turnActions.put(TurnAction.trainer, turnActions.get(TurnAction.trainer) + 1);
 
                         Card trainerCard = players.get(playerName).popCard(card.getId(), "");
-                        executeAbility(playerName, ((TrainerCard) trainerCard).getAttack().getAbility());
-
-                        players.get(playerName).addCard(trainerCard, Area.discard, -1, "", false);
-                        logger.info("trainer card:" + card.getName());
+                        if (executeAbility(playerName, ((TrainerCard) trainerCard).getAttack().getAbility())) {
+                            players.get(playerName).addCard(trainerCard, Area.discard, -1, "", false);
+                            logger.info("trainer card:" + card.getName());
+                            result = true;
+                        }
 
                     }
+                    if (result) {
+                        LogicController.this.CheckKnockout();
 
-                    LogicController.this.CheckKnockout();
-
-                    if (activePlayer == Enums.Player.A)
-                        activePlayer = Enums.Player.B;
-                    else activePlayer = Enums.Player.A;
-                    startTurn(true);
+                        if (activePlayer == Enums.Player.A)
+                            activePlayer = Enums.Player.B;
+                        else activePlayer = Enums.Player.A;
+                        startTurn(true);
+                    }
                 } else
                     fireShowMessage(Alert.AlertType.WARNING, "Active area is empty", 2);
             }

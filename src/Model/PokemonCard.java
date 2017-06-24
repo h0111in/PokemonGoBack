@@ -31,7 +31,7 @@ public class PokemonCard implements Card {
     private int damage;
     private int totalHealed;
     private Player playerName;
-    private ActionStatus status;
+    private Status status;
 
     private final EventListenerList listenerList;
     private int lastHeal;
@@ -40,7 +40,7 @@ public class PokemonCard implements Card {
 
     public PokemonCard() {
         attackList = new ArrayList<>();
-        status = ActionStatus.none;
+        status = Status.none;
         this.id = "";
         listenerList = new EventListenerList();
 
@@ -228,11 +228,13 @@ public class PokemonCard implements Card {
         return totalHealed;
     }
 
-    public ActionStatus getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(ActionStatus status) {
+    public void setStatus(Status status)
+    {
+        fireCardModified("Status");
         this.status = status;
     }
 

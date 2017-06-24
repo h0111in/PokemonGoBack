@@ -15,9 +15,9 @@
     </columnConstraints>
     <rowConstraints>
         <RowConstraints maxHeight="60.0" minHeight="28.0" prefHeight="32.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="150.0" minHeight="102.0" prefHeight="115.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="188.0" minHeight="90.0" prefHeight="163.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="102.0" minHeight="25.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="150.0" minHeight="9.75" prefHeight="43.75" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="246.25" minHeight="90.0" prefHeight="217.75" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="102.0" minHeight="25.0" prefHeight="39.25" vgrow="SOMETIMES" />
     </rowConstraints>
    <children>
       <GridPane GridPane.rowIndex="2">
@@ -28,6 +28,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <GridPane fx:id="attack1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleAttack1Clicked" prefHeight="50.0" prefWidth="270.0" visible="false">
@@ -51,7 +52,7 @@
                         <Insets />
                      </GridPane.margin>
                      <font>
-                        <Font size="10.0" />
+                        <Font size="9.0" />
                      </font>
                      <padding>
                         <Insets left="5.0" right="5.0" />
@@ -98,7 +99,7 @@
                         <Insets />
                      </GridPane.margin>
                      <font>
-                        <Font size="8.0" />
+                        <Font size="9.0" />
                      </font>
                      <padding>
                         <Insets left="5.0" right="5.0" />
@@ -145,7 +146,7 @@
                         <Insets />
                      </GridPane.margin>
                      <font>
-                        <Font size="8.0" />
+                        <Font size="9.0" />
                      </font>
                      <padding>
                         <Insets left="5.0" right="5.0" />
@@ -171,12 +172,49 @@
                   </Label>
                </children>
             </GridPane>
+            <GridPane fx:id="retreat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleRetreatClicked" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: #87ff94;" visible="false" GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="28.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Label fx:id="retreatDescription" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="29.0" prefWidth="270.0" textOverrun="CLIP" wrapText="true" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="retreatName" prefHeight="30.0" prefWidth="194.0" text="Retreat" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.5" minWidth="7.5" prefWidth="19.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.5" minWidth="10.0" prefWidth="205.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.5" minWidth="10.0" prefWidth="45.5" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.5" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
          </children>
       </GridPane>
       <GridPane>
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="42.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="160.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="58.25" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="142.75" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="69.0" />
         </columnConstraints>
         <rowConstraints>
@@ -196,6 +234,9 @@
             <Label fx:id="level" alignment="TOP_CENTER" prefHeight="119.0" prefWidth="157.0" text="basic" textAlignment="CENTER" visible="false" />
          </children>
       </GridPane>
-      <Button fx:id="buttonClose" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="270.0" text="BACK" GridPane.rowIndex="3" />
+      <Button fx:id="buttonClose" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="270.0" text="BACK" GridPane.rowIndex="3">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
    </children>
 </fx:root>

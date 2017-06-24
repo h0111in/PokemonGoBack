@@ -1,19 +1,9 @@
 package Model;
 
-import Enums.ActionStatus;
-import Enums.ActionTarget;
-import Enums.Area;
-import Enums.CardCategory;
 import Model.Abilities.Ability;
-import Model.Abilities.Counter;
 import Parser.IDataLoader;
-import javafx.scene.control.Alert;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
 import java.util.List;
-
-import static Controller.Helper.alert;
 
 
 /**

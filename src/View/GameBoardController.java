@@ -149,6 +149,7 @@ public class GameBoardController extends GridPane {
                         }
                     });
                     smallCard.showFace();
+
                     //endregion
 
                     //region push card

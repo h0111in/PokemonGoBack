@@ -3,14 +3,11 @@ package Model.Abilities;
 import Enums.*;
 import Listeners.LogicEventListener;
 import Model.Card;
-import Model.Condition;
 import javafx.scene.control.Alert;
 
 import javax.script.ScriptException;
-import javax.swing.*;
 import javax.swing.event.EventListenerList;
 import java.net.URISyntaxException;
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -98,19 +95,19 @@ public abstract class BaseAction implements IActionStrategy {
         return targetPlayer;
     }
 
-    protected static ActionStatus toStatus(String statusName) {
+    protected static Status toStatus(String statusName) {
 
         switch (statusName) {
             case "paralyzed":
-                return ActionStatus.paralyzed;
+                return Status.paralyzed;
             case "stuck":
-                return ActionStatus.stuck;
+                return Status.stuck;
             case "poisoned":
-                return ActionStatus.poisoned;
+                return Status.poisoned;
             case "asleep":
-                return ActionStatus.asleep;
+                return Status.asleep;
         }
-        return ActionStatus.none;
+        return Status.none;
     }
 
     protected static Area toArea(String areaName) {

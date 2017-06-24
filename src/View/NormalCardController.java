@@ -55,6 +55,14 @@ public class NormalCardController extends GridPane implements IDialog {
     protected Label attack3Cost;
     @FXML
     protected Label attack3Power;
+
+    @FXML
+    protected Label retreatDescription;
+    @FXML
+    protected Label retreatName;
+    @FXML
+    protected GridPane retreat;
+
     @FXML
     protected Button buttonClose;
 
@@ -65,7 +73,7 @@ public class NormalCardController extends GridPane implements IDialog {
     private ButtonType result = ButtonType.CLOSE;
 
     public NormalCardController(Card card, Enums.Player playerName) throws ScriptException {
-        attackIndex = -1;
+        attackIndex = -2;
         this.card = card;
         this.playerName = playerName;
         listenerList = new EventListenerList();
@@ -125,7 +133,12 @@ public class NormalCardController extends GridPane implements IDialog {
                 attack3Power.setText(atk3.getAbility().getActionsPowerText());
                 attack3Cost.setText(atk3.getCostString());
             }
+            //Retreat
 
+            retreat.setVisible(true);
+            retreat.setCursor(Cursor.HAND);
+            Attack retreat = pokemonCard.getRetreat();
+            retreatDescription.setText(retreat.getCostString());
 
         } else if (card instanceof TrainerCard) {
             TrainerCard trainerCard = (TrainerCard) getCard();
@@ -180,8 +193,8 @@ public class NormalCardController extends GridPane implements IDialog {
     }
 
     @FXML
-    private void handleAttack4Clicked(Event event) throws Exception {
-        attackIndex = 3;
+    private void handleRetreatClicked(Event event) throws Exception {
+        attackIndex = -1;
         ((Stage) getScene().getWindow()).close();
 
 // if (getCard() instanceof PokemonCard)

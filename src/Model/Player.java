@@ -399,7 +399,8 @@ public class Player {
         return outputList;
     }
 
-    public void moveCardHolder(CardHolder cardHolder1, CardHolder cardHolder2, Area area1, Area area2) throws Exception {
+    public void swapCardHolder(CardHolder cardHolder1, CardHolder cardHolder2, Area area1, Area area2) throws Exception {
+
         Card topCard1 = cardHolder1.pop(cardHolder1.getId());
         List<Card> cards1 = new ArrayList<>();
         for (Card card : cardHolder1.getAllCard().values()) {

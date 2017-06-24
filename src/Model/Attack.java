@@ -1,10 +1,11 @@
 package Model;
 
 import Model.Abilities.Ability;
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.List;
 import java.util.Map;
+
+import static Controller.Main.logger;
 
 /**
  * Created by H0111in on 05/22/2017.
@@ -20,8 +21,10 @@ public class Attack {
 
     public String getCostString() {
         String string = "";
+
         for (String key : costList.keySet())
             string += costList.get(key) + "X" + key;
+        logger.info("cost =  " + string);
         return string;
     }
 

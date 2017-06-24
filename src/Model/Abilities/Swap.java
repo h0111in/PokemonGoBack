@@ -34,7 +34,7 @@ public class Swap extends BaseAction implements IActionStrategy {
                 if (selectedCard.size() > 0)
                     cardId = selectedCard.get(0);
             }
-            player.moveCardHolder(player.getActiveCard(), player.getCardHolder(cardId),
+            player.swapCardHolder(player.getActiveCard(), player.getCardHolder(cardId),
                     Area.active, choiceArea);
         } else
             fireShowMessage(Alert.AlertType.CONFIRMATION, "Player " + player.getName().name() + "has no card in the bench", 1);
