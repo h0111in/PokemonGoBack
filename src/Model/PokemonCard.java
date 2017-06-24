@@ -233,7 +233,7 @@ public class PokemonCard implements Card {
 
     public void setStatus(Status status)
     {
-        fireCardModified("Status");
+        fireCardModified("status");
         this.status = status;
     }
 
