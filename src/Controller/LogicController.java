@@ -396,7 +396,7 @@ public class LogicController {
         List<EnergyCard> energyCards = players.get(activePlayer).getActiveCard().getEnergyCards();
         for (int i = 0; i < retreat.getCostAmount(""); i++) {
             EnergyCard card = energyCards.get(i);
-            player.addCard(player.getActiveCard().pop(card.getId()), Area.discard, -1, "");
+            player.addCard(player.getActiveCard().pop(card.getId()), Area.discard, -1, player.getActiveCard().getId());
         }
         player.swapCardHolder(player.getActiveCard(), player.getCardHolder(selectedCard.get(0)), Area.active, Area.bench);
 
