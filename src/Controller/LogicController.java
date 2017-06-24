@@ -187,7 +187,6 @@ public class LogicController {
 //endregion
         if (players.get(activePlayer).isComputer())
             playAI();
-
     }
 
     private void playAI() throws Exception {
@@ -212,9 +211,9 @@ public class LogicController {
 
         //region put pokemon in bench from hand
         if (turnActions.get(TurnAction.pokemonToBench) == 0)
-            if (player.getAreaCard(Area.bench).size() <= 5)
+            if (player.getAreaCard(Area.bench).size() < 5)
                 for (Card card : player.getAreaCard(Area.hand)) {
-                    if (player.getAreaCard(Area.bench).size() <= 5) {
+                    if (player.getAreaCard(Area.bench).size() < 5) {
                         if (card instanceof PokemonCard && ((PokemonCard) card).getLevel().equals("basic")) {
                             player.addCard(player.popCard(card.getId(), ""), Area.bench, -1, "");
                             turnActions.put(TurnAction.pokemonToBench, 1);

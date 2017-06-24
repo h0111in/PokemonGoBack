@@ -76,6 +76,11 @@ public class Player {
         return addCard(card, destination, cardHolderIndex, cardHolderId, false);
     }
 
+    public Player addCard(Card card, Area destination, String smallCardId) throws Exception {
+        this.addCard(card, destination, -1, smallCardId, false);
+        return this;
+    }
+
     public Player addCard(Card card, Area destination, int cardHolderIndex, String cardHolderId, boolean addtoBottom) throws Exception {
         logger.info(card.getId() + " Area : " + destination + " columnIndex: " + cardHolderIndex + " uiHolderId: " + cardHolderId);
 
@@ -99,9 +104,10 @@ public class Player {
 
                     for (int i = 0; i < bench.size(); i++) {
                         if (!cardHolderId.isEmpty()) {
-                            if (cardHolderId.equals(bench.get(i).getId()))
+                            if (cardHolderId.equals(bench.get(i).getId())) {
                                 cardHolderIndex = i;
-                            break;
+                                break;
+                            }
                         } else if (bench.get(i).getAllCard().size() == 0) {
                             cardHolderIndex = i;
                             break;
@@ -139,10 +145,6 @@ public class Player {
         return this;
     }
 
-    public Player addCard(Card card, Area destination, String smallCardId) throws Exception {
-        this.addCard(card, destination, -1, smallCardId, false);
-        return this;
-    }
 
     private Map<String, Card> addTopMap(Card card, Map<String, Card> map) {
 
