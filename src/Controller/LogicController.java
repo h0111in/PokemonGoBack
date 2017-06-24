@@ -730,20 +730,23 @@ public class LogicController {
                     boolean result = false;
                     if (card instanceof PokemonCard && cardHolder != null) {
                         if (attackIndex == -1) {//retreat
-                            logger.info(playerName + " :" + card.getId() + " " + TurnAction.retreat);
-                            if (((PokemonCard) card).getRetreat().hasSufficientEnergy(cardHolder.getEnergyCards())) {
-                                logger.info("retreatCostList: " + ((PokemonCard) card).getRetreat().getCostAmount("") + " / " + cardHolder.getEnergyCards().size());
-                                if (!attackRetreatRestricted && !retreatRestricted) {
-                                    if (executeRetreat(playerName, ((PokemonCard) card).getRetreat())) {
-                                        logger.info(activePlayer + ": " + TurnAction.attack + ":" + card.getName());
-                                        turnActions.put(TurnAction.retreat, turnActions.get(TurnAction.retreat) + 1);
-                                        result = true;
-                                    }
+                            if (players.get(playerName).getAreaCard(Area.bench).size() > 0) {
+                                logger.info(playerName + " :" + card.getId() + " " + TurnAction.retreat);
+                                if (((PokemonCard) card).getRetreat().hasSufficientEnergy(cardHolder.getEnergyCards())) {
+                                    logger.info("retreatCostList: " + ((PokemonCard) card).getRetreat().getCostAmount("") + " / " + cardHolder.getEnergyCards().size());
+                                    if (!attackRetreatRestricted && !retreatRestricted) {
+                                        if (executeRetreat(playerName, ((PokemonCard) card).getRetreat())) {
+                                            logger.info(activePlayer + ": " + TurnAction.attack + ":" + card.getName());
+                                            turnActions.put(TurnAction.retreat, turnActions.get(TurnAction.retreat) + 1);
+                                            result = true;
+                                        }
+                                    } else
+                                        logger.info("User can not attack due to restriction");
                                 } else
-                                    logger.info("User can not attack due to restriction");
-                            } else
-                                fireShowMessage(Alert.AlertType.INFORMATION, "You have not enough energy to do that.", 1);
-
+                                    fireShowMessage(Alert.AlertType.INFORMATION, "You have not enough energy to do that.", 1);
+                            } else {
+                                fireShowMessage(Alert.AlertType.INFORMATION, "You have no Pokemon on the bench", 1);
+                            }
                         } else {//Attack
                             if (((PokemonCard) card).getAttackList().get(attackIndex).hasSufficientEnergy(cardHolder.getEnergyCards())) {
                                 if (!attackRetreatRestricted) {
