@@ -407,7 +407,7 @@ public class LogicController {
         //endregion
 
         //check knockout active Card
-        CheckKnockout();
+        checkKnockout();
 
         if (activePlayer == Enums.Player.A)
             activePlayer = Enums.Player.B;
@@ -487,7 +487,7 @@ public class LogicController {
         return true;
     }
 
-    private void CheckKnockout() throws Exception {
+    private void checkKnockout() throws Exception {
         logger.info("CHECK KNOCKOUT");
 
         if (players.get(getOpponent(activePlayer)).getActiveCard() != null &&
@@ -537,7 +537,7 @@ public class LogicController {
                 if (players.get(getOpponent(activePlayer)).getAreaCard(Area.bench).size() <= 0) {
                     gameFinished = true;
                     //opponent wins the game
-                    fireShowMessage(Alert.AlertType.INFORMATION, "PLAYER " + activePlayer.name() + " WINS THE GAME", 3);
+                    fireShowMessage(Alert.AlertType.INFORMATION, "PLAYER " + activePlayer.name() + " WINS THE GAME", -1);
                 }
             }
 
@@ -703,8 +703,21 @@ public class LogicController {
             if (gameFinished)
                 return;
             if (players.get(player).getActiveCard().getTopCard() == null &&
-                    (players.get(player).getAreaCard(Area.bench).size() > 0 || players.get(player).getAreaCard(Area.hand, CardCategory.pokemon).size() > 0)) {
-                fireShowMessage(Alert.AlertType.INFORMATION, "Have a Pokemon in Active Area", 2);
+                    (players.get(player).getAreaCard(Area.bench).size() > 0
+                            || players.get(player).getAreaCard(Area.hand, CardCategory.pokemon).size() > 0)) {
+                if (players.get(player).getAreaCard(Area.hand, CardCategory.pokemon).size() > 0)
+                    fireShowMessage(Alert.AlertType.INFORMATION, "Have a Pokemon in Active Area", 2);
+                else {
+                    if (!firstTurn)
+                        if (players.get(getOpponent(activePlayer)).getActiveCard().getAllCard().size() == 0) {
+                            if (players.get(getOpponent(activePlayer)).getAreaCard(Area.bench).size() <= 0) {
+                                gameFinished = true;
+                                //opponent wins the game
+                                fireShowMessage(Alert.AlertType.INFORMATION, "PLAYER " + activePlayer.name() + " WINS THE GAME", -1);
+                            }
+                        }
+                }
+
                 return;
             }
             if (activePlayer == player) {
@@ -828,7 +841,7 @@ public class LogicController {
 
                     }
                     if (result) {
-                        LogicController.this.CheckKnockout();
+                        LogicController.this.checkKnockout();
 
                         if (activePlayer == Enums.Player.A)
                             activePlayer = Enums.Player.B;

@@ -7,6 +7,7 @@ import javax.script.ScriptException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import static Controller.Helper.alert;
 
@@ -33,12 +34,18 @@ public class AbilityCondition extends BaseAction implements IActionStrategy {
 
     @Override
     public boolean fight(Player player, Player opponent) throws Exception {
-        if (fireShowMessage(Alert.AlertType.CONFIRMATION, "Do you want to " + mainAction.toString(), -1)) {
+        if (player.isComputer()) {
+            if (new Random().nextBoolean()) {
+                mainAction.fight(player, opponent);
+                subordinateAction.fight(player, opponent);
+                return true;
+            }
+        } else if (fireShowMessage(Alert.AlertType.CONFIRMATION, "Do you want to " + mainAction.toString(), -1)) {
             mainAction.fight(player, opponent);
             subordinateAction.fight(player, opponent);
             return true;
         }
-        return false;
+        return true;
     }
 
     @Override
