@@ -28,7 +28,7 @@ public class Deck extends BaseAction implements IActionStrategy {
     public boolean fight(Player player, Player opponent) throws Exception {
         Player targetPlayer = getTargetPlayer(player, opponent);
         List<Card> cardList = new ArrayList<>();
-        if (isUserChoice && !targetPlayer.isComputer()) {
+        if (isUserChoice && !player.isComputer()) {
             List<String> cardIDList = fireSelectCardRequest("Please Select " + power.getCount(player, opponent) + " Card(s).", power.getCount(player, opponent),
                     targetPlayer.getAreaCard(destination), true);
             for (String id : cardIDList)

@@ -9,12 +9,9 @@ import Listeners.PlayerEventListener;
 import Listeners.uiCardEventListener;
 import Model.*;
 import Model.Abilities.IActionStrategy;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -37,7 +34,6 @@ import java.util.List;
 import java.util.Map;
 
 import static Controller.Main.logger;
-import static javafx.scene.paint.Color.TRANSPARENT;
 
 public class GameBoardController extends GridPane {
 
@@ -343,8 +339,8 @@ public class GameBoardController extends GridPane {
                     logger.info(flyCard.getPlayerName().name());
                     logger.info("target-source indext: " + targetArea + targetColumnIndex + " " + sourceArea + " " + sourceColumnIndex + " ");
                     logger.info("cardID:" + cardID + " " + uiSmallCardId);
-                    fireMoveCard(targetArea, targetCard != null ? targetCard.getMainCard() : null, targetCard != null ? targetCard.getStageCard() : null,
-                            flyCard != null ? flyCard.getMainCard() : null, sourceArea, flyCard != null ? flyCard.getPlayerName() : null,
+                    fireMoveCard(targetArea, targetCard != null ? targetCard.getTopCard() : null, targetCard != null ? targetCard.getStageCard() : null,
+                            flyCard != null ? flyCard.getTopCard() : null, sourceArea, flyCard != null ? flyCard.getPlayerName() : null,
                             uiCardList, targetColumnIndex, sourceColumnIndex, cardID, uiSmallCardId);
 
                 }

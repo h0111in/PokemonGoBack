@@ -94,7 +94,7 @@ public class SmallCardController extends GridPane {
             @Override
             public void handle(MouseEvent event) {
                 try {
-                    fireCardClicked(card.getId());
+                    fireCardClicked(getTopCard().getId());
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -107,7 +107,7 @@ public class SmallCardController extends GridPane {
             public void handle(MouseEvent event) {
                 NormalCardController normalCard = null;
                 try {
-                    normalCard = new NormalCardController(getMainCard(), getPlayerName());
+                    normalCard = new NormalCardController(getTopCard(), getPlayerName());
 
                 } catch (ScriptException e) {
                     e.printStackTrace();
@@ -135,7 +135,7 @@ public class SmallCardController extends GridPane {
                 try {
                     stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(0), getPlayerName())));
 
-                    stage.setTitle(getMainCard().getCategory().name().toUpperCase());
+                    stage.setTitle(getTopCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
                     stage.setIconified(false);
@@ -152,7 +152,7 @@ public class SmallCardController extends GridPane {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
                     stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(1), getPlayerName())));
-                    stage.setTitle(getMainCard().getCategory().name().toUpperCase());
+                    stage.setTitle(getTopCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
                     stage.setIconified(false);
@@ -169,7 +169,7 @@ public class SmallCardController extends GridPane {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
                     stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(2), getPlayerName())));
-                    stage.setTitle(getMainCard().getCategory().name().toUpperCase());
+                    stage.setTitle(getTopCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
                     stage.setIconified(false);
@@ -186,7 +186,7 @@ public class SmallCardController extends GridPane {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
                     stage.setScene(new Scene(new NormalCardController(getEnergyCardList().get(3), getPlayerName())));
-                    stage.setTitle(getMainCard().getCategory().name().toUpperCase());
+                    stage.setTitle(getTopCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
                     stage.setIconified(false);
@@ -203,7 +203,7 @@ public class SmallCardController extends GridPane {
                 try {
                     Stage stage = new Stage(StageStyle.UNDECORATED);
                     stage.setScene(new Scene(new NormalCardController(getBasicCard(), getPlayerName())));
-                    stage.setTitle(getMainCard().getCategory().name().toUpperCase());
+                    stage.setTitle(getTopCard().getCategory().name().toUpperCase());
                     stage.initModality(Modality.APPLICATION_MODAL);
                     stage.setResizable(false);
                     stage.setIconified(false);
@@ -291,13 +291,15 @@ public class SmallCardController extends GridPane {
             PokemonCard pokemonCard = (PokemonCard) card;
 
             if (pokemonCard.getLevel().contains("basic"))
-                if (getBasicCard() == null)
+                if (getBasicCard() == null) {
+                    this.setId(card.getId());
                     setBasicCard(pokemonCard);
-                else
+                } else
                     throw new Exception("Two Basic UIControls!");
-            else if (getStageCard() == null)
+            else if (getStageCard() == null) {
+                this.setId(card.getId());
                 setStageCard(pokemonCard);
-            else
+            } else
                 throw new Exception("Two Stage UIControls!");
 
         } else if (card instanceof TrainerCard) {
@@ -383,7 +385,7 @@ public class SmallCardController extends GridPane {
         e3.setVisible(getEnergyCardList().size() > 3);
         basicCardSymbol.setVisible(getStageCard() != null && getBasicCard() != null && fireShowFaceRequest(playerName, getId()));
 
-        Card topCard = getMainCard();
+        Card topCard = getTopCard();
         if (topCard != null) {
             this.name.setText(topCard.getName());
             if (topCard instanceof PokemonCard)
@@ -397,7 +399,7 @@ public class SmallCardController extends GridPane {
         return playerName;
     }
 
-    public Card getMainCard() {
+    public Card getTopCard() {
 
         if (getTrainerCard() != null)
             return getTrainerCard();
@@ -429,7 +431,7 @@ public class SmallCardController extends GridPane {
 
     public void showFace() {
 
-        if (fireShowFaceRequest(playerName, getMainCard().getId())) {
+        if (fireShowFaceRequest(playerName, getTopCard().getId())) {
 
             header.setVisible(true);
             name.setVisible(true);
@@ -440,7 +442,7 @@ public class SmallCardController extends GridPane {
             else setStyle("-fx-background-image:url('/asset/card-face-black1.png'); ");
 
 
-            if (getMainCard() instanceof PokemonCard) {
+            if (getTopCard() instanceof PokemonCard) {
 
             } else {
                 energyHolder.setVisible(false);

@@ -205,6 +205,20 @@ public class LogicController {
                         break;
                     }
                 }
+
+            }
+        //endregion
+
+        //region put pokemon into active area from bench
+        if (turnActions.get(TurnAction.pokemonToActive) == 0)
+            if (player.getAreaCard(Area.active).size() == 0) {
+                for (Card card : player.getAreaCard(Area.bench)) {
+                    player.swapCardHolder(player.getCardHolder(card.getId()), null, Area.bench, Area.active);
+                    turnActions.put(TurnAction.pokemonToActive, 1);
+                    logger.info("put From BENCH to active area:" + card.getName());
+                    break;
+                }
+
             }
         //endregion
 
@@ -425,16 +439,21 @@ public class LogicController {
         ability.action.addListener(new LogicEventListener() {
             @Override
             public Boolean showMessage(Alert.AlertType confirmation, String message, double duration) {
+                logger.info("Player " + name + " in Ability :" + ability.getName() + " message request :" + confirmation.name() + " " + message + " " + duration);
+
                 return fireShowMessage(confirmation, message, duration);
             }
 
             @Override
             public boolean flipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
+                logger.info("Player " + name + " in Ability :" + ability.getName() + " flip request ");
+
                 return fireFlipCoin(defaultFace, waitForFlipping);
             }
 
             @Override
             public List<String> selectCardRequest(String message, int totalRequired, List<Card> cardList, boolean showCard) throws Exception {
+                logger.info("Player " + name + " in Ability :" + ability.getName() + " Select Card request ");
                 return fireSelectCardRequest(message, totalRequired, cardList, showCard);
             }
 
@@ -556,7 +575,9 @@ public class LogicController {
                         else {
                             switch (flyCard.getCategory()) {
                                 case pokemon:
-                                    if (((PokemonCard) flyCard).getLevel().equals("basic")) {
+                                    if (((PokemonCard) flyCard).getLevel().equals("basic")
+                                            || (players.get(activePlayer).getCardHolder(flyCard.getId()) != null
+                                            && players.get(activePlayer).getCardHolder(flyCard.getId()).getBasicCard() != null)) {
                                         movementVerified = true;
                                         if (targetArea == Area.active)
                                             turnAction = TurnAction.pokemonToActive;
@@ -742,7 +763,7 @@ public class LogicController {
                 //check cost
                 if (card != null) {
                     boolean result = false;
-                    if (card instanceof PokemonCard && cardHolder != null) {
+                    if (card instanceof PokemonCard && cardHolder != null && players.get(playerName).getCardArea(pokemonCardId) == Area.active) {
                         if (attackIndex == -1) {//retreat
                             if (players.get(playerName).getAreaCard(Area.bench).size() > 0) {
                                 logger.info(playerName + " :" + card.getId() + " " + TurnAction.retreat);
@@ -776,7 +797,7 @@ public class LogicController {
                             } else
                                 fireShowMessage(Alert.AlertType.INFORMATION, "You have not enough energy to do that.", 1);
                         }
-                    } else if (card instanceof TrainerCard) {
+                    } else if (card instanceof TrainerCard && players.get(playerName).getCardArea(pokemonCardId) == Area.hand) {
 
                         turnActions.put(TurnAction.trainer, turnActions.get(TurnAction.trainer) + 1);
 
