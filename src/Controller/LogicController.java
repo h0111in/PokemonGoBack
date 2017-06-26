@@ -453,6 +453,7 @@ public class LogicController {
         if (gameFinished)
             return false;
 
+        logger.info("player " + name + ", executes " + ability.getName() + "\r\n action:" + ability.action);
         ability.action.addListener(new LogicEventListener() {
             @Override
             public Boolean showMessage(Alert.AlertType confirmation, String message, double duration) {
@@ -482,7 +483,6 @@ public class LogicController {
         });
         ability.action.fight(players.get(name), players.get(getOpponent(name)));
         ability.action.clearListener();
-        logger.info("player " + name + ", executes " + ability.getName() + "\r\n action:" + ability.action);
 
         return true;
     }

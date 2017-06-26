@@ -164,7 +164,7 @@ public class Player {
 
                 case deck:
                     if (deck.size() > 0) {
-                        List<String> keys = new ArrayList<String>(deck.keySet());
+                        List<String> keys = new ArrayList<>(deck.keySet());
                         String randomKey = keys.get(keys.size() - 1);
                         Card card = deck.get(randomKey);
                         cardList.add(card);
@@ -174,9 +174,13 @@ public class Player {
                     break;
                 case hand:
                     if (hand.size() > 0) {
-                        Card card = hand.get(((List<String>) hand.keySet()).get(hand.size() - 1));
+
+                        List<String> keys = new ArrayList<>(hand.keySet());
+                        String randomKey = keys.get(keys.size() - 1);
+                        Card card = hand.get(randomKey);
                         cardList.add(card);
                         hand.remove(card.getId());
+
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));
                     }
                     break;
@@ -187,16 +191,23 @@ public class Player {
                 case prize:
 
                     if (prize.size() > 0) {
-                        Card card = prize.get(((List<String>) prize.keySet()).get(0));
+
+                        List<String> keys = new ArrayList<>(prize.keySet());
+                        String randomKey = keys.get(keys.size() - 1);
+                        Card card = prize.get(randomKey);
                         cardList.add(card);
                         prize.remove(card.getId());
+
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));
                     }
                     break;
                 case discard:
 
                     if (deck.size() > 0) {
-                        Card card = discard.get(((List<String>) discard.keySet()).get(0));
+
+                        List<String> keys = new ArrayList<>(discard.keySet());
+                        String randomKey = keys.get(keys.size() - 1);
+                        Card card = discard.get(randomKey);
                         cardList.add(card);
                         discard.remove(card.getId());
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));

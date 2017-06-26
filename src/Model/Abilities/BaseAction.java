@@ -88,16 +88,20 @@ public abstract class BaseAction implements IActionStrategy {
         Model.Player targetPlayer = null;
         switch (target) {
             case opponentActive:
+            case opponentHand:
+            case opponentBench:
                 targetPlayer = opponent;
-
                 break;
             case last:
             case yourActive:
+            case yourBench:
+            case them:
+            case yourHand:
                 targetPlayer = player;
                 break;
-            case yourBench:
+            case none:
             default:
-                throw new Exception("TargetPlayer is not defined.");
+                throw new Exception("TargetPlayer is not defined.=>" + target);
         }
         return targetPlayer;
     }
@@ -128,7 +132,7 @@ public abstract class BaseAction implements IActionStrategy {
 
     protected static ActionTarget toTarget(String targetName) {
         ActionTarget target = ActionTarget.none;
-        switch (targetName) {
+        switch (targetName.replace("(","").replace(")","")) {
             case "opponent-active":
             case "opponent":
                 return ActionTarget.opponentActive;
