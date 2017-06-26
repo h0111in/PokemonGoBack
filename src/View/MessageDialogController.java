@@ -74,6 +74,13 @@ public class MessageDialogController extends GridPane implements IDialog {
                         MessageDialogController.this.getScene().getWindow().hide();
                     }
                 });
+                this.message.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        result = ButtonType.YES;
+                        MessageDialogController.this.getScene().getWindow().hide();
+                    }
+                });
                 break;
             case CONFIRMATION:
 

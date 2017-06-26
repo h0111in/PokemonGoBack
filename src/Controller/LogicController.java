@@ -240,18 +240,16 @@ public class LogicController {
         //endregion
 
         //region put pokemon in bench from hand
-        if (turnActions.get(TurnAction.pokemonToBench) == 0)
-            if (player.getAreaCard(Area.bench).size() < 5)
-                for (Card card : player.getAreaCard(Area.hand)) {
-                    if (player.getAreaCard(Area.bench).size() < 5) {
-                        if (card instanceof PokemonCard && ((PokemonCard) card).getLevel().equals("basic")) {
-                            player.addCard(player.popCard(card.getId(), ""), Area.bench, -1, "");
-                            turnActions.put(TurnAction.pokemonToBench, 1);
-                            logger.info("put to bench area:" + card.getName());
-                            break;
-                        }
-                    } else break;
-                }
+        if (player.getAreaCard(Area.bench).size() < 5)
+            for (Card card : player.getAreaCard(Area.hand)) {
+                if (player.getAreaCard(Area.bench).size() < 5) {
+                    if (card instanceof PokemonCard && ((PokemonCard) card).getLevel().equals("basic")) {
+                        player.addCard(player.popCard(card.getId(), ""), Area.bench, -1, "");
+                        turnActions.put(TurnAction.pokemonToBench, turnActions.get(TurnAction.pokemonToBench) + 1);
+                        logger.info("put to bench area:" + card.getName());
+                    }
+                } else break;
+            }
 //endregion
 
         //region attach stage one to basic card in active area
@@ -876,7 +874,12 @@ public class LogicController {
 
         @Override
         public void cardClicked(String cardId) {
-            logger.info(cardId);
+            try {
+                logger.info(players.get(getPlayerName(cardId)).getCard(cardId).getCategory().name()+
+                        players.get(getPlayerName(cardId)).getCard(cardId).getName());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     };
@@ -919,38 +922,6 @@ public class LogicController {
 
     //endregion
 
-    //region independent Class
-//    class Damage extends Action {
-//        public Damage() {
-//            super();
-//
-//        }
-//
-//        public void AddDamge() throws ScriptException {
-//
-//            //region condition
-//            boolean conditionMet = false;
-//            switch (getCondition().getName()) {
-//                case "flip":
-//                    if (fireFlipCoin(Coin.Head, 1)) {
-//                        conditionMet = true;
-//                    }
-//                    break;
-//                case "healed":
-//                    //EX:If this Pokémon was healed during this turn, this attack does 80 more damage.
-//                    switch (getCondition().getTarget()) {
-//                        case opponentActive:
-//                            break;
-//                        case yourActive:
-//                            if (players.get(name).getActiveCard().getTopCard().getTotalHealed() > 0) {
-//                                conditionMet = true;
-//                            }
-//                            break;
-//                    }
-//                    break;
-//                default:
-//                    conditionMet = true;
-//            }
-//            //endregion
+
 }
 
