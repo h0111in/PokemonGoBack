@@ -53,8 +53,7 @@ public class CardHolder {
                 card = getStageOneCard();
                 stageOneCard = null;
                 return card;
-            } else
-                throw new Exception("pop basic card from behind Stage one card");
+            }
 
         if (basicCard != null && basicCard.getId().equals(id)) {
             card = getBasicCard();

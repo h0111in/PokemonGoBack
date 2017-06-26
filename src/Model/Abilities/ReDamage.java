@@ -6,8 +6,6 @@ import Model.Card;
 import Model.Player;
 import Model.PokemonCard;
 
-import javax.script.ScriptException;
-import java.util.AbstractMap;
 import java.util.Arrays;
 
 /**

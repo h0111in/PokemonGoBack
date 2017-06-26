@@ -18,6 +18,7 @@ public class AbilityCondition extends BaseAction implements IActionStrategy {
     private IActionStrategy mainAction;
     private IActionStrategy subordinateAction;
 
+
     @Override
     public int getTotalEffectivePower() throws ScriptException {
         int totalPower = 0;

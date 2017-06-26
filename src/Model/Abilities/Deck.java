@@ -19,6 +19,7 @@ public class Deck extends BaseAction implements IActionStrategy {
     private boolean isUserChoice;
     private Area choiceArea;
 
+
     @Override
     public int getTotalEffectivePower() throws ScriptException {
         return 0;

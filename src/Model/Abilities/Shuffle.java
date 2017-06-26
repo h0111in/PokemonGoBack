@@ -3,12 +3,7 @@ package Model.Abilities;
 import Enums.Area;
 import Model.Player;
 
-import javax.script.ScriptException;
-
-import java.util.AbstractMap;
 import java.util.Arrays;
-
-import static Controller.Main.logger;
 
 /**
  * Created by H0111in on 2017-06-21.

@@ -16,10 +16,9 @@ public class Heal extends BaseAction {
 
         Player targetPlayer = getTargetPlayer(player, opponent);
         if (targetPlayer.getActiveCard().getTopCard() != null) {
-            logger.info(power.getCount(player, opponent)+"");
+            logger.info(power.getCount(player, opponent) + "");
             targetPlayer.getActiveCard().getTopCard().setHeal(power.getCount(player, opponent));
         }
         return true;
     }
-
 }

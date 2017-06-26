@@ -1,10 +1,6 @@
 package Model.Abilities;
 
-import Enums.ActionTarget;
 import Model.Player;
-
-import javax.script.ScriptException;
-import java.net.URISyntaxException;
 
 /**
  * Created by hosein on 2017-06-20.

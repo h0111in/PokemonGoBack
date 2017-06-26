@@ -1,11 +1,13 @@
 package Model.Abilities;
 
 import Enums.ActionTarget;
-import Listeners.LogicEventListener;
+import Enums.Area;
+import Model.Card;
 import Model.Player;
 
-import javax.script.ScriptException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by hosein on 2017-06-22.
@@ -18,9 +20,44 @@ public class ReEnergize extends BaseAction implements IActionStrategy {
     private boolean isUserChoiceDestination;
     private ActionTarget targetDestination;
 
+
     @Override
     public boolean fight(Player player, Player opponent) throws Exception {
-        return false;
+        Player targetPlayer = getTargetPlayer(player, opponent);
+        List<Card> holderList = targetPlayer.getAreaCard(Area.bench);
+        if (targetPlayer.getActiveCard().getTopCard() != null)
+            holderList.add(targetPlayer.getActiveCard().getTopCard());
+        Card selectedHolder = null;
+        if (holderList.size() > 0) {
+            if (targetPlayer.isComputer())
+                selectedHolder = holderList.get(0);
+            else {
+                List<String> selectedList = fireSelectCardRequest("select a card as source for energy", 1, holderList, true);
+                if (selectedList.size() > 0)
+                    selectedHolder = targetPlayer.getCard(selectedList.get(0));
+                else return true;
+            }
+        }
+        List<Card> energyList = new ArrayList<>();
+        for (Card energy : targetPlayer.getCardHolder(selectedHolder.getId()).getEnergyCards())
+            energyList.add(energy);
+        List<String> selectedEnergyList = fireSelectCardRequest("select one energy card", 1, energyList, true);
+        if (selectedEnergyList.size() > 0) {
+            if (holderList.size() > 1) {
+                Card targetHolder = null;
+                if (targetPlayer.isComputer())
+                    selectedHolder = holderList.get(1);
+                else {
+                    List<String> selectedList = fireSelectCardRequest("select a card as target for energy", 1, holderList, true);
+                    if (selectedList.size() > 0)
+                        targetHolder = targetPlayer.getCard(selectedList.get(0));
+                    else return true;
+                }
+                targetPlayer.addCard(                        targetPlayer.popCard(selectedEnergyList.get(0),selectedHolder.getId())
+                        , targetPlayer.getCardArea(targetHolder.getId()), targetHolder.getId());
+            }
+        }
+        return true;
     }
 
     @Override
@@ -51,13 +88,4 @@ public class ReEnergize extends BaseAction implements IActionStrategy {
         else return new String[0];
     }
 
-    @Override
-    public void addListener(LogicEventListener listener) {
-
-    }
-
-    @Override
-    public void clearListener() {
-
-    }
 }

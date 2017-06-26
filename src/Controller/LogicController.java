@@ -79,24 +79,18 @@ public class LogicController {
         players.get(Enums.Player.A).addCard(players.get(Enums.Player.A).drawCard(6, Area.deck), Area.prize, -1, "");
         players.get(Enums.Player.B).addCard(players.get(Enums.Player.B).drawCard(6, Area.deck), Area.prize, -1, "");
 
-        //Check pokemon in hands
-        for (Player player : players.values()) {
-            boolean hasPokemon = false;
-            while (!hasPokemon) {
-                for (Card card : player.getAreaCard(Area.hand)) {
-                    if (card instanceof PokemonCard) {
-                        hasPokemon = true;
-                        break;
-                    }
-                }
-                if (!hasPokemon) {
-//                    fireShowMessage("Player " + player.getName() + "doesn't have pokemon", 1);
-//                    fireShowMessage("Exchanging a card...", 1);
-                    player.addCard(player.popAllCard(Area.hand, -1, ""), Area.deck, -1, "");
-                    player.addCard(Player.shuffle(player.popAllCard(Area.deck, -1, "")), Area.deck, -1, "");
-                    player.addCard(player.drawCard(7, Area.deck), Area.hand, -1, "");
-                }
-            }
+        //Check Mulligan in hands
+        int totalMulliganA = checkMulligan(Enums.Player.A);
+        int totalMulliganB = checkMulligan(Enums.Player.B);
+        if (totalMulliganA > totalMulliganB) {
+            fireShowMessage(Alert.AlertType.INFORMATION, "Opponent receives " + (totalMulliganA - totalMulliganB) + " cards due to Mulligan", 1.5);
+            players.get(Enums.Player.B).addCard(players.get(Enums.Player.B).drawCard(totalMulliganA - totalMulliganB, Area.deck), Area.hand, -1, "");
+        } else if (totalMulliganB > totalMulliganA) {
+            fireShowMessage(Alert.AlertType.INFORMATION, "User receives " + (totalMulliganB - totalMulliganA) +
+                    " cards due to Mulligan", 1.5);
+            players.get(Enums.Player.A).addCard(players.get(Enums.Player.A).drawCard(totalMulliganA - totalMulliganB, Area.deck)
+                    , Area.hand, -1, "");
+
         }
 
         //DEFINE FIRST PLAYER
@@ -106,6 +100,29 @@ public class LogicController {
                 Enums.Player.A;
 
         startTurn(false);
+    }
+
+    private int checkMulligan(Enums.Player playerName) throws Exception {
+        Player player = players.get(playerName);
+        boolean hasPokemon = false;
+        int total = 0;
+        while (!hasPokemon) {
+            for (Card card : player.getAreaCard(Area.hand)) {
+                if (card instanceof PokemonCard) {
+                    hasPokemon = true;
+                    break;
+                }
+            }
+            if (!hasPokemon) {
+                fireShowMessage(Alert.AlertType.INFORMATION, "Player " + player.getName() + "doesn't have pokemon", 1);
+                fireShowMessage(Alert.AlertType.INFORMATION, "Exchanging a card...", 1);
+                player.addCard(player.popAllCard(Area.hand, -1, ""), Area.deck, -1, "");
+                player.addCard(Player.shuffle(player.popAllCard(Area.deck, -1, "")), Area.deck, -1, "");
+                player.addCard(player.drawCard(7, Area.deck), Area.hand, -1, "");
+                total++;
+            }
+        }
+        return total;
     }
 
     private void startTurn(boolean addCard) throws Exception {

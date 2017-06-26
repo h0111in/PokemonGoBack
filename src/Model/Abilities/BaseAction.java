@@ -10,7 +10,10 @@ import javax.swing.event.EventListenerList;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EventListener;
 import java.util.List;
+
+import static Controller.Main.logger;
 
 /**
  * Created by hosein on 2017-06-20.
@@ -26,8 +29,12 @@ public abstract class BaseAction implements IActionStrategy {
     protected String name;
     protected ActionTarget target;
     protected Counter power;
-    private EventListenerList listenerList = new EventListenerList();
-    private boolean isUserChoice;
+    protected static EventListenerList listenerList;
+    protected boolean isUserChoice;
+
+    protected BaseAction() {
+        this.listenerList = new EventListenerList();
+    }
 
     @Override
     public String toString() {
@@ -144,15 +151,20 @@ public abstract class BaseAction implements IActionStrategy {
     }
 
     //region Event
-    public void addListener(LogicEventListener listener) {
+    public synchronized void addListener(LogicEventListener listener) {
+        if (listenerList == null)
+            clearListener();
         listenerList.add(LogicEventListener.class, listener);
+        logger.info("listener list size: " + listenerList.getListenerCount());
+
     }
 
     public void clearListener() {
-        listenerList = new EventListenerList();
+        listenerList.remove(LogicEventListener.class, listenerList.getListeners(LogicEventListener.class)[0]);
+        logger.info("listener list size: " + listenerList.getListenerCount());
     }
 
-    protected boolean fireShowMessage(Alert.AlertType confirmation, String message, double duration) {
+    protected synchronized boolean fireShowMessage(Alert.AlertType confirmation, String message, double duration) {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == LogicEventListener.class) {
@@ -162,7 +174,7 @@ public abstract class BaseAction implements IActionStrategy {
         return false;
     }
 
-    protected boolean fireFlipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
+    protected synchronized boolean fireFlipCoin(Coin defaultFace, double waitForFlipping) throws URISyntaxException {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == LogicEventListener.class) {
@@ -172,8 +184,9 @@ public abstract class BaseAction implements IActionStrategy {
         return false;
     }
 
-    protected List<String> fireSelectCardRequest(String message, int cardNumber, List<Card> cardList, boolean showCard) throws Exception {
+    protected synchronized List<String> fireSelectCardRequest(String message, int cardNumber, List<Card> cardList, boolean showCard) throws Exception {
         Object[] listeners = listenerList.getListenerList();
+        logger.info("listener list size: " + listenerList.getListenerCount());
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == LogicEventListener.class) {
                 return ((LogicEventListener) listeners[i + 1]).selectCardRequest(message, cardNumber, cardList, showCard);
@@ -182,7 +195,7 @@ public abstract class BaseAction implements IActionStrategy {
         return new ArrayList<>();
     }
 
-    protected boolean fireActionRequest(Player playerName, IActionStrategy action) throws Exception {
+    protected synchronized boolean fireActionRequest(Player playerName, IActionStrategy action) throws Exception {
         Object[] listeners = listenerList.getListenerList();
         for (int i = 0; i < listeners.length; i = i + 2) {
             if (listeners[i] == LogicEventListener.class) {

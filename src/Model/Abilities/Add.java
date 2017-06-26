@@ -12,6 +12,7 @@ public class Add extends BaseAction implements IActionStrategy {
     private IActionStrategy innerAction;
     private TriggerTime triggerTime;
 
+
     @Override
     public boolean fight(Player player, Player opponent) throws Exception {
         fireActionRequest(player.getName(), innerAction);

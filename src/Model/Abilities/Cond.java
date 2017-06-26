@@ -1,11 +1,7 @@
 package Model.Abilities;
 
-import Enums.ActionTarget;
-import Model.Condition;
 import Model.Player;
 
-import javax.script.ScriptException;
-import java.util.AbstractMap;
 import java.util.Arrays;
 
 /**

@@ -9,6 +9,8 @@ import java.util.Arrays;
  * Created by hosein on 2017-06-22.
  */
 public class Healed extends BaseAction implements IActionStrategy {
+
+
     @Override
     public int getTotalEffectivePower() throws ScriptException {
         return 0;

@@ -1,7 +1,5 @@
 package Model.Abilities;
 
-import Enums.Coin;
-import Listeners.LogicEventListener;
 import Model.Player;
 import javafx.scene.control.Alert;
 
@@ -66,13 +64,5 @@ public class Choice extends BaseAction implements IActionStrategy {
         return words;
     }
 
-    @Override
-    public void addListener(LogicEventListener listener) {
 
-    }
-
-    @Override
-    public void clearListener() {
-
-    }
 }

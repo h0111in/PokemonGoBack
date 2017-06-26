@@ -5,9 +5,12 @@ import Model.Card;
 import Model.EnergyCard;
 import Model.Player;
 import Model.PokemonCard;
+import javafx.scene.control.Alert;
 
 import javax.script.ScriptException;
 import java.util.*;
+
+import static Controller.Main.logger;
 
 /**
  * Created by hosein on 2017-06-22.
@@ -17,7 +20,6 @@ public class Search extends BaseAction implements IActionStrategy {
     private String filterValue;
     private Area source;
     private String filterType;
-    private boolean isUserChoice;
     private String sourceFilterType;
     private String sourceFilterValue;
 
@@ -35,7 +37,7 @@ public class Search extends BaseAction implements IActionStrategy {
     }
 
     @Override
-    public boolean fight(Player player, Player opponent) throws Exception {
+    public final boolean fight(Player player, Player opponent) throws Exception {
         //search:target:opponent:source:deck:filter:top:1:0,cond:choice:shuffle:target:opponent
         //Look at the top card of your opponent's deck. Then, you may have your opponent shuffle his or her deck.
         //search:target:you:source:deck:filter:type:energy:4
@@ -45,23 +47,48 @@ public class Search extends BaseAction implements IActionStrategy {
         //Search your deck for up to 2 Basic Pokémon, reveal them, and put them into your hand. Shuffle your deck afterward.
         //Wally:search:target:your:choice:filter:pokemon:cat:basic:source:deck:filter:evolves-from:target:last:1,shuffle:target:you
 
+        logger.info("listener list size: " + listenerList.getListenerCount());
         Player targetPlayer = getTargetPlayer(player, opponent);
-
-        List<Card> areaCard = targetPlayer.getAreaCard(source);
+        String selectedId = "";
         String basicCardType = "";
         if (!sourceFilterType.isEmpty()) {
-            List<Card> sourceList = getFilteredList(sourceFilterType, sourceFilterValue, Integer.MAX_VALUE, targetPlayer.getAreaCard(Area.hand), "");
-            if (sourceList.size() > 0)
-                basicCardType = sourceList.get(0).getType();
+            List<Card> holderList = targetPlayer.getAreaCard(Area.bench);
+            if (targetPlayer.getActiveCard().getTopCard() != null)
+                holderList.add(targetPlayer.getActiveCard().getTopCard());
+
+            List<Card> sourceList = getFilteredList(sourceFilterType, sourceFilterValue, Integer.MAX_VALUE, holderList, "");
+            logger.info("sourceList.size:" + sourceList.size());
+            if (sourceList.size() > 0) {
+                if (isUserChoice && !player.isComputer()) {
+                    List<String> selectedCards = fireSelectCardRequest("Select a card to search deck for stage-1", 1, sourceList, true);
+                    if (selectedCards.size() > 0) {
+                        basicCardType = targetPlayer.getCard(selectedCards.get(0)).getName();
+                        selectedId = targetPlayer.getCard(selectedCards.get(0)).getId();
+                    }
+                } else {
+                    basicCardType = sourceList.get(0).getName();
+                    selectedId = sourceList.get(0).getId();
+                }
+
+            } else {
+                fireShowMessage(Alert.AlertType.INFORMATION, "Search: Sorry, there is no potential card in your hand!", 2);
+                return true;
+            }
         }
+        List<Card> areaCard = targetPlayer.getAreaCard(source);
         List<Card> filteredList = getFilteredList(filterType, filterValue, amount, areaCard, basicCardType);
-        if (!player.isComputer()) {
-            fireSelectCardRequest(name + " on " + target + "." + source.name(), 0, filteredList, true);
-        }
-        for (int i = 0; i < amount; i++) {
-            Card card = targetPlayer.popCard(filteredList.get(i).getId(), "");
-            targetPlayer.addCard(card, Area.hand, "");
-        }
+        if (filterType.equals("evolves-from")) {
+            logger.info("evolves-from basic: " + selectedId + " to: " + (filteredList.size() > 0 ? filteredList.get(0).getId() : "!"));
+            if (filteredList.size() > 0)
+                targetPlayer.addCard(targetPlayer.popCard(filteredList.get(0).getId(), "")
+                        , targetPlayer.getCardArea(selectedId), selectedId);
+        } else
+            for (int i = 0; i < amount; i++) {
+                Card card = targetPlayer.popCard(filteredList.get(i).getId(), "");
+                targetPlayer.addCard(card, Area.hand, "");
+                logger.info("evolves-from basic: " + selectedId + " to: " + (filteredList.size() > 0 ? filteredList.get(i).getId() : "!"));
+
+            }
 
 
         return true;
@@ -91,17 +118,23 @@ public class Search extends BaseAction implements IActionStrategy {
                         return filteredList;
                     break;
                 case "pokemon":
-                    if (card instanceof PokemonCard && ((PokemonCard) card).getLevel().equals(filterValue))
-                        filteredList.add(card);
+                    if (card instanceof PokemonCard && ((PokemonCard) card).getLevel().equals(filterValue)) {
+                        if (!basicCardType.isEmpty()) {
+                            if (card instanceof PokemonCard)
+                                if (((PokemonCard) card).getLevel().equals(basicCardType)) {
+                                    filteredList.add(card);
+                                }
+                        } else
+                            filteredList.add(card);
+                    }
                     if (filteredList.size() == amount)
                         return filteredList;
                     break;
                 case "evolves-from":
                     if (!basicCardType.isEmpty())
                         if (card instanceof PokemonCard)
-                            if (!((PokemonCard) card).getLevel().equals("basic")) {
-                                if (card.getType().equals(basicCardType))
-                                    filteredList.add(card);
+                            if (((PokemonCard) card).getLevel().equals(basicCardType)) {
+                                filteredList.add(card);
                             }
                     if (filteredList.size() == amount)
                         return filteredList;
@@ -138,11 +171,14 @@ public class Search extends BaseAction implements IActionStrategy {
         if (words[i].equals("choice")) {
             isUserChoice = true;
             i++;
-            sourceFilterType = words[i++];
+            if (words[i].contains("-")) {
+                target = toTarget(words[i].split("-")[0]);
+                sourceFilterType = words[i].split("-")[1];
+                i++;
+            }
             if (words[i].equals("cat")) {
                 i++;
                 sourceFilterValue = words[i++];
-
             }
 
         } else
@@ -221,4 +257,5 @@ public class Search extends BaseAction implements IActionStrategy {
         else return new String[0];
 
     }
+
 }

@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class DeEnergize extends BaseAction {
 
+
     @Override
     public boolean fight(Player player, Player opponent) throws Exception {
 
