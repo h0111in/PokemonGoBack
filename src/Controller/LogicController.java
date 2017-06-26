@@ -544,7 +544,8 @@ public class LogicController {
                                         case pokemon:
                                             if (((PokemonCard) targetCard).getLevel().equals("basic"))
                                                 if (targetStageCard == null)//uc1-7
-                                                    if (!((PokemonCard) flyCard).getLevel().equals("basic")) {
+                                                    if (!((PokemonCard) flyCard).getLevel().equals("basic")
+                                                            && ((PokemonCard) flyCard).getLevel().equals(targetCard.getName())) {
                                                         movementVerified = true;
                                                         if (targetArea == Area.active)
                                                             turnAction = TurnAction.attachStage1CardToActive;
