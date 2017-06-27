@@ -1,108 +1,3179 @@
-Jun 14, 2017 7:18:53 PM Model.Player popCard
-INFO: B19
-Jun 14, 2017 7:18:54 PM Controller.LogicController playAutomatic
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: ﻿Act Cute:deck:target:opponent:destination:deck:bottom:choice:them:target:1
+deck
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Scratch:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Quick Attack:dam:target:opponent-active:10,cond:flip:dam:target:opponent-active:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Quick Attack:dam:target:opponent-active:10,cond:flip:dam:target:opponent-active:30
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Flying Elekick:dam:target:opponent-active:50
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Nuzzle:cond:flip:applystat:status:paralyzed:opponent-active
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Quick Attack:dam:target:opponent-active:20,cond:flip:dam:target:opponent-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Quick Attack:dam:target:opponent-active:20,cond:flip:dam:target:opponent-active:10
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Circle Circuit:dam:target:opponent-active:20*count(target:your-bench)
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Thunderbolt:dam:target:opponent-active:100,deenergize:target:your-active:count(target:your-active:energy)
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Thunderbolt:dam:target:opponent-active:100,deenergize:target:your-active:count(target:your-active:energy)
+deenergize
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Rain Splash:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Soaking Horn:dam:target:opponent-active:10,cond:healed:target:your-active:dam:target:opponent-active:80
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Soaking Horn:dam:target:opponent-active:10,cond:healed:target:your-active:dam:target:opponent-active:80
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Soaking Horn:dam:target:opponent-active:10,cond:healed:target:your-active:dam:target:opponent-active:80
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Reckless Charge:dam:target:opponent-active:40,dam:target:your-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Reckless Charge:dam:target:opponent-active:40,dam:target:your-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Reckless Charge:dam:target:opponent-active:20,dam:target:your-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Reckless Charge:dam:target:opponent-active:20,dam:target:your-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Cut:dam:target:opponent-active:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Pound:dam:target:opponent-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Clamp Crush:dam:target:opponent-active:30,cond:flip:deenergize:target:opponent-active:1,applystat:status:paralyzed:opponent-active
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Clamp Crush:dam:target:opponent-active:30,cond:flip:deenergize:target:opponent-active:1,applystat:status:paralyzed:opponent-active
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Spike Cannon:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Spike Cannon:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30,cond:flip:dam:target:opponent-active:30
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Spiral Drain:dam:target:opponent-active:20,heal:target:your-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Spiral Drain:dam:target:opponent-active:20,heal:target:your-active:20
+heal
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Aurora Beam:dam:target:opponent-active:80
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Wing Attack:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Brave Bird:dam:target:opponent-active:80,dam:target:your-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Brave Bird:dam:target:opponent-active:80,dam:target:your-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Lunge:cond:flip:dam:target:opponent-active:20
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Slash:dam:target:opponent-active:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Nyan Press:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40:else:applystat:status:paralyzed:opponent-active
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Nyan Press:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40:else:applystat:status:paralyzed:opponent-active
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Random Spark:dam:target:choice:opponent:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Bite:dam:target:opponent-active:40
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Bite:dam:target:opponent-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Knuckle Punch:dam:target:opponent-active:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Electroslug:dam:target:opponent-active:90
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Knuckle Punch:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Destructive Beam:cond:flip:deenergize:target:opponent-active:1
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Tierno:draw:3
+draw
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Potion:heal:target:choice:your:30
+heal
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Misty's Determination:cond:ability:deck:target:your:destination:discard:choice:you:1:(search:target:your:source:deck:filter:top:8:1,shuffle:target:your)
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: PokÃ©mon Center Lady:heal:target:choice:your:60,destat:target:last
+heal
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: PokÃ©mon Center Lady:heal:target:choice:your:60,destat:target:last
+destat
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Clemont:search:target:your:source:deck:filter:energy:4
+search
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Ear Influence:redamage:source:choice:opponent:destination:opponent:count(target:last:source:damage)
+redamage
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Psychic:dam:target:opponent-active:60,dam:target:opponent-active:count(target:opponent-active:energy)*10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Psychic:dam:target:opponent-active:60,dam:target:opponent-active:count(target:opponent-active:energy)*10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Hug:dam:target:opponent-active:30,applystat:status:stuck:opponent-active
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Hug:dam:target:opponent-active:30,applystat:status:stuck:opponent-active
+applystat
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Wish:search:target:your:source:deck:1
+search
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Heart Sign:dam:target:opponent-active:50
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Act Tough:dam:target:opponent-active:10,cond:count(target:your-active:energy:psychic)>0:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Act Tough:dam:target:opponent-active:10,cond:count(target:your-active:energy:psychic)>0:dam:target:opponent-active:20
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Act Tough:dam:target:opponent-active:10,cond:count(target:your-active:energy:psychic)>0:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Exhausted Tackle:cond:flip:dam:target:opponent-active:30:else:dam:target:your-active:30
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Knuckle Punch:dam:target:opponent-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Double Stab:cond:flip:dam:target:opponent-active:10,cond:flip:dam:target:opponent-active:10
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Doduo Delivery:draw:2
+draw
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Fury Attack:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Fury Attack:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:40
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Rollout:dam:target:opponent-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Flail:dam:target:opponent-active:count(target:your-active:damage)*10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Skill Dive:dam:target:opponent:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Poison Ring:applystat:status:stuck:opponent-active,applystat:status:poisoned:opponent-active
+applystat
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Poison Ring:applystat:status:stuck:opponent-active,applystat:status:poisoned:opponent-active
+applystat
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Sleep Poison:cond:flip:(applystat:status:asleep:opponent-active,applystat:status:poisoned:opponent-active)
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Mine:search:target:opponent:source:deck:filter:top:1:0,cond:choice:shuffle:target:opponent
+search
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Mine:search:target:opponent:source:deck:filter:top:1:0,cond:choice:shuffle:target:opponent
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Mud Slap:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Earthquake:dam:target:opponent-active:60,dam:target:your-bench:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Earthquake:dam:target:opponent-active:60,dam:target:your-bench:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Rock Tumble:dam:target:opponent-active:60
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Scratch:dam:target:opponent-active:10
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Spacing Out:cond:flip:heal:target:your-active:10
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Scavenge:cond:ability:deenergize:target:your-active:1:(search:target:your:source:discard:filter:cat:item:1)
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Stretch Kick:dam:target:choice:opponent-bench:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Spiral Kick:dam:target:opponent-active:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Bullet Punch:dam:target:opponent-active:20,cond:flip:dam:target:opponent-active:20,cond:flip:dam:target:opponent-active:20
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Bullet Punch:dam:target:opponent-active:20,cond:flip:dam:target:opponent-active:20,cond:flip:dam:target:opponent-active:20
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Mach Cross:dam:target:opponent-active:60
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Beatdown:dam:target:opponent-active:40
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Twinkle:applystat:status:asleep:opponent-active
+applystat
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Fake Out:dam:target:opponent-active:30,cond:flip:applystat:status:paralyzed:opponent-active
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Fake Out:dam:target:opponent-active:30,cond:flip:applystat:status:paralyzed:opponent-active
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Ambush:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:30
+dam
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Ambush:dam:target:opponent-active:40,cond:flip:dam:target:opponent-active:30
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Floral Crown:add:target:your:trigger:opponent:turn-end:(heal:target:self:20)
+add
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Floral Crown:add:target:your:trigger:opponent:turn-end:(heal:target:self:20)
+(heal
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: PokÃ© Ball:cond:flip:search:target:your:source:deck:filter:pokemon:1
+cond
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Shauna:deck:target:your:destination:deck:count(your-hand),shuffle:target:you,draw:5
+deck
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: PokÃ©mon Fan Club:search:target:your:source:deck:filter:pokemon:cat:basic:2,shuffle:target:you
+search
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: PokÃ©mon Fan Club:search:target:your:source:deck:filter:pokemon:cat:basic:2,shuffle:target:you
+shuffle
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Switch:swap:source:your-active:destination:choice:your-bench
+swap
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Energy Switch:reenergize:target:choice:your:1:target:choice:your:1
+reenergize
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Red Card:deck:target:opponent:destination:deck:count(opponent-hand),shuffle:target:opponent,draw:opponent:4
+deck
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Wally:search:target:choice:your-pokemon:cat:basic:source:deck:filter:evolves-from:target:last:1,shuffle:target:you
+search
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: Wally:search:target:choice:your-pokemon:cat:basic:source:deck:filter:evolves-from:target:last:1,shuffle:target:you
+shuffle
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getAbilities
+INFO: *****************abilities finished*****************
+Jun 27, 2017 9:37:38 AM Parser.BaseParser getCards
+INFO: *****************cards finished*****************
+Jun 27, 2017 9:37:39 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:39 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A0 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:39 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:39 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A1 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:39 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:39 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A2 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:39 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:39 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A3 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:39 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A4 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A5 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A6 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A7 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A11 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A12 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A13 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A14 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A16 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A17 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A18 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A28 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A29 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A30 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A31 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A32 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A33 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A34 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A35 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A36 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A37 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A38 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A39 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A50 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A51 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:40 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A55 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A56 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A57 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B0 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B1 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B2 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B3 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B4 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B5 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B6 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B7 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B11 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B12 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B13 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B14 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B16 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B17 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B18 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B28 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B29 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B30 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B31 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B32 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B33 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B34 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B35 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B36 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B37 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B38 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B39 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B50 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B51 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B55 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B56 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B57 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO:  Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A39 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A38 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A37 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A36 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO: A42 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO: A41 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:41 AM Model.Player addCard
+INFO: A40 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A39 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A39 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A38 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A38 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A37 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A37 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A36 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A36 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B18 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B17 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B16 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B19 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B18 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B18 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B17 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B17 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B16 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B16 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B59 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B15 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B58 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A35 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A34 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A33 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A32 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A31 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A30 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A35 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: A35 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A34 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: A34 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A33 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: A33 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A32 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: A32 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A31 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: A31 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: A30 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: A30 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B14 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B57 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B13 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B56 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B12 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B55 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B14 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: B14 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B57 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: B57 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B13 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: B13 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B56 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: B56 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B12 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: B12 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:42 AM Model.Player addCard
+INFO: B55 Area : prize columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area prize - ID: B55 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:44 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:37:49 AM Model.Player popCard
+INFO: B19 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:49 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:49 AM Model.Player addCard
+INFO: B19 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:49 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
 INFO: put to active area:Froakie
-Jun 14, 2017 7:18:54 PM Model.Player popCard
-INFO: B59
-Jun 14, 2017 7:18:54 PM Controller.LogicController playAutomatic
-INFO: attachEnergyOnActive:Lightning
-Jun 14, 2017 7:18:57 PM Model.Player popCard
-INFO: A40
-Jun 14, 2017 7:18:59 PM Model.Player popCard
-INFO: A37
-Jun 14, 2017 7:19:07 PM Controller.LogicController executeAbility
-INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 7:19:07 PM Model.Player popCard
-INFO: B58
-Jun 14, 2017 7:19:07 PM Controller.LogicController executeAbility
-INFO: player B, executes Potionaction:heal
-Jun 14, 2017 7:19:07 PM Controller.LogicController playAutomatic
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 1
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
+INFO: costType: colorless
+Jun 27, 2017 9:37:49 AM Model.Player popCard
+INFO: B59 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:49 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:49 AM Model.Player addCard
+INFO: B59 Area : active columnIndex: -1 uiHolderId: B19
+Jun 27, 2017 9:37:49 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B59 - smallCardId: B19 - columnIndex:-1
+Jun 27, 2017 9:37:49 AM Controller.LogicController playAI
+INFO: attach energy :Lightning into: ActivePokemon: Froakie
+Jun 27, 2017 9:37:49 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:37:49 AM Controller.LogicController checkKnockout
+INFO: 0 
+0
+Jun 27, 2017 9:37:50 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A29 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:50 AM Model.Player addCard
+INFO: A29 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:50 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A29 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:54 AM View.GameBoardController$5 handle
+INFO: active
+Jun 27, 2017 9:37:54 AM View.GameBoardController$5 handle
+INFO: A
+Jun 27, 2017 9:37:54 AM View.GameBoardController$5 handle
+INFO: target-source indext: active-1 hand -1 
+Jun 27, 2017 9:37:54 AM View.GameBoardController$5 handle
+INFO: cardID:A42 
+Jun 27, 2017 9:37:54 AM Controller.LogicController$2 MoveCard
+INFO: Move card A42 from hand, to active
+Jun 27, 2017 9:37:54 AM Model.Player popCard
+INFO: A42 Area : hand columnIndex: -1 uiHolderId: A42
+Jun 27, 2017 9:37:54 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: A42 - smallCardId: A42 - columnIndex:-1
+Jun 27, 2017 9:37:54 AM Model.Player addCard
+INFO: A42 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:37:54 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: A42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:37:56 AM View.GameBoardController$5 handle
+INFO: active
+Jun 27, 2017 9:37:56 AM View.GameBoardController$5 handle
+INFO:  A42 
+Jun 27, 2017 9:37:56 AM View.GameBoardController$5 handle
+INFO: A
+Jun 27, 2017 9:37:56 AM View.GameBoardController$5 handle
+INFO: target-source indext: active-1 hand -1 
+Jun 27, 2017 9:37:56 AM View.GameBoardController$5 handle
+INFO: cardID:A37 A42
+Jun 27, 2017 9:37:56 AM Controller.LogicController$2 MoveCard
+INFO: Move card A37 from hand, to active(A42)
+Jun 27, 2017 9:37:56 AM Model.Player popCard
+INFO: A37 Area : hand columnIndex: -1 uiHolderId: A37
+Jun 27, 2017 9:37:56 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: A37 - smallCardId: A37 - columnIndex:-1
+Jun 27, 2017 9:37:56 AM Model.Player addCard
+INFO: A37 Area : active columnIndex: -1 uiHolderId: A42
+Jun 27, 2017 9:37:56 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: A37 - smallCardId: A42 - columnIndex:-1
+Jun 27, 2017 9:37:57 AM Model.Attack getCostString
+INFO: cost =  1Xpsychic
+Jun 27, 2017 9:37:57 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:37:59 AM Controller.LogicController executeAbility
+INFO: player A, executes Sleep Poison
+ action:cond
+Jun 27, 2017 9:37:59 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:37:59 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Sleep Poison flip request 
+Jun 27, 2017 9:37:59 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:38:01 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:01 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:01 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:01 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:01 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:01 AM Controller.LogicController$3 attackRequest
+INFO: A: attack:Gastly
+Jun 27, 2017 9:38:01 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:38:01 AM Controller.LogicController checkKnockout
+INFO: 2 
+0
+Jun 27, 2017 9:38:02 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B11 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:02 AM Model.Player addCard
+INFO: B11 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:02 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B11 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:38:04 AM Model.Player popCard
+INFO: B58 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:04 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:04 AM Controller.LogicController executeAbility
+INFO: player B, executes Potion
+ action:heal with power 30 on target yourActive in condition &condition&
+Jun 27, 2017 9:38:04 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:04 AM Model.Abilities.Heal fight
+INFO: 30
+Jun 27, 2017 9:38:04 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:04 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:04 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:04 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:04 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:04 AM Model.Player addCard
+INFO: B58 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:04 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
 INFO: trainer card:Potion
-Jun 14, 2017 7:19:07 PM Controller.LogicController playAutomatic
-INFO: A40
-Jun 14, 2017 7:19:07 PM Controller.LogicController playAutomatic
-INFO: attack:Froakie
-Jun 14, 2017 7:19:07 PM Controller.LogicController executeAbility
-INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:07 PM View.SmallCardController$1 handle
-INFO: handle from code
-Jun 14, 2017 7:19:07 PM View.SmallCardController$1 handle
-INFO: A40Zubat
-Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
-INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 7:19:12 PM Model.Player popCard
-INFO: B54
-Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
-INFO: player B, executes Clemontaction:search
-Jun 14, 2017 7:19:12 PM Controller.LogicController playAutomatic
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
+INFO: A42
+Jun 27, 2017 9:38:04 AM Controller.LogicController playAI
+INFO: AI can not attack due to restriction
+Jun 27, 2017 9:38:04 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:38:04 AM Controller.LogicController checkKnockout
+INFO: 2 
+0
+Jun 27, 2017 9:38:05 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A28 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:05 AM Model.Player addCard
+INFO: A28 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:05 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A28 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:05 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:05 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:05 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:05 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:05 AM Controller.LogicController$3 cardClicked
+INFO: pokemonGastly
+Jun 27, 2017 9:38:05 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA42 evt :A42
+Jun 27, 2017 9:38:22 AM View.GameBoardController$5 handle
+INFO: areabenchA2
+Jun 27, 2017 9:38:22 AM View.GameBoardController$5 handle
+INFO: bench
+Jun 27, 2017 9:38:22 AM View.GameBoardController$5 handle
+INFO: A
+Jun 27, 2017 9:38:22 AM View.GameBoardController$5 handle
+INFO: target-source indext: bench2 hand -1 
+Jun 27, 2017 9:38:22 AM View.GameBoardController$5 handle
+INFO: cardID:A38 
+Jun 27, 2017 9:38:22 AM Controller.LogicController$2 MoveCard
+INFO: Move card A38 from hand, to bench
+Jun 27, 2017 9:38:22 AM Model.Player popCard
+INFO: A38 Area : hand columnIndex: -1 uiHolderId: A38
+Jun 27, 2017 9:38:22 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: A38 - smallCardId: A38 - columnIndex:-1
+Jun 27, 2017 9:38:22 AM Model.Player addCard
+INFO: A38 Area : bench columnIndex: 2 uiHolderId: 
+Jun 27, 2017 9:38:22 AM Model.Player addCard
+INFO: card Doduo add to column :2
+Jun 27, 2017 9:38:22 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: A38 - smallCardId:  - columnIndex:2
+Jun 27, 2017 9:38:24 AM Model.Attack getCostString
+INFO: cost =  1Xpsychic
+Jun 27, 2017 9:38:24 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:38:25 AM Controller.LogicController$3 attackRequest
+INFO: A :A42 retreat
+Jun 27, 2017 9:38:25 AM Controller.LogicController$3 attackRequest
+INFO: retreatCostList: 1 / 1
+Jun 27, 2017 9:38:28 AM Model.Player popCard
+INFO: A37 Area : active columnIndex: -1 uiHolderId: A42
+Jun 27, 2017 9:38:28 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: A37 - smallCardId: A42 - columnIndex:-1
+Jun 27, 2017 9:38:28 AM Model.Player addCard
+INFO: A37 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:28 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: A37 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:28 AM Model.Player popCard
+INFO: A42 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:28 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: A42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:28 AM Model.Player popCard
+INFO: A38 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:28 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: A38 - smallCardId:  - columnIndex:2
+Jun 27, 2017 9:38:28 AM Model.Player addCard
+INFO: A38 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:28 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: A38 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:28 AM Model.Player addCard
+INFO: A42 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:28 AM Model.Player addCard
+INFO: card Gastly add to column :0
+Jun 27, 2017 9:38:28 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: A42 - smallCardId:  - columnIndex:0
+Jun 27, 2017 9:38:28 AM Controller.LogicController$3 attackRequest
+INFO: A: attack:Gastly
+Jun 27, 2017 9:38:28 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:38:28 AM Controller.LogicController checkKnockout
+INFO: 2 
+0
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Player addCard
+INFO: B54 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:38:29 AM Model.Player popCard
+INFO: B54 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Controller.LogicController executeAbility
+INFO: player B, executes Clemont
+ action:search with power 0 on target yourActive in condition &condition&
+Jun 27, 2017 9:38:29 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:29 AM Model.Abilities.Search fight
+INFO: listener list size: 1
+Jun 27, 2017 9:38:29 AM Model.Player popCard
+INFO: B24 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Player addCard
+INFO: B24 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Abilities.Search fight
+INFO: evolves-from basic:  to: B24
+Jun 27, 2017 9:38:29 AM Model.Player popCard
+INFO: B25 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Player addCard
+INFO: B25 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Abilities.Search fight
+INFO: evolves-from basic:  to: B25
+Jun 27, 2017 9:38:29 AM Model.Player popCard
+INFO: B27 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Player addCard
+INFO: B27 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Abilities.Search fight
+INFO: evolves-from basic:  to: B27
+Jun 27, 2017 9:38:29 AM Model.Player popCard
+INFO: B28 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B28 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Player addCard
+INFO: B28 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B28 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Model.Abilities.Search fight
+INFO: evolves-from basic:  to: B28
+Jun 27, 2017 9:38:29 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:29 AM Model.Player addCard
+INFO: B54 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:29 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
 INFO: trainer card:Clemont
-Jun 14, 2017 7:19:12 PM Controller.LogicController playAutomatic
-INFO: A40
-Jun 14, 2017 7:19:12 PM Controller.LogicController playAutomatic
-INFO: attack:Froakie
-Jun 14, 2017 7:19:12 PM Controller.LogicController executeAbility
-INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:12 PM View.SmallCardController$1 handle
-INFO: handle from code
-Jun 14, 2017 7:19:12 PM View.SmallCardController$1 handle
-INFO: A40Zubat
-Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
-INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 7:19:16 PM Model.Player popCard
-INFO: B15
-Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
-INFO: player B, executes Tiernoaction:draw
-Jun 14, 2017 7:19:16 PM Controller.LogicController playAutomatic
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
+INFO: A38
+Jun 27, 2017 9:38:29 AM Controller.LogicController executeAbility
+INFO: player B, executes Pound
+ action:dam with power 10 on target opponentActive in condition &condition&
+Jun 27, 2017 9:38:29 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:29 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:29 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:29 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:29 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:29 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:29 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:29 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:29 AM Controller.LogicController playAI
+INFO: B: attack:Froakie
+Jun 27, 2017 9:38:29 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:38:29 AM Controller.LogicController checkKnockout
+INFO: 1 
+1
+Jun 27, 2017 9:38:30 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:30 AM Model.Player addCard
+INFO: A27 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:30 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:30 AM Controller.LogicController$3 cardClicked
+INFO: pokemonGastly
+Jun 27, 2017 9:38:30 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA42 evt :A42
+Jun 27, 2017 9:38:35 AM Model.Attack getCostString
+INFO: cost =  
+Jun 27, 2017 9:38:37 AM Model.Player popCard
+INFO: A27 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:37 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: A27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:37 AM Controller.LogicController executeAbility
+INFO: player A, executes Wally
+ action:search with power 0 on target yourActive in condition &condition&shuffle with power 0 on target yourActive in condition &condition&
+Jun 27, 2017 9:38:37 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:37 AM Model.Abilities.Search fight
+INFO: listener list size: 1
+Jun 27, 2017 9:38:37 AM Model.Abilities.Search fight
+INFO: sourceList.size:2
+Jun 27, 2017 9:38:37 AM Model.Abilities.BaseAction fireSelectCardRequest
+INFO: listener list size: 1
+Jun 27, 2017 9:38:37 AM Controller.LogicController$1 selectCardRequest
+INFO: Player A in Ability :Wally Select Card request 
+Jun 27, 2017 9:38:39 AM Model.Abilities.Search fight
+INFO: evolves-from basic: A38 to: A11
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A11 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A11 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player addCard
+INFO: A11 Area : active columnIndex: -1 uiHolderId: A38
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: A11 - smallCardId: A38 - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A43 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A44 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A45 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A46 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A47 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A48 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A49 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A0 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A0 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A1 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A1 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A2 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A2 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A3 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A3 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A4 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A4 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A5 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A5 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A6 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A6 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A7 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A7 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A8 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A9 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A50 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A50 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A51 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A51 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A52 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A53 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A10 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A54 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A55 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A55 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A12 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A12 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A56 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A56 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A13 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A13 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A57 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A57 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A14 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A14 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A58 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A15 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A59 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A16 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A16 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:39 AM Model.Player popCard
+INFO: A17 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A17 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A18 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A18 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A19 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A20 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A21 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A22 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A23 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A24 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A25 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player popCard
+INFO: A26 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A16 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A16 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A19 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A21 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A6 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A6 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A25 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A45 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A23 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A46 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A2 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A2 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A3 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A3 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A8 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A52 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A48 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A7 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A7 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A58 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A58 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A56 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A56 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A0 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A0 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A18 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A18 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A54 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A54 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A10 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A24 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A15 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A17 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A17 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A44 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A4 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A4 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A5 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A5 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A59 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A49 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A14 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A14 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A9 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A47 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A50 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A50 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A53 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A22 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A13 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A13 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A1 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A1 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A51 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A51 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A20 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A43 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A57 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A57 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A55 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A55 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A12 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A12 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A26 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: A26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:40 AM Model.Player addCard
+INFO: A27 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: A27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:40 AM Controller.LogicController$3 attackRequest
+INFO: trainer card:Wally
+Jun 27, 2017 9:38:40 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:38:40 AM Controller.LogicController checkKnockout
+INFO: 2 
+0
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Model.Player addCard
+INFO: B10 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:38:41 AM Model.Player popCard
+INFO: B15 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Controller.LogicController executeAbility
+INFO: player B, executes Tierno
+ action:draw
+Jun 27, 2017 9:38:41 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B51 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Model.Player addCard
+INFO: B53 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Model.Player addCard
+INFO: B52 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Model.Player addCard
+INFO: B51 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B51 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:41 AM Model.Player addCard
+INFO: B15 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B15 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
 INFO: trainer card:Tierno
-Jun 14, 2017 7:19:16 PM Controller.LogicController playAutomatic
-INFO: A40
-Jun 14, 2017 7:19:16 PM Controller.LogicController playAutomatic
-INFO: attack:Froakie
-Jun 14, 2017 7:19:16 PM Controller.LogicController executeAbility
-INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:17 PM View.SmallCardController$1 handle
-INFO: handle from code
-Jun 14, 2017 7:19:17 PM View.SmallCardController$1 handle
-INFO: A40Zubat
-Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
-INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 7:19:20 PM Model.Player popCard
-INFO: B53
-Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
-INFO: player B, executes Pokémon Center Ladyaction:heal
-Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
-INFO: player B, executes Pokémon Center Ladyaction:destat
-Jun 14, 2017 7:19:20 PM Controller.LogicController playAutomatic
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
+INFO: A11
+Jun 27, 2017 9:38:41 AM Controller.LogicController executeAbility
+INFO: player B, executes Pound
+ action:dam with power 10 on target opponentActive in condition &condition&
+Jun 27, 2017 9:38:41 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:41 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:41 AM Controller.LogicController playAI
+INFO: B: attack:Froakie
+Jun 27, 2017 9:38:41 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:38:41 AM Controller.LogicController checkKnockout
+INFO: 2 
+1
+Jun 27, 2017 9:38:42 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:42 AM Model.Player addCard
+INFO: A26 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:42 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:42 AM Controller.LogicController$3 cardClicked
+INFO: trainerWally
+Jun 27, 2017 9:38:42 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA27 evt :A27
+Jun 27, 2017 9:38:48 AM View.GameBoardController$5 handle
+INFO: active
+Jun 27, 2017 9:38:48 AM View.GameBoardController$5 handle
+INFO:  A11 
+Jun 27, 2017 9:38:48 AM View.GameBoardController$5 handle
+INFO: A
+Jun 27, 2017 9:38:48 AM View.GameBoardController$5 handle
+INFO: target-source indext: active-1 hand -1 
+Jun 27, 2017 9:38:48 AM View.GameBoardController$5 handle
+INFO: cardID:A29 A11
+Jun 27, 2017 9:38:48 AM Controller.LogicController$2 MoveCard
+INFO: Move card A29 from hand, to active(A11)
+Jun 27, 2017 9:38:48 AM Model.Player popCard
+INFO: A29 Area : hand columnIndex: -1 uiHolderId: A29
+Jun 27, 2017 9:38:48 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: A29 - smallCardId: A29 - columnIndex:-1
+Jun 27, 2017 9:38:48 AM Model.Player addCard
+INFO: A29 Area : active columnIndex: -1 uiHolderId: A11
+Jun 27, 2017 9:38:48 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: A29 - smallCardId: A11 - columnIndex:-1
+Jun 27, 2017 9:38:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B50 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:52 AM Model.Player addCard
+INFO: B50 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B50 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:38:52 AM Model.Player popCard
+INFO: B53 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:52 AM Controller.LogicController executeAbility
+INFO: player B, executes PokÃ©mon Center Lady
+ action:heal with power 60 on target yourActive in condition &condition&destat with power 0 on target last in condition &condition&
+Jun 27, 2017 9:38:52 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:52 AM Model.Abilities.Heal fight
+INFO: 60
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :setHeal
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :status
+Jun 27, 2017 9:38:52 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:52 AM Model.Player addCard
+INFO: B53 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B53 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
 INFO: trainer card:Pokémon Center Lady
-Jun 14, 2017 7:19:20 PM Controller.LogicController playAutomatic
-INFO: A40
-Jun 14, 2017 7:19:20 PM Controller.LogicController playAutomatic
-INFO: attack:Froakie
-Jun 14, 2017 7:19:20 PM Controller.LogicController executeAbility
-INFO: player B, executes Poundaction:dam
-Jun 14, 2017 7:19:20 PM View.SmallCardController$1 handle
-INFO: handle from code
-Jun 14, 2017 7:19:20 PM View.SmallCardController$1 handle
-INFO: A40Zubat
-Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
-INFO: player A, executes Skill Diveaction:dam
-Jun 14, 2017 7:19:25 PM Model.Player popCard
-INFO: B52
-Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
-INFO: player B, executes Misty's Determinationaction:cond
-Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
-INFO: player B, executes Misty's Determinationaction:deck
-Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
-INFO: player B, executes Misty's Determinationaction:search
-Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
-INFO: player B, executes Misty's Determinationaction:shuffle
-Jun 14, 2017 7:19:25 PM Controller.LogicController executeAbility
-INFO: none
-Jun 14, 2017 7:19:25 PM View.SmallCardController$1 handle
-INFO: handle from code
-Jun 14, 2017 7:19:25 PM View.SmallCardController$1 handle
-INFO: A40Zubat
-Jun 14, 2017 7:19:29 PM View.SmallCardController$1 handle
-INFO: handle from code
-Jun 14, 2017 7:19:29 PM View.SmallCardController$1 handle
-INFO: A40Zubat
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
+INFO: A11
+Jun 27, 2017 9:38:52 AM Controller.LogicController executeAbility
+INFO: player B, executes Pound
+ action:dam with power 10 on target opponentActive in condition &condition&
+Jun 27, 2017 9:38:52 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:52 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:38:52 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:38:52 AM Controller.LogicController playAI
+INFO: B: attack:Froakie
+Jun 27, 2017 9:38:52 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:38:52 AM Controller.LogicController checkKnockout
+INFO: 3 
+1
+Jun 27, 2017 9:38:53 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:38:53 AM Model.Player addCard
+INFO: A25 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:38:53 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A25 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:09 AM View.GameBoardController$5 handle
+INFO: active
+Jun 27, 2017 9:39:09 AM View.GameBoardController$5 handle
+INFO:  A11 
+Jun 27, 2017 9:39:09 AM View.GameBoardController$5 handle
+INFO: A
+Jun 27, 2017 9:39:09 AM View.GameBoardController$5 handle
+INFO: target-source indext: active-1 hand -1 
+Jun 27, 2017 9:39:09 AM View.GameBoardController$5 handle
+INFO: cardID:A36 A11
+Jun 27, 2017 9:39:09 AM Controller.LogicController$2 MoveCard
+INFO: Move card A36 from hand, to active(A11)
+Jun 27, 2017 9:39:09 AM Model.Player popCard
+INFO: A36 Area : hand columnIndex: -1 uiHolderId: A36
+Jun 27, 2017 9:39:09 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: A36 - smallCardId: A36 - columnIndex:-1
+Jun 27, 2017 9:39:09 AM Model.Player addCard
+INFO: A36 Area : active columnIndex: -1 uiHolderId: A11
+Jun 27, 2017 9:39:09 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: A36 - smallCardId: A11 - columnIndex:-1
+Jun 27, 2017 9:39:10 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:39:10 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:39:12 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:39:12 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B49 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:39:14 AM Controller.LogicController putPokemonIntoBench
+INFO: handCard:Electabuzzmoves into bench
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B49 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B49 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: card Electabuzz add to column :0
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B49 - smallCardId:  - columnIndex:0
+Jun 27, 2017 9:39:14 AM Controller.LogicController putPokemonIntoBench
+INFO: put to bench area:Electabuzz
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: benchCard 0 = pokemon name: Electabuzz
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B10 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B10 Area : bench columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: card Lightning add to column :0
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B10 - smallCardId: B49 - columnIndex:0
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: attach energy :Lightning into: benchPokemon: Electabuzz
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B52 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Controller.LogicController executeAbility
+INFO: player B, executes Misty's Determination
+ action:cond
+Jun 27, 2017 9:39:14 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B51 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Abilities.Search fight
+INFO: listener list size: 1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B20 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B20 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Abilities.Search fight
+INFO: evolves-from basic:  to: B20
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B21 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B22 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B23 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B26 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B29 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B29 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B30 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B30 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B31 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B31 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B32 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B32 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B33 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B33 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B34 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B34 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B35 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B35 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B36 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B36 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B37 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B37 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B38 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B38 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B39 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B39 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B0 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B0 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B1 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B1 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B2 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B2 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B3 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B3 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B4 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B4 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B5 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B5 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B6 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B6 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B7 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B7 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B8 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B9 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B40 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B41 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B42 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B43 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B44 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B45 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B46 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B47 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player popCard
+INFO: B48 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B9 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B37 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B37 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B6 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B6 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B33 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B33 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B32 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B32 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B48 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B40 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B30 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B30 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B22 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B36 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B36 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B7 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B7 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B23 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B5 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B5 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B8 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B2 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B2 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B45 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B21 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B34 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B34 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B26 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B26 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B4 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B4 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B38 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B38 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B42 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B43 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B0 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B0 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B35 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B35 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B29 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B29 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B1 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B1 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B47 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B44 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B39 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B39 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B46 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B41 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B3 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B3 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B31 Area : deck columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area deck - ID: B31 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:39:14 AM Model.Player addCard
+INFO: B52 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:14 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B52 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: trainer card:Misty's Determination
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: A11
+Jun 27, 2017 9:39:14 AM Controller.LogicController executeAbility
+INFO: player B, executes Pound
+ action:dam with power 10 on target opponentActive in condition &condition&
+Jun 27, 2017 9:39:14 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:39:14 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:14 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:14 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:39:14 AM Controller.LogicController playAI
+INFO: B: attack:Froakie
+Jun 27, 2017 9:39:14 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:39:14 AM Controller.LogicController checkKnockout
+INFO: 4 
+1
+Jun 27, 2017 9:39:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:15 AM Model.Player addCard
+INFO: A24 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:18 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:39:18 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:39:20 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:39:20 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:39:23 AM View.GameBoardController$5 handle
+INFO: active
+Jun 27, 2017 9:39:23 AM View.GameBoardController$5 handle
+INFO:  A11 
+Jun 27, 2017 9:39:23 AM View.GameBoardController$5 handle
+INFO: A
+Jun 27, 2017 9:39:23 AM View.GameBoardController$5 handle
+INFO: target-source indext: active-1 hand -1 
+Jun 27, 2017 9:39:23 AM View.GameBoardController$5 handle
+INFO: cardID:A24 A11
+Jun 27, 2017 9:39:23 AM Controller.LogicController$2 MoveCard
+INFO: Move card A24 from hand, to active(A11)
+Jun 27, 2017 9:39:23 AM Model.Player popCard
+INFO: A24 Area : hand columnIndex: -1 uiHolderId: A24
+Jun 27, 2017 9:39:23 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: A24 - smallCardId: A24 - columnIndex:-1
+Jun 27, 2017 9:39:23 AM Model.Player addCard
+INFO: A24 Area : active columnIndex: -1 uiHolderId: A11
+Jun 27, 2017 9:39:23 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: A24 - smallCardId: A11 - columnIndex:-1
+Jun 27, 2017 9:39:24 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:39:24 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:39:25 AM Controller.LogicController executeAbility
+INFO: player A, executes Fury Attack
+ action:dam with power 40 on target opponentActive in condition &condition&cond
+Jun 27, 2017 9:39:25 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:39:25 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:25 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:25 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:25 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:25 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:25 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:39:25 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:39:27 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:39:27 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:39:30 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:39:30 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:39:31 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:39:31 AM Controller.LogicController$3 attackRequest
+INFO: A: attack:Dodrio
+Jun 27, 2017 9:39:31 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:39:31 AM Controller.LogicController checkKnockout
+INFO: 2 
+1
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: B48 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:39:33 AM Controller.LogicController putPokemonIntoBench
+INFO: handCard:Pikachumoves into bench
+Jun 27, 2017 9:39:33 AM Model.Player popCard
+INFO: B20 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: B20 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: card Pikachu add to column :1
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B20 - smallCardId:  - columnIndex:1
+Jun 27, 2017 9:39:33 AM Controller.LogicController putPokemonIntoBench
+INFO: put to bench area:Pikachu
+Jun 27, 2017 9:39:33 AM Controller.LogicController putPokemonIntoBench
+INFO: handCard:Electabuzzmoves into bench
+Jun 27, 2017 9:39:33 AM Model.Player popCard
+INFO: B48 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B48 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: B48 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: card Electabuzz add to column :2
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B48 - smallCardId:  - columnIndex:2
+Jun 27, 2017 9:39:33 AM Controller.LogicController putPokemonIntoBench
+INFO: put to bench area:Electabuzz
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: benchCard 0 = pokemon name: Electabuzz
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: benchCard 1 = pokemon name: Pikachu
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: benchCard 2 = pokemon name: Electabuzz
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:39:33 AM Model.Player popCard
+INFO: B11 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B11 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: B11 Area : bench columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: card Water add to column :0
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B11 - smallCardId: B49 - columnIndex:0
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: attach energy :Water into: benchPokemon: Electabuzz
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: A11
+Jun 27, 2017 9:39:33 AM Model.Player getRandomCardId
+INFO: 3
+Jun 27, 2017 9:39:33 AM Model.Player popCard
+INFO: B59 Area : active columnIndex: -1 uiHolderId: B19
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B59 - smallCardId: B19 - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: B59 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B59 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player popCard
+INFO: B19 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player popCard
+INFO: B20 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B20 - smallCardId:  - columnIndex:1
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: B20 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: B19 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:33 AM Model.Player addCard
+INFO: card Froakie add to column :1
+Jun 27, 2017 9:39:33 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B19 - smallCardId:  - columnIndex:1
+Jun 27, 2017 9:39:33 AM Controller.LogicController playAI
+INFO: B: retreat:Froakie
+Jun 27, 2017 9:39:33 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:39:33 AM Controller.LogicController checkKnockout
+INFO: 5 
+1
+Jun 27, 2017 9:39:34 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:34 AM Model.Player addCard
+INFO: A23 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:34 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A23 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:34 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:39:34 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:39:40 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:39:40 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:39:41 AM Controller.LogicController executeAbility
+INFO: player A, executes Fury Attack
+ action:dam with power 40 on target opponentActive in condition &condition&cond
+Jun 27, 2017 9:39:41 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:39:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:41 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:41 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:39:41 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:39:43 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:39:43 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:39:44 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:39:44 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:39:46 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:46 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:46 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:46 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:46 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:46 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:46 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:39:46 AM Controller.LogicController$3 attackRequest
+INFO: A: attack:Dodrio
+Jun 27, 2017 9:39:46 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:39:46 AM Controller.LogicController checkKnockout
+INFO: 1
+Jun 27, 2017 9:39:46 AM Model.Player popCard
+INFO: B20 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:46 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:46 AM Model.Player addCard
+INFO: B20 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:46 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:46 AM Controller.LogicController checkKnockout
+INFO: 2
+Jun 27, 2017 9:39:48 AM Model.Player getAreaCard
+INFO: 6
+Jun 27, 2017 9:39:51 AM Controller.LogicController checkKnockout
+INFO: 3
+Jun 27, 2017 9:39:51 AM Controller.LogicController checkKnockout
+INFO: Aselect prize card :A31
+Jun 27, 2017 9:39:51 AM Model.Player popCard
+INFO: A31 Area : prize columnIndex: -1 uiHolderId: A31
+Jun 27, 2017 9:39:51 AM View.GameBoardController$2 popCard
+INFO: evt :Area prize - ID: A31 - smallCardId: A31 - columnIndex:-1
+Jun 27, 2017 9:39:51 AM Model.Player addCard
+INFO: A31 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:51 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A31 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:51 AM Controller.LogicController checkKnockout
+INFO: 4
+Jun 27, 2017 9:39:51 AM Controller.LogicController checkKnockout
+INFO: 0 
+3
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B47 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player popCard
+INFO: B10 Area : bench columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B10 - smallCardId: B49 - columnIndex:0
+Jun 27, 2017 9:39:52 AM Model.Player popCard
+INFO: B11 Area : bench columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B11 - smallCardId: B49 - columnIndex:0
+Jun 27, 2017 9:39:52 AM Model.Player popCard
+INFO: B49 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B49 - smallCardId:  - columnIndex:0
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B49 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B10 Area : active columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B10 - smallCardId: B49 - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B11 Area : active columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B11 - smallCardId: B49 - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: put From BENCH to active area:Electabuzz
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: benchCard 0 = pokemon name: Froakie
+Jun 27, 2017 9:39:52 AM Model.Player popCard
+INFO: B16 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B16 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B16 Area : bench columnIndex: 0 uiHolderId: B19
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: card Frogadier add to column :0
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B16 - smallCardId: B19 - columnIndex:0
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: attachStage1CardToBench:Frogadier
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: benchCard 1 = pokemon name: Electabuzz
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Knuckle Punch
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:39:52 AM Model.Player popCard
+INFO: B24 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B24 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B24 Area : bench columnIndex: -1 uiHolderId: B16
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: card Water add to column :0
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B24 - smallCardId: B16 - columnIndex:0
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: attach energy :Water into: benchPokemon: Frogadier
+Jun 27, 2017 9:39:52 AM Model.Player popCard
+INFO: B47 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Controller.LogicController executeAbility
+INFO: player B, executes Tierno
+ action:draw
+Jun 27, 2017 9:39:52 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B46 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B45 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B44 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:39:52 AM Model.Player addCard
+INFO: B47 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:52 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B47 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: trainer card:Tierno
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: A11
+Jun 27, 2017 9:39:52 AM Controller.LogicController executeAbility
+INFO: player B, executes Knuckle Punch
+ action:dam with power 20 on target opponentActive in condition &condition&
+Jun 27, 2017 9:39:52 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:39:52 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:52 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:39:52 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:39:52 AM Controller.LogicController playAI
+INFO: B: attack:Electabuzz
+Jun 27, 2017 9:39:52 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:39:52 AM Controller.LogicController checkKnockout
+INFO: 5 
+1
+Jun 27, 2017 9:39:53 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:53 AM Model.Player addCard
+INFO: A22 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:39:53 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A22 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:39:53 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:39:53 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:40:07 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:40:07 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:40:09 AM Controller.LogicController executeAbility
+INFO: player A, executes Fury Attack
+ action:dam with power 40 on target opponentActive in condition &condition&cond
+Jun 27, 2017 9:40:09 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:09 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:40:09 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:40:11 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:40:11 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:40:13 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:40:13 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:40:14 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:40:14 AM Controller.LogicController$3 attackRequest
+INFO: A: attack:Dodrio
+Jun 27, 2017 9:40:14 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:40:14 AM Controller.LogicController checkKnockout
+INFO: 3 
+3
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B43 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:40:15 AM Controller.LogicController putPokemonIntoBench
+INFO: handCard:Pikachu Libremoves into bench
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B43 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B43 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B43 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: card Pikachu Libre add to column :3
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B43 - smallCardId:  - columnIndex:3
+Jun 27, 2017 9:40:15 AM Controller.LogicController putPokemonIntoBench
+INFO: put to bench area:Pikachu Libre
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: benchCard 0 = pokemon name: Frogadier
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: benchCard 1 = pokemon name: Froakie
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: benchCard 2 = pokemon name: Electabuzz
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B46 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B46 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B46 Area : bench columnIndex: 2 uiHolderId: B48
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: card Electivire add to column :2
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B46 - smallCardId: B48 - columnIndex:2
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: attachStage1CardToBench:Electivire
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: benchCard 3 = pokemon name: Pikachu Libre
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Knuckle Punch
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 0
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B45 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B45 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B45 Area : bench columnIndex: -1 uiHolderId: B16
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: card Water add to column :0
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B45 - smallCardId: B16 - columnIndex:0
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: attach energy :Water into: benchPokemon: Frogadier
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B44 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Controller.LogicController executeAbility
+INFO: player B, executes Tierno
+ action:draw
+Jun 27, 2017 9:40:15 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B42 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B42 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B41 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B40 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B44 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B44 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: trainer card:Tierno
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: A11
+Jun 27, 2017 9:40:15 AM Model.Player getRandomCardId
+INFO: 4
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B10 Area : active columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B10 - smallCardId: B49 - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B10 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B10 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B11 Area : active columnIndex: -1 uiHolderId: B49
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B11 - smallCardId: B49 - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B11 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B11 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B49 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B49 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player popCard
+INFO: B19 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B19 - smallCardId:  - columnIndex:1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B19 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: B49 Area : bench columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:15 AM Model.Player addCard
+INFO: card Electabuzz add to column :1
+Jun 27, 2017 9:40:15 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B49 - smallCardId:  - columnIndex:1
+Jun 27, 2017 9:40:15 AM Controller.LogicController playAI
+INFO: B: retreat:Electabuzz
+Jun 27, 2017 9:40:15 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:40:15 AM Controller.LogicController checkKnockout
+INFO: 5 
+1
+Jun 27, 2017 9:40:16 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:16 AM Model.Player addCard
+INFO: A21 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:16 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A21 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:16 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:40:16 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:40:31 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:40:31 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:40:32 AM Controller.LogicController executeAbility
+INFO: player A, executes Fury Attack
+ action:dam with power 40 on target opponentActive in condition &condition&cond
+Jun 27, 2017 9:40:32 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:40:32 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:32 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:32 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:32 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:32 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:32 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:32 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:32 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:40:32 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:40:34 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:34 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:34 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:34 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:34 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:34 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:34 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:34 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:40:34 AM Controller.LogicController$3 attackRequest
+INFO: A: attack:Dodrio
+Jun 27, 2017 9:40:34 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:40:34 AM Controller.LogicController checkKnockout
+INFO: 1
+Jun 27, 2017 9:40:34 AM Model.Player popCard
+INFO: B19 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:34 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:34 AM Model.Player addCard
+INFO: B19 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:34 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B19 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:34 AM Controller.LogicController checkKnockout
+INFO: 2
+Jun 27, 2017 9:40:36 AM Model.Player getAreaCard
+INFO: 5
+Jun 27, 2017 9:40:39 AM Controller.LogicController checkKnockout
+INFO: 3
+Jun 27, 2017 9:40:39 AM Controller.LogicController checkKnockout
+INFO: Aselect prize card :A35
+Jun 27, 2017 9:40:39 AM Model.Player popCard
+INFO: A35 Area : prize columnIndex: -1 uiHolderId: A35
+Jun 27, 2017 9:40:39 AM View.GameBoardController$2 popCard
+INFO: evt :Area prize - ID: A35 - smallCardId: A35 - columnIndex:-1
+Jun 27, 2017 9:40:39 AM Model.Player addCard
+INFO: A35 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:39 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A35 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:39 AM Controller.LogicController checkKnockout
+INFO: 4
+Jun 27, 2017 9:40:39 AM Controller.LogicController checkKnockout
+INFO: 0 
+4
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:40 AM Model.Player addCard
+INFO: B9 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B9 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:40 AM Model.Player popCard
+INFO: B41 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:40 AM Model.Player addCard
+INFO: B41 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: put to active area:Helioptile
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: region put pokemon in bench from hand
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: benchCard 0 = pokemon name: Frogadier
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: benchCard 1 = pokemon name: Electabuzz
+Jun 27, 2017 9:40:40 AM Model.Player popCard
+INFO: B40 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:40 AM Model.Player addCard
+INFO: B40 Area : bench columnIndex: 1 uiHolderId: B49
+Jun 27, 2017 9:40:40 AM Model.Player addCard
+INFO: card Electivire add to column :1
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area bench - ID: B40 - smallCardId: B49 - columnIndex:1
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: attachStage1CardToBench:Electivire
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: benchCard 2 = pokemon name: Electivire
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: benchCard 3 = pokemon name: Pikachu Libre
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: region if(active pokemon needs energy)=> attach energy
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Pound
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: player.getActiveCard().getEnergyCards() != null
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: requiredEnergyMap.size: 1
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: costType: lightning
+Jun 27, 2017 9:40:40 AM Model.Player popCard
+INFO: B27 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 popCard
+INFO: evt :Area hand - ID: B27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:40 AM Model.Player addCard
+INFO: B27 Area : active columnIndex: -1 uiHolderId: B41
+Jun 27, 2017 9:40:40 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B27 - smallCardId: B41 - columnIndex:-1
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: attach energy :Lightning into: ActivePokemon: Helioptile
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: ﻿Act Cute
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: activeCard.getAttackList: Destructive Beam
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: A11
+Jun 27, 2017 9:40:40 AM Controller.LogicController executeAbility
+INFO: player B, executes Pound
+ action:dam with power 10 on target opponentActive in condition &condition&
+Jun 27, 2017 9:40:40 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:40:40 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:40 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:40 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:40:40 AM Controller.LogicController playAI
+INFO: B: attack:Helioptile
+Jun 27, 2017 9:40:40 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:40:40 AM Controller.LogicController checkKnockout
+INFO: 5 
+1
+Jun 27, 2017 9:40:41 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: A20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:41 AM Model.Player addCard
+INFO: A20 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:41 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A20 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:41 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:40:41 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:40:42 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:40:42 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:40:43 AM Controller.LogicController executeAbility
+INFO: player A, executes Fury Attack
+ action:dam with power 40 on target opponentActive in condition &condition&cond
+Jun 27, 2017 9:40:43 AM Model.Abilities.BaseAction addListener
+INFO: listener list size: 1
+Jun 27, 2017 9:40:43 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:43 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:43 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:43 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:43 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:40:43 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:40:46 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:40:46 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:40:47 AM Controller.LogicController$1 flipCoin
+INFO: Player A in Ability :Fury Attack flip request 
+Jun 27, 2017 9:40:47 AM View.GameBoardController$3 flipCoin
+INFO: flipCoin - flipping time:-1.0
+Jun 27, 2017 9:40:49 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:49 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:49 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:49 AM View.SmallCardController$1 cardModified
+INFO: property :addDamage
+Jun 27, 2017 9:40:49 AM Model.Abilities.BaseAction clearListener
+INFO: listener list size: 0
+Jun 27, 2017 9:40:49 AM Controller.LogicController$3 attackRequest
+INFO: A: attack:Dodrio
+Jun 27, 2017 9:40:49 AM Controller.LogicController checkKnockout
+INFO: CHECK KNOCKOUT
+Jun 27, 2017 9:40:49 AM Controller.LogicController checkKnockout
+INFO: 1
+Jun 27, 2017 9:40:49 AM Model.Player popCard
+INFO: B27 Area : active columnIndex: -1 uiHolderId: B41
+Jun 27, 2017 9:40:49 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B27 - smallCardId: B41 - columnIndex:-1
+Jun 27, 2017 9:40:49 AM Model.Player addCard
+INFO: B27 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:49 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B27 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:49 AM Controller.LogicController checkKnockout
+INFO: put B27 on discard
+Jun 27, 2017 9:40:49 AM Model.Player popCard
+INFO: B41 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:49 AM View.GameBoardController$2 popCard
+INFO: evt :Area active - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:49 AM Model.Player addCard
+INFO: B41 Area : discard columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:49 AM View.GameBoardController$2 pushCard
+INFO: evt :Area discard - ID: B41 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:49 AM Controller.LogicController checkKnockout
+INFO: 2
+Jun 27, 2017 9:40:51 AM Model.Player getAreaCard
+INFO: 4
+Jun 27, 2017 9:40:53 AM Controller.LogicController checkKnockout
+INFO: 3
+Jun 27, 2017 9:40:53 AM Controller.LogicController checkKnockout
+INFO: Aselect prize card :A30
+Jun 27, 2017 9:40:53 AM Model.Player popCard
+INFO: A30 Area : prize columnIndex: -1 uiHolderId: A30
+Jun 27, 2017 9:40:53 AM View.GameBoardController$2 popCard
+INFO: evt :Area prize - ID: A30 - smallCardId: A30 - columnIndex:-1
+Jun 27, 2017 9:40:53 AM Model.Player addCard
+INFO: A30 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:53 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: A30 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:53 AM Controller.LogicController checkKnockout
+INFO: 4
+Jun 27, 2017 9:40:53 AM Controller.LogicController checkKnockout
+INFO: 0 
+4
+Jun 27, 2017 9:40:54 AM View.GameBoardController$2 popCard
+INFO: evt :Area deck - ID: B8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:54 AM Model.Player addCard
+INFO: B8 Area : hand columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:40:54 AM View.GameBoardController$2 pushCard
+INFO: evt :Area hand - ID: B8 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:40:54 AM Model.Player popCard
+INFO: B45 Area : bench columnIndex: -1 uiHolderId: B16
+Jun 27, 2017 9:40:54 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B45 - smallCardId: B16 - columnIndex:0
+Jun 27, 2017 9:40:54 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:40:54 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:40:56 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:40:56 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:40:58 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:40:58 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
+Jun 27, 2017 9:41:09 AM View.GameBoardController$5 handle
+INFO: active
+Jun 27, 2017 9:41:09 AM View.GameBoardController$5 handle
+INFO: B
+Jun 27, 2017 9:41:09 AM View.GameBoardController$5 handle
+INFO: target-source indext: active-1 bench 1 
+Jun 27, 2017 9:41:09 AM View.GameBoardController$5 handle
+INFO: cardID:B40 
+Jun 27, 2017 9:41:09 AM Controller.LogicController$2 MoveCard
+INFO: Move card B40 from bench, to active
+Jun 27, 2017 9:41:09 AM Model.Player popCard
+INFO: B49 Area : bench columnIndex: 1 uiHolderId: B40
+Jun 27, 2017 9:41:09 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B49 - smallCardId: B40 - columnIndex:1
+Jun 27, 2017 9:41:09 AM Model.Player popCard
+INFO: B40 Area : bench columnIndex: 1 uiHolderId: B40
+Jun 27, 2017 9:41:09 AM View.GameBoardController$2 popCard
+INFO: evt :Area bench - ID: B40 - smallCardId: B40 - columnIndex:1
+Jun 27, 2017 9:41:09 AM Model.Player addCard
+INFO: B40 Area : active columnIndex: -1 uiHolderId: 
+Jun 27, 2017 9:41:09 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B40 - smallCardId:  - columnIndex:-1
+Jun 27, 2017 9:41:09 AM Model.Player addCard
+INFO: B49 Area : active columnIndex: -1 uiHolderId: B40
+Jun 27, 2017 9:41:09 AM View.GameBoardController$2 pushCard
+INFO: evt :Area active - ID: B49 - smallCardId: B40 - columnIndex:-1
+Jun 27, 2017 9:41:12 AM View.GameBoardController$5 handle
+INFO: areabenchB0
+Jun 27, 2017 9:41:12 AM View.GameBoardController$5 handle
+INFO: bench
+Jun 27, 2017 9:41:12 AM View.GameBoardController$5 handle
+INFO: B
+Jun 27, 2017 9:41:12 AM View.GameBoardController$5 handle
+INFO: target-source indext: bench0 bench 1 
+Jun 27, 2017 9:41:12 AM View.GameBoardController$5 handle
+INFO: cardID:B16 
+Jun 27, 2017 9:41:16 AM Model.Attack getCostString
+INFO: cost =  3Xcolorless
+Jun 27, 2017 9:41:16 AM Model.Attack getCostString
+INFO: cost =  1Xcolorless
+Jun 27, 2017 9:41:18 AM Controller.LogicController$3 cardClicked
+INFO: pokemonDodrio
+Jun 27, 2017 9:41:18 AM View.GameBoardController$2$1 cardClicked
+INFO: senderA11 evt :A38
