@@ -3,6 +3,7 @@ package Model;
 import Model.Abilities.Ability;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -52,7 +53,13 @@ public class Attack {
         return costList.get(costType);
     }
 
-    public boolean hasSufficientEnergy(List<EnergyCard> energyCards) {
+    public boolean hasEnoughEnergy(List<EnergyCard> energyCards) {
+        return getRequiredEnergy(energyCards).size() == 0;
+
+    }
+
+    public Map<String, Integer> getRequiredEnergy(List<EnergyCard> energyCards) {
+        Map<String, Integer> requiredList = new HashMap<>();
         List<String> energyCardTypes = new ArrayList<>();
         for (Card cardType : energyCards) {
             energyCardTypes.add(cardType.getType());
@@ -69,9 +76,10 @@ public class Attack {
                         break;
                 }
             }
-            if (subTotal < costList.get(key))
-                return false;
+            if (subTotal < costList.get(key)) {
+                requiredList.put(key, costList.get(key) - subTotal);
+            }
         }
-        return true;
+        return requiredList;
     }
 }

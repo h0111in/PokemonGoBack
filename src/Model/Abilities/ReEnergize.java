@@ -8,6 +8,7 @@ import Model.Player;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by hosein on 2017-06-22.
@@ -27,33 +28,44 @@ public class ReEnergize extends BaseAction implements IActionStrategy {
         List<Card> holderList = targetPlayer.getAreaCard(Area.bench);
         if (targetPlayer.getActiveCard().getTopCard() != null)
             holderList.add(targetPlayer.getActiveCard().getTopCard());
-        Card selectedHolder = null;
+        Card sourceHolder = null;
         if (holderList.size() > 0) {
             if (targetPlayer.isComputer())
-                selectedHolder = holderList.get(0);
+                sourceHolder = holderList.get(0);
             else {
                 List<String> selectedList = fireSelectCardRequest("select a card as source for energy", 1, holderList, true);
                 if (selectedList.size() > 0)
-                    selectedHolder = targetPlayer.getCard(selectedList.get(0));
+                    sourceHolder = targetPlayer.getCard(selectedList.get(0));
                 else return true;
             }
         }
         List<Card> energyList = new ArrayList<>();
-        for (Card energy : targetPlayer.getCardHolder(selectedHolder.getId()).getEnergyCards())
+        for (Card energy : targetPlayer.getCardHolder(sourceHolder.getId()).getEnergyCards())
             energyList.add(energy);
-        List<String> selectedEnergyList = fireSelectCardRequest("select one energy card", 1, energyList, true);
+
+        List<String> selectedEnergyList = new ArrayList<>();
+        if (energyList.size() > 0)
+            if (targetPlayer.isComputer()) {
+                selectedEnergyList = new ArrayList<>();
+                selectedEnergyList.add(energyList.get(new Random().nextInt(energyList.size())).getId());
+            } else {
+                selectedEnergyList = fireSelectCardRequest("select one energy card", 1, energyList, true);
+            }
+
         if (selectedEnergyList.size() > 0) {
+
             if (holderList.size() > 1) {
                 Card targetHolder = null;
                 if (targetPlayer.isComputer())
-                    selectedHolder = holderList.get(1);
+                    targetHolder = holderList.get(1);
                 else {
-                    List<String> selectedList = fireSelectCardRequest("select a card as target for energy", 1, holderList, true);
+                    List<String> selectedList =
+                            fireSelectCardRequest("select a card as target for energy", 1, holderList, true);
                     if (selectedList.size() > 0)
                         targetHolder = targetPlayer.getCard(selectedList.get(0));
                     else return true;
                 }
-                targetPlayer.addCard(                        targetPlayer.popCard(selectedEnergyList.get(0),selectedHolder.getId())
+                targetPlayer.addCard(targetPlayer.popCard(selectedEnergyList.get(0), sourceHolder.getId())
                         , targetPlayer.getCardArea(targetHolder.getId()), targetHolder.getId());
             }
         }

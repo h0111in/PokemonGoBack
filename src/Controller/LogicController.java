@@ -163,7 +163,7 @@ public class LogicController {
             if (activeCard.getStatus() != Status.none) {
 
                 fireShowMessage(Alert.AlertType.INFORMATION,
-                        (activePlayer == Enums.Player.A ? "User " : "Opponent") + "is " + activeCard.getStatus().name(), 1.5);
+                        (activePlayer == Enums.Player.A ? "User " : "Opponent") + " is " + activeCard.getStatus().name(), 1.5);
                 switch (activeCard.getStatus()) {
                     case none://nothing to do..
                         break;
@@ -189,12 +189,35 @@ public class LogicController {
                         // It must also be turned to the left.
                         // After each turn, if a player's Pokémon is Asleep, the player must flip a coin: if heads,
                         // the Asleep Pokémon "wakes up" and is no longer affected by the Special Condition.
-                        if (!players.get(activePlayer).isComputer() ?
+
+                        attackRetreatRestricted = true;
+
+                        break;
+                }
+            }
+        }
+//endregion
+        //region check State
+        if (players.get(getOpponent(activePlayer)).getActiveCard().getTopCard() != null) {
+            PokemonCard activeCard = (PokemonCard) players.get(getOpponent(activePlayer)).getActiveCard().getTopCard();
+            if (activeCard.getStatus() != Status.none) {
+                switch (activeCard.getStatus()) {
+                    case none://nothing to do..
+                        break;
+                    case paralyzed:
+                        return;
+                    case stuck:
+                    case poisoned:
+
+                        break;
+                    case asleep: //it cannot attack or retreat by itself.
+                        // It must also be turned to the left.
+                        // After each turn, if a player's Pokémon is Asleep, the player must flip a coin: if heads,
+                        // the Asleep Pokémon "wakes up" and is no longer affected by the Special Condition.
+                        if (!players.get(getOpponent(activePlayer)).isComputer() ?
                                 fireFlipCoin(Coin.Head, -1) :
                                 new Random().nextBoolean()) {
                             activeCard.setStatus(Status.none);
-                        } else {
-                            attackRetreatRestricted = true;
                         }
                         break;
                 }
@@ -240,17 +263,10 @@ public class LogicController {
         //endregion
 
         //region put pokemon in bench from hand
-        if (player.getAreaCard(Area.bench).size() < 5)
-            for (Card card : player.getAreaCard(Area.hand)) {
-                if (player.getAreaCard(Area.bench).size() < 5) {
-                    if (card instanceof PokemonCard && ((PokemonCard) card).getLevel().equals("basic")) {
-                        player.addCard(player.popCard(card.getId(), ""), Area.bench, -1, "");
-                        turnActions.put(TurnAction.pokemonToBench, turnActions.get(TurnAction.pokemonToBench) + 1);
-                        logger.info("put to bench area:" + card.getName());
-                    }
-                } else break;
-            }
-//endregion
+
+        logger.info("region put pokemon in bench from hand");
+        putPokemonIntoBench(activePlayer);
+        //endregion
 
         //region attach stage one to basic card in active area
         if (turnActions.get(TurnAction.attachStage1CardToActive) == 0) {
@@ -258,10 +274,10 @@ public class LogicController {
                 if (player.getActiveCard().getTopCard().getType().equals("basic")) {
                     for (Card handCard : player.getAreaCard(Area.hand)) {
                         if (handCard instanceof PokemonCard && !((PokemonCard) handCard).getLevel().equals("basic")
-                                && handCard.getType().equals(player.getActiveCard().getTopCard().getType())) {
-                            player.addCard(player.popCard(handCard.getId(), ""), Area.active, player.getActiveCard().getId());
+                                && ((PokemonCard) handCard).getLevel().equals(player.getActiveCard().getTopCard().getName())) {
+                            player.addCard(player.popCard(handCard.getId(), Area.hand, -1, "")
+                                    , Area.active, player.getActiveCard().getId());
                             turnActions.put(TurnAction.attachStage1CardToActive, 1);
-
                             logger.info(TurnAction.attachStage1CardToActive + ":" + handCard.getName());
                             break;
                         }
@@ -276,10 +292,11 @@ public class LogicController {
             List<Card> benchCards = player.getAreaCard(Area.bench);
             for (int i = 0; i < benchCards.size(); i++) {
                 Card benchCard = benchCards.get(i);
+                logger.info("benchCard " + i + " = " + benchCard.getCategory().name() + " name: " + benchCard.getName());
                 for (Card handCard : player.getAreaCard(Area.hand)) {
-                    if (benchCard instanceof PokemonCard && !((PokemonCard) benchCard).getLevel().equals("basic")
-                            && benchCard.getType().equals(handCard.getType())) {
-                        player.addCard(player.popCard(handCard.getId(), ""), Area.bench, i, benchCard.getId());
+                    if (handCard instanceof PokemonCard && ((PokemonCard) benchCard).getLevel().equals("basic")
+                            && ((PokemonCard) handCard).getLevel().equals(benchCard.getName())) {
+                        player.addCard(player.popCard(handCard.getId(), Area.hand, -1, ""), Area.bench, i, benchCard.getId());
                         logger.info(TurnAction.attachStage1CardToBench + ":" + handCard.getName());
                         break;
                     }
@@ -289,41 +306,63 @@ public class LogicController {
 //endregion
 
         //region if(active pokemon needs energy)=> attach energy
-        if (player.getActiveCard() != null && player.getActiveCard().getTopCard() != null) {
-            PokemonCard activeCard = player.getActiveCard().getTopCard();
-            int totalRequiredEnergy = 0;
-            for (Attack attack : activeCard.getAttackList())
-                totalRequiredEnergy += attack.getCostAmount("");
-            if (player.getActiveCard().getEnergyCards().size() < totalRequiredEnergy) {
-                for (Card card : player.getAreaCard(Area.hand)) {
-                    if (card instanceof EnergyCard) {
+        logger.info("region if(active pokemon needs energy)=> attach energy");
+        if (turnActions.get(TurnAction.attachEnergyOnActive) == 0)
+            if (player.getActiveCard() != null && player.getActiveCard().getTopCard() != null) {
+                PokemonCard activeCard = player.getActiveCard().getTopCard();
+                if (turnActions.get(TurnAction.attachEnergyOnActive) == 0)
+                    for (Attack activeCardAttack : activeCard.getAttackList()) {
+                        logger.info("activeCard.getAttackList: " + activeCardAttack.getAbility().getName());
+                        if (turnActions.get(TurnAction.attachEnergyOnActive) == 0)
+                            if (player.getActiveCard().getEnergyCards() != null) {
+                                logger.info("player.getActiveCard().getEnergyCards() != null");
+                                Map<String, Integer> requiredEnergyMap = activeCardAttack.getRequiredEnergy(player.getActiveCard().getEnergyCards());
+                                logger.info("requiredEnergyMap.size: " + requiredEnergyMap.size());
+                                for (String costType : requiredEnergyMap.keySet()) {
+                                    logger.info("costType: " + costType);
+                                    if (turnActions.get(TurnAction.attachEnergyOnActive) == 0) {
+                                        for (Card handCard : player.getAreaCard(Area.hand)) {
+                                            if (turnActions.get(TurnAction.attachEnergyOnActive) == 0)
+                                                if (handCard instanceof EnergyCard)
+                                                    if (handCard.getType().equals(costType) || costType.equals("colorless") || handCard.getType().equals("colorless")) {
+                                                        player.addCard(player.popCard(handCard.getId(), ""), Area.active, activeCard.getId());
+                                                        turnActions.put(TurnAction.attachEnergyOnActive, turnActions.get(TurnAction.attachEnergyOnActive) + 1);
+                                                        logger.info("attach energy :" + handCard.getName() + " into: ActivePokemon: " + activeCard.getName());
+                                                    }
 
-                        player.addCard(player.popCard(card.getId(), ""), Area.active, activeCard.getId());
-                        turnActions.put(TurnAction.attachEnergyOnActive, turnActions.get(TurnAction.attachEnergyOnActive) + 1);
-                        logger.info(TurnAction.attachEnergyOnActive + ":" + card.getName());
-
-                        break;
+                                        }
+                                    }
+                                }
+                            }
                     }
-                }
+
             }
-        }
         //endregion
-        else
-            //region if(bench pokemon needs energy)=>attach energy
+        //region if(bench pokemon needs energy)=>attach energy
+        if (turnActions.get(TurnAction.attachEnergyOnBench) + turnActions.get(TurnAction.attachEnergyOnActive) == 0)
             for (Card benchCard : player.getAreaCard(Area.bench)) {
                 if (benchCard instanceof PokemonCard) {
-                    PokemonCard pokemonCard = (PokemonCard) benchCard;
-                    if (player.getCardHolder(benchCard.getId()).getEnergyCards() != null
-                            && player.getCardHolder(benchCard.getId()).getEnergyCards().size()
-                            < pokemonCard.getHeaviestAttack().getCostAmount(""))
-                        for (Card card : player.getAreaCard(Area.hand)) {
-                            if (card instanceof EnergyCard) {
-                                player.addCard(player.popCard(card.getId(), ""), Area.bench, benchCard.getId());
-                                turnActions.put(TurnAction.attachEnergyOnBench, turnActions.get(TurnAction.attachEnergyOnBench) + 1);
-                                logger.info(TurnAction.attachEnergyOnBench + ":" + card.getName());
+                    PokemonCard benchPokemonCard = (PokemonCard) benchCard;
+                    if (turnActions.get(TurnAction.attachEnergyOnBench) == 0)
+                        for (Attack benchCardAttack : benchPokemonCard.getAttackList()) {
+                            if (turnActions.get(TurnAction.attachEnergyOnBench) == 0)
+                                if (player.getCardHolder(benchPokemonCard.getId()).getEnergyCards() != null) {
+                                    Map<String, Integer> requiredEnergyMap = benchCardAttack.getRequiredEnergy(player.getCardHolder(benchPokemonCard.getId()).getEnergyCards());
+                                    for (String costType : requiredEnergyMap.keySet()) {
+                                        if (turnActions.get(TurnAction.attachEnergyOnBench) == 0) {
+                                            for (Card handCard : player.getAreaCard(Area.hand)) {
+                                                if (turnActions.get(TurnAction.attachEnergyOnBench) == 0)
+                                                    if (handCard instanceof EnergyCard)
+                                                        if (handCard.getType().equals(costType) || costType.equals("colorless") || handCard.getType().equals("colorless")) {
+                                                            player.addCard(player.popCard(handCard.getId(), ""), Area.bench, benchPokemonCard.getId());
+                                                            turnActions.put(TurnAction.attachEnergyOnBench, turnActions.get(TurnAction.attachEnergyOnBench) + 1);
+                                                            logger.info("attach energy :" + handCard.getName() + " into: benchPokemon: " + benchPokemonCard.getName());
+                                                        }
 
-                                break;
-                            }
+                                            }
+                                        }
+                                    }
+                                }
                         }
                 }
             }
@@ -364,7 +403,7 @@ public class LogicController {
                 Attack bestOpponentAttack = players.get(getOpponent(activePlayer)).getActiveCard().getBestAttack();
                 Attack bestAttack = player.getActiveCard().getBestAttack();
                 logger.info(players.get(getOpponent(activePlayer)).getActiveCard().getId());
-                if (bestAttack != null && bestAttack.hasSufficientEnergy(player.getActiveCard().getEnergyCards()) &&
+                if (bestAttack != null && bestAttack.hasEnoughEnergy(player.getActiveCard().getEnergyCards()) &&
                         bestAttack.getAbility().getActionsPower() >= players.get(getOpponent(activePlayer)).getActiveCard().getTopCard().getHealth()) {
                     //justDoAttack = true;
                     if (!attackRetreatRestricted) {
@@ -378,14 +417,14 @@ public class LogicController {
                         && bestOpponentAttack.getAbility().getActionsPower() >= player.getActiveCard().getTopCard().getHealth()
                         //justDoRetreat = true;
                         && player.getAreaCard(Area.bench).size() > 0 &&
-                        player.getActiveCard().getTopCard().getRetreat().hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {
+                        player.getActiveCard().getTopCard().getRetreat().hasEnoughEnergy(player.getActiveCard().getEnergyCards())) {
                     if (!attackRetreatRestricted && !retreatRestricted) {
                         executeRetreat(activePlayer, player.getActiveCard().getTopCard().getRetreat());
                         logger.info(activePlayer + ": " + TurnAction.retreat + ":" + activeCard.getName());
                     } else
                         logger.info("AI can not attack due to restriction");
 
-                } else if (bestAttack != null && bestAttack.hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {//try to attack
+                } else if (bestAttack != null && bestAttack.hasEnoughEnergy(player.getActiveCard().getEnergyCards())) {//try to attack
                     if (!attackRetreatRestricted) {
                         executeAbility(activePlayer, bestAttack.getAbility());
                         logger.info(activePlayer + ": " + TurnAction.attack + ":" + activeCard.getName());
@@ -393,7 +432,7 @@ public class LogicController {
                         logger.info("AI can not attack due to restriction");
                 } else {//try to retreat
                     if (player.getAreaCard(Area.bench).size() > 0 &&
-                            player.getActiveCard().getTopCard().getRetreat().hasSufficientEnergy(player.getActiveCard().getEnergyCards())) {
+                            player.getActiveCard().getTopCard().getRetreat().hasEnoughEnergy(player.getActiveCard().getEnergyCards())) {
                         if (!attackRetreatRestricted && !retreatRestricted) {
                             executeRetreat(activePlayer, player.getActiveCard().getTopCard().getRetreat());
                             logger.info(activePlayer + ": " + TurnAction.attack + ":" + activeCard.getName());
@@ -413,6 +452,24 @@ public class LogicController {
         startTurn(true);
     }
 
+    private void putPokemonIntoBench(Enums.Player playerName) throws Exception {
+
+        for (Card card : players.get(playerName).getAreaCard(Area.hand)) {
+            if (players.get(playerName).getAreaCard(Area.bench).size() < 5) {
+
+                if (card instanceof PokemonCard && ((PokemonCard) card).getLevel().equals("basic")) {
+                    logger.info("handCard:" + card.getName() + "moves into bench");
+                    players.get(playerName).addCard(players.get(playerName).popCard(card.getId(), Area.hand, -1, ""),
+                            Area.bench, -1, "");
+                    turnActions.put(TurnAction.pokemonToBench, turnActions.get(TurnAction.pokemonToBench) + 1);
+                    logger.info("put to bench area:" + card.getName());
+                    putPokemonIntoBench(playerName);
+                    return;
+                }
+            } else break;
+        }
+    }
+
     private boolean executeRetreat(Enums.Player activePlayer, Attack retreat) throws Exception {
         if (gameFinished)
             return false;
@@ -428,7 +485,7 @@ public class LogicController {
             }
             while (selectedCard.size() != 1);
         //move energy cards into discard
-        List<EnergyCard> energyCards = players.get(activePlayer).getActiveCard().getEnergyCards();
+        List<EnergyCard> energyCards = player.getActiveCard().getEnergyCards();
 
         for (int i = 0; i < retreat.getCostAmount(""); i++) {
             EnergyCard card = energyCards.get(0);
@@ -497,8 +554,7 @@ public class LogicController {
             for (String activeCardId : players.get(getOpponent(activePlayer)).getActiveCard().getAllCard().keySet()) {
                 if (!activeCardId.equals(opponentActiveId)) {
                     players.get(getOpponent(activePlayer)).addCard(players.get(getOpponent(activePlayer))
-                                    .popCard(activeCardId, players.get(getOpponent(activePlayer)).getActiveCard().getId()),
-                            Area.discard, -1, "", false);
+                            .popCard(activeCardId, opponentActiveId), Area.discard, -1, "", false);
                     logger.info("put " + activeCardId + " on discard");
                 }
             }
@@ -796,7 +852,7 @@ public class LogicController {
                         if (attackIndex == -1) {//retreat
                             if (players.get(playerName).getAreaCard(Area.bench).size() > 0) {
                                 logger.info(playerName + " :" + card.getId() + " " + TurnAction.retreat);
-                                if (((PokemonCard) card).getRetreat().hasSufficientEnergy(cardHolder.getEnergyCards())) {
+                                if (((PokemonCard) card).getRetreat().hasEnoughEnergy(cardHolder.getEnergyCards())) {
                                     logger.info("retreatCostList: " + ((PokemonCard) card).getRetreat().getCostAmount("") + " / " + cardHolder.getEnergyCards().size());
                                     if (!attackRetreatRestricted && !retreatRestricted) {
                                         if (executeRetreat(playerName, ((PokemonCard) card).getRetreat())) {
@@ -812,7 +868,7 @@ public class LogicController {
                                 fireShowMessage(Alert.AlertType.INFORMATION, "You have no Pokemon on the bench", 1);
                             }
                         } else {//Attack
-                            if (((PokemonCard) card).getAttackList().get(attackIndex).hasSufficientEnergy(cardHolder.getEnergyCards())) {
+                            if (((PokemonCard) card).getAttackList().get(attackIndex).hasEnoughEnergy(cardHolder.getEnergyCards())) {
                                 if (!attackRetreatRestricted) {
                                     if (executeAbility(playerName, ((PokemonCard) card).getAttackList().get(attackIndex).getAbility())) {
                                         logger.info(activePlayer + ": " + TurnAction.attack + ":" + card.getName());
@@ -835,7 +891,9 @@ public class LogicController {
                             players.get(playerName).addCard(trainerCard, Area.discard, -1, "", false);
                             logger.info("trainer card:" + card.getName());
                             result = true;
-                        }
+                        } else
+                            fireShowMessage(Alert.AlertType.ERROR,
+                                    "Ability " + ((TrainerCard) trainerCard).getAttack().getAbility().getName() + ", did not work properly.", -1);
 
                     }
                     if (result) {
@@ -875,7 +933,7 @@ public class LogicController {
         @Override
         public void cardClicked(String cardId) {
             try {
-                logger.info(players.get(getPlayerName(cardId)).getCard(cardId).getCategory().name()+
+                logger.info(players.get(getPlayerName(cardId)).getCard(cardId).getCategory().name() +
                         players.get(getPlayerName(cardId)).getCard(cardId).getName());
             } catch (Exception e) {
                 e.printStackTrace();

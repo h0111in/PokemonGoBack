@@ -28,6 +28,54 @@ import static Controller.Main.logger;
 
 public class SmallCardController extends GridPane {
 
+    private final CardEventListener cardEventListener = new CardEventListener() {
+        @Override
+        public void cardModified(String property, Card card) {
+
+            logger.info("property :" + property);
+            if (basicCard != null && card.getId().equals(basicCard.getId()))
+                setBasicCard((PokemonCard) card);
+            else if (stageCard != null && stageCard.getId().equals(card.getId()))
+                setStageCard((PokemonCard) card);
+            else if (card instanceof EnergyCard) {
+                for (int i = 0; i < energyCardList.size(); i++) {
+                    Card energyCard = energyCardList.get(i);
+                    if (energyCard.equals(card.getId())) {
+                        energyCardList.set(i, (EnergyCard) card);
+                        break;
+                    }
+                }
+            }
+            switch (property) {
+                case "status":
+                    if (getTopCard() instanceof PokemonCard) {
+                        switch (((PokemonCard) getTopCard()).getStatus()) {
+
+                            case none:
+                                setRotate(0);
+                                break;
+                            case paralyzed:
+                                setRotate(45);
+                                break;
+                            case stuck:
+                                break;
+                            case poisoned:
+                                setRotate(0);
+                                break;
+                            case asleep:
+                                setRotate(-45);
+                                break;
+                        }
+                    }
+                    break;
+                default:
+
+                    updateView();
+                    break;
+            }
+
+        }
+    };
     //region fields
     @FXML
     protected Label name;
@@ -233,53 +281,6 @@ public class SmallCardController extends GridPane {
                 event.consume();
             }
         });
-        card.addListener(new CardEventListener() {
-            @Override
-            public void cardModified(String property, Card card) {
-
-                if (basicCard != null && card.getId().equals(basicCard.getId()))
-                    setBasicCard((PokemonCard) card);
-                else if (stageCard != null && stageCard.getId().equals(card.getId()))
-                    setStageCard((PokemonCard) card);
-                else if (card instanceof EnergyCard) {
-                    for (int i = 0; i < energyCardList.size(); i++) {
-                        Card energyCard = energyCardList.get(i);
-                        if (energyCard.equals(card.getId())) {
-                            energyCardList.set(i, (EnergyCard) card);
-                            break;
-                        }
-                    }
-                }
-                switch (property) {
-                    case "status":
-                        if (card instanceof PokemonCard) {
-                            switch (((PokemonCard) card).getStatus()) {
-
-                                case none:
-                                    setRotate(0);
-                                    break;
-                                case paralyzed:
-                                    setRotate(45);
-                                    break;
-                                case stuck:
-                                    break;
-                                case poisoned:
-                                    setRotate(0);
-                                    break;
-                                case asleep:
-                                    setRotate(-45);
-                                    break;
-                            }
-                        }
-                        break;
-                    default:
-
-                        updateView();
-                        break;
-                }
-
-            }
-        });
         //place card
         push(card);
     }
@@ -292,12 +293,16 @@ public class SmallCardController extends GridPane {
 
             if (pokemonCard.getLevel().contains("basic"))
                 if (getBasicCard() == null) {
-                    this.setId(card.getId());
+                    if (stageCard == null) {
+                        this.setId(card.getId());
+                        card.addListener(cardEventListener);
+                    }
                     setBasicCard(pokemonCard);
                 } else
                     throw new Exception("Two Basic UIControls!");
             else if (getStageCard() == null) {
                 this.setId(card.getId());
+                card.addListener(cardEventListener);
                 setStageCard(pokemonCard);
             } else
                 throw new Exception("Two Stage UIControls!");
@@ -354,6 +359,8 @@ public class SmallCardController extends GridPane {
         if (getStageCard() != null && getStageCard().getId().equals(id)) {
             output = getStageCard().clone();
             stageCard = null;
+            if (basicCard != null)
+                setId(basicCard.getId());
         }
         if (getTrainerCard() != null && getTrainerCard().getId().equals(id)) {
             output = getTrainerCard();
@@ -491,12 +498,12 @@ public class SmallCardController extends GridPane {
         return false;
     }
 
-    public void setStageCard(PokemonCard stageCard) {
+    private void setStageCard(PokemonCard stageCard) {
         this.stageCard = stageCard;
         updateView();
     }
 
-    public void setBasicCard(PokemonCard basicCard) {
+    private void setBasicCard(PokemonCard basicCard) {
         this.basicCard = basicCard;
         updateView();
     }
@@ -510,7 +517,7 @@ public class SmallCardController extends GridPane {
         return trainerCard;
     }
 
-    public void setTrainerCard(TrainerCard trainerCard) {
+    private void setTrainerCard(TrainerCard trainerCard) {
         this.trainerCard = trainerCard;
         updateView();
     }

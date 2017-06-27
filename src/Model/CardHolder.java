@@ -125,7 +125,7 @@ public class CardHolder {
         Attack bestAttack = null;
         if (getTopCard() != null)
             for (Attack attack : getTopCard().getAttackList()) {
-                if (attack.hasSufficientEnergy(getEnergyCards()))//has enough energy?
+                if (attack.hasEnoughEnergy(getEnergyCards()))//has enough energy?
                 {
                     if (bestAttack == null) {
                         bestAttack = attack;

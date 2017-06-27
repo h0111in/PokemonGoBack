@@ -125,7 +125,7 @@ public class Player {
 
                     throw new Exception("Bench is full");
                 }
-
+                logger.info("card " + card.getName() + " add to column :" + cardHolderIndex);
                 bench.get(cardHolderIndex).add(card);
                 break;
             case active:
@@ -438,28 +438,33 @@ public class Player {
 
     public void swapCardHolder(CardHolder cardHolder1, CardHolder cardHolder2, Area area1, Area area2) throws Exception {
 
-        List<Card> cards1 = new ArrayList<>();
-        for (Card card : cardHolder1.getAllCard().values()) {
-            if (!cardHolder1.getId().equals(card.getId()))
-                cards1.add(popCard(card.getId(), cardHolder1.getId()));
-        }
-        Card topCard1 = popCard(cardHolder1.getId(), "");
 
+        List<Card> cards1 = new ArrayList<>();
+        Card topCard1 = null;
+        if (cardHolder1 != null) {
+            for (Card card : cardHolder1.getAllCard().values()) {
+                if (!cardHolder1.getId().equals(card.getId()))
+                    cards1.add(popCard(card.getId(), cardHolder1.getId()));
+            }
+            topCard1 = popCard(cardHolder1.getId(), "");
+        }
         if (cardHolder2 != null) {
             List<Card> cards2 = new ArrayList<>();
             for (Card card : cardHolder2.getAllCard().values()) {
                 if (!cardHolder2.getId().equals(card.getId()))
                     cards2.add(popCard(card.getId(), cardHolder2.getId()));
             }
+
             Card topCard2 = popCard(cardHolder2.getId(), "");
             addCard(topCard2, area1, -1, "");
             for (Card card : cards2)
                 addCard(card, area1, -1, topCard2.getId());
         }
-        addCard(topCard1, area2, -1, "");
-        for (Card card : cards1)
-            addCard(card, area2, -1, topCard1.getId());
-
+        if (cardHolder1 != null) {
+            addCard(topCard1, area2, -1, "");
+            for (Card card : cards1)
+                addCard(card, area2, -1, topCard1.getId());
+        }
 
     }
 }

@@ -137,6 +137,9 @@ public class PokemonCard implements Card {
     }
 
     public void parse(String[] words, List<Ability> abilities) {
+//        Pikachu:pokemon:cat:basic:cat:lightning:60:retreat:cat:colorless:1:attacks:cat:colorless:1:5,cat:colorless:2:6
+//        Raichu:pokemon:cat:stage-one:Pikachu:cat:lightning:90:attacks:cat:colorless:2:7,cat:colorless:1,cat:lightning:2:8
+
         try {
             int j = 0;
             int i = 0;
