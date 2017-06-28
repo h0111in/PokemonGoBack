@@ -17,11 +17,11 @@ public class Player {
     private Coin coin;
     private boolean isComputer;
     List<CardHolder> bench;
-    Map<String, Card> hand;//id-UIControls
-    Map<String, Card> deck;
-    Map<String, Card> prize;
+    List<Card> hand;//id-UIControls
+    List<Card> deck;
+    List<Card> prize;
     CardHolder active;
-    Map<String, Card> discard;
+    List<Card> discard;
     private EventListenerList listenerList;
 
     public Player(Enums.Player name, boolean isComputer) {
@@ -32,21 +32,31 @@ public class Player {
         bench = new ArrayList<CardHolder>();
         for (int i = 0; i < 5; i++)
             bench.add(new CardHolder());
-        hand = new HashMap<>();
-        deck = new HashMap<>();
-        prize = new HashMap<>();
+        hand = new ArrayList<>();
+        deck = new ArrayList<>();
+        prize = new ArrayList<>();
         active = new CardHolder();
-        discard = new HashMap<>();
+        discard = new ArrayList<>();
 
     }
 
 
     public Area getCardArea(String cardId) {
-
-        if (deck.containsKey(cardId)) return Area.deck;
-        if (hand.containsKey(cardId)) return Area.hand;
-        if (prize.containsKey(cardId)) return Area.prize;
-        if (discard.containsKey(cardId)) return Area.discard;
+        for (Card card : deck)
+            if (card.getId().equals(cardId))
+                return Area.deck;
+        for (Card card : hand)
+            if (card.getId().equals(cardId))
+                return Area.hand;
+        for (Card card : prize)
+            if (card.getId().equals(cardId))
+                return Area.prize;
+        for (Card card : discard)
+            if (card.getId().equals(cardId))
+                return Area.discard;
+        for (Card card : deck)
+            if (card.getId().equals(cardId))
+                return Area.deck;
         if (active.getAllCard().containsKey(cardId))
             return Area.active;
         for (CardHolder cardHolder : bench)
@@ -77,27 +87,29 @@ public class Player {
     }
 
     public Player addCard(Card card, Area destination, String smallCardId) throws Exception {
+        //logger.info(card.getName());
         this.addCard(card, destination, -1, smallCardId, false);
         return this;
     }
 
     public Player addCard(Card card, Area destination, int cardHolderIndex, String cardHolderId, boolean addtoBottom) throws Exception {
-        logger.info(card.getId() + " Area : " + destination + " columnIndex: " + cardHolderIndex + " uiHolderId: " + cardHolderId);
 
         switch (destination) {
             case deck:
                 if (card.getId().equals("")) {
                     card.setId(name.name() + deck.size());
                     card.setPlayerName(name);
+                    logger.info(card.getId() + " Area : " + destination + " columnIndex: " + cardHolderIndex + " uiHolderId: " + cardHolderId);
+
                 }
                 if (addtoBottom) deck = addTopMap(card, deck);
                 else
-                    deck.put(card.getId(), card);
+                    deck.add(card);
                 break;
             case hand:
                 if (addtoBottom) hand = addTopMap(card, hand);
                 else
-                    hand.put(card.getId(), card);
+                    hand.add(card);
                 break;
             case bench:
                 if (cardHolderIndex == -1) {
@@ -134,11 +146,11 @@ public class Player {
             case prize:
                 if (addtoBottom) prize = addTopMap(card, prize);
                 else
-                    prize.put(card.getId(), card);
+                    prize.add(card);
                 break;
             case discard:
                 if (addtoBottom) discard = addTopMap(card, discard);
-                else discard.put(card.getId(), card);
+                else discard.add(card);
                 break;
         }
         fireAddCard(new CardEvent(card, destination, getName(), cardHolderIndex, cardHolderId));
@@ -146,13 +158,15 @@ public class Player {
     }
 
 
-    private Map<String, Card> addTopMap(Card card, Map<String, Card> map) {
+    private List<Card> addTopMap(Card card, List<Card> map) {
 
-        Map<String, Card> temp = new HashMap<>();
-        temp.put(card.getId(), card);
-        for (Card card1 : map.values())
-            temp.put(card1.getId(), card1);
-        return temp;
+        map.add(0, card);
+        return map;
+//        Map<String, Card> temp = new HashMap<>();
+//        temp.put(card.getId(), card);
+//        for (Card card1 : map.values())
+//            temp.put(card1.getId(), card1);
+//        return temp;
 
     }
 
@@ -163,23 +177,25 @@ public class Player {
             switch (area) {
 
                 case deck:
+
                     if (deck.size() > 0) {
-                        List<String> keys = new ArrayList<>(deck.keySet());
-                        String randomKey = keys.get(keys.size() - 1);
-                        Card card = deck.get(randomKey);
+//                        List<String> keys = new ArrayList<>(deck.keySet());
+//                        String randomKey = keys.get(keys.size() - 1);
+                        Card card = deck.get(0);
+                        logger.info(name + " draws " + card.getName() + " " + card.getCategory());
                         cardList.add(card);
-                        deck.remove(card.getId());
+                        deck.remove(0);
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));
                     }
                     break;
                 case hand:
                     if (hand.size() > 0) {
 
-                        List<String> keys = new ArrayList<>(hand.keySet());
-                        String randomKey = keys.get(keys.size() - 1);
-                        Card card = hand.get(randomKey);
+//                        List<String> keys = new ArrayList<>(hand.keySet());
+//                        String randomKey = keys.get(keys.size() - 1);
+                        Card card = hand.get(0);
                         cardList.add(card);
-                        hand.remove(card.getId());
+                        hand.remove(0);
 
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));
                     }
@@ -192,11 +208,11 @@ public class Player {
 
                     if (prize.size() > 0) {
 
-                        List<String> keys = new ArrayList<>(prize.keySet());
-                        String randomKey = keys.get(keys.size() - 1);
-                        Card card = prize.get(randomKey);
+//                        List<String> keys = new ArrayList<>(prize.keySet());
+//                        String randomKey = keys.get(keys.size() - 1);
+                        Card card = prize.get(0);
                         cardList.add(card);
-                        prize.remove(card.getId());
+                        prize.remove(0);
 
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));
                     }
@@ -205,11 +221,9 @@ public class Player {
 
                     if (deck.size() > 0) {
 
-                        List<String> keys = new ArrayList<>(discard.keySet());
-                        String randomKey = keys.get(keys.size() - 1);
-                        Card card = discard.get(randomKey);
+                        Card card = discard.get(0);
                         cardList.add(card);
-                        discard.remove(card.getId());
+                        discard.remove(0);
                         fireRemoveCard(new CardEvent(card, area, getName(), -1, ""));
                     }
                     break;
@@ -228,11 +242,9 @@ public class Player {
         switch (area) {
 
             case deck:
-                card = deck.get(id);
-                break;
+                return getCard(id, deck);
             case hand:
-                card = hand.get(id);
-                break;
+                return getCard(id, hand);
             case bench:
                 for (int i = 0; i < bench.size(); i++) {
                     CardHolder cardHolder = bench.get(i);
@@ -247,25 +259,46 @@ public class Player {
                 card = active.getCard(id);
                 break;
             case prize:
-                card = prize.get(id);
-
-                break;
+                return getCard(id, prize);
             case discard:
-                card = discard.get(id);
-                break;
+                return getCard(id, discard);
         }
         return card;
+    }
+
+    private Card getCard(String id, List<Card> cardList) {
+        for (Card tempCard : cardList)
+            if (tempCard.getId().equals(id))
+                return tempCard;
+        return null;
+    }
+
+    private int getIndex(String id, List<Card> cardList) {
+        for (int i = 0; i < cardList.size(); i++) {
+            Card card = cardList.get(i);
+            if (card.getId().equals(id))
+                return i;
+        }
+        return -1;
     }
 
     private boolean removeCard(String id, Area area) throws Exception {
         switch (area) {
 
             case deck:
-                deck.remove(id);
-                return true;
+                int index = getIndex(id, deck);
+                if (index > -1) {
+                    deck.remove(index);
+                    return true;
+                }
+                return false;
             case hand:
-                hand.remove(id);
-                return true;
+                index = getIndex(id, hand);
+                if (index > -1) {
+                    hand.remove(index);
+                    return true;
+                }
+                return false;
 
             case bench:
                 for (CardHolder cardHolder : bench)
@@ -279,12 +312,20 @@ public class Player {
                 return true;
 
             case prize:
-                prize.remove(id);
-                return true;
+                index = getIndex(id, prize);
+                if (index > -1) {
+                    prize.remove(index);
+                    return true;
+                }
+                return false;
 
             case discard:
-                discard.remove(id);
-                return true;
+                index = getIndex(id, discard);
+                if (index > -1) {
+                    discard.remove(index);
+                    return true;
+                }
+                return false;
 
             case none:
                 break;
@@ -387,9 +428,9 @@ public class Player {
         switch (area) {
 
             case deck:
-                return new ArrayList<>(deck.values());
+                return new ArrayList<>(deck);
             case hand:
-                return new ArrayList<>(hand.values());
+                return new ArrayList<>(hand);
             case bench:
                 List<Card> list = new ArrayList<>();
                 for (CardHolder cardHolder : bench)
@@ -399,10 +440,10 @@ public class Player {
             case active:
                 return new ArrayList<>(getActiveCard().getAllCard().values());
             case prize:
-                logger.info(String.valueOf(prize.values().size()));
-                return new ArrayList<>(prize.values());
+                logger.info(String.valueOf(prize.size()));
+                return new ArrayList<>(prize);
             case discard:
-                return new ArrayList<>(discard.values());
+                return new ArrayList<>(discard);
         }
         return new ArrayList<>();
     }

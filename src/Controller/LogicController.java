@@ -72,6 +72,14 @@ public class LogicController {
 //        for (Card card :players.get(Enums.Player.A).getAreaCard(Area.deck))
 //            if(card.getTargetCategory()==CardCategory.energy)
 //            logger.info(card.getName()+card.getTargetCategory());
+//        String cardList="";
+//        for (Card card : players.get(Enums.Player.A).getAreaCard(Area.deck))
+//            cardList+="\r\n"+card.getName();
+//            logger.info(cardList);
+//        for (Card card : players.get(Enums.Player.B).getAreaCard(Area.deck))
+//            cardList+="\r\n"+card.getName();
+//        logger.info(cardList);
+
         players.get(Enums.Player.A).addCard(players.get(Enums.Player.A).drawCard(7, Area.deck), Area.hand, -1, "");
         players.get(Enums.Player.B).addCard(players.get(Enums.Player.B).drawCard(7, Area.deck), Area.hand, -1, "");
 
@@ -82,6 +90,9 @@ public class LogicController {
         //Check Mulligan in hands
         int totalMulliganA = checkMulligan(Enums.Player.A);
         int totalMulliganB = checkMulligan(Enums.Player.B);
+        logger.info("A " + totalMulliganA);
+        logger.info("B " + totalMulliganB);
+
         if (totalMulliganA > totalMulliganB) {
             fireShowMessage(Alert.AlertType.INFORMATION, "Opponent receives " + (totalMulliganA - totalMulliganB) + " cards due to Mulligan", 1.5);
             players.get(Enums.Player.B).addCard(players.get(Enums.Player.B).drawCard(totalMulliganA - totalMulliganB, Area.deck), Area.hand, -1, "");
@@ -912,6 +923,7 @@ public class LogicController {
 
         @Override
         public boolean showFaceRequest(Enums.Player playerName, String cardId) {
+            logger.info(playerName + " wants to see " + cardId + " in " + players.get(playerName).getCardArea(cardId));
             switch (players.get(playerName).getCardArea(cardId)) {
                 case hand:
                     if (!players.get(playerName).isComputer()) {
