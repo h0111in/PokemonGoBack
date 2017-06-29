@@ -1,10 +1,10 @@
 package Model.Abilities;
 
 import Enums.Area;
-import Model.Card;
 import Model.EnergyCard;
 import Model.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,10 +18,11 @@ public class DeEnergize extends BaseAction {
 
         Player targetPlayer = getTargetPlayer(player, opponent);
 
-        List<EnergyCard> energyCardList = targetPlayer.getActiveCard().getEnergyCards();
-        for (Card energyCard : energyCardList) {
-            targetPlayer.addCard(targetPlayer.popCard(energyCard.getId(),
-                    targetPlayer.getActiveCard().getId()), Area.discard, "");
+        List<String> energyCardList = new ArrayList<>();
+        for (EnergyCard energyCard : targetPlayer.getActiveCard().getEnergyCards())
+            energyCardList.add(energyCard.getId());
+        for (String energyCard : energyCardList) {
+            targetPlayer.addCard(targetPlayer.popCard(energyCard, targetPlayer.getActiveCard().getId()), Area.discard, "");
         }
         return true;
     }
