@@ -12,17 +12,19 @@ The Pokémon installation comprises three parts:
 A typical Pokémon game architecture might be like figure 2.
 ![Pokémon game architecture](https://github.com/h0111in/PokemonGoBack/blob/master/Documents/game-screenshot.jpg)
 
-![Highlevel Architecture](https://github.com/h0111in/PokemonGoBack/blob/master/Documents/pokemon%20architecture.jpg)
-
-![Model Diagram](https://github.com/h0111in/PokemonGoBack/blob/master/Documents/Model-diagram.png)
-
 *	Core / Logic unit controls rules of the game such as defining who goes first? Managing turns, setting up the game or identifying winner the match.
 *	GUI, it interacts with user by receiving user commands and passing them to the logic and consequently refreshing the user interface based on models.
 *	AI part, plays as an opponent and invokes commands to the logic unit.
 *	Meta Data provides required information about cards, abilities and list of cards for each player.
 
+![Highlevel Architecture](https://github.com/h0111in/PokemonGoBack/blob/master/Documents/pokemon%20architecture.jpg)
+
+
 The project focuses on obtaining rules of the game, not only those related to general turns, but also the correctness of the operation of each ability in cards.
 Pokémon project is open source or free software (GPL). It is written in Java. This project was implemented as a course project for SOEN 6011 (Software Engineering Processes) at Concordia university.
+
+![Model Diagram](https://github.com/h0111in/PokemonGoBack/blob/master/Documents/Model-diagram.png)
+
 Potential Improvements
 1.	Since the project uses a built-in AI module within the logic unit, extracting AI responsibilities from logic controller might be a useful modification to increase cohesion and make low coupling.
 2.	By default, the software logs players’ operations into a text file just for further monitoring. Using a database instead of text file to store the meta data and latest state of players makes software more stable during the game and efficiency issues as well.
