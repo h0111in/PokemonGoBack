@@ -10,11 +10,13 @@ The Pokémon installation comprises three parts:
 3.	The deck files. Each player has his/her own deck text file that contains a list of indexes of those cards that the player wants to have in his/her deck at the start point. These files should be placed into the ‘Asset’ folder as well.
 
 A typical Pokémon game architecture might be like figure 2.
+![test](https://github.com/h0111in/PokemonGoBack/tree/master/Documents/game-screenshot.jpg)
 Figure 2: Pokémon game architecture
-•	Core / Logic unit controls rules of the game such as defining who goes first? Managing turns, setting up the game or identifying winner the match.
-•	GUI, it interacts with user by receiving user commands and passing them to the logic and consequently refreshing the user interface based on models.
-•	AI part, plays as an opponent and invokes commands to the logic unit.
-•	Meta Data provides required information about cards, abilities and list of cards for each player.
+
+*	Core / Logic unit controls rules of the game such as defining who goes first? Managing turns, setting up the game or identifying winner the match.
+*	GUI, it interacts with user by receiving user commands and passing them to the logic and consequently refreshing the user interface based on models.
+*	AI part, plays as an opponent and invokes commands to the logic unit.
+*	Meta Data provides required information about cards, abilities and list of cards for each player.
 
 The project focuses on obtaining rules of the game, not only those related to general turns, but also the correctness of the operation of each ability in cards.
 Pokémon project is open source or free software (GPL). It is written in Java. This project was implemented as a course project for SOEN 6011 (Software Engineering Processes) at Concordia university.
