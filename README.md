@@ -10,7 +10,7 @@ The Pokémon installation comprises three parts:
 3.	The deck files. Each player has his/her own deck text file that contains a list of indexes of those cards that the player wants to have in his/her deck at the start point. These files should be placed into the ‘Asset’ folder as well.
 
 A typical Pokémon game architecture might be like figure 2.
-![test](https://github.com/h0111in/PokemonGoBack/tree/master/Documents/game-screenshot.jpg)
+![test](https://github.com/h0111in/PokemonGoBack/Documents/game-screenshot.jpg)
 Figure 2: Pokémon game architecture
 
 *	Core / Logic unit controls rules of the game such as defining who goes first? Managing turns, setting up the game or identifying winner the match.
